@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/eds-lessons-dev
+    docker:
+      - image: earthlab/earth-analytics-python-env
+    steps:
+      - add_shh_keys:
+          fingerprints:
+            - 00:fa:e2:dc:54:90:50:55:0f:80:1d:d2:15:67:a3:5a
+      - checkout
+      
+
