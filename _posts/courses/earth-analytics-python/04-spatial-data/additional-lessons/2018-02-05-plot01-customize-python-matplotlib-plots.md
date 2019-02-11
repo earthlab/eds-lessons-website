@@ -3,7 +3,7 @@ layout: single
 title: "Customize your Maps in Python using Matplotlib: GIS in Python"
 excerpt: "In this lesson you will review how to customize matplotlib maps created using vector data in Python. You will review how to add legends, titles and how to customize map colors."
 authors: ['Chris Holdgraf', 'Leah Wasser']
-modified: 2019-02-04
+modified: 2019-02-11
 category: [courses]
 class-lesson: ['hw-custom-maps-python']
 module-title: 'Custom Plots in Python'
@@ -128,7 +128,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_9_0.png" alt = "Geopandas plot of roads colored according to an attribute.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_9_0.png" alt = "Geopandas plot of roads colored according to an attribute.">
 <figcaption>Geopandas plot of roads colored according to an attribute.</figcaption>
 
 </figure>
@@ -199,7 +199,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_13_0.png" alt = "One way to customize plots is to create a dictionary that contains the symbology or colors and symbols that you wish to use for each attribute type in the map and legend.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_13_0.png" alt = "One way to customize plots is to create a dictionary that contains the symbology or colors and symbols that you wish to use for each attribute type in the map and legend.">
 <figcaption>One way to customize plots is to create a dictionary that contains the symbology or colors and symbols that you wish to use for each attribute type in the map and legend.</figcaption>
 
 </figure>
@@ -235,7 +235,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_15_0.png" alt = "Here the line width is adjusted on the roads layer.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_15_0.png" alt = "Here the line width is adjusted on the roads layer.">
 <figcaption>Here the line width is adjusted on the roads layer.</figcaption>
 
 </figure>
@@ -283,7 +283,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_17_0.png" alt = "You can refine plot symbology to make nicer looking plots.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_17_0.png" alt = "You can refine plot symbology to make nicer looking plots.">
 <figcaption>You can refine plot symbology to make nicer looking plots.</figcaption>
 
 </figure>
@@ -316,7 +316,7 @@ Create a plot of roads using the following line thicknesses:
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_19_0.png" alt = "Geopandas plot of roads colored according to an attribute.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_19_0.png" alt = "Geopandas plot of roads colored according to an attribute.">
 <figcaption>Geopandas plot of roads colored according to an attribute.</figcaption>
 
 </figure>
@@ -372,7 +372,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_21_0.png" alt = "If you set the label argument in your plot, that will be added to your legend when you call ax.legend().">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_21_0.png" alt = "If you set the label argument in your plot, that will be added to your legend when you call ax.legend().">
 <figcaption>If you set the label argument in your plot, that will be added to your legend when you call ax.legend().</figcaption>
 
 </figure>
@@ -410,7 +410,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_23_0.png" alt = "Geopandas plot of roads colored according to an attribute.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_23_0.png" alt = "Geopandas plot of roads colored according to an attribute.">
 <figcaption>Geopandas plot of roads colored according to an attribute.</figcaption>
 
 </figure>
@@ -447,7 +447,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_25_0.png" alt = "Geopandas plot of roads colored according to an attribute.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_25_0.png" alt = "Geopandas plot of roads colored according to an attribute.">
 <figcaption>Geopandas plot of roads colored according to an attribute.</figcaption>
 
 </figure>
@@ -492,7 +492,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_27_0.png" alt = "Geopandas plot of roads colored according to an attribute.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_27_0.png" alt = "Geopandas plot of roads colored according to an attribute.">
 <figcaption>Geopandas plot of roads colored according to an attribute.</figcaption>
 
 </figure>
@@ -639,7 +639,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_31_0.png" alt = "A similar approach can be taken to customize points on a plot.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_31_0.png" alt = "A similar approach can be taken to customize points on a plot.">
 <figcaption>A similar approach can be taken to customize points on a plot.</figcaption>
 
 </figure>
@@ -756,7 +756,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_41_0.png" alt = "Custom legends in matplotlib using collections">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_41_0.png" alt = "Custom legends in matplotlib using collections">
 <figcaption>Custom legends in matplotlib using collections</figcaption>
 
 </figure>
@@ -799,7 +799,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_43_0.png" alt = "Once you have setup a loop, you can access the collections and define the legend using the collection attributes.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_43_0.png" alt = "Once you have setup a loop, you can access the collections and define the legend using the collection attributes.">
 <figcaption>Once you have setup a loop, you can access the collections and define the legend using the collection attributes.</figcaption>
 
 </figure>
@@ -854,7 +854,7 @@ Note that you can customize the look of legend elements using the `prop=` argume
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_46_0.png" alt = "Geopandas plot of roads colored according to an attribute.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_46_0.png" alt = "Geopandas plot of roads colored according to an attribute.">
 <figcaption>Geopandas plot of roads colored according to an attribute.</figcaption>
 
 </figure>
@@ -893,7 +893,7 @@ plt.rcParams['legend.fontsize'] = 'small'
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_50_0.png" alt = "Geopandas plot of roads colored according to an attribute.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/additional-lessons/2018-02-05-plot01-customize-python-matplotlib-plots_50_0.png" alt = "Geopandas plot of roads colored according to an attribute.">
 <figcaption>Geopandas plot of roads colored according to an attribute.</figcaption>
 
 </figure>

@@ -4,7 +4,7 @@ title: "Classify and Plot Raster Data in Python"
 excerpt: "This lesson presents how to classify a raster dataset and export it as a
 new raster in Python."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: 2019-02-04
+modified: 2019-02-11
 category: [courses]
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/classify-plot-raster-data-in-python/
@@ -186,7 +186,7 @@ ax.set(xlabel="Height (m)",
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_9_0.png" alt = "Histogram of Canopy Height Model values.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_9_0.png" alt = "Histogram of Canopy Height Model values.">
 <figcaption>Histogram of Canopy Height Model values.</figcaption>
 
 </figure>
@@ -224,7 +224,7 @@ ax.set_title("Distribution of raster cell values in the DTM difference data\nZoo
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_11_0.png" alt = "Histogram of CHM data zoomed in to 0-25 on the x axis.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_11_0.png" alt = "Histogram of CHM data zoomed in to 0-25 on the x axis.">
 <figcaption>Histogram of CHM data zoomed in to 0-25 on the x axis.</figcaption>
 
 </figure>
@@ -302,7 +302,7 @@ ax.set(title="Histogram with Custom Breaks",
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_15_0.png" alt = "Histogram with custom breaks applied.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_15_0.png" alt = "Histogram with custom breaks applied.">
 <figcaption>Histogram with custom breaks applied.</figcaption>
 
 </figure>
@@ -339,7 +339,7 @@ ax.set(title="Histogram with Custom Breaks",
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_17_0.png" alt = "Histogram with custom breaks applied.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_17_0.png" alt = "Histogram with custom breaks applied.">
 <figcaption>Histogram with custom breaks applied.</figcaption>
 
 </figure>
@@ -507,7 +507,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_27_0.png" alt = "CHM plot with NA values applied to the data.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_27_0.png" alt = "CHM plot with NA values applied to the data.">
 <figcaption>CHM plot with NA values applied to the data.</figcaption>
 
 </figure>
@@ -554,7 +554,7 @@ ax.set_title("Classified Canopy Height Model");
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_30_0.png" alt = "Canopy height model plot with a better colormap applied.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_30_0.png" alt = "Canopy height model plot with a better colormap applied.">
 <figcaption>Canopy height model plot with a better colormap applied.</figcaption>
 
 </figure>
@@ -623,7 +623,7 @@ ax.set_axis_off();
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_33_0.png" alt = "Canopy height model with a better colormap and a legend.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_33_0.png" alt = "Canopy height model with a better colormap and a legend.">
 <figcaption>Canopy height model with a better colormap and a legend.</figcaption>
 
 </figure>

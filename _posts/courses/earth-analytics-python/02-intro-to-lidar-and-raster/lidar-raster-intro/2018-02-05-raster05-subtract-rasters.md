@@ -3,7 +3,7 @@ layout: single
 title: "Subtract One Raster from Another and Export a New Geotiff in Python"
 excerpt: "Often you need to process two raster datasets together to create a new raster output. You then want to save that output as a new file. Learn how to subtract rasters and create a new geotiff file using open source Python."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: 2019-02-04
+modified: 2019-02-11
 category: [courses]
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/subtract-rasters-in-python/
@@ -197,7 +197,7 @@ ax.set_axis_off();
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster05-subtract-rasters_13_0.png" alt = "A plot of a Lidar derived canopy height model for Lee Hill Road in Boulder, CO.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster05-subtract-rasters_13_0.png" alt = "A plot of a Lidar derived canopy height model for Lee Hill Road in Boulder, CO.">
 <figcaption>A plot of a Lidar derived canopy height model for Lee Hill Road in Boulder, CO.</figcaption>
 
 </figure>
@@ -218,7 +218,7 @@ ax.set_title("Histogram of CHM Values");
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster05-subtract-rasters_14_0.png" alt = "A histogram of a Lidar derived canopy height model values for Lee Hill Road in Boulder, CO.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster05-subtract-rasters_14_0.png" alt = "A histogram of a Lidar derived canopy height model values for Lee Hill Road in Boulder, CO.">
 <figcaption>A histogram of a Lidar derived canopy height model values for Lee Hill Road in Boulder, CO.</figcaption>
 
 </figure>
@@ -445,7 +445,7 @@ Your plot should look like the one below (athough the colors may be different.
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster05-subtract-rasters_31_0.png" alt = "Lidar canopy height model derived from the DTM and DSM.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster05-subtract-rasters_31_0.png" alt = "Lidar canopy height model derived from the DTM and DSM.">
 <figcaption>Lidar canopy height model derived from the DTM and DSM.</figcaption>
 
 </figure>

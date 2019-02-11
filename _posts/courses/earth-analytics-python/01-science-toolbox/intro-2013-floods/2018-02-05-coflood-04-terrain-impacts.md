@@ -3,7 +3,7 @@ layout: single
 title: 'Measure Changes in the Terrain Caused by a Flood Using Lidar Data'
 excerpt: "A flood event often changes the terrain as water moves sediment and debris across the landscape. Learn how terrain changes are measured using lidar remote sensing data."
 authors: ['Leah Wasser', 'Lauren Herwehe']
-modified: 2019-02-04
+modified: 2019-02-11
 category: [courses]
 class-lesson: ['about-2013-floods']
 permalink: /courses/earth-analytics-python/python-open-science-toolbox/measure-changes-in-terrain-caused-by-floods/
@@ -102,7 +102,7 @@ Below, you can see a Digital Terrain Model (DTM) created for the lower Four-Mile
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/01-science-toolbox/intro-2013-floods/2018-02-05-coflood-04-terrain-impacts_2_0.png" alt = "Plots of DTMs for Four Mile Canyon Creek in Boulder County, Colorado before and after the 2013 floods.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/01-science-toolbox/intro-2013-floods/2018-02-05-coflood-04-terrain-impacts_2_0.png" alt = "Plots of DTMs for Four Mile Canyon Creek in Boulder County, Colorado before and after the 2013 floods.">
 <figcaption>Plots of DTMs for Four Mile Canyon Creek in Boulder County, Colorado before and after the 2013 floods.</figcaption>
 
 </figure>
@@ -123,7 +123,7 @@ The DoD created with the Four Mile Canyon Creek DTMs is below. Areas in purple h
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/01-science-toolbox/intro-2013-floods/2018-02-05-coflood-04-terrain-impacts_4_0.png" alt = "Plot of Digital Elevation Model of Difference (DoD) for Four Mile Canyon Creek DTMs.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/01-science-toolbox/intro-2013-floods/2018-02-05-coflood-04-terrain-impacts_4_0.png" alt = "Plot of Digital Elevation Model of Difference (DoD) for Four Mile Canyon Creek DTMs.">
 <figcaption>Plot of Digital Elevation Model of Difference (DoD) for Four Mile Canyon Creek DTMs.</figcaption>
 
 </figure>

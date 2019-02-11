@@ -9,7 +9,7 @@ course: 'earth-analytics-python'
 permalink: /courses/earth-analytics-python/use-time-series-data-in-python/about-and-get-help-with-python/
 nav-title: 'About Python & Get Help'
 dateCreated: 2017-05-05
-modified: 2019-02-04
+modified: 2019-02-11
 week: 3
 sidebar:
   nav:

@@ -5,7 +5,7 @@ excerpt: "This lesson introduces the raster geotiff file format - which is often
 to store lidar raster data. You will learn the 3 key spatial attributes of a raster dataset
 including Coordinate reference system, spatial extent and resolution."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: 2019-02-04
+modified: 2019-02-11
 category: [courses]
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/open-lidar-raster-python/
@@ -140,7 +140,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_7_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_7_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO.">
 <figcaption>A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO.</figcaption>
 
 </figure>
@@ -209,7 +209,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_12_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_12_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO.">
 <figcaption>A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO.</figcaption>
 
 </figure>
@@ -388,7 +388,7 @@ ax.set_title("Digital Elevation Model - Pre 2013 Flood");
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_29_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO with a grey color map applied.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_29_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO with a grey color map applied.">
 <figcaption>A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO with a grey color map applied.</figcaption>
 
 </figure>
@@ -421,7 +421,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_31_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO with a colorbar.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_31_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO with a colorbar.">
 <figcaption>A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO with a colorbar.</figcaption>
 
 </figure>
@@ -504,7 +504,7 @@ ax.set_title("Lee Hill Road - Digital elevation (terrain) model - \nDistribution
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_35_0.png" alt = "A histogram of lidar derived elevation values for Boulder, CO.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_35_0.png" alt = "A histogram of lidar derived elevation values for Boulder, CO.">
 <figcaption>A histogram of lidar derived elevation values for Boulder, CO.</figcaption>
 
 </figure>

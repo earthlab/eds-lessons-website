@@ -2,7 +2,7 @@
 layout: single
 title: "Geographic vs projected coordinate reference systems - GIS in Python"
 authors: ['Chris Holdgraf', 'Leah Wasser']
-modified: 2019-02-04
+modified: 2019-02-11
 category: [courses]
 class-lesson: ['class-intro-spatial-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/geographic-vs-projected-coordinate-reference-systems-python/
@@ -127,7 +127,7 @@ os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial03-geographic-vs-projected_3_0.png" alt = "Global map in a geographic Coordinate Reference System.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial03-geographic-vs-projected_3_0.png" alt = "Global map in a geographic Coordinate Reference System.">
 <figcaption>Global map in a geographic Coordinate Reference System.</figcaption>
 
 </figure>
@@ -250,7 +250,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial03-geographic-vs-projected_6_0.png" alt = "Plot of a single point that is provided for Boulder, Colorado in UTM units.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial03-geographic-vs-projected_6_0.png" alt = "Plot of a single point that is provided for Boulder, Colorado in UTM units.">
 <figcaption>Plot of a single point that is provided for Boulder, Colorado in UTM units.</figcaption>
 
 </figure>
@@ -366,7 +366,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial03-geographic-vs-projected_12_0.png" alt = "Map showing the location of Boulder, CO. All layers are in geographic WGS84 CRS.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial03-geographic-vs-projected_12_0.png" alt = "Map showing the location of Boulder, CO. All layers are in geographic WGS84 CRS.">
 <figcaption>Map showing the location of Boulder, CO. All layers are in geographic WGS84 CRS.</figcaption>
 
 </figure>

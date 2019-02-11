@@ -3,7 +3,7 @@ layout: single
 title: "Subset Time Series By Dates Python Using Pandas"
 excerpt: "Sometimes you have data over a longer time span than you need to run analysis. Learn how to subset your data  using a begina and end date in Python."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: 2019-02-04
+modified: 2019-02-11
 category: [courses]
 class-lesson: ['time-series-python']
 course: 'earth-analytics-python'
@@ -917,7 +917,7 @@ ax.set_ylabel('Precipitation (Inches)');
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_24_0.png" alt = "Scatterplot showing daily total precipitation for Boulder Creek.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_24_0.png" alt = "Scatterplot showing daily total precipitation for Boulder Creek.">
 <figcaption>Scatterplot showing daily total precipitation for Boulder Creek.</figcaption>
 
 </figure>
@@ -953,7 +953,7 @@ Your final plot should look something like the plot below.
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_26_0.png" alt = "Scatterplot of hourly precipitation for Boulder subsetted to 2003-2013.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_26_0.png" alt = "Scatterplot of hourly precipitation for Boulder subsetted to 2003-2013.">
 <figcaption>Scatterplot of hourly precipitation for Boulder subsetted to 2003-2013.</figcaption>
 
 </figure>
@@ -983,7 +983,7 @@ How different was the rainfall in 2012 compared to 2013?
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_28_0.png" alt = "Comparison of precipitation data in Boulder, CO from 2012 and 2013.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_28_0.png" alt = "Comparison of precipitation data in Boulder, CO from 2012 and 2013.">
 <figcaption>Comparison of precipitation data in Boulder, CO from 2012 and 2013.</figcaption>
 
 </figure>

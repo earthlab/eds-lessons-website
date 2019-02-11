@@ -3,7 +3,7 @@ layout: single
 title: "Calculate and plot difference normalized burn ratio (dNBR) from Landsat remote sensing data in R"
 excerpt: "In this lesson we review how to calculate difference normalized burn ratio using pre and post fire NBR rasters in R. We finally will classify the dNBR raster."
 authors: ['Leah Wasser','Megan Cattau']
-modified: 2019-02-04
+modified: 2019-02-11
 category: [courses]
 class-lesson: ['spectral-data-fire-r']
 permalink: /courses/earth-analytics-python/week-6/calculate-dNBR-R-Landsat/
@@ -203,7 +203,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-calculate-NBR-with-landsat-python_9_0.png">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-calculate-NBR-with-landsat-python_9_0.png">
 
 </figure>
 
@@ -268,7 +268,7 @@ ax.set_title("Landsat derived Normalized Burn Index (NBR)\n Pre-fire - you will 
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-calculate-NBR-with-landsat-python_11_1.png">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-calculate-NBR-with-landsat-python_11_1.png">
 
 </figure>
 

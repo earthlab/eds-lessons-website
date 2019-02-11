@@ -4,7 +4,7 @@ title: "Extract Raster Values At Point Locations in Python"
 excerpt: "This lesson reviews how to extract data from a raster dataset using a
 vector dataset. "
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Carson Farmer']
-modified: 2019-02-04
+modified: 2019-02-11
 category: [courses]
 class-lesson: ['remote-sensing-uncertainty-python']
 permalink: /courses/earth-analytics-python/lidar-remote-sensing-uncertainty/extract-data-from-raster/
@@ -101,7 +101,7 @@ ax.ticklabel_format(useOffset=False,
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty02-extract-raster-values_4_0.png" alt = "Bar plot showing the distribution of lidar canopy height model pixel values.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty02-extract-raster-values_4_0.png" alt = "Bar plot showing the distribution of lidar canopy height model pixel values.">
 <figcaption>Bar plot showing the distribution of lidar canopy height model pixel values.</figcaption>
 
 </figure>
@@ -179,7 +179,7 @@ ax.ticklabel_format(useOffset=False,
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty02-extract-raster-values_9_0.png" alt = "Bar plot showing the distribution of lidar chm values with 0's removed.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty02-extract-raster-values_9_0.png" alt = "Bar plot showing the distribution of lidar chm values with 0's removed.">
 <figcaption>Bar plot showing the distribution of lidar chm values with 0's removed.</figcaption>
 
 </figure>
@@ -271,7 +271,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty02-extract-raster-values_14_0.png" alt = "Map showing SJER plot location points overlayed on top of the SJER Canopy Height Model.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty02-extract-raster-values_14_0.png" alt = "Map showing SJER plot location points overlayed on top of the SJER Canopy Height Model.">
 <figcaption>Map showing SJER plot location points overlayed on top of the SJER Canopy Height Model.</figcaption>
 
 </figure>
@@ -593,7 +593,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty02-extract-raster-values_24_0.png" alt = "Bar plot showing maximum tree height per plot in SJER.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty02-extract-raster-values_24_0.png" alt = "Bar plot showing maximum tree height per plot in SJER.">
 <figcaption>Bar plot showing maximum tree height per plot in SJER.</figcaption>
 
 </figure>
@@ -753,7 +753,7 @@ for (zone, ix), ax in zip(SJER_lidar_height_df.iterrows(), axs.ravel()):
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty02-extract-raster-values_28_0.png" alt = "Bar plot showing the distribution of pixel values for each plot at the SJER field site.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty02-extract-raster-values_28_0.png" alt = "Bar plot showing the distribution of pixel values for each plot at the SJER field site.">
 <figcaption>Bar plot showing the distribution of pixel values for each plot at the SJER field site.</figcaption>
 
 </figure>

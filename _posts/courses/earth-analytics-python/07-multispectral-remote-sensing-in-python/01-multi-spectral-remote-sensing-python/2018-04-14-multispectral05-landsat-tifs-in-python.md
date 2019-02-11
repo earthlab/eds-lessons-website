@@ -3,7 +3,7 @@ layout: single
 title: "Work with Landsat Remote Sensing Data in Python"
 excerpt: "Landsat 8 data are downloaded in tif file format. Learn how to open and manipulate Landsat data in Python. Also learn how to create RGB and color infrafed Landsat image composites."
 authors: ['Leah Wasser']
-modified: 2019-02-04
+modified: 2019-02-11
 category: [courses]
 class-lesson: ['multispectral-remote-sensing-data-python']
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-in-python/landsat-bands-geotif-in-Python/
@@ -341,7 +341,7 @@ es.plot_bands(landsat_band4[0],
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral05-landsat-tifs-in-python_14_0.png" alt = "Landsat band 4  - red band - plot.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral05-landsat-tifs-in-python_14_0.png" alt = "Landsat band 4  - red band - plot.">
 <figcaption>Landsat band 4  - red band - plot.</figcaption>
 
 </figure>
@@ -398,7 +398,7 @@ es.plot_bands(landsat_post_fire,
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral05-landsat-tifs-in-python_19_0.png" alt = "Plot showing all 7 of the landsat 8 bands for the Cold Springs Fire Site. Do you notice any difference in brightness between the bands?.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral05-landsat-tifs-in-python_19_0.png" alt = "Plot showing all 7 of the landsat 8 bands for the Cold Springs Fire Site. Do you notice any difference in brightness between the bands?.">
 <figcaption>Plot showing all 7 of the landsat 8 bands for the Cold Springs Fire Site. Do you notice any difference in brightness between the bands?.</figcaption>
 
 </figure>
@@ -434,7 +434,7 @@ es.plot_rgb(landsat_post_fire,
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral05-landsat-tifs-in-python_22_0.png" alt = "Landsat 8 3 band color RGB composite.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral05-landsat-tifs-in-python_22_0.png" alt = "Landsat 8 3 band color RGB composite.">
 <figcaption>Landsat 8 3 band color RGB composite.</figcaption>
 
 </figure>
@@ -487,7 +487,7 @@ es.plot_rgb(landsat_post_fire,
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral05-landsat-tifs-in-python_24_0.png" alt = "Landsat 3 band RGB color composite with stretch applied.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral05-landsat-tifs-in-python_24_0.png" alt = "Landsat 3 band RGB color composite with stretch applied.">
 <figcaption>Landsat 3 band RGB color composite with stretch applied.</figcaption>
 
 </figure>
@@ -510,7 +510,7 @@ es.plot_rgb(landsat_post_fire,
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral05-landsat-tifs-in-python_25_0.png" alt = "Landsat 3 band RGB color composite with stretch and more clip applied.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral05-landsat-tifs-in-python_25_0.png" alt = "Landsat 3 band RGB color composite with stretch and more clip applied.">
 <figcaption>Landsat 3 band RGB color composite with stretch and more clip applied.</figcaption>
 
 </figure>
@@ -533,7 +533,7 @@ es.hist(landsat_post_fire,
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral05-landsat-tifs-in-python_27_0.png" alt = "Landsat 8 histogram for each band.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral05-landsat-tifs-in-python_27_0.png" alt = "Landsat 8 histogram for each band.">
 <figcaption>Landsat 8 histogram for each band.</figcaption>
 
 </figure>
@@ -558,7 +558,7 @@ es.plot_rgb(landsat_post_fire, rgb=[4, 3, 2],
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral05-landsat-tifs-in-python_29_0.png" alt = "Landsat 8 CIR color composite image.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral05-landsat-tifs-in-python_29_0.png" alt = "Landsat 8 CIR color composite image.">
 <figcaption>Landsat 8 CIR color composite image.</figcaption>
 
 </figure>

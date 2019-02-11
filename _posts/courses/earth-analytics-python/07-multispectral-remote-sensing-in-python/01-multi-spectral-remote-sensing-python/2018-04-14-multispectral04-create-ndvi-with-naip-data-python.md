@@ -3,7 +3,7 @@ layout: single
 title: "Calculate NDVI Using NAIP Remote Sensing Data in the Python Programming Language"
 excerpt: "A vegetation index is a single value that quantifies vegetation health or structure. Learn how to calculate the NDVI vegetation index using NAIP data in Python."
 authors: ['Leah Wasser', 'Chris Holdgraf']
-modified: 2019-02-04
+modified: 2019-02-11
 category: [courses]
 class-lesson: ['multispectral-remote-sensing-data-python']
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-in-python/vegetation-indices-NDVI-in-python/
@@ -165,7 +165,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral04-create-ndvi-with-naip-data-python_9_0.png" alt = "Plot of NDVI using 2015 NAIP data - before the Cold Springs Fire.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral04-create-ndvi-with-naip-data-python_9_0.png" alt = "Plot of NDVI using 2015 NAIP data - before the Cold Springs Fire.">
 <figcaption>Plot of NDVI using 2015 NAIP data - before the Cold Springs Fire.</figcaption>
 
 </figure>
@@ -189,7 +189,7 @@ es.hist(naip_ndvi,
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral04-create-ndvi-with-naip-data-python_11_0.png" alt = "Histogram of NDVI values derived from 2015 NAIP data.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral04-create-ndvi-with-naip-data-python_11_0.png" alt = "Histogram of NDVI values derived from 2015 NAIP data.">
 <figcaption>Histogram of NDVI values derived from 2015 NAIP data.</figcaption>
 
 </figure>

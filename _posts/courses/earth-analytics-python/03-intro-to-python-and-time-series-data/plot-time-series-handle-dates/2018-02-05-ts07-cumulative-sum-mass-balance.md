@@ -3,7 +3,7 @@ layout: single
 title: "The Relationship Between Precipitation and Stream Discharge | Explore Mass Balance"
 excerpt: "Learn how to create a cumulative sum plot in Pandas to better understand stream discharge in a watershed"
 authors: ['Matthew Rossi', 'Leah Wasser']
-modified: 2019-02-04
+modified: 2019-02-11
 category: [courses]
 class-lesson: ['time-series-python']
 course: 'earth-analytics-python'
@@ -295,7 +295,7 @@ ax.set_title("Annual Maxima - USGS Peak Flow vs Daily Calculated");
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts07-cumulative-sum-mass-balance_6_0.png" alt = "Comparison of USGS peak annual max vs calculated annual max from the USGS daily mean data.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts07-cumulative-sum-mass-balance_6_0.png" alt = "Comparison of USGS peak annual max vs calculated annual max from the USGS daily mean data.">
 <figcaption>Comparison of USGS peak annual max vs calculated annual max from the USGS daily mean data.</figcaption>
 
 </figure>
@@ -485,7 +485,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts07-cumulative-sum-mass-balance_13_0.png" alt = "Cumulative sum plot for stream discharge.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts07-cumulative-sum-mass-balance_13_0.png" alt = "Cumulative sum plot for stream discharge.">
 <figcaption>Cumulative sum plot for stream discharge.</figcaption>
 
 </figure>

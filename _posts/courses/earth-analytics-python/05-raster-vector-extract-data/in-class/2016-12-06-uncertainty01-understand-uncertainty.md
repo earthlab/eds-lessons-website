@@ -3,7 +3,7 @@ layout: single
 title: "Compare Lidar With Human Measured Tree Heights - Remote Sensing Uncertainty"
 excerpt: "In this lesson, we cover the topic of uncertainty. We focus on the types of uncertainty that you can expect when working with tree height data both derived from lidar remote sensing and human measurements. Further we cover sources of error including systematic vs. random error."
 authors: ['Leah Wasser', 'Chris Holdgraf']
-modified: 2019-02-04
+modified: 2019-02-11
 category: [courses]
 class-lesson: ['remote-sensing-uncertainty-python']
 permalink: /courses/earth-analytics-python/lidar-remote-sensing-uncertainty/understand-uncertainty-lidar/
@@ -91,7 +91,7 @@ heights that we are likely to get when we measure the tree.
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty01-understand-uncertainty_2_0.png" alt = "Boxplot showing an example distribution of a set of measurements. If 10 people measured the same tree to get height, they all might have slightly different answers.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty01-understand-uncertainty_2_0.png" alt = "Boxplot showing an example distribution of a set of measurements. If 10 people measured the same tree to get height, they all might have slightly different answers.">
 <figcaption>Boxplot showing an example distribution of a set of measurements. If 10 people measured the same tree to get height, they all might have slightly different answers.</figcaption>
 
 </figure>
@@ -113,7 +113,7 @@ precision (or lack thereof) of the measurement process.
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty01-understand-uncertainty_4_0.png" alt = "Example histogram of tree height values.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty01-understand-uncertainty_4_0.png" alt = "Example histogram of tree height values.">
 <figcaption>Example histogram of tree height values.</figcaption>
 
 </figure>
@@ -219,7 +219,7 @@ site location on the map below.
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty01-understand-uncertainty_7_0.png" alt = "Contextily map of California showing the location of the study site.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty01-understand-uncertainty_7_0.png" alt = "Contextily map of California showing the location of the study site.">
 <figcaption>Contextily map of California showing the location of the study site.</figcaption>
 
 </figure>
@@ -243,7 +243,7 @@ A map of our study plots is below overlaid on top of the canopy height mode.
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty01-understand-uncertainty_9_0.png" alt = "SJER field site locations overlayed on top of a lidar canopy height model.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty01-understand-uncertainty_9_0.png" alt = "SJER field site locations overlayed on top of a lidar canopy height model.">
 <figcaption>SJER field site locations overlayed on top of a lidar canopy height model.</figcaption>
 
 </figure>
@@ -276,7 +276,7 @@ Do they follow a 1:1 line? Do the data diverge from a 1:1 relationship?
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty01-understand-uncertainty_11_0.png" alt = "Scatterplot showing the relationship between lidar and measured tree height.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty01-understand-uncertainty_11_0.png" alt = "Scatterplot showing the relationship between lidar and measured tree height.">
 <figcaption>Scatterplot showing the relationship between lidar and measured tree height.</figcaption>
 
 </figure>
@@ -297,7 +297,7 @@ Do they follow a 1:1 line? Do the data diverge from a 1:1 relationship?
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty01-understand-uncertainty_13_0.png" alt = "Bar plot showing the difference between lidar and measured tree height by plot. ">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty01-understand-uncertainty_13_0.png" alt = "Bar plot showing the difference between lidar and measured tree height by plot. ">
 <figcaption>Bar plot showing the difference between lidar and measured tree height by plot. </figcaption>
 
 </figure>
