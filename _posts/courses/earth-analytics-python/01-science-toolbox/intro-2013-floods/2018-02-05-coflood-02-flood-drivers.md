@@ -82,7 +82,7 @@ There are many ways to measure or quantify drought. The Palmer Drought Severity 
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/01-science-toolbox/intro-2013-floods/2018-02-05-coflood-02-flood-drivers_2_0.png" alt = "Plot of Palmer Drought Index for Colorado 2005-2016.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/01-science-toolbox/intro-2013-floods/2018-02-05-coflood-02-flood-drivers_2_0.png" alt = "Plot of Palmer Drought Index for Colorado 2005-2016.">
 <figcaption>Plot of Palmer Drought Index for Colorado 2005-2016.</figcaption>
 
 </figure>
@@ -128,5 +128,3 @@ Dry organic matter is less able to absorb moisture. It also can be easily reloca
 
 
 All of this causes water to flow across the soil rather than being absorbed into the soil. Water flowing over the soil and earth is referred to as overland flow. Often times the floods that have significant impacts on an area have a lot of overland flow.
-
-test test
