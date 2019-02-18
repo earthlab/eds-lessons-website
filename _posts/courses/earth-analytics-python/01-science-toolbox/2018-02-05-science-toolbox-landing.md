@@ -200,7 +200,7 @@ It is OK if the dates are not formatted properly on your plot. You will learn ho
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/01-science-toolbox/2018-02-05-science-toolbox-landing_2_0.png" alt = "Homework plot of precipitation over time in Boulder, Colorado.">
+<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/01-science-toolbox/2018-02-05-science-toolbox-landing_2_0.png" alt = "Homework plot of precipitation over time in Boulder, Colorado.">
 <figcaption>Homework plot of precipitation over time in Boulder, Colorado.</figcaption>
 
 </figure>
