@@ -3,7 +3,7 @@ layout: single
 title: 'Analyze Sentiments Using Twitter Data and Tweepy in Python'
 excerpt: 'One common way to analyze Twitter data is to analyze attitudes (i.e. sentiment) in the tweet text. Learn how to analyze sentiments in Twitter data using Python.'
 authors: ['Martha Morrissey', 'Leah Wasser', 'Jeremey Diaz', 'Jenny Palomino']
-modified: 2019-02-11
+modified: 2019-02-18
 category: [courses]
 class-lesson: ['social-media-Python']
 permalink: /courses/earth-analytics-python/using-apis-natural-language-processing-twitter/analyze-tweet-sentiments-in-python/

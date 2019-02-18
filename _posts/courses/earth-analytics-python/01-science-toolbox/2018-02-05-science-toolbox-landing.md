@@ -4,7 +4,7 @@ category: courses
 title: "Get Started with Data in Python / Jupyter Notebooks"
 permalink: /courses/earth-analytics-python/python-open-science-toolbox/
 week-landing: 1
-modified: 2019-02-11
+modified: 2019-02-18
 week: 1
 sidebar:
   nav:
@@ -207,3 +207,5 @@ It is OK if the dates are not formatted properly on your plot. You will learn ho
 
 
 
+
+test test

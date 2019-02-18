@@ -8,7 +8,7 @@ class-lesson: ['time-series-python']
 permalink: /courses/earth-analytics-python/use-time-series-data-in-python/missing-data-in-python-na/
 nav-title: 'Missing data'
 dateCreated: 2018-08-07
-modified: 2019-02-11
+modified: 2019-02-18
 week: 3
 sidebar:
   nav:
