@@ -3,7 +3,7 @@ layout: single
 title: "Customize matplotlib plots in Python - earth analytics - data science for scientists"
 excerpt: 'Matplotlib is one of the most commonly used plotting library in Python. This lesson covers how to create a plot using matplotlib and how to customize matplotlib plot colors and label axes in Python.'
 authors: ['Chris Holdgraf', 'Leah Wasser', 'Martha Morrissey']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['get-to-know-python']
 course: 'earth-analytics-python'
@@ -183,7 +183,7 @@ boulder_precip.plot('DATE', 'PRECIP');
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_7_0.png" alt = "Basic matplotlib plot with dates on the x axis using .plot().">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_7_0.png" alt = "Basic matplotlib plot with dates on the x axis using .plot().">
 <figcaption>Basic matplotlib plot with dates on the x axis using .plot().</figcaption>
 
 </figure>
@@ -225,7 +225,7 @@ fig, ax = plt.subplots()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_10_0.png" alt = "When you create a figure object you are creating a blank canvas to place a plot on.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_10_0.png" alt = "When you create a figure object you are creating a blank canvas to place a plot on.">
 <figcaption>When you create a figure object you are creating a blank canvas to place a plot on.</figcaption>
 
 </figure>
@@ -253,7 +253,7 @@ ax.plot(boulder_precip['DATE'],
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_12_0.png" alt = "Once you add a call to plot using ax.plot - your  blank canvas has a plot on it.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_12_0.png" alt = "Once you add a call to plot using ax.plot - your  blank canvas has a plot on it.">
 <figcaption>Once you add a call to plot using ax.plot - your  blank canvas has a plot on it.</figcaption>
 
 </figure>
@@ -279,7 +279,7 @@ plt.setp(ax.get_xticklabels(), rotation=45);
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_14_0.png" alt = "You can customize your plot adding and adjust ticks and titles.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_14_0.png" alt = "You can customize your plot adding and adjust ticks and titles.">
 <figcaption>You can customize your plot adding and adjust ticks and titles.</figcaption>
 
 </figure>
@@ -316,7 +316,7 @@ plt.setp(ax.get_xticklabels(), rotation=45);
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_16_0.png" alt = "Here you adjust the point markers used in your plot.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_16_0.png" alt = "Here you adjust the point markers used in your plot.">
 <figcaption>Here you adjust the point markers used in your plot.</figcaption>
 
 </figure>
@@ -370,7 +370,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_20_0.png" alt = "Adjust the ticklabels on the x-axis and create a scatterplot.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_20_0.png" alt = "Adjust the ticklabels on the x-axis and create a scatterplot.">
 <figcaption>Adjust the ticklabels on the x-axis and create a scatterplot.</figcaption>
 
 </figure>
@@ -394,7 +394,7 @@ plt.setp(ax.get_xticklabels(), rotation=45);
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_22_0.png" alt = "Adjust the alpha value to add transparency to your points.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_22_0.png" alt = "Adjust the alpha value to add transparency to your points.">
 <figcaption>Adjust the alpha value to add transparency to your points.</figcaption>
 
 </figure>
@@ -428,7 +428,7 @@ plt.setp(ax.get_xticklabels(), rotation=45);
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_24_0.png" alt = "Color points according to an attribute value.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_24_0.png" alt = "Color points according to an attribute value.">
 <figcaption>Color points according to an attribute value.</figcaption>
 
 </figure>
@@ -453,7 +453,7 @@ plt.setp(ax.get_xticklabels(), rotation=45);
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_26_0.png" alt = "When you create a bar plot you need to call .values on your data.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_26_0.png" alt = "When you create a bar plot you need to call .values on your data.">
 <figcaption>When you create a bar plot you need to call .values on your data.</figcaption>
 
 </figure>
@@ -482,7 +482,7 @@ plt.setp(ax.get_xticklabels(), rotation=45);
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_28_0.png" alt = "Just like you could adjust point colors you can adjust the bar fill and edge colors.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_28_0.png" alt = "Just like you could adjust point colors you can adjust the bar fill and edge colors.">
 <figcaption>Just like you could adjust point colors you can adjust the bar fill and edge colors.</figcaption>
 
 </figure>
@@ -510,7 +510,7 @@ plt.setp(ax.get_xticklabels(), rotation=45);
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_30_0.png" alt = "Here the bar color is set to green and the edge color is blue.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_30_0.png" alt = "Here the bar color is set to green and the edge color is blue.">
 <figcaption>Here the bar color is set to green and the edge color is blue.</figcaption>
 
 </figure>
@@ -552,7 +552,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_33_0.png" alt = "There are many styles that you can apply to make your plots look nicer and uniform. Here a style is called within the plot code. This style will only be applied to this plot.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_33_0.png" alt = "There are many styles that you can apply to make your plots look nicer and uniform. Here a style is called within the plot code. This style will only be applied to this plot.">
 <figcaption>There are many styles that you can apply to make your plots look nicer and uniform. Here a style is called within the plot code. This style will only be applied to this plot.</figcaption>
 
 </figure>
@@ -580,7 +580,7 @@ ax.set(title="Daily Precipitation (inches)\nBoulder, Colorado 2013");
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_35_0.png" alt = "You can label your x and y axes as well.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py05-intro-to-matplotlib-plotting-python_35_0.png" alt = "You can label your x and y axes as well.">
 <figcaption>You can label your x and y axes as well.</figcaption>
 
 </figure>

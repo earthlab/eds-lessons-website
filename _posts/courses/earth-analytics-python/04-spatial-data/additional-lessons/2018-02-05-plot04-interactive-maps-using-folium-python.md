@@ -3,7 +3,7 @@ layout: single
 title: "Create interactive leaflet maps using folium in jupyter notebooks: GIS in Python"
 excerpt: "Learn how to create interative leaflet maps embedded in a Jupyter Notebook using Python and folium. "
 authors: ['Leah Wasser']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['hw-custom-maps-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/interactive-leaflet-maps-in-python-folium/

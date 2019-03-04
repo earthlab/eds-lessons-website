@@ -3,7 +3,7 @@ layout: single
 title: "How to Join Attributes From One Shapefile to Another in Open Source Python Using Geopandas: GIS in Python"
 excerpt: "In this lesson you review how to perform spatial joins in python. A spatial join is when you assign attributes from one shapefile to another based upon it's spatial location."
 authors: ['Leah Wasser','Jenny Palomino']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['class-intro-spatial-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/spatial-joins-in-python-geopandas-shapely/
@@ -221,7 +221,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial08-spatial-joins-python_10_0.png" alt = "Plot of roads colored by region with a standard geopandas legend.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial08-spatial-joins-python_10_0.png" alt = "Plot of roads colored by region with a standard geopandas legend.">
 <figcaption>Plot of roads colored by region with a standard geopandas legend.</figcaption>
 
 </figure>
@@ -266,7 +266,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial08-spatial-joins-python_12_0.png" alt = "Plot of roads colored by region with a custom legend.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial08-spatial-joins-python_12_0.png" alt = "Plot of roads colored by region with a custom legend.">
 <figcaption>Plot of roads colored by region with a custom legend.</figcaption>
 
 </figure>

@@ -3,7 +3,7 @@ layout: single
 title: "Work with the difference Normalized Burn Index - Using spectral remote sensing to understand the impacts of fire on the landscape"
 excerpt: "In this lesson we review the normalized burn ratio (NBR) index which can be used to identify the area and severity of a fire. Specifically we will calculate NBR using Landsat 8 spectral remote sensing data in raster, .tif format."
 authors: ['Leah Wasser', 'Megan Cattau']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['spectral-data-fire-r']
 permalink: /courses/earth-analytics-python/week-6/normalized-burn-index-dNBR/
@@ -209,7 +209,7 @@ plt.hist(all_landsat_bands_pre_data[6].ravel(), bins=20);
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_10_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_10_0.png">
 
 </figure>
 
@@ -230,7 +230,7 @@ ax.set_axis_off();
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_11_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_11_0.png">
 
 </figure>
 
@@ -252,7 +252,7 @@ ax.set_axis_off();
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_12_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_12_0.png">
 
 </figure>
 
@@ -311,7 +311,7 @@ ax.set_title("Landsat Scene Visually Cropped to the Cold Springs Fire Study Area
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_15_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_15_0.png">
 
 </figure>
 
@@ -431,7 +431,7 @@ ax.set(xticks=[], yticks=[]);
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_20_1.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_20_1.png">
 
 </figure>
 
@@ -492,7 +492,7 @@ ax.set(xticks=[], yticks=[]);
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_23_1.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_23_1.png">
 
 </figure>
 
@@ -532,7 +532,7 @@ ax.set_title("Distribution of Pixel Values - NBR Raster");
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_25_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_25_0.png">
 
 </figure>
 
@@ -553,7 +553,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_26_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_26_0.png">
 
 </figure>
 
@@ -668,7 +668,7 @@ axs.set_title("Distribution of Pixel Values - NBR Raster")
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_31_1.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_31_1.png">
 
 </figure>
 
@@ -748,7 +748,7 @@ axs.set_xlim([-1, 1]);
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_34_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_34_0.png">
 
 </figure>
 
@@ -848,7 +848,7 @@ plt.hist(nbr_pre_clipped.ravel(), bins=20, color = "purple");
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_40_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_40_0.png">
 
 </figure>
 
@@ -867,7 +867,7 @@ sns.palplot(sns.palettes.color_palette('RdYlGn'))
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_41_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_41_0.png">
 
 </figure>
 
@@ -888,7 +888,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_42_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_42_0.png">
 
 </figure>
 
@@ -955,7 +955,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_47_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_47_0.png">
 
 </figure>
 
@@ -974,7 +974,7 @@ plt.hist(landsat_nbr_post.ravel(), bins=20, color = "purple");
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_48_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_48_0.png">
 
 </figure>
 
@@ -1023,7 +1023,7 @@ sns.palplot(sns.palettes.color_palette('RdYlGn_r'))
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_52_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_52_0.png">
 
 </figure>
 
@@ -1044,7 +1044,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_53_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_53_0.png">
 
 </figure>
 
@@ -1098,7 +1098,7 @@ ax.imshow(dNBR_landsat_cl, cmap=plt.cm.get_cmap('RdYlGn_r', 5));
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_56_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral09-WK8-use-downloaded-landsat-data-earth-explorer_56_0.png">
 
 </figure>
 

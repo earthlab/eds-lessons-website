@@ -3,7 +3,7 @@ layout: single
 title: "Crop Spatial Raster Data With a Shapefile in Python"
 excerpt: "Learn how to crop raster data using a shapefile and export it as a new raster in open source Python"
 authors: ['Leah Wasser']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/crop-raster-data-with-shapefile-in-python/
@@ -96,7 +96,7 @@ In the previous lessons, you worked with a raster layer that looked like the one
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster07-crop-raster_5_0.png" alt = "Canopy height model plot - uncropped.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster07-crop-raster_5_0.png" alt = "Canopy height model plot - uncropped.">
 <figcaption>Canopy height model plot - uncropped.</figcaption>
 
 </figure>
@@ -149,7 +149,7 @@ ax.set_title("Shapefile Crop Extent",
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster07-crop-raster_10_0.png" alt = "Plot of the shapefile that you will use to crop the CHM data.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster07-crop-raster_10_0.png" alt = "Plot of the shapefile that you will use to crop the CHM data.">
 <figcaption>Plot of the shapefile that you will use to crop the CHM data.</figcaption>
 
 </figure>
@@ -185,7 +185,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster07-crop-raster_12_0.png" alt = "Canopy height model with the crop shapefile overlayed. Note this image is just an illustration of what the two layers look like together. Below you will learn how to import the data and mask it rather than using the .read() method.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster07-crop-raster_12_0.png" alt = "Canopy height model with the crop shapefile overlayed. Note this image is just an illustration of what the two layers look like together. Below you will learn how to import the data and mask it rather than using the .read() method.">
 <figcaption>Canopy height model with the crop shapefile overlayed. Note this image is just an illustration of what the two layers look like together. Below you will learn how to import the data and mask it rather than using the .read() method.</figcaption>
 
 </figure>
@@ -264,7 +264,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster07-crop-raster_19_0.png" alt = "Final cropped canopy height model plot.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster07-crop-raster_19_0.png" alt = "Final cropped canopy height model plot.">
 <figcaption>Final cropped canopy height model plot.</figcaption>
 
 </figure>

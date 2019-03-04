@@ -3,7 +3,7 @@ layout: single
 title: "GIS in Python: Introduction to Vector Format Spatial Data - Points, Lines and Polygons"
 excerpt: "This lesson introduces what vector data are and how to open vector data stored in shapefile format in Python."
 authors: ['Leah Wasser', 'Chris Holdgraf']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['class-intro-spatial-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/intro-vector-data-python/
@@ -461,7 +461,7 @@ sjer_plot_locations.plot()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial01-intro-vector-data_18_1.png" alt = "You can quickly plot a geopandas dataframe using the .plot() method. You do not have to setup an axis or figure object to create this quick plot.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial01-intro-vector-data_18_1.png" alt = "You can quickly plot a geopandas dataframe using the .plot() method. You do not have to setup an axis or figure object to create this quick plot.">
 <figcaption>You can quickly plot a geopandas dataframe using the .plot() method. You do not have to setup an axis or figure object to create this quick plot.</figcaption>
 
 </figure>
@@ -492,7 +492,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial01-intro-vector-data_20_0.png" alt = "If you do setup an axis or figure object to create a geopandas plot, then you can easily customize the plot later.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial01-intro-vector-data_20_0.png" alt = "If you do setup an axis or figure object to create a geopandas plot, then you can easily customize the plot later.">
 <figcaption>If you do setup an axis or figure object to create a geopandas plot, then you can easily customize the plot later.</figcaption>
 
 </figure>
@@ -516,7 +516,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial01-intro-vector-data_22_0.png" alt = "Spatial plot of SJER plot locations using Geopandas with matplotlib axes defined.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial01-intro-vector-data_22_0.png" alt = "Spatial plot of SJER plot locations using Geopandas with matplotlib axes defined.">
 <figcaption>Spatial plot of SJER plot locations using Geopandas with matplotlib axes defined.</figcaption>
 
 </figure>
@@ -557,7 +557,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial01-intro-vector-data_24_0.png" alt = "Spatial plot of SJER plot locations using Geopandas with a legend and title.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial01-intro-vector-data_24_0.png" alt = "Spatial plot of SJER plot locations using Geopandas with a legend and title.">
 <figcaption>Spatial plot of SJER plot locations using Geopandas with a legend and title.</figcaption>
 
 </figure>
@@ -590,7 +590,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial01-intro-vector-data_26_0.png" alt = "Spatial plot of SJER plot locations using Geopandas with custom marker colors and size.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial01-intro-vector-data_26_0.png" alt = "Spatial plot of SJER plot locations using Geopandas with custom marker colors and size.">
 <figcaption>Spatial plot of SJER plot locations using Geopandas with custom marker colors and size.</figcaption>
 
 </figure>
@@ -674,7 +674,7 @@ plt.axis('equal')
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial01-intro-vector-data_30_1.png" alt = "Spatial plot of SJER plot locations layered on top of the plot boundary.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial01-intro-vector-data_30_1.png" alt = "Spatial plot of SJER plot locations layered on top of the plot boundary.">
 <figcaption>Spatial plot of SJER plot locations layered on top of the plot boundary.</figcaption>
 
 </figure>

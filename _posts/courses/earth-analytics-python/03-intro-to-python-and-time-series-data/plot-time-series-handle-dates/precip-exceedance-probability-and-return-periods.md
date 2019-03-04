@@ -3,7 +3,7 @@ layout: single
 title: "How a Hundred Year Flood Can Occur Every Year. Calculate Exceedance Probability and Return Periods in Python"
 excerpt: "Learn how to calculate exceedance probability and return periods associated with a flood in Python."
 authors: ['Matt Rossi', 'Leah Wasser']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['time-series-python']
 course: 'earth-analytics-python'
@@ -132,7 +132,7 @@ ax.set_ylabel("Precipitation (mm?)");
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/precip-exceedance-probability-and-return-periods_3_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/precip-exceedance-probability-and-return-periods_3_0.png">
 
 </figure>
 
@@ -230,7 +230,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/precip-exceedance-probability-and-return-periods_5_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/precip-exceedance-probability-and-return-periods_5_0.png">
 
 </figure>
 
@@ -268,7 +268,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/precip-exceedance-probability-and-return-periods_6_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/precip-exceedance-probability-and-return-periods_6_0.png">
 
 </figure>
 
@@ -373,7 +373,7 @@ ax.set_title("Annual Maximum Daily Total Precipitation - Boulder, Colorado");
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/precip-exceedance-probability-and-return-periods_8_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/precip-exceedance-probability-and-return-periods_8_0.png">
 
 </figure>
 
@@ -494,7 +494,7 @@ ax.set_xlabel("Precipitation (in?)");
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/precip-exceedance-probability-and-return-periods_10_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/precip-exceedance-probability-and-return-periods_10_0.png">
 
 </figure>
 
@@ -624,7 +624,7 @@ ax.set_xlabel("Discharge Value (CFS)");
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/precip-exceedance-probability-and-return-periods_13_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/precip-exceedance-probability-and-return-periods_13_0.png">
 
 </figure>
 

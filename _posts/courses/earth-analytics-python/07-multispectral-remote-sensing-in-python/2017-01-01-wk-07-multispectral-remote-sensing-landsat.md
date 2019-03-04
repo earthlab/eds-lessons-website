@@ -3,7 +3,7 @@ layout: single
 category: courses
 title: "Multispectral Imagery Python - NAIP, Landsat, Fire & Remote Sensing"
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-in-python/
-modified: 2019-02-18
+modified: 2019-03-04
 week-landing: 7
 week: 7
 sidebar:
@@ -57,7 +57,7 @@ At the end of this week you will be able to:
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/2017-01-01-wk-07-multispectral-remote-sensing-landsat_2_0.png" alt = "Homework plots 1 & 2 RGB and CIR images using NAIP data from 2017.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/2017-01-01-wk-07-multispectral-remote-sensing-landsat_2_0.png" alt = "Homework plots 1 & 2 RGB and CIR images using NAIP data from 2017.">
 <figcaption>Homework plots 1 & 2 RGB and CIR images using NAIP data from 2017.</figcaption>
 
 </figure>
@@ -83,7 +83,7 @@ The intermediate NDVI plots below are not required for your homework. They are h
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/2017-01-01-wk-07-multispectral-remote-sensing-landsat_4_1.png" alt = "COMPARISON plots - intermediate NDVI NAIP outputs. These plots are just here if you want to compare your intermediate outputs with the instructors.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/2017-01-01-wk-07-multispectral-remote-sensing-landsat_4_1.png" alt = "COMPARISON plots - intermediate NDVI NAIP outputs. These plots are just here if you want to compare your intermediate outputs with the instructors.">
 <figcaption>COMPARISON plots - intermediate NDVI NAIP outputs. These plots are just here if you want to compare your intermediate outputs with the instructors.</figcaption>
 
 </figure>
@@ -97,7 +97,7 @@ The intermediate NDVI plots below are not required for your homework. They are h
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/2017-01-01-wk-07-multispectral-remote-sensing-landsat_5_0.png" alt = "Homework plot 3 NDVI difference using NAIP 2017 - NAIP 2015.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/2017-01-01-wk-07-multispectral-remote-sensing-landsat_5_0.png" alt = "Homework plot 3 NDVI difference using NAIP 2017 - NAIP 2015.">
 <figcaption>Homework plot 3 NDVI difference using NAIP 2017 - NAIP 2015.</figcaption>
 
 </figure>
@@ -111,7 +111,7 @@ The intermediate NDVI plots below are not required for your homework. They are h
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/2017-01-01-wk-07-multispectral-remote-sensing-landsat_6_0.png" alt = "Homework plots 4 & 5 RGB and CIR images using Landsat 8 pre-fire.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/2017-01-01-wk-07-multispectral-remote-sensing-landsat_6_0.png" alt = "Homework plots 4 & 5 RGB and CIR images using Landsat 8 pre-fire.">
 <figcaption>Homework plots 4 & 5 RGB and CIR images using Landsat 8 pre-fire.</figcaption>
 
 </figure>
@@ -125,7 +125,7 @@ The intermediate NDVI plots below are not required for your homework. They are h
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/2017-01-01-wk-07-multispectral-remote-sensing-landsat_7_0.png" alt = "Homework plot  6 NDVI calculated from Landsat 8 pre-fire data.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/2017-01-01-wk-07-multispectral-remote-sensing-landsat_7_0.png" alt = "Homework plot  6 NDVI calculated from Landsat 8 pre-fire data.">
 <figcaption>Homework plot  6 NDVI calculated from Landsat 8 pre-fire data.</figcaption>
 
 </figure>

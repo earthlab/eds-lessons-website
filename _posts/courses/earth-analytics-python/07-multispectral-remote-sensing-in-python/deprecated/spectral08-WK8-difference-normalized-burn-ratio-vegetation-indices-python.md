@@ -3,7 +3,7 @@ layout: single
 title: "Work with the difference Normalized Burn Index - Using spectral remote sensing to understand the impacts of fire on the landscape"
 excerpt: "In this lesson we review the normalized burn ratio (NBR) index which can be used to identify the area and severity of a fire. Specifically we will calculate NBR using Landsat 8 spectral remote sensing data in raster, .tif format."
 authors: ['Leah Wasser', 'Megan Cattau']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['spectral-data-fire-r']
 permalink: /courses/earth-analytics-python/week-6/normalized-burn-index-dNBR/
@@ -459,7 +459,7 @@ ax.set_axis_off();
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral08-WK8-difference-normalized-burn-ratio-vegetation-indices-python_7_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral08-WK8-difference-normalized-burn-ratio-vegetation-indices-python_7_0.png">
 
 </figure>
 
@@ -526,7 +526,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral08-WK8-difference-normalized-burn-ratio-vegetation-indices-python_10_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral08-WK8-difference-normalized-burn-ratio-vegetation-indices-python_10_0.png">
 
 </figure>
 
@@ -557,7 +557,7 @@ fire_boundary.plot();
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral08-WK8-difference-normalized-burn-ratio-vegetation-indices-python_12_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral08-WK8-difference-normalized-burn-ratio-vegetation-indices-python_12_0.png">
 
 </figure>
 
@@ -580,7 +580,7 @@ sns.palplot(sns.palettes.color_palette('RdYlGn'))
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral08-WK8-difference-normalized-burn-ratio-vegetation-indices-python_14_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral08-WK8-difference-normalized-burn-ratio-vegetation-indices-python_14_0.png">
 
 </figure>
 
@@ -606,7 +606,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral08-WK8-difference-normalized-burn-ratio-vegetation-indices-python_15_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral08-WK8-difference-normalized-burn-ratio-vegetation-indices-python_15_0.png">
 
 </figure>
 
@@ -632,7 +632,7 @@ ax.set_xticklabels(category_labels[::-1], rotation=45, horizontalalignment='righ
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral08-WK8-difference-normalized-burn-ratio-vegetation-indices-python_18_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/spectral08-WK8-difference-normalized-burn-ratio-vegetation-indices-python_18_0.png">
 
 </figure>
 

@@ -3,7 +3,7 @@ layout: single
 title: "Why A Hundred Year Flood Can Occur Every Year. Calculate Exceedance Probability and Return Periods in Python"
 excerpt: "Learn how to calculate exceedance probability and return periods associated with a flood in Python."
 authors: ['Matt Rossi', 'Leah Wasser']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['time-series-python']
 course: 'earth-analytics-python'
@@ -522,7 +522,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/OLD-ts06-exceedance-probability-and-return-periods_16_0.png" alt = "Stream Discharge for the longmont USGS stream gage from 1946-2017">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/OLD-ts06-exceedance-probability-and-return-periods_16_0.png" alt = "Stream Discharge for the longmont USGS stream gage from 1946-2017">
 <figcaption>Stream Discharge for the longmont USGS stream gage from 1946-2017</figcaption>
 
 </figure>
@@ -1119,7 +1119,7 @@ ax.set_title("Annual Maxima - USGS Peak Flow vs Daily Calculated");
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/OLD-ts06-exceedance-probability-and-return-periods_30_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/OLD-ts06-exceedance-probability-and-return-periods_30_0.png">
 
 </figure>
 
@@ -1157,7 +1157,7 @@ ax.set_title("Difference Plot \nUSGS Peak Max Annual Minus Calculated Max Annual
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/OLD-ts06-exceedance-probability-and-return-periods_34_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/OLD-ts06-exceedance-probability-and-return-periods_34_0.png">
 
 </figure>
 
@@ -1505,7 +1505,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/OLD-ts06-exceedance-probability-and-return-periods_43_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/OLD-ts06-exceedance-probability-and-return-periods_43_0.png">
 
 </figure>
 
@@ -1542,7 +1542,7 @@ ax.set_ylabel("Discharge Value (CFS)");
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/OLD-ts06-exceedance-probability-and-return-periods_45_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/OLD-ts06-exceedance-probability-and-return-periods_45_0.png">
 
 </figure>
 

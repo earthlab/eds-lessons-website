@@ -3,7 +3,7 @@ layout: single
 title: 'Data Driven Reports with Jupyter Notebooks | 2013 Colorado Flood Data'
 excerpt: "COnnecting data to analysis and outputs is an important part of open reproducible science. In this lesson you will explore that value of a well documented workflow."
 authors: ['Leah Wasser', 'Martha Morrissey']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['data-for-science-floods']
 permalink: /courses/earth-analytics-python/python-open-science-toolbox/data-driven-reports-jupyter-notebook/
@@ -141,7 +141,7 @@ A lot of rain impacted Colorado. See below.
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/01-science-toolbox/use-data-for-science/2018-02-05-flood-02-precip-discharge-python-example_3_0.png" alt = "Plot of daily precipitation for Boulder, Colorado from 2003-2013.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/01-science-toolbox/use-data-for-science/2018-02-05-flood-02-precip-discharge-python-example_3_0.png" alt = "Plot of daily precipitation for Boulder, Colorado from 2003-2013.">
 <figcaption>Plot of daily precipitation for Boulder, Colorado from 2003-2013.</figcaption>
 
 </figure>
@@ -168,7 +168,7 @@ Let's check out the data for a few months.
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/01-science-toolbox/use-data-for-science/2018-02-05-flood-02-precip-discharge-python-example_5_0.png" alt = "Plot of Daily Total Precipitation from Aug to Oct 2013 for Boulder Creek.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/01-science-toolbox/use-data-for-science/2018-02-05-flood-02-precip-discharge-python-example_5_0.png" alt = "Plot of Daily Total Precipitation from Aug to Oct 2013 for Boulder Creek.">
 <figcaption>Plot of Daily Total Precipitation from Aug to Oct 2013 for Boulder Creek.</figcaption>
 
 </figure>
@@ -182,7 +182,7 @@ Let's check out the data for a few months.
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/01-science-toolbox/use-data-for-science/2018-02-05-flood-02-precip-discharge-python-example_6_0.png" alt = "Plot of Total Monthly Precipitation for Boulder, CO.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/01-science-toolbox/use-data-for-science/2018-02-05-flood-02-precip-discharge-python-example_6_0.png" alt = "Plot of Total Monthly Precipitation for Boulder, CO.">
 <figcaption>Plot of Total Monthly Precipitation for Boulder, CO.</figcaption>
 
 </figure>

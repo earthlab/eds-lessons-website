@@ -3,7 +3,7 @@ layout: single
 title: "Export Numpy Arrays to Geotiff Format Using Rasterio and Python"
 excerpt: "You often create outputs in Python that you want to use in another tool like QGIS or ArcGIS. Learn how to export a numpy array created through a rasterio workflow in Python to  spatial geotiff."
 authors: ['Leah Wasser', 'Chris Holdgraf']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['export-raster-python']
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-in-python/export-numpy-array-to-geotiff-in-python/
@@ -141,7 +141,7 @@ ax.set_axis_off();
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/additional-lessons/2018-10-04-exp01-export-raster-to-geotiff_6_0.png" alt = "NDVI for the Cold Springs Fire site derived from NAIP data. You may want to export this data as a geotiff to share and use in other tools like QGIS.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/additional-lessons/2018-10-04-exp01-export-raster-to-geotiff_6_0.png" alt = "NDVI for the Cold Springs Fire site derived from NAIP data. You may want to export this data as a geotiff to share and use in other tools like QGIS.">
 <figcaption>NDVI for the Cold Springs Fire site derived from NAIP data. You may want to export this data as a geotiff to share and use in other tools like QGIS.</figcaption>
 
 </figure>

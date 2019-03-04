@@ -3,7 +3,7 @@ layout: single
 category: courses
 title: "MidTerm Review - Science Communication"
 permalink: /courses/earth-analytics-python/communicate-your-science/
-modified: 2019-02-18
+modified: 2019-03-04
 week-landing: 11
 week: 11
 sidebar:

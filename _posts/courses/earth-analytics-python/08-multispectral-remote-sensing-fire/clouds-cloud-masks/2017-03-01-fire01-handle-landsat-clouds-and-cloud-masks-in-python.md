@@ -3,7 +3,7 @@ layout: single
 title: "Clean Remote Sensing Data in Python - Clouds, Shadows & Cloud Masks"
 excerpt: "In this lesson, you will learn how to deal with clouds when working with spectral remote sensing data. You will learn how to mask clouds from landsat and MODIS remote sensing data in R using the mask() function. You will also discuss issues associated with cloud cover - particular as they relate to a research topic."
 authors: ['Leah Wasser']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['clouds-remote-sensing-python']
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-modis/cloud-masks-with-spectral-data-python/
@@ -162,7 +162,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_7_0.png" alt = "CIR Composite image for the post-Cold Springs fire area on July 8, 2016.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_7_0.png" alt = "CIR Composite image for the post-Cold Springs fire area on July 8, 2016.">
 <figcaption>CIR Composite image for the post-Cold Springs fire area on July 8, 2016.</figcaption>
 
 </figure>
@@ -219,7 +219,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_11_0.png" alt = "Landsat Collection Pixel QA layer for the Cold Springs fire area.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_11_0.png" alt = "Landsat Collection Pixel QA layer for the Cold Springs fire area.">
 <figcaption>Landsat Collection Pixel QA layer for the Cold Springs fire area.</figcaption>
 
 </figure>
@@ -362,7 +362,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_18_0.png" alt = "Landsat image in which the masked pixels (cloud) are rendered in light purple.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_18_0.png" alt = "Landsat image in which the masked pixels (cloud) are rendered in light purple.">
 <figcaption>Landsat image in which the masked pixels (cloud) are rendered in light purple.</figcaption>
 
 </figure>
@@ -457,7 +457,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_22_0.png" alt = "CIR Composite image in grey scale with mask applied, covering the post-Cold Springs fire area on July 8, 2016.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_22_0.png" alt = "CIR Composite image in grey scale with mask applied, covering the post-Cold Springs fire area on July 8, 2016.">
 <figcaption>CIR Composite image in grey scale with mask applied, covering the post-Cold Springs fire area on July 8, 2016.</figcaption>
 
 </figure>
@@ -483,7 +483,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_23_0.png" alt = "CIR Composite image with cloud mask applied, covering the post-Cold Springs fire area on July 8, 2016.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_23_0.png" alt = "CIR Composite image with cloud mask applied, covering the post-Cold Springs fire area on July 8, 2016.">
 <figcaption>CIR Composite image with cloud mask applied, covering the post-Cold Springs fire area on July 8, 2016.</figcaption>
 
 </figure>

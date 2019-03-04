@@ -4,7 +4,7 @@ title: "Extract raster values using vector boundaries in Python"
 excerpt: "This lesson reviews how to extract data from a raster dataset using a
 vector dataset. "
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Carson Farmer' ]
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['remote-sensing-uncertainty-python']
 permalink: /courses/earth-analytics-python/lidar-remote-sensing-uncertainty/summarize-and-compare-lidar-insitu-tree-height/
@@ -593,7 +593,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty03-summarize-and-compare-measured-to-lidar-data_18_0.png" alt = "Scatterplot showing the relationship between lidar and measured tree height without a 1:1 line.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty03-summarize-and-compare-measured-to-lidar-data_18_0.png" alt = "Scatterplot showing the relationship between lidar and measured tree height without a 1:1 line.">
 <figcaption>Scatterplot showing the relationship between lidar and measured tree height without a 1:1 line.</figcaption>
 
 </figure>
@@ -635,7 +635,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty03-summarize-and-compare-measured-to-lidar-data_20_0.png" alt = "Scatterplot showing the relationship between lidar and measured tree height with a 1:1 line.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty03-summarize-and-compare-measured-to-lidar-data_20_0.png" alt = "Scatterplot showing the relationship between lidar and measured tree height with a 1:1 line.">
 <figcaption>Scatterplot showing the relationship between lidar and measured tree height with a 1:1 line.</figcaption>
 
 </figure>
@@ -734,7 +734,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty03-summarize-and-compare-measured-to-lidar-data_26_0.png" alt = "Map showing plot locations with points sized by the height of vegetation in each plot overlayed on top of a canopy height model.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty03-summarize-and-compare-measured-to-lidar-data_26_0.png" alt = "Map showing plot locations with points sized by the height of vegetation in each plot overlayed on top of a canopy height model.">
 <figcaption>Map showing plot locations with points sized by the height of vegetation in each plot overlayed on top of a canopy height model.</figcaption>
 
 </figure>
@@ -783,7 +783,7 @@ plt.show()
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty03-summarize-and-compare-measured-to-lidar-data_28_0.png" alt = "Barplot showing the difference between lidar and measured tree height for each plot.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty03-summarize-and-compare-measured-to-lidar-data_28_0.png" alt = "Barplot showing the difference between lidar and measured tree height for each plot.">
 <figcaption>Barplot showing the difference between lidar and measured tree height for each plot.</figcaption>
 
 </figure>

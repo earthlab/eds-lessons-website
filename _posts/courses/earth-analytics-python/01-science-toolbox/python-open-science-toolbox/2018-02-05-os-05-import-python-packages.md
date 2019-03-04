@@ -3,7 +3,7 @@ layout: single
 title: 'Install and Import Python Packages'
 excerpt: 'This tutorial walks you through how to install and import python packages.'
 authors: ['Martha Morrissey','Leah Wasser', 'Software Carpentry']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['open-science-python']
 permalink: /courses/earth-analytics-python/python-open-science-toolbox/install-and-import-python-packages/ 

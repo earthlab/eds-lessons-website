@@ -3,7 +3,7 @@ layout: single
 title: "Raster Stack Functions to Work with Landsat Remote Sensing Data in Python"
 excerpt: "You may find yourself performing the same tasks over and over when working wtih Landsat 8 data in Python. Learn how to create core functions that will automate your python raster data workflow."
 authors: ['Leah Wasser']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['multispectral-remote-sensing-data-python']
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-in-python/functions-to-stack-raster-data-in-python/
@@ -253,7 +253,7 @@ ax.set(xticks=[], yticks=[]);
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/deprecated-2-multispectral06-functions-for-landsat-tifs-in-python_17_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/deprecated-2-multispectral06-functions-for-landsat-tifs-in-python_17_0.png">
 
 </figure>
 
@@ -276,7 +276,7 @@ ax.set(xticks=[], yticks=[]);
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/deprecated-2-multispectral06-functions-for-landsat-tifs-in-python_18_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/deprecated-2-multispectral06-functions-for-landsat-tifs-in-python_18_0.png">
 
 </figure>
 
@@ -298,7 +298,7 @@ ax.set(xticks=[], yticks=[]);
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/deprecated-2-multispectral06-functions-for-landsat-tifs-in-python_19_0.png">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/deprecated/deprecated-2-multispectral06-functions-for-landsat-tifs-in-python_19_0.png">
 
 </figure>
 

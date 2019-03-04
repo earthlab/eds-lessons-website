@@ -3,7 +3,7 @@ layout: single
 title: "How to Replace Raster Cell Values with Values from A Different Raster Data Set in Python"
 excerpt: "Most remote sensing data sets contain no data values represented as nan or none in Python. This normally represents pixels that contain not valid data. Learn how to handle no data values in Python for better raster processing."
 authors: ['Leah Wasser']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['clouds-remote-sensing-python']
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-modis/replace-raster-cell-values-in-remote-sensing-images-in-python/
@@ -111,7 +111,7 @@ ax.set_axis_off();
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire02-replace-na-values-in-raster-with-different-raster_6_0.png" alt = "Masked Landsat CIR Composite image for the post-Cold Springs fire on July 8, 2016.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire02-replace-na-values-in-raster-with-different-raster_6_0.png" alt = "Masked Landsat CIR Composite image for the post-Cold Springs fire on July 8, 2016.">
 <figcaption>Masked Landsat CIR Composite image for the post-Cold Springs fire on July 8, 2016.</figcaption>
 
 </figure>
@@ -201,7 +201,7 @@ ax.set_title('Do the Spatial Extents Ovelap?');
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire02-replace-na-values-in-raster-with-different-raster_11_0.png" alt = "Overlapping spatial extents of the masked Landsat image and the image that will be used to fill in the masked values.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire02-replace-na-values-in-raster-with-different-raster_11_0.png" alt = "Overlapping spatial extents of the masked Landsat image and the image that will be used to fill in the masked values.">
 <figcaption>Overlapping spatial extents of the masked Landsat image and the image that will be used to fill in the masked values.</figcaption>
 
 </figure>
@@ -317,7 +317,7 @@ ax.set_axis_off();
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire02-replace-na-values-in-raster-with-different-raster_20_0.png" alt = "Landsat CIR Composite image after replacement of masked pixel values using a cloud-free image for the post-Cold Springs fire.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire02-replace-na-values-in-raster-with-different-raster_20_0.png" alt = "Landsat CIR Composite image after replacement of masked pixel values using a cloud-free image for the post-Cold Springs fire.">
 <figcaption>Landsat CIR Composite image after replacement of masked pixel values using a cloud-free image for the post-Cold Springs fire.</figcaption>
 
 </figure>

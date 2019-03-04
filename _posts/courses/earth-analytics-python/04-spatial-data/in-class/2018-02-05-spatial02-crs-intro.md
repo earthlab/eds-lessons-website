@@ -3,7 +3,7 @@ layout: single
 title: "GIS in Python: Intro to Coordinate Reference Systems in Python"
 excerpt: "This lesson introduces what a coordinate reference system is. You will use the `Python` programming language to explore and reproject data into geographic and projected CRSs."
 authors: ['Chris Holdgraf', 'Leah Wasser']
-modified: 2019-02-18
+modified: 2019-03-04
 category: [courses]
 class-lesson: ['class-intro-spatial-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/intro-to-coordinate-reference-systems-python/
@@ -184,7 +184,7 @@ ax.xaxis.grid(color='gray',
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial02-crs-intro_7_0.png" alt = "Global Map in Geographic Coordinate System WGS84 Datum">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial02-crs-intro_7_0.png" alt = "Global Map in Geographic Coordinate System WGS84 Datum">
 <figcaption>Global Map in Geographic Coordinate System WGS84 Datum</figcaption>
 
 </figure>
@@ -316,7 +316,7 @@ ax.xaxis.grid(color='gray', linestyle='dashed')
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial02-crs-intro_12_0.png" alt = "Global map in geographic coordinate reference system with point locations overlayed on top.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial02-crs-intro_12_0.png" alt = "Global map in geographic coordinate reference system with point locations overlayed on top.">
 <figcaption>Global map in geographic coordinate reference system with point locations overlayed on top.</figcaption>
 
 </figure>
@@ -352,7 +352,7 @@ ax.set(title="World Map - Geographic Coordinate Reference System (long/lat degre
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial02-crs-intro_14_0.png" alt = "Global map in geographic coordinate reference system with graticules.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial02-crs-intro_14_0.png" alt = "Global map in geographic coordinate reference system with graticules.">
 <figcaption>Global map in geographic coordinate reference system with graticules.</figcaption>
 
 </figure>
@@ -416,7 +416,7 @@ for axis in [ax.xaxis, ax.yaxis]:
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial02-crs-intro_16_0.png" alt = "Global map in Robinson CRS.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial02-crs-intro_16_0.png" alt = "Global map in Robinson CRS.">
 <figcaption>Global map in Robinson CRS.</figcaption>
 
 </figure>
@@ -459,7 +459,7 @@ plt.axis('equal');
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial02-crs-intro_18_0.png" alt = "If you overlay points in geographic coordinate reference system (WGS84) on top of a map projected using Robinson, notice that they don't line up properly.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial02-crs-intro_18_0.png" alt = "If you overlay points in geographic coordinate reference system (WGS84) on top of a map projected using Robinson, notice that they don't line up properly.">
 <figcaption>If you overlay points in geographic coordinate reference system (WGS84) on top of a map projected using Robinson, notice that they don't line up properly.</figcaption>
 
 </figure>
@@ -502,7 +502,7 @@ plt.axis('equal');
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial02-crs-intro_20_0.png" alt = "If you reproject your points to the Robinson CRS, then they plot nicely on top of the basemap in the spatial location that they belog.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial02-crs-intro_20_0.png" alt = "If you reproject your points to the Robinson CRS, then they plot nicely on top of the basemap in the spatial location that they belog.">
 <figcaption>If you reproject your points to the Robinson CRS, then they plot nicely on top of the basemap in the spatial location that they belog.</figcaption>
 
 </figure>
@@ -561,7 +561,7 @@ for axis in [ax1.xaxis, ax1.yaxis]:
 
 <figure>
 
-<img src = "/home/jovyan/eds-lessons-website/images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial02-crs-intro_22_0.png" alt = "Notice the x and y axis units on these two maps are completely different. This is one reason why points in a geographic WGS84 CRS don't line up properly when plotted on a map in another CRS like Robinson. However if you reproject the data, then they will line up properly.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial02-crs-intro_22_0.png" alt = "Notice the x and y axis units on these two maps are completely different. This is one reason why points in a geographic WGS84 CRS don't line up properly when plotted on a map in another CRS like Robinson. However if you reproject the data, then they will line up properly.">
 <figcaption>Notice the x and y axis units on these two maps are completely different. This is one reason why points in a geographic WGS84 CRS don't line up properly when plotted on a map in another CRS like Robinson. However if you reproject the data, then they will line up properly.</figcaption>
 
 </figure>
