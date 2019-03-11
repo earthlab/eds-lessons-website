@@ -4,7 +4,7 @@ category: courses
 title: "Get Started with Data in Python / Jupyter Notebooks"
 permalink: /courses/earth-analytics-python/python-open-science-toolbox/
 week-landing: 1
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 week: 1
 sidebar:
   nav:
@@ -195,12 +195,13 @@ An example table that shows what you might post:
 It is OK if the dates are not formatted properly on your plot. You will learn how to handle dates next week! 
 
 
+
 {:.output}
 {:.display_data}
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/01-science-toolbox/2018-02-05-science-toolbox-landing_2_0.png" alt = "Homework plot of precipitation over time in Boulder, Colorado.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/01-science-toolbox/2018-02-05-science-toolbox-landing_3_0.png" alt = "Homework plot of precipitation over time in Boulder, Colorado.">
 <figcaption>Homework plot of precipitation over time in Boulder, Colorado.</figcaption>
 
 </figure>
@@ -208,4 +209,4 @@ It is OK if the dates are not formatted properly on your plot. You will learn ho
 
 
 
-test
+test test
