@@ -3,7 +3,7 @@ layout: single
 title: 'File Organization Tips'
 excerpt: 'This lesson provides a broad overview of file organization principles.'
 authors: ['Leah Wasser', 'Martha Morrissey']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['open-science-python']
 permalink: /courses/earth-analytics-python/python-open-science-toolbox/best-practices-file-organization/

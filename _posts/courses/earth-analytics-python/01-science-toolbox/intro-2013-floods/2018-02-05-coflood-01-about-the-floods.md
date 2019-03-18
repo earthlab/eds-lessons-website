@@ -3,7 +3,7 @@ layout: single
 title: 'An Overview of the 2013 Colorado Floods'
 excerpt: "Learn about what caused the 2013 floods in Colorado and also some of the impacts."
 authors: ['Leah Wasser', 'Lauren Herwehe']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['about-2013-floods']
 permalink: /courses/earth-analytics-python/python-open-science-toolbox/an-overview-of-the-floods/
@@ -111,4 +111,4 @@ In the following sections you will learn more about each of the drivers and impa
 * Lidar data
 
 
-test test
+test

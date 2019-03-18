@@ -8,7 +8,7 @@ class-lesson: ['open-science-python']
 permalink: /courses/earth-analytics-python/python-open-science-toolbox/jupyter-notebooks-for-open-science/
 nav-title: "Why Open Science"
 dateCreated: 2018-02-08
-modified: 2018-02-09
+modified: '2018-02-09'
 module-title: 'Open Science Python'
 module-nav-title: 'Open Science Python'
 module-description: 'This module reviews why open science and best practices in python.'

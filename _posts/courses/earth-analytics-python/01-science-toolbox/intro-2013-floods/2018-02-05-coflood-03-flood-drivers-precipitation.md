@@ -3,7 +3,7 @@ layout: single
 title: 'Rain: a Driver of the 2013 Colorado Floods'
 excerpt: "The amount and/or duration of rainfall can impact how severe a flood is. Learn how rainfall is measured and used to understand flood impacts."
 authors: ['Leah Wasser', 'Lauren Herwehe']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['about-2013-floods']
 permalink: /courses/earth-analytics-python/python-open-science-toolbox/how-rain-impacts-floods/
@@ -89,13 +89,39 @@ The average annual precipitation (which includes rain and snow) in Boulder, Colo
 The figure below shows the total precipitation each month from 1948 to 2013 for a National Weather Service COOP site located in Boulder, CO.
 
 
+{:.input}
+```python
+plt.rcParams['axes.titlesize'] = 20
+plt.rcParams['axes.facecolor']='white'
+plt.rcParams['lines.color'] = 'purple'
+plt.rcParams['grid.linestyle'] = '-'
+plt.rcParams['grid.linewidth'] = '.5'
+
+precip = pd.read_csv('data/colorado-flood/precipitation/805333-precip-daily-1948-2013.csv',
+                    parse_dates=['DATE'], na_values=['999.99'])
+# resample
+precip_d = precip.set_index('DATE')
+
+daily_sum_precip = precip_d.resample('D').sum().apply(np.round, decimals=1)
+# remove days with no rain
+daily_sum_precip = daily_sum_precip[(daily_sum_precip.HPCP != 0.00)]
+
+# note when plottinglots of bars, snap = False will turn off the pixel snapping or set the width to be wider.
+fig, ax = plt.subplots(figsize = (16,8))
+ax.plot(daily_sum_precip.index, 
+       daily_sum_precip['HPCP'].values, 
+       'o',
+       color = 'purple')
+ax.set_title("Precipitation for Boulder Colorado 1948-2016")
+plt.show()
+```
+
 {:.output}
 {:.display_data}
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/01-science-toolbox/intro-2013-floods/2018-02-05-coflood-03-flood-drivers-precipitation_2_0.png" alt = "Plot of total precipitation each month from 1948 to 2013 for a National Weather Service COOP site located in Boulder, CO.">
-<figcaption>Plot of total precipitation each month from 1948 to 2013 for a National Weather Service COOP site located in Boulder, CO.</figcaption>
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/01-science-toolbox/intro-2013-floods/2018-02-05-coflood-03-flood-drivers-precipitation_3_0.png">
 
 </figure>
 
@@ -113,7 +139,7 @@ Within this 65 years of data, you can see that there is a jump in the amount of 
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/01-science-toolbox/intro-2013-floods/2018-02-05-coflood-03-flood-drivers-precipitation_4_0.png" alt = "Plot of total daily precipitation from August 15th to September 15th, 2013 for a National Weather Service COOP site located in Boulder, CO.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/01-science-toolbox/intro-2013-floods/2018-02-05-coflood-03-flood-drivers-precipitation_5_0.png" alt = "Plot of total daily precipitation from August 15th to September 15th, 2013 for a National Weather Service COOP site located in Boulder, CO.">
 <figcaption>Plot of total daily precipitation from August 15th to September 15th, 2013 for a National Weather Service COOP site located in Boulder, CO.</figcaption>
 
 </figure>
@@ -156,7 +182,7 @@ The daily average data for the stream gauge along Boulder Creek, five miles down
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/01-science-toolbox/intro-2013-floods/2018-02-05-coflood-03-flood-drivers-precipitation_6_0.png" alt = "Plot of Daily Average Stream Discharge (CFS) for Boulder Creek from August 15th to September 15th, 2013 for a National Weather Service COOP site located in Boulder, CO.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/01-science-toolbox/intro-2013-floods/2018-02-05-coflood-03-flood-drivers-precipitation_7_0.png" alt = "Plot of Daily Average Stream Discharge (CFS) for Boulder Creek from August 15th to September 15th, 2013 for a National Weather Service COOP site located in Boulder, CO.">
 <figcaption>Plot of Daily Average Stream Discharge (CFS) for Boulder Creek from August 15th to September 15th, 2013 for a National Weather Service COOP site located in Boulder, CO.</figcaption>
 
 </figure>
