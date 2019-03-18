@@ -3,7 +3,7 @@ layout: single
 title: "For Loops in Python Refresher"
 excerpt: "In this lesson you will review the basics of for loops in Python."
 authors: ['Software Carpentry', 'Martha Morrissey']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['hw-custom-maps-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/python-for-loops-refresher/

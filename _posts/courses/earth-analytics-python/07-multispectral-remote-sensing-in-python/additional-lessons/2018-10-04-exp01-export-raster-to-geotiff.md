@@ -3,7 +3,7 @@ layout: single
 title: "Export Numpy Arrays to Geotiff Format Using Rasterio and Python"
 excerpt: "You often create outputs in Python that you want to use in another tool like QGIS or ArcGIS. Learn how to export a numpy array created through a rasterio workflow in Python to  spatial geotiff."
 authors: ['Leah Wasser', 'Chris Holdgraf']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['export-raster-python']
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-in-python/export-numpy-array-to-geotiff-in-python/
@@ -245,6 +245,8 @@ Note that when we write the data we need the following elements:
 
 Finally you need to specify the name of the output file and the path to where it will be saved on your computer. 
 
+
+
 ## Export a Numpy Array to a Raster Geotiff Using the Spatial Profile or Metadata of Another Raster
 You can use the naip_meta variable that you created above. This variable contains all of the spatial metadata for naip data.
 
@@ -303,6 +305,9 @@ The two ** tells Python to unpack all of the values in the naip_meta object to u
 with rio.open('data/cold-springs-fire/outputs/naip_ndvi.tif', 'w', **naip_meta) as dst:
     dst.write(naip_ndvi, 1)
 ```
+
+
+
 
 <div class="notice--info" markdown="1">
 

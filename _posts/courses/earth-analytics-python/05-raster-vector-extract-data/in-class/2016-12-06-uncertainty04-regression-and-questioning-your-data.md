@@ -3,7 +3,7 @@ layout: single
 title: "Use Regression Analysis to Explore Data Relationships & Bad Data"
 excerpt: "You often want to understand the relationships between two different types of data. Learn how to use regression to determine whether there is a relationship between two variables."
 authors: ['Max Joseph', 'Leah Wasser']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['remote-sensing-uncertainty-python']
 permalink: /courses/earth-analytics-python/lidar-remote-sensing-uncertainty/compare-lidar-and-measured-tree-height-regression/
@@ -50,6 +50,7 @@ A one-to-one line is a line that represents what the relationship between two va
 See the example below:
 
 
+
 {:.input}
 ```python
 # create some points with a one to one relationships
@@ -76,7 +77,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_2_0.png" alt = "Plot showing a one to one relationship between x and y variables.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_3_0.png" alt = "Plot showing a one to one relationship between x and y variables.">
 <figcaption>Plot showing a one to one relationship between x and y variables.</figcaption>
 
 </figure>
@@ -91,6 +92,7 @@ In other cases, when points lie above or below the 1:1 line, the measurements ar
 
 This all assumes that you decide that the human measurement is correct all of the time. But you know from discussions about uncertainty and from being a human yourself, that often times, humans make mistakes too! Some people may think that, particularly in dense forests, lidar does an even better job of measuring the tallest trees that humans can not fully get a clear view of to make a measurement.
  
+
 
 {:.input}
 ```python
@@ -158,7 +160,7 @@ ax.set_title("Lidar vs Measured Tree Height - SJER",
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_4_0.png" alt = "Plot showing a the relationship between lidar and measured tree height with a one to one line overlayed on top.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_6_0.png" alt = "Plot showing a the relationship between lidar and measured tree height with a one to one line overlayed on top.">
 <figcaption>Plot showing a the relationship between lidar and measured tree height with a one to one line overlayed on top.</figcaption>
 
 </figure>
@@ -261,7 +263,7 @@ plt.legend();
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_8_0.png" alt = "This plot shows the same x and y variables as the previous plot however now you have a regression relationship drawn in grey. This represents a statistical that quantifies how x relates to y. Note that in this case, this relationship is not a purely 1:1 relationship.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_10_0.png" alt = "This plot shows the same x and y variables as the previous plot however now you have a regression relationship drawn in grey. This represents a statistical that quantifies how x relates to y. Note that in this case, this relationship is not a purely 1:1 relationship.">
 <figcaption>This plot shows the same x and y variables as the previous plot however now you have a regression relationship drawn in grey. This represents a statistical that quantifies how x relates to y. Note that in this case, this relationship is not a purely 1:1 relationship.</figcaption>
 
 </figure>
@@ -324,7 +326,7 @@ print("slope:", slope,
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_10_1.png" alt = "Here you can see that the x and y variables have a relationship where the slope is 1 however the intercept in this case is positive. Here the x predictor tends to underestimate y.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_12_1.png" alt = "Here you can see that the x and y variables have a relationship where the slope is 1 however the intercept in this case is positive. Here the x predictor tends to underestimate y.">
 <figcaption>Here you can see that the x and y variables have a relationship where the slope is 1 however the intercept in this case is positive. Here the x predictor tends to underestimate y.</figcaption>
 
 </figure>
@@ -381,7 +383,7 @@ print("slope:", slope,
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_12_1.png" alt = "In this plot the x predictor overestimates y values. Yet the slope of the relationship is still 1.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_14_1.png" alt = "In this plot the x predictor overestimates y values. Yet the slope of the relationship is still 1.">
 <figcaption>In this plot the x predictor overestimates y values. Yet the slope of the relationship is still 1.</figcaption>
 
 </figure>
@@ -426,7 +428,7 @@ ax.set(xlabel="Lidar derived max tree height",
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_15_0.png" alt = "Using Seaborn you can look at the regression relationship and how much of the data variablility is explained by the regression model.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_17_0.png" alt = "Using Seaborn you can look at the regression relationship and how much of the data variablility is explained by the regression model.">
 <figcaption>Using Seaborn you can look at the regression relationship and how much of the data variablility is explained by the regression model.</figcaption>
 
 </figure>
@@ -483,7 +485,7 @@ print("slope:", slope,
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_16_1.png" alt = "Plot showing the relationship between x and y variables.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_18_1.png" alt = "Plot showing the relationship between x and y variables.">
 <figcaption>Plot showing the relationship between x and y variables.</figcaption>
 
 </figure>
@@ -516,7 +518,7 @@ plt.setp(ax.get_xticklabels(), rotation=45, horizontalalignment='right');
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_18_0.png" alt = "Sometimes looking at difference plots like this one can be helpful. If you have outlier points, it can be nice to identify which plots those are in. You may see differences in the plots even in the imagery that could explain the large differences.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty04-regression-and-questioning-your-data_20_0.png" alt = "Sometimes looking at difference plots like this one can be helpful. If you have outlier points, it can be nice to identify which plots those are in. You may see differences in the plots even in the imagery that could explain the large differences.">
 <figcaption>Sometimes looking at difference plots like this one can be helpful. If you have outlier points, it can be nice to identify which plots those are in. You may see differences in the plots even in the imagery that could explain the large differences.</figcaption>
 
 </figure>

@@ -3,7 +3,7 @@ layout: single
 title: 'Analyze Word Frequency Counts Using Twitter Data and Tweepy in Python'
 excerpt: 'One common way to analyze Twitter data is to calculate word frequencies to understand how often words are used in tweets on a particular topic. To complete any analysis, you need to first prepare the data. Learn how to clean Twitter data and calculate word frequencies using Python.'
 authors: ['Martha Morrissey', 'Leah Wasser', 'Jeremey Diaz', 'Jenny Palomino']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['social-media-Python']
 permalink: /courses/earth-analytics-python/using-apis-natural-language-processing-twitter/calculate-tweet-word-frequencies-in-python/
@@ -77,6 +77,7 @@ consumer_secret= 'yourkeyhere'
 access_token= 'yourkeyhere'
 access_token_secret= 'yourkeyhere'
 ```
+
 
 {:.input}
 ```python
@@ -500,10 +501,16 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/13-twitter-api/twitter-api/2018-02-05-twitter-03-word-frequency-analysis_28_0.png" alt = "This plot displays the frequency of all words in the tweets on climate change, after URLs have been removed.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/13-twitter-api/twitter-api/2018-02-05-twitter-03-word-frequency-analysis_29_0.png" alt = "This plot displays the frequency of all words in the tweets on climate change, after URLs have been removed.">
 <figcaption>This plot displays the frequency of all words in the tweets on climate change, after URLs have been removed.</figcaption>
 
 </figure>
+
+
+
+
+
+
 
 
 
@@ -700,7 +707,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/13-twitter-api/twitter-api/2018-02-05-twitter-03-word-frequency-analysis_39_0.png" alt = "This plot displays the frequency of the words in the tweets on climate change, after URLs and stop words have been removed.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/13-twitter-api/twitter-api/2018-02-05-twitter-03-word-frequency-analysis_44_0.png" alt = "This plot displays the frequency of the words in the tweets on climate change, after URLs and stop words have been removed.">
 <figcaption>This plot displays the frequency of the words in the tweets on climate change, after URLs and stop words have been removed.</figcaption>
 
 </figure>
@@ -929,7 +936,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/13-twitter-api/twitter-api/2018-02-05-twitter-03-word-frequency-analysis_52_0.png" alt = "This plot displays the frequency of all words in the tweets on climate change, after URLs, stop words, and collection words have been removed.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/13-twitter-api/twitter-api/2018-02-05-twitter-03-word-frequency-analysis_57_0.png" alt = "This plot displays the frequency of all words in the tweets on climate change, after URLs, stop words, and collection words have been removed.">
 <figcaption>This plot displays the frequency of all words in the tweets on climate change, after URLs, stop words, and collection words have been removed.</figcaption>
 
 </figure>

@@ -4,7 +4,7 @@ title: "Classify and Plot Raster Data in Python"
 excerpt: "This lesson presents how to classify a raster dataset and export it as a
 new raster in Python."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/classify-plot-raster-data-in-python/
@@ -69,6 +69,7 @@ Please note - working with data is not a linear process. Above you see a potenti
 
 To get started, first load the required libraries and then open up your raster. In this case, you are using the lidar canopy height model (CHM) that you calculated in the previous lesson.
 
+
 {:.input}
 ```python
 import rasterio as rio
@@ -90,6 +91,7 @@ sns.set_style("whitegrid")
 
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
+
 
 To begin, open the `lidar_chm.tif` file that you created in the previous lesson. A copy of it is also in your outputs directory of this week's data.
 
@@ -131,6 +133,7 @@ lidar_chm_im
      [ True  True  True ..., False False False]
      [ True  True  True ..., False False False]],
            fill_value = -3.40282e+38)
+
 
 
 
@@ -186,10 +189,12 @@ ax.set(xlabel="Height (m)",
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_9_0.png" alt = "Histogram of Canopy Height Model values.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_12_0.png" alt = "Histogram of Canopy Height Model values.">
 <figcaption>Histogram of Canopy Height Model values.</figcaption>
 
 </figure>
+
+
 
 
 
@@ -224,7 +229,7 @@ ax.set_title("Distribution of raster cell values in the DTM difference data\nZoo
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_11_0.png" alt = "Histogram of CHM data zoomed in to 0-25 on the x axis.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_16_0.png" alt = "Histogram of CHM data zoomed in to 0-25 on the x axis.">
 <figcaption>Histogram of CHM data zoomed in to 0-25 on the x axis.</figcaption>
 
 </figure>
@@ -240,6 +245,7 @@ collect the outputs that are returned when you call `hist`. This consists of thr
 * `patches`, which are `matplotlib` objects that represent the visualized bar corresponding to each bin. These are useful if you want to change the visual appearance of the bars after plotting.
 
 Note: if you don't want to worry about a particular variable that is returned by a function, simply replace it with a `_` as shown in the comment below:
+
 
 {:.input}
 ```python
@@ -302,7 +308,7 @@ ax.set(title="Histogram with Custom Breaks",
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_15_0.png" alt = "Histogram with custom breaks applied.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_21_0.png" alt = "Histogram with custom breaks applied.">
 <figcaption>Histogram with custom breaks applied.</figcaption>
 
 </figure>
@@ -339,7 +345,7 @@ ax.set(title="Histogram with Custom Breaks",
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_17_0.png" alt = "Histogram with custom breaks applied.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_23_0.png" alt = "Histogram with custom breaks applied.">
 <figcaption>Histogram with custom breaks applied.</figcaption>
 
 </figure>
@@ -507,10 +513,14 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_27_0.png" alt = "CHM plot with NA values applied to the data.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_33_0.png" alt = "CHM plot with NA values applied to the data.">
 <figcaption>CHM plot with NA values applied to the data.</figcaption>
 
 </figure>
+
+
+
+
 
 
 
@@ -554,7 +564,7 @@ ax.set_title("Classified Canopy Height Model");
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_30_0.png" alt = "Canopy height model plot with a better colormap applied.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_39_0.png" alt = "Canopy height model plot with a better colormap applied.">
 <figcaption>Canopy height model plot with a better colormap applied.</figcaption>
 
 </figure>
@@ -623,7 +633,7 @@ ax.set_axis_off();
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_33_0.png" alt = "Canopy height model with a better colormap and a legend.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster06-classify-raster_42_0.png" alt = "Canopy height model with a better colormap and a legend.">
 <figcaption>Canopy height model with a better colormap and a legend.</figcaption>
 
 </figure>

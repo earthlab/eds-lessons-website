@@ -3,7 +3,7 @@ layout: single
 title: "Canopy Height Models, Digital Surface Models & Digital Elevation Models - Work With LiDAR Data in Python"
 excerpt: "This lesson defines 3 lidar data products: the digital elevation model (DEM), the digital surface model (DSM) and the canopy height model (CHM)."
 authors: ['Leah Wasser']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['class-lidar']
 permalink: /courses/earth-analytics-python/lidar-raster-data/lidar-chm-dem-dsm/
@@ -64,6 +64,7 @@ In the previous lesson, you opened and explored a digital elevation model (DEM).
 
 In this lesson, you will explore Digital Surface Models (DSM) and will use the DEM and the DSM to create a canopy height model (CHM). 
 
+
 {:.input}
 ```python
 # open raster data
@@ -91,7 +92,7 @@ ax.set_title("Lidar Digital Elevation Model (DEM)",
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-intro/2018-02-05-lidar03-chm-dtm-dsm_2_0.png" alt = "Raster plot of a lidar DEM.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-intro/2018-02-05-lidar03-chm-dtm-dsm_3_0.png" alt = "Raster plot of a lidar DEM.">
 <figcaption>Raster plot of a lidar DEM.</figcaption>
 
 </figure>
@@ -103,12 +104,13 @@ ax.set_title("Lidar Digital Elevation Model (DEM)",
 Next, let's open the digital surface model (DSM). The DSM represents the top of the earth's surface. Thus, it INCLUDES TREES, BUILDINGS and other objects that sit on the earth.
 
 
+
 {:.output}
 {:.display_data}
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-intro/2018-02-05-lidar03-chm-dtm-dsm_4_0.png" alt = "Raster plot of a Lidar DSM.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-intro/2018-02-05-lidar03-chm-dtm-dsm_6_0.png" alt = "Raster plot of a Lidar DSM.">
 <figcaption>Raster plot of a Lidar DSM.</figcaption>
 
 </figure>
@@ -136,7 +138,7 @@ You will learn how to subtract rasters in the [subtract raster lesson](/courses/
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-intro/2018-02-05-lidar03-chm-dtm-dsm_6_0.png" alt = "Raster plot of a Lidar canopy height model.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-intro/2018-02-05-lidar03-chm-dtm-dsm_8_0.png" alt = "Raster plot of a Lidar canopy height model.">
 <figcaption>Raster plot of a Lidar canopy height model.</figcaption>
 
 </figure>

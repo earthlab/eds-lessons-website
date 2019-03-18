@@ -3,7 +3,7 @@ layout: single
 title: "Reproject Raster Data Python"
 excerpt: "This lesson teaches you how to reproject raster data using rasterio."
 authors: ['Leah Wasser', 'Martha Morrissey']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: ['courses']
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/reproject-raster/
@@ -63,6 +63,7 @@ print(lidar_dem.meta)
 {:.output}
     {'driver': 'GTiff', 'dtype': 'float32', 'nodata': -3.4028234663852886e+38, 'width': 4000, 'height': 2000, 'count': 1, 'crs': CRS({'init': 'epsg:32613'}), 'transform': Affine(1.0, 0.0, 472000.0,
            0.0, -1.0, 4436000.0)}
+
 
 
 

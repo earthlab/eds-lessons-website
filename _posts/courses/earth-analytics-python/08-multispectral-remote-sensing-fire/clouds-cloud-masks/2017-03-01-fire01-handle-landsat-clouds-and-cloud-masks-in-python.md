@@ -3,7 +3,7 @@ layout: single
 title: "Clean Remote Sensing Data in Python - Clouds, Shadows & Cloud Masks"
 excerpt: "In this lesson, you will learn how to deal with clouds when working with spectral remote sensing data. You will learn how to mask clouds from landsat and MODIS remote sensing data in R using the mask() function. You will also discuss issues associated with cloud cover - particular as they relate to a research topic."
 authors: ['Leah Wasser']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['clouds-remote-sensing-python']
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-modis/cloud-masks-with-spectral-data-python/
@@ -170,6 +170,8 @@ plt.show()
 
 
 
+
+
 ## Raster Masks
 
 Many remote sensing data sets come with quality layers that you can use as a mask 
@@ -186,6 +188,7 @@ You will explore using this pixel quality assurance (QA) layer, next. To begin, 
 the `pixel_qa` layer using rasterio and plot it with matplotlib.
 
 
+
 {:.input}
 ```python
 # Open the pixel_qa layer for your landsat scene
@@ -195,6 +198,7 @@ with rio.open("data/cold-springs-fire/landsat_collect/LC080340322016070701T1-SC2
 ```
 
 First, plot the pixel_qa layer in matplotlib.
+
 
 {:.input}
 ```python
@@ -219,10 +223,13 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_11_0.png" alt = "Landsat Collection Pixel QA layer for the Cold Springs fire area.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_14_0.png" alt = "Landsat Collection Pixel QA layer for the Cold Springs fire area.">
 <figcaption>Landsat Collection Pixel QA layer for the Cold Springs fire area.</figcaption>
 
 </figure>
+
+
+
 
 
 
@@ -271,6 +278,8 @@ To better understand the values above, create a better map of the data. To do th
 
 We are reclassifying the data because matplotlib colormaps will assign colors to values along a continuous gradient.
 Reclassifying the data allows us to enforce one color for each unique value in our data. 
+
+
 
 
 Next you will create a binary cloud mask layer. In this mask all pixels that you wish to remove from your analysis or mask will be set to `1`. All other pixels which represent pixels you want to use in your analysis will be set to `0`.
@@ -341,6 +350,7 @@ np.unique(cl_mask)
 
 
 
+
 Finally, plot the reclassified raster mask. 
 
 {:.input}
@@ -362,7 +372,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_18_0.png" alt = "Landsat image in which the masked pixels (cloud) are rendered in light purple.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_26_0.png" alt = "Landsat image in which the masked pixels (cloud) are rendered in light purple.">
 <figcaption>Landsat image in which the masked pixels (cloud) are rendered in light purple.</figcaption>
 
 </figure>
@@ -457,7 +467,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_22_0.png" alt = "CIR Composite image in grey scale with mask applied, covering the post-Cold Springs fire area on July 8, 2016.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_30_0.png" alt = "CIR Composite image in grey scale with mask applied, covering the post-Cold Springs fire area on July 8, 2016.">
 <figcaption>CIR Composite image in grey scale with mask applied, covering the post-Cold Springs fire area on July 8, 2016.</figcaption>
 
 </figure>
@@ -483,10 +493,27 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_23_0.png" alt = "CIR Composite image with cloud mask applied, covering the post-Cold Springs fire area on July 8, 2016.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire01-handle-landsat-clouds-and-cloud-masks-in-python_31_0.png" alt = "CIR Composite image with cloud mask applied, covering the post-Cold Springs fire area on July 8, 2016.">
 <figcaption>CIR Composite image with cloud mask applied, covering the post-Cold Springs fire area on July 8, 2016.</figcaption>
 
 </figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

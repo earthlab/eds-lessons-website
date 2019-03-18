@@ -3,7 +3,7 @@ layout: single
 title: "Work With Datetime Format in Python - Time Series Data "
 excerpt: "This lesson covers how to deal with dates in Python. It reviews how to convert a field containing dates as strings to a datetime object that Python can understand and plot efficiently. This tutorial also covers how to handle missing data values in Python."
 authors: ['Jenny Palomino', 'Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['time-series-python']
 course: 'earth-analytics-python'
@@ -761,15 +761,17 @@ Test your `Python` skills to plot data using `datetime` object:
 </div>
 
 
+
 {:.output}
 {:.display_data}
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts01-date-format-python_30_0.png" alt = "Bar plot showing daily precipitation with the x-axis dates cleaned up and no data values removed.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts01-date-format-python_31_0.png" alt = "Bar plot showing daily precipitation with the x-axis dates cleaned up and no data values removed.">
 <figcaption>Bar plot showing daily precipitation with the x-axis dates cleaned up and no data values removed.</figcaption>
 
 </figure>
+
 
 
 

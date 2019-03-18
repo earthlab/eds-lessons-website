@@ -4,7 +4,7 @@ category: courses
 title: "Lidar Remote Sensing Uncertainty - Compare Ground to Lidar Measurements of Tree Height in Python"
 permalink: /courses/earth-analytics-python/lidar-remote-sensing-uncertainty/
 week-landing: 5
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 week: 5
 sidebar:
   nav:
@@ -52,8 +52,41 @@ The plots below are examples of what your plot could look like. Feel free to
 customize or modify plot settings as you see fit! 
 
 
+
+
+
+
+
+
+
 {:.output}
-    file_sizes: 100%|████████████████████████████| 211M/211M [02:00<00:00, 6.71MB/s]
+{:.display_data}
+
+<figure>
+
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/2018-06-15-lidar-remote-sensing-uncertainty-landing-page_8_0.png" alt = "Plots of lidar min and max vs insitu min and max with a 1:1 line a regression fit for the NEON SJER field site.">
+<figcaption>Plots of lidar min and max vs insitu min and max with a 1:1 line a regression fit for the NEON SJER field site.</figcaption>
+
+</figure>
+
+
+
+
+
+
+
+
+{:.output}
+{:.display_data}
+
+<figure>
+
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/2018-06-15-lidar-remote-sensing-uncertainty-landing-page_12_0.png" alt = "Plots of lidar min and max vs insitu min and max with a 1:1 line a regression fit for the NEON SOAP field site.">
+<figcaption>Plots of lidar min and max vs insitu min and max with a 1:1 line a regression fit for the NEON SOAP field site.</figcaption>
+
+</figure>
+
+
 
 
 ### Calculated Regression Fit 
@@ -61,4 +94,26 @@ customize or modify plot settings as you see fit!
 The above plots show the regression fit as calculated by the `seaborn` python package. Use `stats.linregression()` to calculate the slope and intercept of the regresion fit for each of the plots above. 
 
 Print the outputs below. 
+
+
+
+{:.output}
+    SJER - Mean Height Comparison
+    slope: print-slope-value-here intercept: print-intercept-value-here
+    
+    SJER - Max Height Comparison
+    slope: print-slope-value-here intercept: print-intercept-value-here
+
+
+
+
+
+
+
+
+
+
+
+
+
 

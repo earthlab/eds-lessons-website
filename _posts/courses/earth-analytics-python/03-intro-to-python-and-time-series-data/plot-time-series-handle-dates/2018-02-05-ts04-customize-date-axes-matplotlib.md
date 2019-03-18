@@ -3,7 +3,7 @@ layout: single
 title: "Customize Matplotlibe Dates Ticks on the x-axis in Python"
 excerpt: 'When you plot time series data in matplotlib, you often want to customize the date format that is presented on the plot. Learn how to customize the date format in a Python matplotlib plot.'
 authors: ['Chris Holdgraf', 'Leah Wasser', 'Martha Morrissey']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['time-series-python']
 course: 'earth-analytics-python'
@@ -307,6 +307,8 @@ ax.xaxis.set_major_formatter(myFmt)
 <figcaption>Scatterplot showing daily precipitation with the x-axis dates cleaned up and the format customized so they are easier to read.</figcaption>
 
 </figure>
+
+
 
 
 

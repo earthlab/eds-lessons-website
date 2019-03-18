@@ -3,7 +3,7 @@ layout: single
 category: courses
 title: "You Can Contribute To Open Source Software Too! How to Get Started in Python"
 permalink: /courses/earth-analytics-python/contribute-to-open-source/
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 week-landing: 9
 week: 9
 sidebar:

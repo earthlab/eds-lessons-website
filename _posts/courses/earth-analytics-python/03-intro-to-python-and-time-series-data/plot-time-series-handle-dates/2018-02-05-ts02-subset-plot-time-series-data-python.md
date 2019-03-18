@@ -3,7 +3,7 @@ layout: single
 title: "Subset Time Series By Dates Python Using Pandas"
 excerpt: "Sometimes you have data over a longer time span than you need to run analysis. Learn how to subset your data  using a begina and end date in Python."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['time-series-python']
 course: 'earth-analytics-python'
@@ -109,6 +109,8 @@ import seaborn as sns;
 sns.set(font_scale=1.5)
 sns.set_style("whitegrid")
 ```
+
+
 
 {:.input}
 ```python
@@ -246,6 +248,7 @@ boulder_daily_precip.dtypes
     YEAR                     int64
     JULIAN                   int64
     dtype: object
+
 
 
 
@@ -391,6 +394,9 @@ values to ensure you learn how to clean them.
 <i class="fa fa-star"></i> **Data Tip** You can download the original complete data subset with additional documentation
 <a href="https://figshare.com/articles/NEON_Remote_Sensing_Boulder_Flood_2013_Teaching_Data_Subset_Lee_Hill_Road/3146284">here. </a>
 {: .notice--success }
+
+
+
 
 
 ## Subset Data Temporally in Pandas
@@ -898,6 +904,7 @@ ax.scatter(precip_boulder_AugOct.index.values,
 You are now ready to plot your data. 
 
 
+
 {:.input}
 ```python
 # plot the data
@@ -917,7 +924,7 @@ ax.set_ylabel('Precipitation (Inches)');
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_24_0.png" alt = "Scatterplot showing daily total precipitation for Boulder Creek.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_30_0.png" alt = "Scatterplot showing daily total precipitation for Boulder Creek.">
 <figcaption>Scatterplot showing daily total precipitation for Boulder Creek.</figcaption>
 
 </figure>
@@ -953,7 +960,7 @@ Your final plot should look something like the plot below.
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_26_0.png" alt = "Scatterplot of hourly precipitation for Boulder subsetted to 2003-2013.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_32_0.png" alt = "Scatterplot of hourly precipitation for Boulder subsetted to 2003-2013.">
 <figcaption>Scatterplot of hourly precipitation for Boulder subsetted to 2003-2013.</figcaption>
 
 </figure>
@@ -978,15 +985,18 @@ How different was the rainfall in 2012 compared to 2013?
 </div>
 
 
+
 {:.output}
 {:.display_data}
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_28_0.png" alt = "Comparison of precipitation data in Boulder, CO from 2012 and 2013.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_35_0.png" alt = "Comparison of precipitation data in Boulder, CO from 2012 and 2013.">
 <figcaption>Comparison of precipitation data in Boulder, CO from 2012 and 2013.</figcaption>
 
 </figure>
+
+
 
 
 

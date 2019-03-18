@@ -5,7 +5,7 @@ authors: ['Leah Wasser']
 category: courses
 excerpt:
 nav-title: Course Syllabus
-modified: 2017-05-12
+modified: '2017-05-12'
 comments: no
 permalink: /courses/earth-analytics-python/earth-analytics-syllabus/
 author_profile: no

@@ -3,7 +3,7 @@ layout: single
 title: "Raster Stack Functions to Work with Landsat Remote Sensing Data in Python"
 excerpt: "You may find yourself performing the same tasks over and over when working wtih Landsat 8 data in Python. Learn how to create core functions that will automate your python raster data workflow."
 authors: ['Leah Wasser']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['multispectral-remote-sensing-data-python']
 permalink: /none/

@@ -3,7 +3,7 @@ layout: single
 title: "Spatial Raster Metadata: CRS, Resolution, and Extent in Python"
 excerpt: "This lesson introduces the raster meta data. You will learn about CRS, resolution, and spatial extent."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/raster-metadata-in-python/
@@ -40,6 +40,8 @@ You will need a computer with internet access to complete this lesson.
 
 
 </div>
+
+
 
 You will learn about three important spatial attributes associated with raster data that in this lesson:  Coordinate Reference Systems, resolution, and spatial extent. 
 

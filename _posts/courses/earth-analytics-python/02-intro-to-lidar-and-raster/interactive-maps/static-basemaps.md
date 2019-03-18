@@ -3,7 +3,7 @@ layout: single
 title: "Static Basemaps in Python"
 excerpt: "This lesson covers creating static basemaps in Python"
 authors: ['Leah Wasser', 'Martha Morrissey']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['hw-lidar']
 permalink: /courses/earth-analytics-python/lidar-raster-data/static-basemaps/
@@ -268,6 +268,7 @@ ax.set_title('USA')
 ax.set_extent((minx, maxx, miny, maxy))
 ax.figure.set_size_inches(10, 5)
 ```
+
 
 
 Customize colors.

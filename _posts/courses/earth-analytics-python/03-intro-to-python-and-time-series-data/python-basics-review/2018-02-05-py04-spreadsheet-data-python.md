@@ -9,7 +9,7 @@ course: "earth-analytics-python"
 permalink: /courses/earth-analytics-python/use-time-series-data-in-python/spreadsheet-data-in-python/
 nav-title: 'Spreadsheet Data in Python'
 dateCreated: 2016-12-13
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 week: 3
 sidebar:
   nav:
@@ -96,6 +96,8 @@ file when saved (in this case: boulder-precip.csv). So you downloaded a file fro
 a url on figshare do your data directory. You named that file `boulder-precip.csv`.
 
 Next, you read in the data using the function: `pd.read_csv()`.
+
+
 
 {:.input}
 ```python
@@ -521,7 +523,7 @@ boulder_precip.plot('DATE', 'PRECIP', color = 'purple');
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py04-spreadsheet-data-python_21_0.png" alt = "If you call dataframe.plot() you are plotting using the pandas plot function. This function wraps around matplotlib.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py04-spreadsheet-data-python_23_0.png" alt = "If you call dataframe.plot() you are plotting using the pandas plot function. This function wraps around matplotlib.">
 <figcaption>If you call dataframe.plot() you are plotting using the pandas plot function. This function wraps around matplotlib.</figcaption>
 
 </figure>
@@ -539,7 +541,7 @@ boulder_precip.plot.bar('DATE', 'PRECIP', color = 'purple');
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py04-spreadsheet-data-python_22_0.png" alt = "Here dataframe.plot.bar() is also using the pandas plot function to create a bar plot.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py04-spreadsheet-data-python_24_0.png" alt = "Here dataframe.plot.bar() is also using the pandas plot function to create a bar plot.">
 <figcaption>Here dataframe.plot.bar() is also using the pandas plot function to create a bar plot.</figcaption>
 
 </figure>
@@ -574,6 +576,7 @@ Let's now work with the matplotlib and take a little time to customize your plot
 * **legend = False:** turn off the legend for the plot
 * **kind = bar**: create a bar plot
 
+
 {:.input}
 ```python
 fig, ax = plt.subplots()
@@ -592,7 +595,7 @@ plt.setp(ax.get_xticklabels(), rotation=45);
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py04-spreadsheet-data-python_25_0.png" alt = "Notice here you use ax.plot. This is matplotlib plotting not pandas.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py04-spreadsheet-data-python_28_0.png" alt = "Notice here you use ax.plot. This is matplotlib plotting not pandas.">
 <figcaption>Notice here you use ax.plot. This is matplotlib plotting not pandas.</figcaption>
 
 </figure>

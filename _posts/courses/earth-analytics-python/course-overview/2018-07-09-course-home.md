@@ -5,7 +5,7 @@ title: "Earth Analytics Python Course | Earth Lab CU Boulder"
 nav-title: "Earth Analytics Home"
 permalink: /courses/earth-analytics-python/
 course: "earth-analytics-python"
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 module-type: 'overview'
 module-title: "Earth Analytics Python Course"
 week-landing: 0

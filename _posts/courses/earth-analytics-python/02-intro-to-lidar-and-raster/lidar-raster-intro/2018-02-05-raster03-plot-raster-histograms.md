@@ -5,7 +5,7 @@ excerpt: "This lesson introduces the raster geotiff file format - which is often
 to store lidar raster data. You cover the 3 key spatial attributes of a raster dataset
 including Coordinate reference system, spatial extent and resolution."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/plot-raster-histograms/
@@ -55,6 +55,7 @@ distribution of your data.
 To work with raster data in `Python`, you can use the `rasterio` and `numpy` packages.
 Remember you can use the `raserio context manager` to import the raster object into `Python`.
 
+
 {:.input}
 ```python
 import rasterio as rio
@@ -76,6 +77,7 @@ sns.set_style("whitegrid")
 plt.rcParams['figure.figsize'] = (8, 8)
 
 ```
+
 
 As you did in the previous lessons, you can open your raster data using `rio.open()`.
 
@@ -157,7 +159,7 @@ ax.set(xlabel = 'Elevation (meters)',
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster03-plot-raster-histograms_10_0.png" alt = "This plot displays a histogram of lidar dem elevation values.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster03-plot-raster-histograms_12_0.png" alt = "This plot displays a histogram of lidar dem elevation values.">
 <figcaption>This plot displays a histogram of lidar dem elevation values.</figcaption>
 
 </figure>
@@ -193,7 +195,7 @@ ax.set(title="Distribution of Elevation Values",
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster03-plot-raster-histograms_12_0.png" alt = "This plot displays a histogram of lidar dem elevation values with 3 bins.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster03-plot-raster-histograms_14_0.png" alt = "This plot displays a histogram of lidar dem elevation values with 3 bins.">
 <figcaption>This plot displays a histogram of lidar dem elevation values with 3 bins.</figcaption>
 
 </figure>
@@ -229,7 +231,7 @@ ax.set_ylabel('Frequency');
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster03-plot-raster-histograms_14_0.png" alt = "This plot displays a histogram of lidar dem elevation values with 3 bins.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster03-plot-raster-histograms_16_0.png" alt = "This plot displays a histogram of lidar dem elevation values with 3 bins.">
 <figcaption>This plot displays a histogram of lidar dem elevation values with 3 bins.</figcaption>
 
 </figure>

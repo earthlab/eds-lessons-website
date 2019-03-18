@@ -8,7 +8,7 @@ class-lesson: ['time-series-python']
 permalink: /courses/earth-analytics-python/use-time-series-data-in-python/missing-data-in-python-na/
 nav-title: 'Missing data'
 dateCreated: 2018-08-07
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 week: 3
 sidebar:
   nav:
@@ -384,6 +384,7 @@ print(np.mean(temp_df2['avg_temp']))
 {:.output}
     -231.54545454545453
     56.25
+
 
 
 

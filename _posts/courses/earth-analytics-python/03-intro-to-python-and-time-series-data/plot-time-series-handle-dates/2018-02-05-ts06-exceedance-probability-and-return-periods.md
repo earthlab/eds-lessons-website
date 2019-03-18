@@ -3,7 +3,7 @@ layout: single
 title: "Why A Hundred Year Flood Can Occur Every Year. Calculate Exceedance Probability and Return Periods in Python"
 excerpt: "Learn how to calculate exceedance probability and return periods associated with a flood in Python."
 authors: ['Matthew Rossi', 'Leah Wasser']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['time-series-python']
 course: 'earth-analytics-python'
@@ -79,6 +79,8 @@ In this lesson, you will use streamflow data to explore the probabilities of a d
 You will use the `hydrofunctions` python package to access streamflow data via an API from the United States Geological Survey (USGS) National Water Information System (NWIS) website. 
 
 To begin, load all of your libraries.
+
+
 
 {:.input}
 ```python
@@ -498,6 +500,7 @@ longmont_discharge.tail()
 
 
 
+
 ## Plot Your Data
 Next, plot the time series using `matplotlib`. What do you notice?
 There is an unfortunate gap in the data. The good news that while this gap may not work for some analyses, it is acceptable when you calculate a recurrence interval (based on our assumptions of independence and stationarity). 
@@ -529,10 +532,13 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts06-exceedance-probability-and-return-periods_16_0.png" alt = "Stream Discharge for the longmont USGS stream gage from 1946-2017">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts06-exceedance-probability-and-return-periods_18_0.png" alt = "Stream Discharge for the longmont USGS stream gage from 1946-2017">
 <figcaption>Stream Discharge for the longmont USGS stream gage from 1946-2017</figcaption>
 
 </figure>
+
+
+
 
 
 
@@ -642,6 +648,8 @@ longmont_discharge_annual_max.head()
 
 ### Import USGS Annual Peak Max Data
 Next import the USGS annual maxima data. 
+
+
 
 
 {:.input}
@@ -1114,10 +1122,12 @@ ax.set_title("Annual Maxima - Downloaded Instantaneous vs. Derived Daily Peak Fl
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts06-exceedance-probability-and-return-periods_29_0.png" alt = "Annual maxima data compared - USGS product vs daily value calculated.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts06-exceedance-probability-and-return-periods_35_0.png" alt = "Annual maxima data compared - USGS product vs daily value calculated.">
 <figcaption>Annual maxima data compared - USGS product vs daily value calculated.</figcaption>
 
 </figure>
+
+
 
 
 
@@ -1139,6 +1149,7 @@ usgs_calculated["diff"] = usgs_calculated["peak_va"] - usgs_calculated["discharg
 
 Once you have calculated a difference column, create a barplot. 
 
+
 {:.input}
 ```python
 # plot difference
@@ -1153,10 +1164,12 @@ ax.set_title("Difference Plot of Annual Maxima \nInstantaneous Minus Mean Daily"
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts06-exceedance-probability-and-return-periods_33_0.png" alt = "Bar plot showing the difference between the USGS max product and the calculated annual max.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts06-exceedance-probability-and-return-periods_41_0.png" alt = "Bar plot showing the difference between the USGS max product and the calculated annual max.">
 <figcaption>Bar plot showing the difference between the USGS max product and the calculated annual max.</figcaption>
 
 </figure>
+
+
 
 
 
@@ -1463,9 +1476,14 @@ usgs_annual_prob.head()
 
 
 
+
+
+
+
 ### Plot Event Probability
 
 Below, you plot Discharge on the x-axis and the probability that an event of that size will occur on the y-axis. 
+
 
 {:.input}
 ```python
@@ -1500,7 +1518,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts06-exceedance-probability-and-return-periods_42_0.png" alt = "Plot showing the probability of a discharge event using both datasets. Note that the y-axis is log scaled in this plot.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts06-exceedance-probability-and-return-periods_55_0.png" alt = "Plot showing the probability of a discharge event using both datasets. Note that the y-axis is log scaled in this plot.">
 <figcaption>Plot showing the probability of a discharge event using both datasets. Note that the y-axis is log scaled in this plot.</figcaption>
 
 </figure>
@@ -1541,7 +1559,7 @@ ax.set_ylabel("Discharge Value (CFS)");
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts06-exceedance-probability-and-return-periods_44_0.png" alt = "Plot showing the return period of a discharge event using both datasets. Note that the y-axis is log scaled in this plot.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts06-exceedance-probability-and-return-periods_57_0.png" alt = "Plot showing the return period of a discharge event using both datasets. Note that the y-axis is log scaled in this plot.">
 <figcaption>Plot showing the return period of a discharge event using both datasets. Note that the y-axis is log scaled in this plot.</figcaption>
 
 </figure>
@@ -1555,4 +1573,6 @@ Falcone, J. A. (2011). GAGES-II: Geospatial attributes of gages for evaluating s
 Lins, H. F. (2012). USGS hydro-climatic data network 2009 (HCDN-2009). US Geological Survey Fact Sheet, 3047(4).
 
 Yochum, S. E. (2015, April). Colorado Front Range Flood of 2013: Peak flows and flood frequencies. In Proceedings of the 3rd Joint Federal Interagency Conference on Sedimentation and Hydrologic Modeling, Reno, NV, USA (pp. 19-23).
+
+
 

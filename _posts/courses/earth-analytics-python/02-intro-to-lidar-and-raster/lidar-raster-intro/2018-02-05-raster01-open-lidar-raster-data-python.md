@@ -5,7 +5,7 @@ excerpt: "This lesson introduces the raster geotiff file format - which is often
 to store lidar raster data. You will learn the 3 key spatial attributes of a raster dataset
 including Coordinate reference system, spatial extent and resolution."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/open-lidar-raster-python/
@@ -94,6 +94,7 @@ sns.set(font_scale=1.5)
 sns.set_style("white")
 ```
 
+
 Note that you imported the `rasterio` library using the shortname `rio`.
 
 Now, you can use the `rio.open("path-to-raster-here")` function to open a raster dataset.
@@ -140,7 +141,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_7_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_8_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO.">
 <figcaption>A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO.</figcaption>
 
 </figure>
@@ -209,7 +210,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_12_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_13_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO.">
 <figcaption>A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO.</figcaption>
 
 </figure>
@@ -275,6 +276,8 @@ To plot using matplotlib directly you:
 3. Read in the raster data itself into a numpy array using `.read()`
 
 
+
+
 {:.input}
 ```python
 with rio.open('data/colorado-flood/spatial/boulder-leehill-rd/pre-flood/lidar/pre_DTM.tif') as src:
@@ -311,6 +314,7 @@ print("rasterio bounds:", bounds)
 {:.output}
     spatial extent: (472000.0, 476000.0, 4434000.0, 4436000.0)
     rasterio bounds: BoundingBox(left=472000.0, bottom=4434000.0, right=476000.0, top=4436000.0)
+
 
 
 
@@ -388,7 +392,7 @@ ax.set_title("Digital Elevation Model - Pre 2013 Flood");
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_29_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO with a grey color map applied.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_32_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO with a grey color map applied.">
 <figcaption>A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO with a grey color map applied.</figcaption>
 
 </figure>
@@ -421,10 +425,12 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_31_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO with a colorbar.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_34_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO with a colorbar.">
 <figcaption>A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO with a colorbar.</figcaption>
 
 </figure>
+
+
 
 
 
@@ -436,6 +442,7 @@ plt.show()
 To plot you can select [pre-determined color ramps](https://matplotlib.org/users/colormaps.html) from `matplotlib`, you can reverse a color ramp by adding `_r` at the end of the color ramps name, for example `cmap = 'viridis_r'`. 
 
 </div>
+
 
 ### Explore Raster Data Values with Histograms
 
@@ -486,6 +493,9 @@ lidar_dem_im
 
 
 
+
+
+
 {:.input}
 ```python
 # Use seaborn styles
@@ -504,10 +514,11 @@ ax.set_title("Lee Hill Road - Digital elevation (terrain) model - \nDistribution
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_35_0.png" alt = "A histogram of lidar derived elevation values for Boulder, CO.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_43_0.png" alt = "A histogram of lidar derived elevation values for Boulder, CO.">
 <figcaption>A histogram of lidar derived elevation values for Boulder, CO.</figcaption>
 
 </figure>
+
 
 
 
@@ -535,6 +546,9 @@ print("Zoomed in raster extent:", zoomed_extent)
 
 
 Next you'll define a box which you'll focus on. You've provided a small helper function that lets you give the x and y limits of a box, and it returns the `x,y` points corresponding to four corners of this box. It then returns a `shapely` polygon object.
+
+
+
 
 {:.input}
 ```python
@@ -586,3 +600,7 @@ ax.set_ylim(zoomed_extent[2:4])
 ax.plot(x, y, '-', lw=3, color='r')
 ax.set_axis_off()
 ```
+
+
+
+

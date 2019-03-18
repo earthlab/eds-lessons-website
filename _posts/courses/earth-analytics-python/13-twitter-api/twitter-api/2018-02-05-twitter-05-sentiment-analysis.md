@@ -3,7 +3,7 @@ layout: single
 title: 'Analyze Sentiments Using Twitter Data and Tweepy in Python'
 excerpt: 'One common way to analyze Twitter data is to analyze attitudes (i.e. sentiment) in the tweet text. Learn how to analyze sentiments in Twitter data using Python.'
 authors: ['Martha Morrissey', 'Leah Wasser', 'Jeremey Diaz', 'Jenny Palomino']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['social-media-Python']
 permalink: /courses/earth-analytics-python/using-apis-natural-language-processing-twitter/analyze-tweet-sentiments-in-python/
@@ -75,6 +75,7 @@ consumer_secret= 'yourkeyhere'
 access_token= 'yourkeyhere'
 access_token_secret= 'yourkeyhere'
 ```
+
 
 {:.input}
 ```python
@@ -255,7 +256,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/13-twitter-api/twitter-api/2018-02-05-twitter-05-sentiment-analysis_14_0.png" alt = "This plot displays a histogram of polarity values for tweets on climate change.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/13-twitter-api/twitter-api/2018-02-05-twitter-05-sentiment-analysis_15_0.png" alt = "This plot displays a histogram of polarity values for tweets on climate change.">
 <figcaption>This plot displays a histogram of polarity values for tweets on climate change.</figcaption>
 
 </figure>
@@ -289,7 +290,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/13-twitter-api/twitter-api/2018-02-05-twitter-05-sentiment-analysis_17_0.png" alt = "This plot displays a revised histogram of polarity values for tweets on climate change. For this histogram, polarity values equal to zero have been removed, and a break has been added at zero, to better highlight the distribution of polarity values.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/13-twitter-api/twitter-api/2018-02-05-twitter-05-sentiment-analysis_18_0.png" alt = "This plot displays a revised histogram of polarity values for tweets on climate change. For this histogram, polarity values equal to zero have been removed, and a break has been added at zero, to better highlight the distribution of polarity values.">
 <figcaption>This plot displays a revised histogram of polarity values for tweets on climate change. For this histogram, polarity values equal to zero have been removed, and a break has been added at zero, to better highlight the distribution of polarity values.</figcaption>
 
 </figure>
@@ -426,7 +427,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/13-twitter-api/twitter-api/2018-02-05-twitter-05-sentiment-analysis_22_0.png" alt = "This plot displays a histogram of polarity values for tweets on the Camp Fire in California. For this histogram, polarity values equal to zero have been removed and a break has been added at zero, to better highlight the distribution of polarity values.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/13-twitter-api/twitter-api/2018-02-05-twitter-05-sentiment-analysis_23_0.png" alt = "This plot displays a histogram of polarity values for tweets on the Camp Fire in California. For this histogram, polarity values equal to zero have been removed and a break has been added at zero, to better highlight the distribution of polarity values.">
 <figcaption>This plot displays a histogram of polarity values for tweets on the Camp Fire in California. For this histogram, polarity values equal to zero have been removed and a break has been added at zero, to better highlight the distribution of polarity values.</figcaption>
 
 </figure>

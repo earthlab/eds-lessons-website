@@ -3,7 +3,7 @@ layout: single
 title: 'Get and Work With Twitter Data in Python Using Tweepy'
 excerpt: 'You can use the Twitter RESTful API to access tweet data from Twitter. Learn how to use tweepy to download and work with twitter social media data in Python.'
 authors: ['Martha Morrissey', 'Leah Wasser','Carson Farmer']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['social-media-Python']
 permalink: /courses/earth-analytics-python/using-apis-natural-language-processing-twitter/get-and-use-twitter-data-in-python/
@@ -92,6 +92,7 @@ consumer_secret= 'yourkeyhere'
 access_token= 'yourkeyhere'
 access_token_secret= 'yourkeyhere'
 ```
+
 
 {:.input}
 ```python
@@ -411,3 +412,4 @@ In the next lesson, you will explore calculating word frequencies associated wit
 * <a href="https://developer.twitter.com/en/docs/tweets/rules-and-filtering/overview/standard-operators" target="_blank">Twitter API documentation</a>
 
 </div >
+

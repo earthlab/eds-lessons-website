@@ -3,7 +3,7 @@ layout: single
 title: "How to Dissolve Polygons Using Geopandas: GIS in Python"
 excerpt: "In this lesson you review how to dissolve polygons in python. A spatial join is when you assign attributes from one shapefile to another based upon its spatial location."
 authors: ['Leah Wasser']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['class-intro-spatial-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/dissolve-polygons-in-python-geopandas-shapely/
@@ -76,6 +76,10 @@ country_boundary_us = gpd.read_file(country_boundary_path)
 state_boundary_us = gpd.read_file(state_boundary_path)
 pop_places = gpd.read_file(pop_places_path)
 ```
+
+
+
+
 
 ## Dissolve Polygons Based On an Attribute with Geopandas
 Next, you will learn how to dissolve polygon data. Dissolving polygons entails combining polygons based upon a unique attribute value and removing the interior geometry. 
@@ -362,7 +366,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial07-dissolve-polygons-python_12_0.png" alt = "The LSAD attribute value for every polygon in the data is 00. Thus when you dissolve by that attribute, you get one resulting polygon.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial07-dissolve-polygons-python_16_0.png" alt = "The LSAD attribute value for every polygon in the data is 00. Thus when you dissolve by that attribute, you get one resulting polygon.">
 <figcaption>The LSAD attribute value for every polygon in the data is 00. Thus when you dissolve by that attribute, you get one resulting polygon.</figcaption>
 
 </figure>
@@ -501,10 +505,12 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial07-dissolve-polygons-python_15_1.png" alt = "In this example, you dissolved by region. There are 5 unique region values in the attributes. Thus you end up with 5 polygons. You also summarized attributes by ALAND and AWATER calculating the total value for each.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial07-dissolve-polygons-python_19_1.png" alt = "In this example, you dissolved by region. There are 5 unique region values in the attributes. Thus you end up with 5 polygons. You also summarized attributes by ALAND and AWATER calculating the total value for each.">
 <figcaption>In this example, you dissolved by region. There are 5 unique region values in the attributes. Thus you end up with 5 polygons. You also summarized attributes by ALAND and AWATER calculating the total value for each.</figcaption>
 
 </figure>
+
+
 
 
 

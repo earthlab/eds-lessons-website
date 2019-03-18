@@ -3,7 +3,7 @@ layout: single
 title: "How to Process Many Files in Python - Manipulate Directories, Filenames and Strings"
 excerpt: "When automating workflows, it is helpful to be able to programmatically check for and create directories and to parse directory and file names to extract information. Learn how to manipulate directories and strings using Python."
 authors: ['Leah Wasser', 'Jenny Palomino']
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 category: [courses]
 class-lesson: ['create-data-workflows']
 permalink: /courses/earth-analytics-python/create-efficient-data-workflows/manipulate-files-directories-and-strings/
@@ -421,6 +421,7 @@ path_components[3]
 
 
     'SJER'
+
 
 
 

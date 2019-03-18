@@ -10,7 +10,7 @@ class-lesson: ['get-to-know-python']
 permalink: /courses/earth-analytics-python/use-time-series-data-in-python/python-syntax-and-using-functions/
 nav-title: 'Review: Get to Know Python'
 dateCreated: 2018-02-05
-modified: 2019-03-04
+modified: '{:%Y-%m-%d}'.format(datetime.now())
 module-title: 'Get to Know the Python programming language'
 module-nav-title: 'Review: Get to Know Python'
 module-description: 'This module introduces the Python scientific programming language.
@@ -111,6 +111,7 @@ import earthpy as et
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
 
+
 Notice that at the top of your script you also set the working directory. You use the `.chdir()` function from the `os` library to set the working directory in python. Set your working directory to the `earth-analytics` directory that you created last week. Your path should look something like this:
 
 `/Users/your-user-name/Documents/earth-analytics/`
@@ -139,6 +140,11 @@ If you've used python before, you may be used to using `plt.show()`. `plt.ion()`
 # Force notebooks to plot figures inline (in the notebook)
 plt.ion()
 ```
+
+
+
+
+
 
 {:.input}
 ```python
@@ -321,10 +327,11 @@ data.plot(x='DATE',
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py01-python-syntax-and-using-basic-functions_16_0.png" alt = "Basic plot of precipitation data in Boulder, Colorado 2003-2013">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py01-python-syntax-and-using-basic-functions_20_0.png" alt = "Basic plot of precipitation data in Boulder, Colorado 2003-2013">
 <figcaption>Basic plot of precipitation data in Boulder, Colorado 2003-2013</figcaption>
 
 </figure>
+
 
 
 
@@ -827,3 +834,9 @@ If you need help with a specific function, let's say `plt.plot`, you can type:
 ```python
 help(plt.plot)
 ```
+
+
+
+
+
+
