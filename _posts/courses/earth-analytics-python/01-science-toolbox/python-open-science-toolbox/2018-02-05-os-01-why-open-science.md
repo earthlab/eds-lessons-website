@@ -7,7 +7,7 @@ category: [courses]
 class-lesson: ['open-science-python']
 permalink: /courses/earth-analytics-python/python-open-science-toolbox/jupyter-notebooks-for-open-science/
 nav-title: "Why Open Science"
-dateCreated: 2018-02-08
+dateCreated: '{:%Y-%m-%d}'.format(datetime.now())
 modified: '2018-02-09'
 module-title: 'Open Science Python'
 module-nav-title: 'Open Science Python'
