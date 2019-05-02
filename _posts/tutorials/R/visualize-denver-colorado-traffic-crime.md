@@ -12,7 +12,7 @@ comments: true
 lang: [r]
 lib: [dplyr, ggplot2, lubridate, viridis, RCurl]
 ---
-# test
+
 
 The city of Denver publicly hosts crime data from the past five years in their open data catalog.
 In this tutorial, we will use R to access and visualize these data, which are essentially spatiotemporally referenced points with features for type of crime, neighborhood, etc. 

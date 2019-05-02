@@ -12,7 +12,7 @@ comments: true
 lang: [r]
 lib: [ggmap, viridis]
 ---
-#test
+
 
 It is often useful to quickly compute a measure of point density and show it on a map. 
 In this tutorial, we'll demonstrate this using crime data from Houston, Texas 
