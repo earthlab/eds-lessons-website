@@ -54,7 +54,7 @@ topics:
 ## 
 ##     xor
 ## Attaching package ff
-## - getOption("fftempdir")=="/tmp/RtmpGGEu7x"
+## - getOption("fftempdir")=="/tmp/RtmpWU7CeH"
 ## - getOption("ffextension")=="ff"
 ## - getOption("ffdrop")==TRUE
 ## - getOption("fffinonexit")==TRUE
@@ -75,7 +75,6 @@ topics:
 ##     is.factor, is.ordered
 ## Warning in unzip(file.path(data_dir, basename(url)), exdir =
 ## file.path(data_dir, : error 1 in extracting from zip file
-## Error in setwd(Sys.getenv("HOME"), "earth-analytics"): unused argument ("earth-analytics")
 ```
 
 <div class='notice--success' markdown="1">
