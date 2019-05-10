@@ -5,7 +5,7 @@ excerpt: "This lesson introduces the raster geotiff file format - which is often
 to store lidar raster data. You learn the 3 key spatial attributes of a raster dataset
 including Coordinate reference system, spatial extent and resolution."
 authors: ['Leah Wasser']
-modified: '2019-05-02'
+modified: '2019-05-10'
 category: [courses]
 class-lesson: ['intro-lidar-raster-r']
 permalink: /courses/earth-analytics/lidar-raster-data-r/open-lidar-raster-r/
@@ -34,6 +34,49 @@ topics:
 {% include toc title="In This Lesson" icon="file-text" %}
 
 
+```
+## [1] "need to install a package"
+## Installing package into '/usr/local/lib/R/site-library'
+## (as 'lib' is unspecified)
+## also installing the dependency 'bit'
+## Loading required package: bit
+## Attaching package bit
+## package:bit (c) 2008-2012 Jens Oehlschlaegel (GPL-2)
+## creators: bit bitwhich
+## coercion: as.logical as.integer as.bit as.bitwhich which
+## operator: ! & | xor != ==
+## querying: print length any all min max range sum summary
+## bit access: length<- [ [<- [[ [[<-
+## for more help type ?bit
+## 
+## Attaching package: 'bit'
+## The following object is masked from 'package:base':
+## 
+##     xor
+## Attaching package ff
+## - getOption("fftempdir")=="/tmp/RtmpGGEu7x"
+## - getOption("ffextension")=="ff"
+## - getOption("ffdrop")==TRUE
+## - getOption("fffinonexit")==TRUE
+## - getOption("ffpagesize")==65536
+## - getOption("ffcaching")=="mmnoflush"  -- consider "ffeachflush" if your system stalls on large writes
+## - getOption("ffbatchbytes")==16777216 -- consider a different value for tuning your system
+## - getOption("ffmaxbytes")==536870912 -- consider a different value for tuning your system
+## 
+## Attaching package: 'ff'
+## The following objects are masked from 'package:bit':
+## 
+##     clone, clone.default, clone.list
+## The following objects are masked from 'package:utils':
+## 
+##     write.csv, write.csv2
+## The following objects are masked from 'package:base':
+## 
+##     is.factor, is.ordered
+## Warning in unzip(file.path(data_dir, basename(url)), exdir =
+## file.path(data_dir, : error 1 in extracting from zip file
+## Error in setwd(Sys.getenv("HOME"), "earth-analytics"): unused argument ("earth-analytics")
+```
 
 <div class='notice--success' markdown="1">
 
