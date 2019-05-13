@@ -5,7 +5,7 @@ excerpt: "This lesson introduces the raster geotiff file format - which is often
 to store lidar raster data. You learn the 3 key spatial attributes of a raster dataset
 including Coordinate reference system, spatial extent and resolution."
 authors: ['Leah Wasser']
-modified: '2019-05-10'
+modified: '2019-05-13'
 category: [courses]
 class-lesson: ['intro-lidar-raster-r']
 permalink: /courses/earth-analytics/lidar-raster-data-r/open-lidar-raster-r/
@@ -31,14 +31,11 @@ topics:
   spatial-data-and-gis: ['raster-data']
 ---
 #test
+
 {% include toc title="In This Lesson" icon="file-text" %}
 
 
 ```
-## [1] "need to install a package"
-## Installing package into '/usr/local/lib/R/site-library'
-## (as 'lib' is unspecified)
-## also installing the dependency 'bit'
 ## Loading required package: bit
 ## Attaching package bit
 ## package:bit (c) 2008-2012 Jens Oehlschlaegel (GPL-2)
@@ -54,7 +51,7 @@ topics:
 ## 
 ##     xor
 ## Attaching package ff
-## - getOption("fftempdir")=="/tmp/RtmpWU7CeH"
+## - getOption("fftempdir")=="/tmp/RtmpvA46q1"
 ## - getOption("ffextension")=="ff"
 ## - getOption("ffdrop")==TRUE
 ## - getOption("fffinonexit")==TRUE
@@ -73,8 +70,13 @@ topics:
 ## The following objects are masked from 'package:base':
 ## 
 ##     is.factor, is.ordered
-## Warning in unzip(file.path(data_dir, basename(url)), exdir =
-## file.path(data_dir, : error 1 in extracting from zip file
+## Warning in download.file(url, file.path(data_dir, paste0(basename(url), :
+## URL https://ndownloader.figshare.com/files/7446715: cannot open destfile '/
+## root/earth-analytics/data/7446715.zip', reason 'No such file or directory'
+## Warning in download.file(url, file.path(data_dir, paste0(basename(url), :
+## downloaded length 0 != reported length 226190834
+## Error in download.file(url, file.path(data_dir, paste0(basename(url), : cannot download all files
+## Error in setwd(file.path(Sys.getenv("HOME"), "earth-analytics")): cannot change working directory
 ```
 
 <div class='notice--success' markdown="1">
