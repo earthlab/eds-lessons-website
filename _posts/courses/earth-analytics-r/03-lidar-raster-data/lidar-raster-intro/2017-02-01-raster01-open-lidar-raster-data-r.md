@@ -36,40 +36,6 @@ topics:
 
 
 ```
-## Loading required package: bit
-## Attaching package bit
-## package:bit (c) 2008-2012 Jens Oehlschlaegel (GPL-2)
-## creators: bit bitwhich
-## coercion: as.logical as.integer as.bit as.bitwhich which
-## operator: ! & | xor != ==
-## querying: print length any all min max range sum summary
-## bit access: length<- [ [<- [[ [[<-
-## for more help type ?bit
-## 
-## Attaching package: 'bit'
-## The following object is masked from 'package:base':
-## 
-##     xor
-## Attaching package ff
-## - getOption("fftempdir")=="/tmp/RtmpvA46q1"
-## - getOption("ffextension")=="ff"
-## - getOption("ffdrop")==TRUE
-## - getOption("fffinonexit")==TRUE
-## - getOption("ffpagesize")==65536
-## - getOption("ffcaching")=="mmnoflush"  -- consider "ffeachflush" if your system stalls on large writes
-## - getOption("ffbatchbytes")==16777216 -- consider a different value for tuning your system
-## - getOption("ffmaxbytes")==536870912 -- consider a different value for tuning your system
-## 
-## Attaching package: 'ff'
-## The following objects are masked from 'package:bit':
-## 
-##     clone, clone.default, clone.list
-## The following objects are masked from 'package:utils':
-## 
-##     write.csv, write.csv2
-## The following objects are masked from 'package:base':
-## 
-##     is.factor, is.ordered
 ## Warning in download.file(url, file.path(data_dir, paste0(basename(url), :
 ## URL https://ndownloader.figshare.com/files/7446715: cannot open destfile '/
 ## root/earth-analytics/data/7446715.zip', reason 'No such file or directory'
