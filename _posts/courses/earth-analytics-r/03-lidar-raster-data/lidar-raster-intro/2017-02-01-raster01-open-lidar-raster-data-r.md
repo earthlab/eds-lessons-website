@@ -30,7 +30,7 @@ topics:
   earth-science: ['vegetation']
   spatial-data-and-gis: ['raster-data']
 ---
-#test
+# tes
 
 {% include toc title="In This Lesson" icon="file-text" %}
 
@@ -52,6 +52,7 @@ list.files()
 
 
 ```
+## [1] "the dir is /root/earth-analytics/data"
 ## Warning in download.file(url, file.path(data_dir, paste0(basename(url), :
 ## URL https://ndownloader.figshare.com/files/7446715: cannot open destfile '/
 ## root/earth-analytics/data/7446715.zip', reason 'No such file or directory'
