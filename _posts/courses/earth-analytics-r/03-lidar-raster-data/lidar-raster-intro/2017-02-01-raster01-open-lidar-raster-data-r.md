@@ -36,6 +36,7 @@ topics:
 
 
 ```r
+# printing thing
 getwd()
 ## [1] "/root/eds-lessons-dev/courses/earth-analytics-r/03-lidar-raster-data/lidar-raster-intro"
 list.dirs()
