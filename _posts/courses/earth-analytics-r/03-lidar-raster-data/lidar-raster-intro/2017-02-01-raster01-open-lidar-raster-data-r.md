@@ -5,7 +5,7 @@ excerpt: "This lesson introduces the raster geotiff file format - which is often
 to store lidar raster data. You learn the 3 key spatial attributes of a raster dataset
 including Coordinate reference system, spatial extent and resolution."
 authors: ['Leah Wasser']
-modified: '2019-05-14'
+modified: '2019-05-15'
 category: [courses]
 class-lesson: ['intro-lidar-raster-r']
 permalink: /courses/earth-analytics/lidar-raster-data-r/open-lidar-raster-r/
@@ -30,37 +30,10 @@ topics:
   earth-science: ['vegetation']
   spatial-data-and-gis: ['raster-data']
 ---
-# tes
-
+#test
 {% include toc title="In This Lesson" icon="file-text" %}
 
 
-```r
-# printing thing
-getwd()
-## [1] "/root/eds-lessons-dev/courses/earth-analytics-r/03-lidar-raster-data/lidar-raster-intro"
-list.dirs()
-## [1] "."
-list.files()
-## [1] "2017-02-01-raster01-open-lidar-raster-data-r.Rmd"                  
-## [2] "2017-02-01-raster02-plot-raster-histograms-r.Rmd"                  
-## [3] "2017-02-01-raster03-metadata-geotiff-file-format-raster-data-r.Rmd"
-## [4] "2017-02-01-raster04-chm-dem-dsm.Rmd"                               
-## [5] "2017-02-01-raster05-classify-raster.Rmd"                           
-## [6] "2017-02-01-raster06-crop-raster.Rmd"
-```
-
-
-```
-## [1] "the dir is /root/earth-analytics/data"
-## Warning in download.file(url, file.path(data_dir, paste0(basename(url), :
-## URL https://ndownloader.figshare.com/files/7446715: cannot open destfile '/
-## root/earth-analytics/data/7446715.zip', reason 'No such file or directory'
-## Warning in download.file(url, file.path(data_dir, paste0(basename(url), :
-## downloaded length 0 != reported length 226190834
-## Error in download.file(url, file.path(data_dir, paste0(basename(url), : cannot download all files
-## Error in setwd(file.path(Sys.getenv("HOME"), "earth-analytics")): cannot change working directory
-```
 
 <div class='notice--success' markdown="1">
 
