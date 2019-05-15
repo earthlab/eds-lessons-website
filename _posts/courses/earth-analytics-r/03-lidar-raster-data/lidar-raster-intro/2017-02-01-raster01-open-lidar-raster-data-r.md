@@ -34,6 +34,10 @@ topics:
 {% include toc title="In This Lesson" icon="file-text" %}
 
 
+```
+## Warning in unzip(zip_fn, exdir = file.path(data_dir,
+## week_id_list[[basename(url)]])): error 1 in extracting from zip file
+```
 
 <div class='notice--success' markdown="1">
 
