@@ -3,7 +3,7 @@ layout: single
 category: courses
 title: "Multispectral Imagery R - NAIP, Landsat, Fire & Remote Sensing"
 permalink: /courses/earth-analytics/multispectral-remote-sensing-data/
-modified: '2019-06-28'
+modified: '2019-07-01'
 week-landing: 7
 week: 7
 sidebar:
