@@ -41,7 +41,7 @@ After completing this tutorial, you will be able to:
 
 ## <i class="fa fa-check-square-o fa-2" aria-hidden="true"></i> What You Need
 
-You don't need anything for this lesson. Please watch the videos below. They
+You do not need anything for this lesson. Please watch the videos below. They
 review what you learned in class with the additive light demo.
 
 </div>
@@ -58,7 +58,7 @@ light models and demonstrates subtractive models with paints.
 
 The ~3 minute video below has no sound, but look closely as they zoom in on the pixels of
 an old school computer monitor. You will notice that each pixel is composed of three
-types of light red, green and blue.
+types of light: red, green and blue.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HzY4Q5fKxmU" frameborder="0" allowfullscreen></iframe>
 

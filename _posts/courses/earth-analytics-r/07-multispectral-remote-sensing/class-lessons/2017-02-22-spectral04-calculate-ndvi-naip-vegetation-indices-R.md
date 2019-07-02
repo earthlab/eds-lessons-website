@@ -46,7 +46,8 @@ After completing this tutorial, you will be able to:
 You will need a computer with internet access to complete this lesson and the
 data for week 7 of the course.
 
-{% include/data_subsets/course_earth_analytics/_data-week6-7.md %}
+{% include /data_subsets/course_earth_analytics/_data-week6-7.md %}
+
 </div>
 
 ## About Vegetation Indices
@@ -63,7 +64,7 @@ will represent areas that potentially have healthy vegetation.
 ## Normalized Difference Vegetation Index (NDVI)
 
 The Normalized Difference Vegetation Index (NDVI) is a quantitative index of
-greenness ranging from 0-1 where 0 represents minimal or no greenness and 1
+greenness ranging from 0-1, where 0 represents minimal or no greenness and 1
 represents maximum greenness.
 
 NDVI is often used for a quantitate proxy measure of vegetation health, cover
@@ -258,8 +259,8 @@ microbenchmark((naip_multispectral_br[[4]] - naip_multispectral_br[[1]]) / (naip
 ## Unit: milliseconds
 ##                                                                                                                      expr
 ##  (naip_multispectral_br[[4]] - naip_multispectral_br[[1]])/(naip_multispectral_br[[4]] +      naip_multispectral_br[[1]])
-##       min       lq     mean   median      uq      max neval
-##  793.6595 830.1719 869.2103 851.4693 920.615 958.3308    10
+##       min       lq     mean  median       uq      max neval
+##  732.5547 746.3468 780.2446 766.595 807.0131 896.7674    10
 
 # is a raster brick faster?
 microbenchmark(overlay(naip_multispectral_br[[1]],
@@ -268,8 +269,8 @@ microbenchmark(overlay(naip_multispectral_br[[1]],
 ## Unit: milliseconds
 ##                                                                                         expr
 ##  overlay(naip_multispectral_br[[1]], naip_multispectral_br[[4]],      fun = normalized_diff)
-##       min       lq     mean   median       uq      max neval
-##  573.1492 579.6436 627.5905 586.5163 691.6121 719.9554    10
+##       min      lq     mean   median       uq      max neval
+##  508.4428 541.916 568.3845 561.9892 583.8746 637.7223    10
 ```
 
 Notice that the results above suggest that the overlay function is in fact

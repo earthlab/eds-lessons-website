@@ -65,8 +65,8 @@ store sets of related functions. You can then call those functions using the
 Sourcing functions is good practice because it is:
 
 1. **Reusable:** It allows you to reuse functions over and over using the same code (i.e. you don't have to copy and paste the function into each new analysis script).
-2. **Easy to Maintain:** It allows you to quick fix a function that doesn't work properly - only once.
-3. **Sharable:** In the same way that a library can be used by anyone, you can share your `R` script containing your functions with anyone too. This is the first step towards creating an `R` package!
+2. **Easy to Maintain:** It allows you to quickly fix a function that doesn't work properly - only once.
+3. **Sharable:** In the same way that a library can be used by anyone, you can share your `R` script containing your functions with anyone, too. This is the first step towards creating an `R` package!
 
 
 ## How to Source Functions in R
