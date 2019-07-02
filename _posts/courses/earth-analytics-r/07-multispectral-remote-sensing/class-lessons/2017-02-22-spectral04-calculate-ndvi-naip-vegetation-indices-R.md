@@ -3,7 +3,7 @@ layout: single
 title: "Calculate NDVI in R: Remote Sensing Vegetation Index"
 excerpt: "NDVI is calculated using near infrared and red wavelengths or types of light and is used to measure vegetation greenness or health. Learn how to calculate remote sensing NDVI using multispectral imagery in R."
 authors: ['Leah Wasser']
-modified: '2019-07-01'
+modified: '2019-07-02'
 category: [courses]
 class-lesson: ['spectral-data-fire-r']
 permalink: /courses/earth-analytics/multispectral-remote-sensing-data/vegetation-indices-NDVI-in-R/
@@ -258,8 +258,8 @@ microbenchmark((naip_multispectral_br[[4]] - naip_multispectral_br[[1]]) / (naip
 ## Unit: milliseconds
 ##                                                                                                                      expr
 ##  (naip_multispectral_br[[4]] - naip_multispectral_br[[1]])/(naip_multispectral_br[[4]] +      naip_multispectral_br[[1]])
-##       min      lq     mean median       uq      max neval
-##  785.8078 813.556 849.5836 823.21 898.5144 944.1629    10
+##       min       lq     mean   median      uq      max neval
+##  793.6595 830.1719 869.2103 851.4693 920.615 958.3308    10
 
 # is a raster brick faster?
 microbenchmark(overlay(naip_multispectral_br[[1]],
@@ -269,7 +269,7 @@ microbenchmark(overlay(naip_multispectral_br[[1]],
 ##                                                                                         expr
 ##  overlay(naip_multispectral_br[[1]], naip_multispectral_br[[4]],      fun = normalized_diff)
 ##       min       lq     mean   median       uq      max neval
-##  560.9004 580.1396 614.2157 600.8136 668.5692 691.0903    10
+##  573.1492 579.6436 627.5905 586.5163 691.6121 719.9554    10
 ```
 
 Notice that the results above suggest that the overlay function is in fact
