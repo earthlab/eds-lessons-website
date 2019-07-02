@@ -3,7 +3,7 @@ layout: single
 title: "The Fastest Way to Process Rasters in R"
 excerpt: "."
 authors: ['Leah Wasser']
-modified: '2019-07-01'
+modified: '2019-07-02'
 category: [courses]
 class-lesson: ['spectral-data-fire-r']
 permalink: /courses/earth-analytics/multispectral-remote-sensing-data/process-rasters-faster-in-R/
@@ -41,7 +41,8 @@ After completing this tutorial, you will be able to:
 You will need a computer with internet access to complete this lesson and the
 data for week 7 of the course.
 
-{% include/data_subsets/course_earth_analytics/_data-week6-7.md %}
+{% include /data_subsets/course_earth_analytics/_data-week6-7.md %}
+
 </div>
 
 Below you will find several benchmark tests that demonstrate the fastest way
@@ -110,18 +111,18 @@ library(microbenchmark)
 # is it faster?
 microbenchmark((lidar_dsm - lidar_dsm), times = 10)
 ## Unit: milliseconds
-##                     expr      min       lq    mean   median       uq
-##  (lidar_dsm - lidar_dsm) 752.3842 785.3718 794.681 786.6997 809.3263
+##                     expr      min       lq     mean   median       uq
+##  (lidar_dsm - lidar_dsm) 757.5662 804.9185 819.2561 817.0094 838.9105
 ##       max neval
-##  849.4979    10
+##  873.4138    10
 
 microbenchmark(overlay(lidar_dtm, lidar_dsm,
                      fun = diff_rasters), times = 10)
 ## Unit: seconds
-##                                               expr      min     lq    mean
-##  overlay(lidar_dtm, lidar_dsm, fun = diff_rasters) 1.162438 1.1645 1.17442
-##    median       uq      max neval
-##  1.171805 1.187662 1.190643    10
+##                                               expr      min       lq
+##  overlay(lidar_dtm, lidar_dsm, fun = diff_rasters) 1.198717 1.212802
+##      mean   median       uq      max neval
+##  1.241718 1.238901 1.268755 1.279666    10
 ```
 
 The overlay function is actually not faster when you are performing basic
@@ -162,7 +163,7 @@ microbenchmark((naip_multispectral_st[[4]] - naip_multispectral_st[[1]]) / (naip
 ##                                                                                                                      expr
 ##  (naip_multispectral_st[[4]] - naip_multispectral_st[[1]])/(naip_multispectral_st[[4]] +      naip_multispectral_st[[1]])
 ##       min       lq     mean   median       uq      max neval
-##  1.846348 1.913369 1.913634 1.925505 1.940313 1.942633     5
+##  1.917163 2.075828 2.161663 2.086682 2.093105 2.635534     5
 
 
 # is overlay faster?
@@ -172,8 +173,8 @@ microbenchmark(overlay(naip_multispectral_st[[1]],
 ## Unit: seconds
 ##                                                                                         expr
 ##  overlay(naip_multispectral_st[[1]], naip_multispectral_st[[4]],      fun = normalized_diff)
-##       min       lq    mean   median      uq      max neval
-##  1.249899 1.250932 1.26095 1.251381 1.26149 1.291048     5
+##       min       lq    mean  median       uq      max neval
+##  1.305981 1.316353 1.36313 1.37898 1.400719 1.413618     5
 
 # what if you make your stack a brick - is it faster?
 naip_multispectral_br <- brick(naip_multispectral_st)
@@ -186,14 +187,14 @@ microbenchmark(overlay(naip_multispectral_br[[1]],
 ## Unit: milliseconds
 ##                                                                                         expr
 ##  overlay(naip_multispectral_br[[1]], naip_multispectral_br[[4]],      fun = normalized_diff)
-##       min       lq     mean   median       uq      max neval
-##  435.2746 438.7242 468.1817 455.7993 468.5217 542.5888     5
+##       min       lq    mean   median       uq      max neval
+##  482.1299 517.0372 529.008 519.8523 522.0183 604.0026     5
 ```
 
 Notice that the results above suggest that the `overlay()` function is in fact
 just a bit faster than the regular raster math approach. This may seem minor now.
 However, you are only working with 55mb files. This will save processing time in the
-long run as you work with larger raster files.
+long run, as you work with larger raster files.
 
 <div class="notice--info" markdown="1">
 
