@@ -4,7 +4,7 @@ title: "About the Geotiff (.tif) Raster File Format: Raster Data in Python"
 excerpt: "This lesson introduces the geotiff file format. Further it introduces the
 concept of metadata - or data about the data. Metadata describe key characteristics of a data set. For spatial data these characteristics including CRS, resolution and spatial extent. Here you learn about the use of tif tags or metadata embedded within a geotiff file as they can be used to explore data programatically."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-09
 category: ['courses']
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/intro-to-the-geotiff-file-format/
@@ -81,6 +81,8 @@ programmatically. You can quickly view the spatial **extent**,
 
 NOTE: not all geotiffs contain tif tags!
 
+_test - force trigger rebuild_
+
 {:.input}
 ```python
 # Import all packages in their own cell at the top of your notebook
@@ -117,7 +119,7 @@ lidar_dem.meta
      'width': 4000,
      'height': 2000,
      'count': 1,
-     'crs': CRS({'init': 'epsg:32613'}),
+     'crs': CRS.from_epsg(32613),
      'transform': Affine(1.0, 0.0, 472000.0,
             0.0, -1.0, 4436000.0)}
 
@@ -175,7 +177,7 @@ lidar_dem_mask
     array([[  0,   0,   0, ..., 255, 255, 255],
            [  0,   0,   0, ..., 255, 255, 255],
            [  0,   0,   0, ..., 255, 255, 255],
-           ..., 
+           ...,
            [  0,   0,   0, ..., 255, 255, 255],
            [  0,   0,   0, ..., 255, 255, 255],
            [  0,   0,   0, ..., 255, 255, 255]], dtype=uint8)
@@ -206,7 +208,7 @@ print(lidar_dem.bounds)
 ```
 
 {:.output}
-    +init=epsg:32613
+    EPSG:32613
     BoundingBox(left=472000.0, bottom=4434000.0, right=476000.0, top=4436000.0)
 
 

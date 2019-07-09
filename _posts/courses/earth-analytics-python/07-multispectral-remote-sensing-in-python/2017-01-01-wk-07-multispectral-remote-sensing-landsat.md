@@ -3,7 +3,7 @@ layout: single
 category: courses
 title: "Multispectral Imagery Python - NAIP, Landsat, Fire & Remote Sensing"
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-in-python/
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-09
 week-landing: 7
 week: 7
 sidebar:
@@ -52,6 +52,12 @@ At the end of this week you will be able to:
 
 
 
+
+
+
+{:.output}
+    Downloading from https://ndownloader.figshare.com/files/10960211?private_link=18f892d9f3645344b2fe
+    Extracted output to /root/earth-analytics/data/cs-test-naip/.
 
 
 

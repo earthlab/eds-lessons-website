@@ -3,7 +3,7 @@ layout: single
 title: "Learn to Use NAIP Multiband Remote Sensing Images in Python"
 excerpt: "Learn how to open up a multi-band raster layer or image stored in .tiff format in Python using Rasterio. Learn how to plot histograms of raster values and how to plot 3 band RGB and color infrared or false color images."
 authors: ['Leah Wasser']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-09
 category: [courses]
 class-lesson: ['multispectral-remote-sensing-data-python']
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-in-python/naip-imagery-raster-stacks-in-python/
@@ -59,7 +59,7 @@ Just like you did with single band rasters, you will use the `rasterio.open()` f
 
 * To import multi-band raster data you will use the `stack()` function.
 * If your multi-band data are imagery that you wish to composite into a color image, you can use the `earthpy`
-`plotRGB()` function to plot a 3 band raster image.
+`plot_rgb()` function to plot a 3 band raster image.
 
 <figure>
     <a href="{{ site.url }}/images/courses/earth-analytics/raster-data/single-vs-multi-band-raster-data.png">
@@ -100,6 +100,12 @@ in that band. DARKER colors represent a weaker reflection.
 
 
 
+{:.output}
+    Downloading from https://ndownloader.figshare.com/files/10960109
+    Extracted output to /root/earth-analytics/data/cold-springs-fire/.
+
+
+
 
 
 {:.output}
@@ -114,6 +120,21 @@ in that band. DARKER colors represent a weaker reflection.
 
 
 
+
+{:.output}
+{:.execute_result}
+
+
+
+    <matplotlib.axes._subplots.AxesSubplot at 0x7f06adb3fdd8>
+
+
+
+
+
+#### RBG Plot 
+You can plot the red, green and blue bands together to create an RGB image. This is
+what you would see with our eyes if you were in the airplane looking down at the earth.
 
 
 
@@ -132,7 +153,7 @@ in that band. DARKER colors represent a weaker reflection.
 
 #### Each band plotted separately
 
-Note there are four bands below. You are looking at the red, green, blue and Near
+Note there are four bands below. You are looking at the red, green, blue and near
 infrared bands of a NAIP image. What do you notice about the relative darkness /
 lightness of each image? Is one image brighter than the other?
 
@@ -151,12 +172,8 @@ lightness of each image? Is one image brighter than the other?
 
 
 
-You can plot the red, green and blue bands together to create an RGB image. This is
-what you would see with our eyes if you were in the airplane looking down at the earth.
 
-
-
-## CIR Image
+### Color Infrared (CIR) Image
 
 If the image has a 4th NIR band, you can create a CIR (sometimes called false color)
 image. In a color infrared image, the NIR band is plotted on the "red" band. Thus vegetation, which reflects strongly in the NIR part of the spectrum, is colored "red". CIR images are often used to better understand vegetation cover and health in an area.
@@ -167,7 +184,7 @@ image. In a color infrared image, the NIR band is plotted on the "red" band. Thu
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_12_0.png" alt = "Near infrared light reflects strongly off of vegetation. When you plot a near infrared band from remote sensing images on the red channel, vegetation is emphasized.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_11_0.png" alt = "Near infrared light reflects strongly off of vegetation. When you plot a near infrared band from remote sensing images on the red channel, vegetation is emphasized.">
 <figcaption>Near infrared light reflects strongly off of vegetation. When you plot a near infrared band from remote sensing images on the red channel, vegetation is emphasized.</figcaption>
 
 </figure>
@@ -213,10 +230,9 @@ NAIP data access: The data used in this lesson were downloaded from the <a href=
 
 Next, you will use NAIP imagery for the Coldsprings fire study area in
 Colorado. To work with multi-band raster data you will use the `rasterio` and `geopandas`
-packages. You will also use the `spatial` module from the `earthpy` package for raster plotting.
+packages. You will also use the `plot` module from the `earthpy` package for raster plotting.
 
 Before you get started, make sure that your working directory is set.
-
 
 {:.input}
 ```python
@@ -229,9 +245,12 @@ import matplotlib as mpl
 import rasterio as rio
 import geopandas as gpd
 import earthpy as et
-import earthpy.spatial as es
+import earthpy.plot as ep
 
-# set working directory
+# Get the data
+data = et.data.get_data('cold-springs-fire')
+
+# Set working directory
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 
 mpl.rcParams['figure.figsize'] = (10, 10)
@@ -279,10 +298,8 @@ Just like you've done before, you can plot a single band in the NAIP raster usin
 
 {:.input}
 ```python
-fig, ax = plt.subplots()
-ax.imshow(naip_csf[0], cmap='Greys')
-ax.set(title="NAIP RGB Imagery - Band 1-Red\nCold Springs Fire Scar",
-       xticks=[], yticks=[])
+ep.plot_bands(naip_csf[0],
+              title="NAIP RGB Imagery Band 1 Red \nCold Springs Fire Scar")
 plt.show()
 ```
 
@@ -291,7 +308,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_21_0.png" alt = "Plot showing band one (red) of the NAIP data from 2015.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_20_0.png" alt = "Plot showing band one (red) of the NAIP data from 2015.">
 <figcaption>Plot showing band one (red) of the NAIP data from 2015.</figcaption>
 
 </figure>
@@ -303,8 +320,9 @@ Or you can use the earthpy function `plot_bands()`. Note that in this lesson, yo
 
 {:.input}
 ```python
-es.plot_bands(naip_csf[0],
+ep.plot_bands(naip_csf[0],
               title="NAIP RGB Imagery - Band 1-Red\nCold Springs Fire Scar")
+plt.show()
 ```
 
 {:.output}
@@ -312,7 +330,7 @@ es.plot_bands(naip_csf[0],
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_23_0.png" alt = "Plot showing band one (red) of the NAIP data from 2015 using the plot_bands() function.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_22_0.png" alt = "Plot showing band one (red) of the NAIP data from 2015 using the plot_bands() function.">
 <figcaption>Plot showing band one (red) of the NAIP data from 2015 using the plot_bands() function.</figcaption>
 
 </figure>
@@ -339,7 +357,7 @@ naip_csf_meta
      'width': 4377,
      'height': 2312,
      'count': 4,
-     'crs': CRS({'proj': 'utm', 'zone': 13, 'ellps': 'GRS80', 'towgs84': '0,0,0,0,0,0,0', 'units': 'm', 'no_defs': True}),
+     'crs': CRS.from_wkt('PROJCS["UTM Zone 13, Northern Hemisphere",GEOGCS["GRS 1980(IUGG, 1980)",DATUM["unknown",SPHEROID["GRS80",6378137,298.257222101],TOWGS84[0,0,0,0,0,0,0]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-105],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]]]'),
      'transform': Affine(1.0, 0.0, 457163.0,
             0.0, -1.0, 4426952.0)}
 
@@ -357,7 +375,7 @@ Next, examine the raster's min and max values. What is the value range?
 
 {:.input}
 ```python
-# view min and max value
+# View min and max value
 print(naip_csf.min())
 print(naip_csf.max())
 ```
@@ -385,12 +403,9 @@ You can plot a single band of your choice using numpy indexing. `naip_csf[1]` wi
 {:.input}
 ```python
 # Plot band 2 - green
-fig, ax = plt.subplots()
-ax.imshow(naip_csf[1], cmap='Greys')
-ax.set(title="RGB Imagery - Band 2 - Green\nCold Springs Fire Scar",
-       xticks=[], yticks=[])
+ep.plot_bands(naip_csf[1],
+              title="RGB Imagery - Band 2 - Green\nCold Springs Fire Scar")
 plt.show()
-
 ```
 
 {:.output}
@@ -398,7 +413,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_29_0.png" alt = "Plot showing band two (green) of the NAIP data from 2015.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_28_0.png" alt = "Plot showing band two (green) of the NAIP data from 2015.">
 <figcaption>Plot showing band two (green) of the NAIP data from 2015.</figcaption>
 
 </figure>
@@ -425,24 +440,25 @@ Similar to plotting a single band, in each band "color", the brightest pixels ar
 You can use the earthpy package to plot a single or all bands in your array. 
 To use earthpy call:
 
-`es.plot_bands()`
+`ep.plot_bands()`
 
-plot_bands() takes the following arguments:
+plot_bands() takes several key agruments including:
 
-* title: A single title for one band or a list of x titles for x bands in your array
-* figsize: a tutple of 2 values representing the x and y dimensions of the image.
-* cmap: the colormap that you'd like to use to plot the raster. Default is greyscale
-* cols: if you are plotting more than one band you can specify the number of columns in the grid that you'd like to plot. 
+* `arr`: an n-dimensional numpy array to plot.
+* `figsize`: a tutple of 2 values representing the x and y dimensions of the image.
+* `cols`: if you are plotting more than one band you can specify the number of columns in the grid that you'd like to plot. 
+* `title`: OPTIONAL - A single title for one band or a list of x titles for x bands in your array.
 
 {:.input}
 ```python
 titles = ["Red Band", "Green Band", "Blue Band", "Near Infrared (NIR) Band"]
 
-# plot all bands using the earthpy function
-es.plot_bands(naip_csf, 
-              title=titles,
+# Plot all bands using the earthpy function
+ep.plot_bands(naip_csf, 
               figsize=(12, 5), 
-              cols=2)
+              cols=2,
+              title=titles)
+plt.show()
 ```
 
 {:.output}
@@ -450,7 +466,7 @@ es.plot_bands(naip_csf,
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_32_0.png" alt = "Plot showing all NAIP data bands from 2015.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_31_0.png" alt = "Plot showing all NAIP data bands from 2015.">
 <figcaption>Plot showing all NAIP data bands from 2015.</figcaption>
 
 </figure>
@@ -458,20 +474,7 @@ es.plot_bands(naip_csf,
 
 
 
-<div class="notice--info" markdown="1">
-## Optional - How The plot_bands Function is Built
 
-
-```python
-
-fig, axs = plt.subplots(2, 2, figsize=(20, 10))
-for ax, band, the_title in zip(axs.ravel(), naip_csf, titles):
-    ax.imshow(band, cmap='Greys')
-    ax.set(xticks=[], yticks=[])
-    ax.set_title(the_title)
-plt.tight_layout()
-```
-</div>
 
 ## Plot RGB Data in Python
 
@@ -496,17 +499,18 @@ Previously you have plotted individual bands using a greyscale color ramp in Pyt
 You can use the Earthpy function called `plot_rgb()` to quickly plot 3 band composite images.
 This function has several key arguments including
 
-1. arr: a numpy array in rasterio band order (bands first)
-2. rgb: the three bands that you wish to plot on the red, green and blue channels respectively
-3. title: OPTIONAL - if you want to add a title to your plot.
+* `arr`: a numpy array in rasterio band order (bands first)
+* `rgb`: the three bands that you wish to plot on the red, green and blue channels respectively
+* `title`: OPTIONAL - if you want to add a title to your plot.
 
 Similar to plotting with geopandas, you can provide an `ax=` argument as well to plot your data on a particular matplotlib axis.
 
 {:.input}
 ```python
-es.plot_rgb(naip_csf,
+ep.plot_rgb(naip_csf,
            rgb=[0, 1, 2],
            title="RGB Composite image - NAIP")
+plt.show()
 ```
 
 {:.output}
@@ -514,7 +518,7 @@ es.plot_rgb(naip_csf,
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_36_0.png" alt = "RGB plot NAIP data from 2015.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_35_0.png" alt = "RGB plot NAIP data from 2015.">
 <figcaption>RGB plot NAIP data from 2015.</figcaption>
 
 </figure>
@@ -528,9 +532,10 @@ Optionally, you can also provide the bands that you wish to plot, the title and 
 
 {:.input}
 ```python
-es.plot_rgb(naip_csf, title="CIR NAIP image",
+ep.plot_rgb(naip_csf, title="CIR NAIP image",
             rgb=[3, 0, 1],
             figsize=(10, 8))
+plt.show()
 ```
 
 {:.output}
@@ -538,7 +543,7 @@ es.plot_rgb(naip_csf, title="CIR NAIP image",
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_38_0.png" alt = "CIR (Color Infrared) plot of NAIP data from 2015.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_37_0.png" alt = "CIR (Color Infrared) plot of NAIP data from 2015.">
 <figcaption>CIR (Color Infrared) plot of NAIP data from 2015.</figcaption>
 
 </figure>
@@ -552,7 +557,7 @@ es.plot_rgb(naip_csf, title="CIR NAIP image",
 ## <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Optional : How plot_rgb() Works
 
 To render a 3 band, color image in `Python`, you can use the `imshow()` function. 
-`Imshow` allows you to identify what bands you want to render in the red, green and blue regions. 
+`imshow` allows you to identify what bands you want to render in the red, green and blue regions. 
 
 To ensure that the image plots and is scalled correctly, you will use the `bytescale()` function which used to be a part of sci-py / sci-image. Scipy deprecated this function so we've added it to the `earthpy` package for you to use in this course
 
@@ -563,7 +568,7 @@ The code will look something like this:
 where
 
 * `ax.imshow()` is the call to plot the image
-* `es.bytescale()` ensures that the values in the image are stretched between 0 and 255 which is the range that our monitor can recognize. 
+* `et.spatial.bytescale()` ensures that the values in the image are stretched between 0 and 255 which is the range that our monitor can recognize. 
 
 IMPORTANT: when plotting in python, it is important that you TRANSPOSE the data.
 The data are read in with the bands FIRST and then the rows and columns. however imshow expects to find the individual bands last. We adjust the dimensions of the data using:
@@ -573,7 +578,7 @@ The data are read in with the bands FIRST and then the rows and columns. however
 Your final code will look like this:
 
 ```python
-# plot the first 3 bands of the raster (r,g,b bands)
+# Plot the first 3 bands of the raster (r,g,b bands)
 fig, ax = plt.subplots()
 ax.imshow(es.bytescale(naip_csf)[:3].transpose([1, 2, 0]))
 plt.show()
@@ -599,9 +604,10 @@ healthy leaves reflect MORE green light compared to red light however the bright
 {:.input}
 ```python
 titles = ['red', 'green', 'near\ninfrared']
-es.plot_bands(naip_csf[[0, 1, 3]],
-              figsize=(10,  5),
+ep.plot_bands(naip_csf[[0, 1, 3]],
+              figsize=(10,  7),
               title=titles)
+plt.show()
 ```
 
 {:.output}
@@ -609,7 +615,7 @@ es.plot_bands(naip_csf[[0, 1, 3]],
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_41_0.png" alt = "Plot showing the red vs green vs near infrared bands of the NAIP data. Do you notice a difference in brightness between the 3 images?">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_40_0.png" alt = "Plot showing the red vs green vs near infrared bands of the NAIP data. Do you notice a difference in brightness between the 3 images?">
 <figcaption>Plot showing the red vs green vs near infrared bands of the NAIP data. Do you notice a difference in brightness between the 3 images?</figcaption>
 
 </figure>
@@ -670,12 +676,13 @@ For convenience we have also built a stretch feature into `earthpy`. You can cal
 ```python
 band_indices = [0, 1, 2]
 
-# apply stretch using the earthpy plot_rgb function
-es.plot_rgb(naip_csf,
+# Apply stretch using the earthpy plot_rgb function
+ep.plot_rgb(naip_csf,
             rgb=band_indices,
             title="RGB NAIP image\n Stretch Applied",
             figsize=(10, 8),
             stretch=True)
+plt.show()
 ```
 
 {:.output}
@@ -683,7 +690,7 @@ es.plot_rgb(naip_csf,
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_47_0.png" alt = "Plot showing RGB image of NAIP data with a stretch applied to increase contrast.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_46_0.png" alt = "Plot showing RGB image of NAIP data with a stretch applied to increase contrast.">
 <figcaption>Plot showing RGB image of NAIP data with a stretch applied to increase contrast.</figcaption>
 
 </figure>
@@ -703,20 +710,23 @@ Just like you did with single band rasters, you can view a histogram of each ban
 
 
 
-You can use the `es.hist()` function in earthpy to plot histograms for all bands in your raster. Hist() accepts several arguments including
+You can use the `ep.hist()` function in earthpy to plot histograms for all bands in your raster. hist() accepts several key arguments including
 
-* `colors=`: a list of colors to use for each histogram
-* `title=`: plot titles to use for each histogram
+* `arr`: a numpy array in rasterio band order (bands first)
+* `colors`: a list of colors to use for each histogram.
+* `title`: plot titles to use for each histogram.
+* `cols`: the number of columns for the plot grid.
 
 {:.input}
 ```python
 # Create a colors and titles list to use in the histogram, then plot
 colors = ['r', 'g', 'b', 'k']
-titles = ['red band', 'green band', 'blue band', 'nir band']
-es.hist(naip_csf, 
+titles = ['red band', 'green band', 'blue band', 'near-infrared band']
+ep.hist(naip_csf, 
         colors=colors, 
         title=titles, 
         cols=2)
+plt.show()
 ```
 
 {:.output}
@@ -724,7 +734,7 @@ es.hist(naip_csf,
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_52_0.png" alt = "Histogram for each band in the NAIP data from 2015.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/07-multispectral-remote-sensing-in-python/01-multi-spectral-remote-sensing-python/2018-04-14-multispectral02-open-NAIP-imagery-in-python_51_0.png" alt = "Histogram for each band in the NAIP data from 2015.">
 <figcaption>Histogram for each band in the NAIP data from 2015.</figcaption>
 
 </figure>
