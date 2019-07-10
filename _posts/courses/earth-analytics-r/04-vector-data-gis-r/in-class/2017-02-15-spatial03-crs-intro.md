@@ -3,7 +3,7 @@ layout: single
 title: "Coordinate Reference System and Spatial Projection"
 excerpt: "Coordinate reference systems are used to convert locations on the earth which is round, to a two dimensional (flat) map. Learn about the differences between coordinate reference systems."
 authors: ['Leah Wasser']
-modified: '2019-06-25'
+modified: '2019-07-10'
 category: [courses]
 class-lesson: ['class-intro-spatial-r']
 permalink: /courses/earth-analytics/spatial-data-r/intro-to-coordinate-reference-systems/
@@ -218,7 +218,7 @@ worldMap <- ggplot(worldBound_df, aes(long,lat, group = group)) +
   coord_equal() +
   labs(x = "Longitude (Degrees)",
        y = "Latitude (Degrees)",
-      title = "Global Map - Geographic Coordinate System ",
+      title = "Global Map - Geographic Coordinate System TESTING BUILD",
       subtitle = "WGS84 Datum, Units: Degrees - Latitude / Longitude")
 
 worldMap
