@@ -3,7 +3,7 @@ layout: single
 title: 'Rain: a Driver of the 2013 Colorado Floods'
 excerpt: "The amount and/or duration of rainfall can impact how severe a flood is. Learn how rainfall is measured and used to understand flood impacts."
 authors: ['Leah Wasser', 'Lauren Herwehe']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-15
 category: [courses]
 class-lesson: ['about-2013-floods']
 permalink: /courses/earth-analytics-python/python-open-science-toolbox/how-rain-impacts-floods/
@@ -91,14 +91,8 @@ The figure below shows the total precipitation each month from 1948 to 2013 for 
 
 {:.input}
 ```python
-plt.rcParams['axes.titlesize'] = 20
-plt.rcParams['axes.facecolor']='white'
-plt.rcParams['lines.color'] = 'purple'
-plt.rcParams['grid.linestyle'] = '-'
-plt.rcParams['grid.linewidth'] = '.5'
-
 precip = pd.read_csv('data/colorado-flood/precipitation/805333-precip-daily-1948-2013.csv',
-                    parse_dates=['DATE'], na_values=['999.99'])
+                     parse_dates=['DATE'], na_values=['999.99'])
 # resample
 precip_d = precip.set_index('DATE')
 
@@ -107,11 +101,11 @@ daily_sum_precip = precip_d.resample('D').sum().apply(np.round, decimals=1)
 daily_sum_precip = daily_sum_precip[(daily_sum_precip.HPCP != 0.00)]
 
 # note when plottinglots of bars, snap = False will turn off the pixel snapping or set the width to be wider.
-fig, ax = plt.subplots(figsize = (16,8))
-ax.plot(daily_sum_precip.index, 
-       daily_sum_precip['HPCP'].values, 
-       'o',
-       color = 'purple')
+fig, ax = plt.subplots(figsize=(16, 8))
+ax.plot(daily_sum_precip.index,
+        daily_sum_precip['HPCP'].values,
+        'o',
+        color='purple')
 ax.set_title("Precipitation for Boulder Colorado 1948-2016")
 plt.show()
 ```
