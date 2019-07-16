@@ -4,7 +4,7 @@ category: courses
 title: "Lidar Remote Sensing Uncertainty - Compare Ground to Lidar Measurements of Tree Height in Python"
 permalink: /courses/earth-analytics-python/lidar-remote-sensing-uncertainty/
 week-landing: 5
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-16
 week: 5
 sidebar:
   nav:
@@ -50,6 +50,12 @@ For your homework you'll also need to download the data below.
 
 The plots below are examples of what your plot could look like. Feel free to
 customize or modify plot settings as you see fit! 
+
+
+
+{:.output}
+    Downloading from https://ndownloader.figshare.com/files/12459464
+    Extracted output to /root/earth-analytics/data/spatial-vector-lidar/.
 
 
 

@@ -3,7 +3,7 @@ layout: single
 title: "Compare Lidar With Human Measured Tree Heights - Remote Sensing Uncertainty"
 excerpt: "In this lesson, we cover the topic of uncertainty. We focus on the types of uncertainty that you can expect when working with tree height data both derived from lidar remote sensing and human measurements. Further we cover sources of error including systematic vs. random error."
 authors: ['Leah Wasser', 'Chris Holdgraf']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-16
 category: [courses]
 class-lesson: ['remote-sensing-uncertainty-python']
 permalink: /courses/earth-analytics-python/lidar-remote-sensing-uncertainty/understand-uncertainty-lidar/
@@ -284,11 +284,17 @@ Do they follow a 1:1 line? Do the data diverge from a 1:1 relationship?
 
 
 {:.output}
+    findfont: Font family ['Myriad Pro'] not found. Falling back to DejaVu Sans.
+    findfont: Font family ['Myriad Pro'] not found. Falling back to DejaVu Sans.
+
+
+
+{:.output}
 {:.display_data}
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty01-understand-uncertainty_23_0.png" alt = "Scatterplot showing the relationship between lidar and measured tree height.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/05-raster-vector-extract-data/in-class/2016-12-06-uncertainty01-understand-uncertainty_23_1.png" alt = "Scatterplot showing the relationship between lidar and measured tree height.">
 <figcaption>Scatterplot showing the relationship between lidar and measured tree height.</figcaption>
 
 </figure>

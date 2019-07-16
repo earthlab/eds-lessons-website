@@ -85,7 +85,8 @@ Get started by loading the required python libraries into your Jupyter notebook.
 
 {:.input}
 ```python
-# Load python libraries
+# load python libraries
+import numpy as np
 import os
 import pandas as pd
 import matplotlib.pyplot as plt

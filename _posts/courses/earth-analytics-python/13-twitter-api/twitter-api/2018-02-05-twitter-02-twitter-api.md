@@ -3,7 +3,7 @@ layout: single
 title: 'Get and Work With Twitter Data in Python Using Tweepy'
 excerpt: 'You can use the Twitter RESTful API to access tweet data from Twitter. Learn how to use tweepy to download and work with twitter social media data in Python.'
 authors: ['Martha Morrissey', 'Leah Wasser','Carson Farmer']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-16
 category: [courses]
 class-lesson: ['social-media-Python']
 permalink: /courses/earth-analytics-python/using-apis-natural-language-processing-twitter/get-and-use-twitter-data-in-python/
@@ -145,7 +145,7 @@ tweets
 
 
 
-    <tweepy.cursor.ItemIterator at 0x7fafc296e400>
+    <tweepy.cursor.ItemIterator at 0x7fe2b7b544e0>
 
 
 
@@ -173,11 +173,12 @@ for tweet in tweets:
 ```
 
 {:.output}
-    2/2 provide forest products to local mills, provide jobs to local communities, and improve the ecological health of… https://t.co/XemzXvyPyX
-    1/2 Obama's Forest Service Chief in 2015 --&gt;"Treating these acres through commercial thinning, hazardous fuels remo… https://t.co/01obvjezQW
-    RT @EnviroEdgeNews: US-#Volunteers care for abandoned #pets found in #California #wildfires; #Dogs, #cats, [#horses], livestock get care an…
-    RT @FairWarningNews: The wildfires that ravaged CA have been contained, but the health impacts from the resulting air pollution will be sev…
-    RT @chiarabtownley: If you know anybody who has been affected by the wildfires, please refer them to @awarenow_io It is one of the companie…
+    RT @Bewickwren: PG&amp;E working to repair nearly 10,000 problems as it steps up efforts to prevent equipment from sparking more #wildfires
+    It…
+    A year ago thunderstorms ignited more than 100 #wildfires in Oregon https://t.co/LRJtECh1s6 https://t.co/FPbW2tBD6g
+    RT @blmnv: Update: #JasperFire remains at 1165 acres.  Containment: 80%, w/ proj full containment 07/16 at 6 p.m. Structures confirmed dest…
+    RT @blmnv: Update: #JasperFire remains at 1165 acres.  Containment: 80%, w/ proj full containment 07/16 at 6 p.m. Structures confirmed dest…
+    RT @AntjeInness: #Wildfires in the #Arctic lead to enhanced CO concentrations in #Alaska and #Siberia on 14 July as seen here in #TROPOMI #…
 
 
 
@@ -200,11 +201,11 @@ tweets = tw.Cursor(api.search,
 
 
 
-    ['2/2 provide forest products to local mills, provide jobs to local communities, and improve the ecological health of… https://t.co/XemzXvyPyX',
-     '1/2 Obama\'s Forest Service Chief in 2015 --&gt;"Treating these acres through commercial thinning, hazardous fuels remo… https://t.co/01obvjezQW',
-     'RT @EnviroEdgeNews: US-#Volunteers care for abandoned #pets found in #California #wildfires; #Dogs, #cats, [#horses], livestock get care an…',
-     'RT @FairWarningNews: The wildfires that ravaged CA have been contained, but the health impacts from the resulting air pollution will be sev…',
-     'RT @chiarabtownley: If you know anybody who has been affected by the wildfires, please refer them to @awarenow_io It is one of the companie…']
+    ['RT @Bewickwren: PG&amp;E working to repair nearly 10,000 problems as it steps up efforts to prevent equipment from sparking more #wildfires\nIt…',
+     'A year ago thunderstorms ignited more than 100 #wildfires in Oregon https://t.co/LRJtECh1s6 https://t.co/FPbW2tBD6g',
+     'RT @blmnv: Update: #JasperFire remains at 1165 acres.  Containment: 80%, w/ proj full containment 07/16 at 6 p.m. Structures confirmed dest…',
+     'RT @blmnv: Update: #JasperFire remains at 1165 acres.  Containment: 80%, w/ proj full containment 07/16 at 6 p.m. Structures confirmed dest…',
+     'RT @AntjeInness: #Wildfires in the #Arctic lead to enhanced CO concentrations in #Alaska and #Siberia on 14 July as seen here in #TROPOMI #…']
 
 
 
@@ -248,11 +249,11 @@ tweets = tw.Cursor(api.search,
 
 
 
-    ['2/2 provide forest products to local mills, provide jobs to local communities, and improve the ecological health of… https://t.co/XemzXvyPyX',
-     '1/2 Obama\'s Forest Service Chief in 2015 --&gt;"Treating these acres through commercial thinning, hazardous fuels remo… https://t.co/01obvjezQW',
-     '"Start packing up!" Video shows how gender-reveal stunt sparked wildfire https://t.co/gvfNLI8NbO #Heatwave #Wildfires',
-     'The pictures and stories coming out of the California #wildfires are heartbreaking, but there are plenty of good st… https://t.co/s4D7JB3VGu',
-     'The wildfires that ravaged CA have been contained, but the health impacts from the resulting air pollution will be… https://t.co/bSdg9uHkqH']
+    ['A year ago thunderstorms ignited more than 100 #wildfires in Oregon https://t.co/LRJtECh1s6 https://t.co/FPbW2tBD6g',
+     '#NWTNewsNorth #SteenRiver #wildfires CN plans to rebuild Steen River bridge linking NWT and Alberta… https://t.co/pFYAzAhOSF',
+     'From #ScienceNow - Alaska Still Reeling From Incessant Wildfires https://t.co/YYpAokfvD9 #NASA #Alaska #wildfires',
+     'California’s #Wildfires Are 500 Percent Larger Due to #ClimateChange\n“Each degree of warming causes way more fire t… https://t.co/CwjL3llbWN',
+     "Worried about #wildfires? This map shows the fire hazard zones in California. (And it's going to get a major update… https://t.co/SpgWexmBE5"]
 
 
 
@@ -284,11 +285,11 @@ users_locs
 
 
 
-    [['TamaraHinton', 'Washington, DC'],
-     ['TamaraHinton', 'Washington, DC'],
-     ['robinsnewswire', "RT's Are FYI Purposes Only"],
-     ['PublicityErika', 'Seattle area'],
-     ['FairWarningNews', 'Los Angeles']]
+    [['wildfiretoday', 'South Dakota (Black Hills)'],
+     ['NNSLonline', 'Northern Canada'],
+     ['kellytechnology', 'Marco Island FL USA'],
+     ['ICLRCanada', 'Toronto, Ontario'],
+     ['KQED', 'San Francisco, CA']]
 
 
 
@@ -335,28 +336,28 @@ tweet_text
   <tbody>
     <tr>
       <th>0</th>
-      <td>TamaraHinton</td>
-      <td>Washington, DC</td>
+      <td>wildfiretoday</td>
+      <td>South Dakota (Black Hills)</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>TamaraHinton</td>
-      <td>Washington, DC</td>
+      <td>NNSLonline</td>
+      <td>Northern Canada</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>robinsnewswire</td>
-      <td>RT's Are FYI Purposes Only</td>
+      <td>kellytechnology</td>
+      <td>Marco Island FL USA</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>PublicityErika</td>
-      <td>Seattle area</td>
+      <td>ICLRCanada</td>
+      <td>Toronto, Ontario</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>FairWarningNews</td>
-      <td>Los Angeles</td>
+      <td>KQED</td>
+      <td>San Francisco, CA</td>
     </tr>
   </tbody>
 </table>
@@ -392,11 +393,11 @@ all_tweets[:5]
 
 
 
-    ['“But as climate change is happening in real time, the practice of climate science...has never been at greater risk.… https://t.co/hIo1VtDnfW',
-     '“Climate Change isn’t real.” https://t.co/hzY4vQ09xM',
-     'BBC News - Climate change: CO2 emissions rising for first time in four years https://t.co/cxrzCQmmml',
-     "Ooh LOL. Anderson Cooper - giving Trump's ignorance a whipping. https://t.co/wbivZx8YHX",
-     '#NCA2018 makes it abundantly clear: the U.S. must do more to limit carbon emissions and combat the effects of clima… https://t.co/Xc81JouHQb']
+    ['CLIMATE CHANGE IS REAL YOU DUMB CUNTS JUST WALK MORE INSTEAD OF DRIVE AND USE LESS PLASTIC',
+     "Climate change is upending the world around us. That's why we advocate for a #priceonpollution with HR 763, the… https://t.co/Ng4I8Azc1Y",
+     '@CanadaAction Has the leadership of #CanadaAction assessed the @IPCC_CH and @usgcrp change reports and have you pos… https://t.co/vgyjA54pBL',
+     '@VP @realDonaldTrump Under the leadership of @realDonaldTrump , the government is doing away with climate change st… https://t.co/uYFAl5Cvg6',
+     "Don't know why I read replies to articles, Extinction Rebellion are holding a protest in town for climate change an… https://t.co/Zeiyv6CV69"]
 
 
 

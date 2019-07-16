@@ -3,7 +3,7 @@ layout: single
 category: courses
 title: "Programmatic Data Access"
 permalink: /courses/earth-analytics-python/using-apis-natural-language-processing-twitter/
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-16
 week-landing: 13
 week: 13
 sidebar:
