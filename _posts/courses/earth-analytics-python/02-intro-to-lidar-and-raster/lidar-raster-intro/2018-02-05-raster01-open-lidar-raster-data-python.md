@@ -5,7 +5,7 @@ excerpt: "This lesson introduces the raster geotiff file format - which is often
 to store lidar raster data. You will learn the 3 key spatial attributes of a raster dataset
 including Coordinate reference system, spatial extent and resolution."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-16
 category: [courses]
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/open-lidar-raster-python/
@@ -78,22 +78,25 @@ from rasterio.plot import show
 import matplotlib.pyplot as plt
 import numpy as np
 import os
-plt.ion()
 
-from shapely.geometry import Polygon, mapping
+from shapely.geometry import Polygon, box
+import geopandas as gpd
 from rasterio.mask import mask
 # A package created for this class that will be discussed later in this lesson
 import earthpy as et
-
-# Set standard plot parameters for uniform plotting
-plt.rcParams['figure.figsize'] = (8, 8)
+import earthpy.plot as ep
 
 # Prettier plotting with seaborn
-import seaborn as sns; 
-sns.set(font_scale=1.5)
-sns.set_style("white")
+import seaborn as sns
+sns.set(font_scale=1.5, style="white")
 ```
 
+{:.input}
+```python
+# Get data and set wd
+et.data.get_data("colorado-flood")
+os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
+```
 
 Note that you imported the `rasterio` library using the shortname `rio`.
 
@@ -129,7 +132,7 @@ lidar_dem.bounds
 {:.input}
 ```python
 # Plot the dem using raster.io
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize = (8,3))
 show(lidar_dem, 
      title="Lidar Digital Elevation Model (DEM) \n Boulder Flood 2013", 
      ax=ax)
@@ -384,7 +387,8 @@ fig, ax = plt.subplots(figsize = (8,3))
 ax.imshow(lidar_dem_im, 
           cmap='Greys', 
           extent=spatial_extent)
-ax.set_title("Digital Elevation Model - Pre 2013 Flood");
+ax.set_title("Digital Elevation Model - Pre 2013 Flood")
+plt.show()
 ```
 
 {:.output}
@@ -403,9 +407,8 @@ ax.set_title("Digital Elevation Model - Pre 2013 Flood");
 Let's plot again but this time you will:
 
 1. add a colorbar legend
-2. turn off the annoying matplotlib message by adding a semicolon `;` to the end of the last line
-3. turn off the axes given you don't need the coordinates in your plot
-4. increase the title font size using the `as.set_title` function and the `fontsize` argument 
+2. turn off the axes given you don't need the coordinates in your plot
+3. increase the title font size using the `as.set_title` function and the `fontsize` argument 
 
 {:.input}
 ```python
@@ -416,7 +419,7 @@ lidar_plot = ax.imshow(lidar_dem_im,
 ax.set_title("Lidar Digital Elevation Model \n Pre 2013 Boulder Flood | Lee Hill Road", fontsize= 20)
 fig.colorbar(lidar_plot)
 # turn off the x and y axes for prettier plotting
-ax.set_axis_off()
+#ax.set_axis_off()
 plt.show()
 ```
 
@@ -495,18 +498,16 @@ lidar_dem_im
 
 
 
-
 {:.input}
 ```python
-# Use seaborn styles
-sns.set_style("whitegrid")
 # Plot histogram
 fig, ax = plt.subplots(figsize = (10,8))
-ax.hist(lidar_dem_im.ravel(),
+ax.hist(lidar_dem_im[~lidar_dem_im.mask].ravel(),
         bins=100, 
         color='purple')
 ax.set_title("Lee Hill Road - Digital elevation (terrain) model - \nDistribution of elevation values", 
-             fontsize=20);
+             fontsize=20)
+plt.show()
 ```
 
 {:.output}
@@ -514,7 +515,7 @@ ax.set_title("Lee Hill Road - Digital elevation (terrain) model - \nDistribution
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_43_0.png" alt = "A histogram of lidar derived elevation values for Boulder, CO.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_42_0.png" alt = "A histogram of lidar derived elevation values for Boulder, CO.">
 <figcaption>A histogram of lidar derived elevation values for Boulder, CO.</figcaption>
 
 </figure>
@@ -532,18 +533,10 @@ original spatial extent of the data.
 
 {:.input}
 ```python
-# Create a new spatial extent 
-print("Full Spatial extent of raster:", spatial_extent)
 # Define a spatial extent that is "smaller"
-zoomed_extent = [472500, 473030, 4434000, 4435030]
-print("Zoomed in raster extent:", zoomed_extent)
+# minx, miny, maxx, maxy, ccw=True
+zoomed_extent = [472500, 4434000, 473030, 4435030]
 ```
-
-{:.output}
-    Full Spatial extent of raster: (472000.0, 476000.0, 4434000.0, 4436000.0)
-    Zoomed in raster extent: [472500, 473030, 4434000, 4435030]
-
-
 
 Next you'll define a box which you'll focus on. You've provided a small helper function that lets you give the x and y limits of a box, and it returns the `x,y` points corresponding to four corners of this box. It then returns a `shapely` polygon object.
 
@@ -552,26 +545,10 @@ Next you'll define a box which you'll focus on. You've provided a small helper f
 
 {:.input}
 ```python
-# Define the four corners of the box
-box = et.utils.bounds_to_box(*zoomed_extent)
-box
+# Turn extent into geodataframe
+zoom_ext_gdf = gpd.GeoDataFrame()
+zoom_ext_gdf.loc[0, 'geometry'] = box(*zoomed_extent)
 ```
-
-{:.output}
-
-    ---------------------------------------------------------------------------
-
-    AttributeError                            Traceback (most recent call last)
-
-    <ipython-input-28-0321f7fac266> in <module>()
-          1 # Define the four corners of the box
-    ----> 2 box = et.utils.bounds_to_box(*zoomed_extent)
-          3 box
-
-
-    AttributeError: module 'earthpy.utils' has no attribute 'bounds_to_box'
-
-
 
 {:.input}
 ```python
@@ -580,11 +557,23 @@ fig, ax = plt.subplots(figsize = (8,3))
 ax.imshow(lidar_dem_im, 
      extent=spatial_extent)
 ax.set_title("Lidar Raster Full Spatial Extent w Zoom Box Overlayed")
+zoom_ext_gdf.plot(ax=ax)
 
-x, y = box.exterior.xy
-ax.plot(x, y, '-', lw=3, color='r')
 ax.set_axis_off()
 ```
+
+{:.output}
+{:.display_data}
+
+<figure>
+
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_50_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO with an extent box overlayed on top.">
+<figcaption>A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO with an extent box overlayed on top.</figcaption>
+
+</figure>
+
+
+
 
 {:.input}
 ```python
@@ -595,12 +584,21 @@ ax.imshow(lidar_dem_im,
 ax.set_title("Lidar Raster Zoomed on a Smaller Spatial Extent")
 
 # Set x and y limits of the plot
-ax.set_xlim(zoomed_extent[:2])
-ax.set_ylim(zoomed_extent[2:4])
-ax.plot(x, y, '-', lw=3, color='r')
+ax.set_xlim(zoomed_extent[0], zoomed_extent[2])
+ax.set_ylim(zoomed_extent[1], zoomed_extent[3])
 ax.set_axis_off()
+plt.show()
 ```
 
+{:.output}
+{:.display_data}
+
+<figure>
+
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster01-open-lidar-raster-data-python_51_0.png" alt = "A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO clipped to a smaller spatial extent using the x and y lim plot parameters.">
+<figcaption>A plot of a Lidar derived digital elevation model for Lee Hill Road in Boulder, CO clipped to a smaller spatial extent using the x and y lim plot parameters.</figcaption>
+
+</figure>
 
 
 

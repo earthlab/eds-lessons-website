@@ -4,7 +4,7 @@ title: "About the Geotiff (.tif) Raster File Format: Raster Data in Python"
 excerpt: "This lesson introduces the geotiff file format. Further it introduces the
 concept of metadata - or data about the data. Metadata describe key characteristics of a data set. For spatial data these characteristics including CRS, resolution and spatial extent. Here you learn about the use of tif tags or metadata embedded within a geotiff file as they can be used to explore data programatically."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: 2019-07-09
+modified: 2019-07-16
 category: ['courses']
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/intro-to-the-geotiff-file-format/
@@ -81,14 +81,14 @@ programmatically. You can quickly view the spatial **extent**,
 
 NOTE: not all geotiffs contain tif tags!
 
-_test - force trigger rebuild_
-
 {:.input}
 ```python
 # Import all packages in their own cell at the top of your notebook
 import rasterio as rio
 import os
 import earthpy as et
+# Get data and set wd
+et.data.get_data("colorado-flood")
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
 

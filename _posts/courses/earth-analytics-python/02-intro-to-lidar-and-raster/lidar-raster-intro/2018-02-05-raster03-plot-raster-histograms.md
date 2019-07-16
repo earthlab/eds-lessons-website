@@ -5,7 +5,7 @@ excerpt: "This lesson introduces the raster geotiff file format - which is often
 to store lidar raster data. You cover the 3 key spatial attributes of a raster dataset
 including Coordinate reference system, spatial extent and resolution."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-16
 category: [courses]
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/plot-raster-histograms/
@@ -63,19 +63,15 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 import seaborn as sns
-# Inline plotting
-plt.ion()
 
 import earthpy as et
+
+# Get data and set wd
+et.data.get_data("colorado-flood")
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 
 # Prettier plotting with seaborn
-sns.set(font_scale=1.5)
-sns.set_style("whitegrid")
-
-# Format histograms
-plt.rcParams['figure.figsize'] = (8, 8)
-
+sns.set(font_scale=1.5, style="whitegrid")
 ```
 
 

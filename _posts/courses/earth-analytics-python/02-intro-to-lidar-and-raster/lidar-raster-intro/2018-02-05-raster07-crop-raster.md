@@ -3,7 +3,7 @@ layout: single
 title: "Crop Spatial Raster Data With a Shapefile in Python"
 excerpt: "Learn how to crop raster data using a shapefile and export it as a new raster in open source Python"
 authors: ['Leah Wasser']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-16
 category: [courses]
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/crop-raster-data-with-shapefile-in-python/
@@ -79,10 +79,11 @@ from rasterio.mask import mask
 from shapely.geometry import mapping
 import geopandas as gpd
 import earthpy as et
-plt.ion()
 
 import seaborn as sns
 sns.set(font_scale=1.5)
+# Get data and set wd
+et.data.get_data("colorado-flood")
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
 
@@ -131,7 +132,7 @@ print('lidar crs: ', lidar_chm.crs)
 
 {:.output}
     crop extent crs:  {'init': 'epsg:32613'}
-    lidar crs:  +init=epsg:32613
+    lidar crs:  EPSG:32613
 
 
 
@@ -148,11 +149,22 @@ ax.set_title("Shapefile Crop Extent",
 ```
 
 {:.output}
+{:.execute_result}
+
+
+
+    Text(0.5, 1, 'Shapefile Crop Extent')
+
+
+
+
+
+{:.output}
 {:.display_data}
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster07-crop-raster_13_0.png" alt = "Plot of the shapefile that you will use to crop the CHM data.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster07-crop-raster_13_1.png" alt = "Plot of the shapefile that you will use to crop the CHM data.">
 <figcaption>Plot of the shapefile that you will use to crop the CHM data.</figcaption>
 
 </figure>
@@ -300,6 +312,18 @@ lidar_chm_meta.update({'transform': lidar_chm_crop_affine,
                        'nodata': -999.99})
 lidar_chm_meta
 ```
+
+{:.output}
+{:.execute_result}
+
+
+
+    {'driver': 'GTiff', 'dtype': 'float64', 'nodata': -999.99, 'width': 3490, 'height': 2000, 'count': 1, 'crs': CRS.from_epsg(32613), 'transform': Affine(1.0, 0.0, 472510.0,
+           0.0, -1.0, 4436000.0), 'tiled': False, 'compress': 'lzw', 'interleave': 'band'}
+
+
+
+
 
 Once you have updated the metadata you can write our your new raster. 
 

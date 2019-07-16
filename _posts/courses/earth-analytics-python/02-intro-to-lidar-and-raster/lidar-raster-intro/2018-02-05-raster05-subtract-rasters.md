@@ -3,7 +3,7 @@ layout: single
 title: "Subtract One Raster from Another and Export a New Geotiff in Python"
 excerpt: "Often you need to process two raster datasets together to create a new raster output. You then want to save that output as a new file. Learn how to subtract rasters and create a new geotiff file using open source Python."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-16
 category: [courses]
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/subtract-rasters-in-python/
@@ -55,18 +55,16 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
 from matplotlib.colors import ListedColormap
 import matplotlib.colors as colors
-import earthpy.spatial as es
 import os
 import seaborn as sns
-plt.ion()
-# Set plot parameters (optional)
-plt.rcParams['figure.figsize'] = (8, 8)
+import earthpy.spatial as es
+import earthpy.plot as ep
+
 # prettier plotting with seaborn
+sns.set(font_scale=1.5, style="whitegrid")
 
-sns.set(font_scale=1.5)
-sns.set_style("whitegrid")
-
-# set working directory
+# Get data and set wd
+et.data.get_data("colorado-flood")
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
 
@@ -206,13 +204,13 @@ ax.set_axis_off();
 
 
 
-
 {:.input}
 ```python
 fig, ax = plt.subplots(figsize = (10,8))
-ax.hist(lidar_chm_im.ravel(), 
+ax.hist(lidar_dem_im[~lidar_dem_im.mask].ravel(), 
         color = 'purple')
-ax.set_title("Histogram of CHM Values");
+ax.set_title("Histogram of CHM Values")
+plt.show()
 ```
 
 {:.output}
@@ -220,7 +218,7 @@ ax.set_title("Histogram of CHM Values");
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster05-subtract-rasters_16_0.png" alt = "A histogram of a Lidar derived canopy height model values for Lee Hill Road in Boulder, CO.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster05-subtract-rasters_15_0.png" alt = "A histogram of a Lidar derived canopy height model values for Lee Hill Road in Boulder, CO.">
 <figcaption>A histogram of a Lidar derived canopy height model values for Lee Hill Road in Boulder, CO.</figcaption>
 
 </figure>
@@ -297,7 +295,7 @@ lidar_dem.meta
      'width': 4000,
      'height': 2000,
      'count': 1,
-     'crs': CRS({'init': 'epsg:32613'}),
+     'crs': CRS.from_epsg(32613),
      'transform': Affine(1.0, 0.0, 472000.0,
             0.0, -1.0, 4436000.0)}
 
@@ -386,7 +384,7 @@ chm_meta
      'width': 4000,
      'height': 2000,
      'count': 1,
-     'crs': CRS({'init': 'epsg:32613'}),
+     'crs': CRS.from_epsg(32613),
      'transform': Affine(1.0, 0.0, 472000.0,
             0.0, -1.0, 4436000.0)}
 
@@ -447,7 +445,7 @@ Your plot should look like the one below (athough the colors may be different.
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster05-subtract-rasters_33_0.png" alt = "Lidar canopy height model derived from the DTM and DSM.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/02-intro-to-lidar-and-raster/lidar-raster-intro/2018-02-05-raster05-subtract-rasters_32_0.png" alt = "Lidar canopy height model derived from the DTM and DSM.">
 <figcaption>Lidar canopy height model derived from the DTM and DSM.</figcaption>
 
 </figure>

@@ -3,7 +3,7 @@ layout: single
 title: "Customize Matplotlib Raster Maps in Python"
 excerpt: "Sometimes you want to customize the colorbar and range of values plotted in a raster map. Learn how to create breaks to plot rasters in Python."
 authors: ['Leah Wasser']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-16
 category: [courses]
 class-lesson: ['hw-lidar']
 permalink: /courses/earth-analytics-python/lidar-raster-data/customize-matplotlib-raster-maps/
@@ -56,13 +56,13 @@ from matplotlib.patches import Patch
 from matplotlib.colors import ListedColormap
 import matplotlib.colors as colors
 import earthpy.spatial as es
+import earthpy.plot as ep
 import os
 plt.ion()
-# Set plot parameters
-plt.rcParams['figure.figsize'] = (8, 8)
+
 # Prettier plotting with seaborn
-import seaborn as sns; 
-sns.set(font_scale=1.5)
+import seaborn as sns
+sns.set(font_scale=1.5, style="white")
 # Set working directory
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
@@ -144,13 +144,13 @@ You can also modify the colorbar to the right so that each bin has a human-reada
 
 {:.input}
 ```python
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(10,5))
 chm_plot = ax.imshow(lidar_chm, 
                      cmap=cmap, 
                      norm=norm)
 ax.set_title("Lidar Canopy Height Model (CHM)")
 # Scale color bar to the height of the plot
-cbar = es.colorbar(chm_plot);
+cbar = ep.colorbar(chm_plot);
 
 boundary_means = [np.mean([norm.boundaries[ii], norm.boundaries[ii - 1]])
                   for ii in range(1, len(norm.boundaries))]

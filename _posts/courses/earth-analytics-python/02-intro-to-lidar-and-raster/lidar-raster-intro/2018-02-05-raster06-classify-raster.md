@@ -4,7 +4,7 @@ title: "Classify and Plot Raster Data in Python"
 excerpt: "This lesson presents how to classify a raster dataset and export it as a
 new raster in Python."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-16
 category: [courses]
 class-lesson: ['intro-lidar-raster-python']
 permalink: /courses/earth-analytics-python/lidar-raster-data/classify-plot-raster-data-in-python/
@@ -81,14 +81,13 @@ import os
 import matplotlib.pyplot as plt
 import pandas as pd
 import earthpy as et
-plt.ion()
-# Set plot parameters
-plt.rcParams['figure.figsize'] = (8, 8)
-# Prettier plotting with seaborn
-import seaborn as sns; 
-sns.set(font_scale=1.5)
-sns.set_style("whitegrid")
 
+# Prettier plotting with seaborn
+import seaborn as sns
+sns.set(font_scale=1.5, style="whitegrid")
+
+# Get data and set wd
+et.data.get_data("colorado-flood")
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
 
@@ -116,23 +115,23 @@ lidar_chm_im
 
 
 
-    masked_array(data =
-     [[-- -- -- ..., 0.0 0.1700439453125 0.9600830078125]
-     [-- -- -- ..., 0.0 0.090087890625 1.6400146484375]
-     [-- -- -- ..., 0.0 0.0 0.0799560546875]
-     ..., 
-     [-- -- -- ..., 0.0 0.0 0.0]
-     [-- -- -- ..., 0.0 0.0 0.0]
-     [-- -- -- ..., 0.0 0.0 0.0]],
-                 mask =
-     [[ True  True  True ..., False False False]
-     [ True  True  True ..., False False False]
-     [ True  True  True ..., False False False]
-     ..., 
-     [ True  True  True ..., False False False]
-     [ True  True  True ..., False False False]
-     [ True  True  True ..., False False False]],
-           fill_value = -3.40282e+38)
+    masked_array(
+      data=[[--, --, --, ..., 0.0, 0.1700439453125, 0.9600830078125],
+            [--, --, --, ..., 0.0, 0.090087890625, 1.6400146484375],
+            [--, --, --, ..., 0.0, 0.0, 0.0799560546875],
+            ...,
+            [--, --, --, ..., 0.0, 0.0, 0.0],
+            [--, --, --, ..., 0.0, 0.0, 0.0],
+            [--, --, --, ..., 0.0, 0.0, 0.0]],
+      mask=[[ True,  True,  True, ..., False, False, False],
+            [ True,  True,  True, ..., False, False, False],
+            [ True,  True,  True, ..., False, False, False],
+            ...,
+            [ True,  True,  True, ..., False, False, False],
+            [ True,  True,  True, ..., False, False, False],
+            [ True,  True,  True, ..., False, False, False]],
+      fill_value=-3.402823e+38,
+      dtype=float32)
 
 
 
@@ -162,7 +161,7 @@ print('CHM max value:' ,lidar_chm_im.max())
 
 {:.output}
     CHM min value: 0.0
-    CHM max value: 26.9301
+    CHM max value: 26.930054
 
 
 
@@ -259,24 +258,20 @@ print("bins:", bins)
 ```
 
 {:.output}
-    counts: [  5.29278500e+06   1.55317000e+05   1.28037000e+05   1.16551000e+05
-       1.09743000e+05   1.10395000e+05   1.07528000e+05   9.85790000e+04
-       8.92340000e+04   8.39470000e+04   7.91230000e+04   7.39340000e+04
-       7.16690000e+04   7.05210000e+04   6.70430000e+04   6.16390000e+04
-       5.63890000e+04   5.19320000e+04   4.61930000e+04   4.06740000e+04
-       3.64420000e+04   3.18770000e+04   2.84280000e+04   2.45530000e+04
-       2.16200000e+04   1.86130000e+04   1.60950000e+04   1.37760000e+04
-       1.14240000e+04   9.40200000e+03   7.50400000e+03   6.19500000e+03
-       4.88300000e+03   3.90100000e+03   2.95400000e+03   2.30600000e+03
-       1.77600000e+03   1.34200000e+03   1.02700000e+03   7.06000000e+02
-       5.25000000e+02   3.58000000e+02   2.71000000e+02   1.60000000e+02
-       1.13000000e+02   9.90000000e+01   4.70000000e+01   4.40000000e+01
-       2.10000000e+01   1.60000000e+01]
-    bins: [  0.    0.5   1.    1.5   2.    2.5   3.    3.5   4.    4.5   5.    5.5
-       6.    6.5   7.    7.5   8.    8.5   9.    9.5  10.   10.5  11.   11.5
-      12.   12.5  13.   13.5  14.   14.5  15.   15.5  16.   16.5  17.   17.5
-      18.   18.5  19.   19.5  20.   20.5  21.   21.5  22.   22.5  23.   23.5
-      24.   24.5  25. ]
+    counts: [5.292785e+06 1.553170e+05 1.280370e+05 1.165510e+05 1.097430e+05
+     1.103950e+05 1.075280e+05 9.857900e+04 8.923400e+04 8.394700e+04
+     7.912300e+04 7.393400e+04 7.166900e+04 7.052100e+04 6.704300e+04
+     6.163900e+04 5.638900e+04 5.193200e+04 4.619300e+04 4.067400e+04
+     3.644200e+04 3.187700e+04 2.842800e+04 2.455300e+04 2.162000e+04
+     1.861300e+04 1.609500e+04 1.377600e+04 1.142400e+04 9.402000e+03
+     7.504000e+03 6.195000e+03 4.883000e+03 3.901000e+03 2.954000e+03
+     2.306000e+03 1.776000e+03 1.342000e+03 1.027000e+03 7.060000e+02
+     5.250000e+02 3.580000e+02 2.710000e+02 1.600000e+02 1.130000e+02
+     9.900000e+01 4.700000e+01 4.400000e+01 2.100000e+01 1.600000e+01]
+    bins: [ 0.   0.5  1.   1.5  2.   2.5  3.   3.5  4.   4.5  5.   5.5  6.   6.5
+      7.   7.5  8.   8.5  9.   9.5 10.  10.5 11.  11.5 12.  12.5 13.  13.5
+     14.  14.5 15.  15.5 16.  16.5 17.  17.5 18.  18.5 19.  19.5 20.  20.5
+     21.  21.5 22.  22.5 23.  23.5 24.  24.5 25. ]
 
 
 
@@ -415,7 +410,7 @@ lidar_chm_im.fill_value
 
 
 
-    -3.4028231e+38
+    -3.402823e+38
 
 
 
@@ -474,23 +469,22 @@ lidar_chm_class_ma
 
 
 
-    masked_array(data =
-     [[-- -- -- ..., 1 1 1]
-     [-- -- -- ..., 1 1 1]
-     [-- -- -- ..., 1 1 1]
-     ..., 
-     [-- -- -- ..., 1 1 1]
-     [-- -- -- ..., 1 1 1]
-     [-- -- -- ..., 1 1 1]],
-                 mask =
-     [[ True  True  True ..., False False False]
-     [ True  True  True ..., False False False]
-     [ True  True  True ..., False False False]
-     ..., 
-     [ True  True  True ..., False False False]
-     [ True  True  True ..., False False False]
-     [ True  True  True ..., False False False]],
-           fill_value = 999999)
+    masked_array(
+      data=[[--, --, --, ..., 1, 1, 1],
+            [--, --, --, ..., 1, 1, 1],
+            [--, --, --, ..., 1, 1, 1],
+            ...,
+            [--, --, --, ..., 1, 1, 1],
+            [--, --, --, ..., 1, 1, 1],
+            [--, --, --, ..., 1, 1, 1]],
+      mask=[[ True,  True,  True, ..., False, False, False],
+            [ True,  True,  True, ..., False, False, False],
+            [ True,  True,  True, ..., False, False, False],
+            ...,
+            [ True,  True,  True, ..., False, False, False],
+            [ True,  True,  True, ..., False, False, False],
+            [ True,  True,  True, ..., False, False, False]],
+      fill_value=999999)
 
 
 
@@ -537,9 +531,9 @@ np.unique(lidar_chm_class_ma)
 
 
 
-    masked_array(data = [1 2 3 4 --],
-                 mask = [False False False False  True],
-           fill_value = 999999)
+    masked_array(data=[1, 2, 3, 4, --],
+                 mask=[False, False, False, False,  True],
+           fill_value=999999)
 
 
 
@@ -599,9 +593,9 @@ np.unique(lidar_chm_class_ma)
 
 
 
-    masked_array(data = [1 2 3 4 --],
-                 mask = [False False False False  True],
-           fill_value = 999999)
+    masked_array(data=[1, 2, 3, 4, --],
+                 mask=[False, False, False, False,  True],
+           fill_value=999999)
 
 
 
