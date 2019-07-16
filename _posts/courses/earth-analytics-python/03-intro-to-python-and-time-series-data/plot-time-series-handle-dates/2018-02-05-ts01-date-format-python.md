@@ -2,8 +2,8 @@
 layout: single
 title: "Work With Datetime Format in Python - Time Series Data "
 excerpt: "This lesson covers how to deal with dates in Python. It reviews how to convert a field containing dates as strings to a datetime object that Python can understand and plot efficiently. This tutorial also covers how to handle missing data values in Python."
-authors: ['Jenny Palomino', 'Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+authors: ['Leah Wasser', 'Jenny Palomino', 'Chris Holdgraf', 'Martha Morrissey']
+modified: 2019-07-16
 category: [courses]
 class-lesson: ['time-series-python']
 course: 'earth-analytics-python'
@@ -58,34 +58,36 @@ Begin by importing the necessary `Python` packages to set the working directory 
 
 {:.input}
 ```python
-# import necessary packages
-#import numpy as np
+# Import necessary packages
 import os
 import urllib.request
 import pandas as pd
+import seaborn as sns
 import matplotlib.pyplot as plt
+from matplotlib.dates import DateFormatter
+import matplotlib.dates as mdates
 import earthpy as et
 
-# make figures plot inline
-plt.ion()
+# Handle date time conversions between pandas and matplotlib
+from pandas.plotting import register_matplotlib_converters
+register_matplotlib_converters()
 
-# set working directory
+# Set working directory
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 
-# set standard plot parameters for uniform plotting
-plt.rcParams['figure.figsize'] = (10, 6)
-# prettier plotting with seaborn
-import seaborn as sns; 
-sns.set(font_scale=1.5)
-sns.set_style("whitegrid")
+# Get the data
+data = et.data.get_data('colorado-flood')
+
+# Prettier plotting with seaborn
+sns.set(font_scale=1.5, style="whitegrid")
 ```
 
 {:.input}
 ```python
 file_path = "data/colorado-flood/downloads/july-2018-temperature-precip.csv"
-# download file from Earth Lab Figshare repository
-urllib.request.urlretrieve(url='https://ndownloader.figshare.com/files/12948515', 
-                           filename= file_path)
+# Download file from Earth Lab Figshare repository
+urllib.request.urlretrieve(url='https://ndownloader.figshare.com/files/12948515',
+                           filename=file_path)
 ```
 
 {:.output}
@@ -94,7 +96,7 @@ urllib.request.urlretrieve(url='https://ndownloader.figshare.com/files/12948515'
 
 
     ('data/colorado-flood/downloads/july-2018-temperature-precip.csv',
-     <http.client.HTTPMessage at 0x11b89e7b8>)
+     <http.client.HTTPMessage at 0x7f9e3bda3438>)
 
 
 
@@ -104,10 +106,10 @@ Next, import the data from `data/july-2018-temperature-precip.csv` into a `panda
 
 {:.input}
 ```python
-# import file into pandas dataframe
+# Import file into pandas dataframe
 boulder_july = pd.read_csv(file_path)
 
-# view first few rows of the data`
+# View first few rows of the data`
 boulder_july.head()
 ```
 
@@ -180,7 +182,7 @@ boulder_july.head()
 
 {:.input}
 ```python
-# view data types
+# View data types
 boulder_july.dtypes
 ```
 
@@ -231,7 +233,7 @@ Investigate the data type in the `date` column further to see the data type or c
 
 {:.input}
 ```python
-# query the data type for date column
+# Query the data type for date column
 type(boulder_july['date'][0])
 ```
 
@@ -256,29 +258,39 @@ To understand why using `datetime` objects can help you to create better plots, 
 
 {:.input}
 ```python
-# create the plot space upon which to plot the data
-fig, ax = plt.subplots(figsize = (10,10))
+# Create the plot space upon which to plot the data
+fig, ax = plt.subplots(figsize=(10, 10))
 
-# add the x-axis and the y-axis to the plot
-ax.plot(boulder_july['date'], 
-        boulder_july['precip'], 
-        color = 'red')
+# Add the x-axis and the y-axis to the plot
+ax.plot(boulder_july['date'],
+        boulder_july['precip'],
+        color='purple')
 
-# rotate tick labels
-plt.setp(ax.get_xticklabels(), rotation=45)
-
-# set title and labels for axes
+# Set title and labels for axes
 ax.set(xlabel="Date",
        ylabel="Temperature (Fahrenheit)",
-       title="Precipitation\nBoulder, Colorado in July 2018");
+       title="Precipitation\nBoulder, Colorado in July 2018")
 ```
+
+{:.output}
+{:.execute_result}
+
+
+
+    [Text(0, 0.5, 'Temperature (Fahrenheit)'),
+     Text(0.5, 0, 'Date'),
+     Text(0.5, 1.0, 'Precipitation\nBoulder, Colorado in July 2018')]
+
+
+
+
 
 {:.output}
 {:.display_data}
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts01-date-format-python_10_0.png" alt = "Plot of precipitation in Boulder, CO without no data values removed.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts01-date-format-python_10_1.png" alt = "Plot of precipitation in Boulder, CO without no data values removed.">
 <figcaption>Plot of precipitation in Boulder, CO without no data values removed.</figcaption>
 
 </figure>
@@ -301,12 +313,12 @@ You will use this in later lessons. The index column will allow you to quickly s
 
 {:.input}
 ```python
-# import file into pandas dataframe, identifying the date column to be converted to datetime
+# Import file into pandas dataframe, identifying the date column to be converted to datetime
 boulder_july_datetime = pd.read_csv(file_path,
-                             parse_dates = ['date'],
-                             index_col = ['date'])
+                                    parse_dates=['date'],
+                                    index_col=['date'])
 
-# view data index
+# View data index
 boulder_july_datetime.index
 ```
 
@@ -444,21 +456,24 @@ knows how to only show incremental values rather than each and every date value.
 
 {:.input}
 ```python
-# create the plot space upon which to plot the data
-fig, ax= plt.subplots()
+# Create the plot space upon which to plot the data
+fig, ax = plt.subplots(figsize=(9, 7))
 
-# add the x-axis and the y-axis to the plot
-ax.plot(boulder_july_datetime.index.values, 
-        boulder_july_datetime['precip'], 
-        color = 'red')
+# Add the x-axis and the y-axis to the plot
+ax.plot(boulder_july_datetime.index.values,
+        boulder_july_datetime['max_temp'], '-o',
+        color='purple')
 
-# rotate tick labels
-plt.setp(ax.get_xticklabels(), rotation=45)
-
-# set title and labels for axes
+# Set title and labels for axes
 ax.set(xlabel="Date",
        ylabel="Temperature (Fahrenheit)",
-       title="Precipitation\nBoulder, Colorado in July 2018");
+       title="Precipitation\nBoulder, Colorado in July 2018")
+
+# Clean up the x axis dates (reviewed in lesson 4)
+ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=1))
+ax.xaxis.set_major_formatter(DateFormatter("%m/%d"))
+
+plt.show()
 ```
 
 {:.output}
@@ -476,21 +491,24 @@ ax.set(xlabel="Date",
 
 {:.input}
 ```python
-# create the plot space upon which to plot the data
-fig, ax= plt.subplots()
+# Create the plot space upon which to plot the data
+fig, ax = plt.subplots(figsize=(9, 7))
 
-# add the x-axis and the y-axis to the plot
-ax.bar(boulder_july_datetime.index.values, 
-        boulder_july_datetime['precip'], 
-        color = 'blue')
+# Add the x-axis and the y-axis to the plot
+ax.bar(boulder_july_datetime.index.values,
+       boulder_july_datetime['precip'],
+       color='purple')
 
-# rotate tick labels
-plt.setp(ax.get_xticklabels(), rotation=45)
-
-# set title and labels for axes
+# Set title and labels for axes
 ax.set(xlabel="Date",
        ylabel="Precipitation (in)",
-       title="Precipitation \nBoulder, Colorado in July 2018");
+       title="Precipitation \nBoulder, Colorado in July 2018")
+
+# Clean up the x axis dates (reviewed in lesson 4)
+ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=1))
+ax.xaxis.set_major_formatter(DateFormatter("%m/%d"))
+
+plt.show()
 ```
 
 {:.output}
@@ -512,7 +530,7 @@ You may have observed that the above plots did not look right. Explore the data 
 
 {:.input}
 ```python
-# notice any values that may seem off in the summary statistics below?
+# Notice any values that may seem off in the summary statistics below?
 boulder_july_datetime.describe()
 ```
 
@@ -612,9 +630,9 @@ When you used the `describe` method above, the `-999` values were imported as nu
 
 {:.input}
 ```python
-# import file into pandas dataframe, with a no data value specified
+# Import file into pandas dataframe, with a no data value specified
 boulder_july_datetime_nodata = pd.read_csv(file_path,
-                                           parse_dates=['date'], 
+                                           parse_dates=['date'],
                                            na_values=['-999'])
 ```
 
@@ -622,7 +640,7 @@ Now have a look at the summary statistics.
 
 {:.input}
 ```python
-# calculate mean of columns in dataframe
+# Calculate mean of columns in dataframe
 boulder_july_datetime_nodata.describe()
 ```
 
@@ -706,21 +724,24 @@ And finally, plot the data one last time.
 
 {:.input}
 ```python
-# create the plot space upon which to plot the data
-fig, ax= plt.subplots()
+# Create the plot space upon which to plot the data
+fig, ax = plt.subplots(figsize=(9, 7))
 
-# add the x-axis and the y-axis to the plot
-ax.bar(boulder_july_datetime_nodata.index.values, 
-        boulder_july_datetime_nodata['precip'], 
-        color = 'purple')
+# Add the x-axis and the y-axis to the plot
+ax.bar(boulder_july_datetime_nodata.date.values,
+       boulder_july_datetime_nodata['precip'],
+       color='purple')
 
-# rotate tick labels
-plt.setp(ax.get_xticklabels(), rotation=45)
-
-# set title and labels for axes
+# Set title and labels for axes
 ax.set(xlabel="Date",
        ylabel="Precipitation (Inches)",
-       title="Precipitation\nBoulder, Colorado in July 2018");
+       title="Precipitation\nBoulder, Colorado in July 2018")
+
+# Clean up the x axis dates (reviewed in lesson 4)
+ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=1))
+ax.xaxis.set_major_formatter(DateFormatter("%m/%d"))
+
+plt.show()
 ```
 
 {:.output}

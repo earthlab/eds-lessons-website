@@ -9,7 +9,7 @@ course: "earth-analytics-python"
 permalink: /courses/earth-analytics-python/use-time-series-data-in-python/spreadsheet-data-in-python/
 nav-title: 'Spreadsheet Data in Python'
 dateCreated: 2016-12-13
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-16
 week: 3
 sidebar:
   nav:
@@ -53,22 +53,21 @@ import pandas as pd
 import urllib
 import os
 from matplotlib import pyplot as plt
+import seaborn as sns
+import earthpy as et
 
-# Force notebooks to plot figures inline (in the notebook)
-plt.ion()
+# Prettier plotting with seaborn
+sns.set(font_scale=1.5, style="whitegrid")
 
-# be sure to set your working directory using os.chdir() put your file path in the parenthesis 
+# Set working directory
+os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
-
-### Be sure to set your working directory
-
-`os.chdir("path-to-you-dir-here/earth-analytics/data")`
 
 {:.input}
 ```python
-# download data from figshare (note - we did this in a previous lesson)
-urllib.request.urlretrieve(url='https://ndownloader.figshare.com/files/7010681', 
-                           filename= 'data/boulder-precip.csv')
+# Download data from figshare (note - we did this in a previous lesson)
+urllib.request.urlretrieve(url='https://ndownloader.figshare.com/files/7010681',
+                           filename='data/colorado-flood/downloads/boulder-precip.csv')
 ```
 
 {:.output}
@@ -76,7 +75,9 @@ urllib.request.urlretrieve(url='https://ndownloader.figshare.com/files/7010681',
 
 
 
-    ('data/boulder-precip.csv', <http.client.HTTPMessage at 0x110028390>)
+    ('data/colorado-flood/downloads/boulder-precip.csv',
+     <http.client.HTTPMessage at 0x7efe91a16198>)
+
 
 
 
@@ -98,10 +99,10 @@ a url on figshare do your data directory. You named that file `boulder-precip.cs
 Next, you read in the data using the function: `pd.read_csv()`.
 
 
-
 {:.input}
 ```python
-boulder_precip = pd.read_csv('data/colorado-flood/boulder-precip.csv')
+boulder_precip = pd.read_csv(
+    'data/colorado-flood/downloads/boulder-precip.csv')
 boulder_precip.head()
 ```
 
@@ -174,9 +175,8 @@ boulder_precip.head()
 
 {:.input}
 ```python
-# view the structure of the data.frame 
+# View the structure of the data.frame
 boulder_precip.dtypes
-
 ```
 
 {:.output}
@@ -235,7 +235,7 @@ as follows:
 
 {:.input}
 ```python
-# view the date column of the data frame using its name (or header)
+# View the date column of the data frame using its name (or header)
 boulder_precip['DATE']
 ```
 
@@ -270,7 +270,7 @@ boulder_precip['DATE']
 
 {:.input}
 ```python
-# view the precip column
+# View the precip column
 boulder_precip['PRECIP']
 ```
 
@@ -309,7 +309,7 @@ You can explore the format of your data frame too. For instance, you can see how
 
 {:.input}
 ```python
-# view the number of rows and columns in your dataframe
+# View the number of rows and columns in your dataframe
 boulder_precip.shape
 ```
 
@@ -324,8 +324,6 @@ boulder_precip.shape
 
 
 
-{:.input}
-```python
 <div class="notice--warning" markdown="1">
 
 ## <i class="fa fa-pencil-square-o" aria-hidden="true"></i> ## Optional challenge
@@ -342,11 +340,10 @@ Take note of the output of shape - what format does it return the shape of the D
 * `boulder_precip.tail()`
 
 </div>
-```
 
 {:.input}
 ```python
-# view the data structure of the data frame
+# View the data structure of the data frame
 boulder_precip.dtypes
 ```
 
@@ -370,7 +367,7 @@ You can quickly calculate summary statistics too. First let's explore the column
 
 {:.input}
 ```python
-# view column names
+# View column names
 boulder_precip.columns.values
 ```
 
@@ -387,7 +384,7 @@ boulder_precip.columns.values
 
 {:.input}
 ```python
-# view summary statistics  - for all columns
+# View summary statistics  - for all columns
 boulder_precip.describe()
 ```
 
@@ -469,7 +466,7 @@ boulder_precip.describe()
 
 {:.input}
 ```python
-# view summary statistics  - for just the precip column
+# View summary statistics  - for just the precip column
 boulder_precip['PRECIP'].describe()
 ```
 
@@ -494,7 +491,7 @@ boulder_precip['PRECIP'].describe()
 
 {:.input}
 ```python
-# view a list of just the unique precipitation values
+# View a list of just the unique precipitation values
 pd.unique(boulder_precip['PRECIP'])
 ```
 
@@ -514,8 +511,11 @@ You can quickly plot your data too. Note that you are using the `.plot()` functi
 
 {:.input}
 ```python
-# setup the plot
-boulder_precip.plot('DATE', 'PRECIP', color = 'purple');
+# Setup the plot
+boulder_precip.plot('DATE', 
+                    'PRECIP', 
+                    color='purple')
+plt.show()
 ```
 
 {:.output}
@@ -523,7 +523,7 @@ boulder_precip.plot('DATE', 'PRECIP', color = 'purple');
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py04-spreadsheet-data-python_23_0.png" alt = "If you call dataframe.plot() you are plotting using the pandas plot function. This function wraps around matplotlib.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py04-spreadsheet-data-python_22_0.png" alt = "If you call dataframe.plot() you are plotting using the pandas plot function. This function wraps around matplotlib.">
 <figcaption>If you call dataframe.plot() you are plotting using the pandas plot function. This function wraps around matplotlib.</figcaption>
 
 </figure>
@@ -533,7 +533,10 @@ boulder_precip.plot('DATE', 'PRECIP', color = 'purple');
 
 {:.input}
 ```python
-boulder_precip.plot.bar('DATE', 'PRECIP', color = 'purple');
+boulder_precip.plot.bar('DATE', 
+                        'PRECIP', 
+                        color='purple')
+plt.show()
 ```
 
 {:.output}
@@ -541,7 +544,7 @@ boulder_precip.plot.bar('DATE', 'PRECIP', color = 'purple');
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py04-spreadsheet-data-python_24_0.png" alt = "Here dataframe.plot.bar() is also using the pandas plot function to create a bar plot.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py04-spreadsheet-data-python_23_0.png" alt = "Here dataframe.plot.bar() is also using the pandas plot function to create a bar plot.">
 <figcaption>Here dataframe.plot.bar() is also using the pandas plot function to create a bar plot.</figcaption>
 
 </figure>
@@ -551,7 +554,7 @@ boulder_precip.plot.bar('DATE', 'PRECIP', color = 'purple');
 
 {:.input}
 ```python
-# convert DATE field to a datetime structure
+# Convert the DATE field to a datetime structure
 boulder_precip['DATE'] = pd.to_datetime(boulder_precip['DATE'])
 boulder_precip.dtypes
 ```
@@ -576,18 +579,17 @@ Let's now work with the matplotlib and take a little time to customize your plot
 * **legend = False:** turn off the legend for the plot
 * **kind = bar**: create a bar plot
 
-
 {:.input}
 ```python
 fig, ax = plt.subplots()
 
-ax.bar(boulder_precip['DATE'].values, boulder_precip['PRECIP'].values, data=boulder_precip, color = 'purple')
+ax.bar(boulder_precip['DATE'].values, boulder_precip['PRECIP'].values,
+       data=boulder_precip, color='purple')
 ax.set_title("Total Daily Precipitation")
 
-ax.set_xlabel("Hour", fontsize=12)
-ax.set_ylabel("Total Precip (inches)", fontsize=12)
-plt.setp(ax.get_xticklabels(), rotation=45);
-
+ax.set(xlabel="Hour", ylabel="Total Precipitation (inches)")
+plt.setp(ax.get_xticklabels(), rotation=45)
+plt.show()
 ```
 
 {:.output}
@@ -595,7 +597,7 @@ plt.setp(ax.get_xticklabels(), rotation=45);
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py04-spreadsheet-data-python_28_0.png" alt = "Notice here you use ax.plot. This is matplotlib plotting not pandas.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/python-basics-review/2018-02-05-py04-spreadsheet-data-python_26_0.png" alt = "Notice here you use ax.plot. This is matplotlib plotting not pandas.">
 <figcaption>Notice here you use ax.plot. This is matplotlib plotting not pandas.</figcaption>
 
 </figure>

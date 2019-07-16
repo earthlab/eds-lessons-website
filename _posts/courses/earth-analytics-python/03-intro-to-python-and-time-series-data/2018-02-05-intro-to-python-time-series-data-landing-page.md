@@ -3,7 +3,7 @@ layout: single
 category: courses
 title: "Time Series Data in Python"
 permalink: /courses/earth-analytics-python/use-time-series-data-in-python/
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-16
 week-landing: 1
 week: 3
 sidebar:
@@ -118,6 +118,12 @@ Note that you can modify the colors, style, etc of your plots as you'd like. The
 
 
 
+{:.output}
+    Downloading from https://ndownloader.figshare.com/files/12395030
+    Extracted output to /root/earth-analytics/data/colorado-flood/.
+
+
+
 
 
 
@@ -206,11 +212,22 @@ Note: to plot the y axis on a log scale use the argument: `logy= True` in your p
 
 
 {:.output}
+{:.execute_result}
+
+
+
+    Text(0, 0.5, 'Discharge Value (CFS)')
+
+
+
+
+
+{:.output}
 {:.display_data}
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/2018-02-05-intro-to-python-time-series-data-landing-page_21_0.png" alt = "Return period for stream discharge events plot.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/2018-02-05-intro-to-python-time-series-data-landing-page_21_1.png" alt = "Return period for stream discharge events plot.">
 <figcaption>Return period for stream discharge events plot.</figcaption>
 
 </figure>

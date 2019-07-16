@@ -3,7 +3,7 @@ layout: single
 title: "Customize Matplotlibe Dates Ticks on the x-axis in Python"
 excerpt: 'When you plot time series data in matplotlib, you often want to customize the date format that is presented on the plot. Learn how to customize the date format in a Python matplotlib plot.'
 authors: ['Chris Holdgraf', 'Leah Wasser', 'Martha Morrissey']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-16
 category: [courses]
 class-lesson: ['time-series-python']
 course: 'earth-analytics-python'
@@ -45,45 +45,43 @@ In this lesson you will learn how to format the time and date stamps drawn on a 
 
 {:.input}
 ```python
-# import required python packages
-import numpy as np
+# Import required python packages
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.dates import DateFormatter
-import os
-plt.ion()
+import matplotlib.dates as mdates
+import seaborn as sns
 import earthpy as et
 
-# matplotlibdate format modules
-from matplotlib.dates import DateFormatter
-import matplotlib.dates as mdates
+# Date time conversion registration
+from pandas.plotting import register_matplotlib_converters
+register_matplotlib_converters()
 
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 
-# set parameters so all plots are consistent
-plt.rcParams['figure.figsize'] = (8, 8)
+# Get the data
+data = et.data.get_data('colorado-flood')
 
-# prettier plotting with seaborn
-import seaborn as sns; 
-sns.set(font_scale=1.5)
-sns.set_style("whitegrid")
+# Prettier plotting with seaborn
+sns.set(font_scale=1.5, style="whitegrid")
 ```
 
 In the previous lessons you downloaded and imported data from [figshare](https://figshare.com/authors/_/3386570) into Python using the following code.
 
 {:.input}
 ```python
-# to begin, read in the data
-boulder_daily_precip = pd.read_csv('data/colorado-flood/precipitation/805325-precip-dailysum-2003-2013.csv', 
-                                   parse_dates=['DATE'], 
+# Read in the data
+boulder_daily_precip = pd.read_csv('data/colorado-flood/precipitation/805325-precip-dailysum-2003-2013.csv',
+                                   parse_dates=['DATE'],
                                    na_values=['999.99'],
-                                   index_col = ['DATE'])
+                                   index_col=['DATE'])
 
-# subset the data as we did previously
-precip_boulder_AugOct = boulder_daily_precip["2013-08-15" :"2013-10-15"]
+# Subset the data as we did previously
+precip_boulder_AugOct = boulder_daily_precip["2013-08-15":"2013-10-15"]
 
 
-# view first few rows of data
+# View first few rows of data
 precip_boulder_AugOct.head()
 ```
 
@@ -199,13 +197,19 @@ Plot the data.
 
 {:.input}
 ```python
-# plot the data
-fig, ax = plt.subplots(figsize = (10,8))
-ax.scatter(precip_boulder_AugOct.index.values, 
-       precip_boulder_AugOct['DAILY_PRECIP'].values,
-       color='purple')
-ax.set(xlabel="Date", ylabel="Precipitation (Inches)")
-ax.set(title="Daily Precipitation (inches)\nBoulder, Colorado 2013");
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.plot(precip_boulder_AugOct.index.values,
+        precip_boulder_AugOct['DAILY_PRECIP'].values,
+        '-o',
+        color='purple')
+ax.set(xlabel="Date", ylabel="Precipitation (Inches)",
+       title="Daily Precipitation \nBoulder, Colorado 2013")
+
+# Format the x axis
+ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=2))
+ax.xaxis.set_major_formatter(DateFormatter("%m-%d"))
+
+plt.show()
 ```
 
 {:.output}
@@ -246,19 +250,18 @@ This applies the date format that you defined above to the plot.
 
 {:.input}
 ```python
+# Plot the data
+fig, ax = plt.subplots(figsize=(10,6))
+ax.scatter(precip_boulder_AugOct.index.values,
+           precip_boulder_AugOct['DAILY_PRECIP'].values,
+           color='purple')
+ax.set(xlabel="Date", ylabel="Precipitation (Inches)",
+       title="Daily Precipitation (inches)\nBoulder, Colorado 2013")
+
 # Define the date format
-myFmt = DateFormatter("%m/%d") 
+date_form = DateFormatter("%m/%d")
+ax.xaxis.set_major_formatter(date_form)
 
-# plot the data
-fig, ax = plt.subplots()
-ax.scatter(precip_boulder_AugOct.index.values, 
-       precip_boulder_AugOct['DAILY_PRECIP'].values,
-       color='purple')
-ax.set(xlabel="Date", ylabel="Precipitation (Inches)")
-ax.set(title="Daily Precipitation (inches)\nBoulder, Colorado 2013")
-
-# tell matplotlib to use the format specified above
-ax.xaxis.set_major_formatter(myFmt); 
 ```
 
 {:.output}
@@ -278,24 +281,24 @@ ax.xaxis.set_major_formatter(myFmt);
 
 Time specific ticks can be added along the x-axis. For example, large ticks can indicate each new week day and small ticks can indicate each day. 
 
-The function `xaxis.set_major_location()` controls large ticks, and the function `xaxis.set_minor_locator` controls the smaller ticks.
+The function `xaxis.set_major_locator()` controls the location of the large ticks, and the function `xaxis.set_minor_locator` controls the smaller ticks.
 
 {:.input}
 ```python
-# define the date format
-myFmt = DateFormatter("%m-%d") 
+# Plot the data
+fig, ax = plt.subplots(figsize=(10,6))
+ax.scatter(precip_boulder_AugOct.index.values,
+           precip_boulder_AugOct['DAILY_PRECIP'].values,
+           color='purple')
+ax.set(xlabel="Date", ylabel="Precipitation (Inches)",
+       title="Daily Precipitation (inches)\nBoulder, Colorado 2013")
 
-# plot
-fig, ax = plt.subplots()
-ax.scatter(precip_boulder_AugOct.index.values, 
-       precip_boulder_AugOct['DAILY_PRECIP'].values,
-       color='purple')
-ax.set(xlabel="Date", ylabel="Precipitation (Inches)",)
-ax.set_title("Daily Precipitation (inches)\nBoulder, Colorado 2013")
-     
-#ax.xaxis.set_major_locator(mdates.WeekdayLocator())
-ax.xaxis.set_major_formatter(myFmt) 
 
+# Define the date format
+date_form = DateFormatter("%m/%d")
+ax.xaxis.set_major_formatter(date_form)
+# Ensure ticks fall once every other week (interval=2) 
+ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=2))
 ```
 
 {:.output}
@@ -307,8 +310,6 @@ ax.xaxis.set_major_formatter(myFmt)
 <figcaption>Scatterplot showing daily precipitation with the x-axis dates cleaned up and the format customized so they are easier to read.</figcaption>
 
 </figure>
-
-
 
 
 

@@ -3,7 +3,7 @@ layout: single
 title: "Subset Time Series By Dates Python Using Pandas"
 excerpt: "Sometimes you have data over a longer time span than you need to run analysis. Learn how to subset your data  using a begina and end date in Python."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-16
 category: [courses]
 class-lesson: ['time-series-python']
 course: 'earth-analytics-python'
@@ -85,40 +85,37 @@ Get started by loading the required python libraries into your Jupyter notebook.
 
 {:.input}
 ```python
-# load python libraries
-import numpy as np
+# Load python libraries
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
-import os
-plt.ion()
+import matplotlib.dates as mdates
+from matplotlib.dates import DateFormatter
+import seaborn as sns
+import earthpy as et
+# Date time conversion registration
+from pandas.plotting import register_matplotlib_converters
+register_matplotlib_converters()
 
-import earthpy as et 
-# set working directory
+# Set working directory
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 
-# set standard plot parameters for uniform plotting
-plt.rcParams['figure.figsize'] = (8, 8)
+# Get the data
+data = et.data.get_data('colorado-flood')
 
-# set working directory
-os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
-
-# set standard plot parameters for uniform plotting
-plt.rcParams['figure.figsize'] = (10, 6)
-# prettier plotting with seaborn
-import seaborn as sns; 
-sns.set(font_scale=1.5)
-sns.set_style("whitegrid")
+# Prettier plotting with seaborn
+sns.set(font_scale=1.5, style="whitegrid")
 ```
 
 
 
 {:.input}
 ```python
-# read the data into python
-boulder_daily_precip = pd.read_csv('data/colorado-flood/precipitation/805325-precip-dailysum-2003-2013.csv', 
+# Read the data into python
+boulder_daily_precip = pd.read_csv('data/colorado-flood/precipitation/805325-precip-dailysum-2003-2013.csv',
                                    parse_dates=['DATE'],
-                                  na_values = ['999.99'])
-# view first 5 rows
+                                   na_values=['999.99'])
+# View first 5 rows
 boulder_daily_precip.head()
 ```
 
@@ -229,7 +226,7 @@ It's always a good idea to explore the data before working with it.
 
 {:.input}
 ```python
-# view structure of data
+# View structure of data
 boulder_daily_precip.dtypes
 ```
 
@@ -253,10 +250,9 @@ boulder_daily_precip.dtypes
 
 
 
-
 {:.input}
 ```python
-# view data summary statistics for all columns
+# View data summary statistics for all columns
 boulder_daily_precip.describe()
 ```
 
@@ -396,9 +392,6 @@ values to ensure you learn how to clean them.
 {: .notice--success }
 
 
-
-
-
 ## Subset Data Temporally in Pandas
 
 There are many ways to subset the data temporally in Python. The easiest way to do this is to use pandas.
@@ -417,11 +410,11 @@ as done below. Note that for each argument, the column that contains the time st
 
 {:.input}
 ```python
-# read the data into python setting date as an index
-boulder_daily_precip = pd.read_csv('data/colorado-flood/precipitation/805325-precip-dailysum-2003-2013.csv', 
+# Read the data into python setting date as an index
+boulder_daily_precip = pd.read_csv('data/colorado-flood/precipitation/805325-precip-dailysum-2003-2013.csv',
                                    parse_dates=['DATE'],
-                                  na_values = ['999.99'],
-                                  index_col = 'DATE')
+                                   na_values=['999.99'],
+                                   index_col='DATE')
 ```
 
 Now the magic happens! Once you have specified an index column, your data frame looks like the one below when printed. Notice that the DATE column is lower visually then the other column names. It's also on the LEFT hand side of the dataframe. This is because it is now an index. 
@@ -545,7 +538,7 @@ But if you call `boulder_daily_precip.index` you will find it.
 
 {:.input}
 ```python
-# your date column that is the index now is not listed below
+# Note: your date column that is the index now is not listed below
 boulder_daily_precip.dtypes
 ```
 
@@ -570,7 +563,7 @@ boulder_daily_precip.dtypes
 
 {:.input}
 ```python
-# access the index of your dataframe
+# Access the index of your dataframe
 boulder_daily_precip.index
 ```
 
@@ -598,9 +591,8 @@ data-frame-name['index -period-here']
 
 {:.input}
 ```python
-# below you subset all of the data for 2013 - the first 5 rows are shown
+# Subset all of the data for 2013 - the first 5 rows are shown
 boulder_daily_precip['2013'].head()
-
 ```
 
 {:.output}
@@ -715,7 +707,7 @@ You can subset within a date range using the syntax below.
 
 {:.input}
 ```python
-# you can subset this way
+# Subset another way
 boulder_daily_precip['2013-05-01':'2013-06-06']
 ```
 
@@ -875,9 +867,9 @@ For this example, subset the data to the time period: **January 1 2003 - October
 
 {:.input}
 ```python
-# subset the data to a date range
+# Subset the data to a date range
 precip_boulder_AugOct = boulder_daily_precip['2003-01-01':'2003-10-31']
-# did it work? 
+# Check to see if the subset worked
 print(precip_boulder_AugOct.index.min())
 print(precip_boulder_AugOct.index.max())
 ```
@@ -907,16 +899,21 @@ You are now ready to plot your data.
 
 {:.input}
 ```python
-# plot the data
-fig, ax = plt.subplots(figsize = (8,8))
-ax.scatter(precip_boulder_AugOct.index.values, 
-       precip_boulder_AugOct['DAILY_PRECIP'].values, 
-       color = 'purple')
+# Plot the data
+fig, ax = plt.subplots(figsize=(12, 8))
+ax.plot(precip_boulder_AugOct.index.values,
+        precip_boulder_AugOct['DAILY_PRECIP'].values, '-o',
+        color='purple')
 
-# add titles and format 
-ax.set_title('Daily Total Precipitation \nAug - Oct 2013 for Boulder Creek')
-ax.set_xlabel('Date')
-ax.set_ylabel('Precipitation (Inches)');
+# Add titles and format
+ax.set(title='Daily Total Precipitation \nAug - Oct 2013 for Boulder Creek',
+       xlabel='Date', ylabel='Precipitation (Inches)')
+
+# Format x axis
+ax.xaxis.set_major_locator(mdates.WeekdayLocator(interval=4))
+ax.xaxis.set_major_formatter(DateFormatter("%m-%d"))
+
+plt.show()
 ```
 
 {:.output}
@@ -924,7 +921,7 @@ ax.set_ylabel('Precipitation (Inches)');
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_30_0.png" alt = "Scatterplot showing daily total precipitation for Boulder Creek.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_26_0.png" alt = "Scatterplot showing daily total precipitation for Boulder Creek.">
 <figcaption>Scatterplot showing daily total precipitation for Boulder Creek.</figcaption>
 
 </figure>
@@ -932,8 +929,7 @@ ax.set_ylabel('Precipitation (Inches)');
 
 
 
-The plot above appears to be subsetted correctly in time. However the plot itself looks off. 
-Any ideas what is going on? Complete the challenge below to test your knowledge.
+Complete the challenge below to test your knowledge.
 
 <div class="notice--warning" markdown="1">
 
@@ -960,7 +956,7 @@ Your final plot should look something like the plot below.
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_32_0.png" alt = "Scatterplot of hourly precipitation for Boulder subsetted to 2003-2013.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_28_0.png" alt = "Scatterplot of hourly precipitation for Boulder subsetted to 2003-2013.">
 <figcaption>Scatterplot of hourly precipitation for Boulder subsetted to 2003-2013.</figcaption>
 
 </figure>
@@ -991,7 +987,7 @@ How different was the rainfall in 2012 compared to 2013?
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_35_0.png" alt = "Comparison of precipitation data in Boulder, CO from 2012 and 2013.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/03-intro-to-python-and-time-series-data/plot-time-series-handle-dates/2018-02-05-ts02-subset-plot-time-series-data-python_31_0.png" alt = "Comparison of precipitation data in Boulder, CO from 2012 and 2013.">
 <figcaption>Comparison of precipitation data in Boulder, CO from 2012 and 2013.</figcaption>
 
 </figure>
