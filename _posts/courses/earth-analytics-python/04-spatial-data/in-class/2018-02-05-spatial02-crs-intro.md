@@ -3,7 +3,7 @@ layout: single
 title: "GIS in Python: Intro to Coordinate Reference Systems in Python"
 excerpt: "This lesson introduces what a coordinate reference system is. You will use the `Python` programming language to explore and reproject data into geographic and projected CRSs."
 authors: ['Chris Holdgraf', 'Leah Wasser']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-18
 category: [courses]
 class-lesson: ['class-intro-spatial-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/intro-to-coordinate-reference-systems-python/
@@ -132,21 +132,21 @@ Next, you will learn more about CRS by exploring some data. Note that you don't 
 {:.input}
 ```python
 import os 
-from glob import glob
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.ticker import ScalarFormatter
+import seaborn as sns
 import geopandas as gpd
 from shapely.geometry import Point
-import pandas as pd
 import earthpy as et 
-import seaborn as sns
+
 # Adjust plot font sizes
 sns.set(font_scale=1.5)
 sns.set_style("white")
 
-plt.ion()
-# Set working directory
+# Set working dir & get data
+data = et.data.get_data('spatial-vector-lidar')
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
 
@@ -224,9 +224,9 @@ city_locations
 
 
 
-    [<shapely.geometry.point.Point at 0x119e53668>,
-     <shapely.geometry.point.Point at 0x119e532b0>,
-     <shapely.geometry.point.Point at 0x119e537b8>]
+    [<shapely.geometry.point.Point at 0x7f0852c99fd0>,
+     <shapely.geometry.point.Point at 0x7f08527acda0>,
+     <shapely.geometry.point.Point at 0x7f0852c99780>]
 
 
 
@@ -344,7 +344,10 @@ city_locations.plot(ax=ax,
                     markersize=60, 
                     color='springgreen',
                     marker='*')
-ax.set(title="World Map - Geographic Coordinate Reference System (long/lat degrees)");
+# Add title and axes labels
+ax.set(title="World Map - Geographic Coordinate Reference System (long/lat degrees)",
+       xlabel="X Coordinates (meters)",
+       ylabel="Y Coordinates (meters)");
 ```
 
 {:.output}
@@ -493,7 +496,7 @@ for axis in [ax.xaxis, ax.yaxis]:
     formatter = ScalarFormatter()
     formatter.set_scientific(False)
     axis.set_major_formatter(formatter)
-    
+
 plt.axis('equal');
 ```
 

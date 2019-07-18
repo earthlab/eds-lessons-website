@@ -3,7 +3,7 @@ layout: single
 title: "GIS in Python: Introduction to Vector Format Spatial Data - Points, Lines and Polygons"
 excerpt: "This lesson introduces what vector data are and how to open vector data stored in shapefile format in Python."
 authors: ['Leah Wasser', 'Chris Holdgraf']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-18
 category: [courses]
 class-lesson: ['class-intro-spatial-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/intro-vector-data-python/
@@ -113,11 +113,12 @@ You will use the `geopandas` library to work with vector data in `Python`. You w
 {:.input}
 ```python
 import os
-import geopandas as gpd
 import matplotlib.pyplot as plt
+import geopandas as gpd
 import earthpy as et
-# Plot data inline
-plt.ion()
+
+# Set working dir & get data
+data = et.data.get_data('spatial-vector-lidar')
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
 
@@ -329,7 +330,7 @@ sjer_plot_locations.total_bounds
 
 
 
-    array([  254738.618,  4107527.074,   258497.102,  4112167.778])
+    array([ 254738.618, 4107527.074,  258497.102, 4112167.778])
 
 
 
@@ -430,7 +431,7 @@ sjer_plot_locations.shape
     crs 
      {'init': 'epsg:32611'}
     total_bounds 
-     [  255852.376  4108752.026   257406.967  4111567.818]
+     [ 255852.376 4108752.026  257406.967 4111567.818]
 
 
 
@@ -453,7 +454,7 @@ sjer_plot_locations.plot()
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x120868518>
+    <matplotlib.axes._subplots.AxesSubplot at 0x7f09608ebb00>
 
 
 
@@ -660,25 +661,15 @@ sjer_plot_locations.plot(column='plot_type',
 ax.set_title('SJER Plot Locations\nMadera County, CA')
 ax.set_axis_off()
 plt.axis('equal')
+plt.show()
 ```
-
-{:.output}
-{:.execute_result}
-
-
-
-    (254355.7248834534, 259082.25144747042, 4107050.1346737249, 4112614.8624318959)
-
-
-
-
 
 {:.output}
 {:.display_data}
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial01-intro-vector-data_33_1.png" alt = "Spatial plot of SJER plot locations layered on top of the plot boundary.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial01-intro-vector-data_33_0.png" alt = "Spatial plot of SJER plot locations layered on top of the plot boundary.">
 <figcaption>Spatial plot of SJER plot locations layered on top of the plot boundary.</figcaption>
 
 </figure>

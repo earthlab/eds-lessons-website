@@ -4,7 +4,7 @@ title: "Handle missing spatial attribute data Python: GIS in Python"
 excerpt: "This lesson introduces what vector data are and how to open vector data stored in
 shapefile format in Python. "
 authors: ['Chris Holdgraf', 'Leah Wasser', 'Martha Morrissey']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-18
 category: [courses]
 class-lesson: ['class-intro-spatial-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/missing-data-vector-data-in-python/
@@ -47,6 +47,9 @@ import pandas as pd
 import numpy as np
 import geopandas as gpd
 import earthpy as et 
+
+# Set working dir & get data
+data = et.data.get_data('spatial-vector-lidar')
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
 

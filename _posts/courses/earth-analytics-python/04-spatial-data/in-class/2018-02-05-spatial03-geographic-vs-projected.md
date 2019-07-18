@@ -2,7 +2,7 @@
 layout: single
 title: "Geographic vs projected coordinate reference systems - GIS in Python"
 authors: ['Chris Holdgraf', 'Leah Wasser']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-18
 category: [courses]
 class-lesson: ['class-intro-spatial-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/geographic-vs-projected-coordinate-reference-systems-python/
@@ -112,12 +112,13 @@ import geopandas as gpd
 from shapely.geometry import Point
 import earthpy as et
 import seaborn as sns
-# adjust plot font sizes
+
+# Adjust plot font sizes
 sns.set(font_scale=1.5)
 sns.set_style("white")
-# Render plots inline on the page
-plt.ion()
-# Set working dir
+
+# Set working dir & get data
+data = et.data.get_data('spatial-vector-lidar')
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
 

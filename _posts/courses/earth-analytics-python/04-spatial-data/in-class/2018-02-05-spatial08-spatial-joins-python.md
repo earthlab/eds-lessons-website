@@ -3,7 +3,7 @@ layout: single
 title: "How to Join Attributes From One Shapefile to Another in Open Source Python Using Geopandas: GIS in Python"
 excerpt: "In this lesson you review how to perform spatial joins in python. A spatial join is when you assign attributes from one shapefile to another based upon it's spatial location."
 authors: ['Leah Wasser','Jenny Palomino']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-18
 category: [courses]
 class-lesson: ['class-intro-spatial-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/spatial-joins-in-python-geopandas-shapely/
@@ -47,18 +47,14 @@ import matplotlib.pyplot as plt
 import matplotlib.lines as mlines
 from matplotlib.colors import ListedColormap
 import pandas as pd
-import geopandas as gpd
-import earthpy as et 
 from shapely.geometry import box
+import geopandas as gpd
+import earthpy as et
+from earthpy import clip as cl
 
-# Plot figures inline
-plt.ion()
-
-# Set working directory
+# Set working dir & get data
+data = et.data.get_data('spatial-vector-lidar')
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
-
-# Import clip_data.py as a module so you can access the clip data functions
-import clip_data as cl
 ```
 
 {:.input}
@@ -80,7 +76,7 @@ country_bound_us_simp = country_bound_us.simplify(.2, preserve_topology=True)
 
 # Clip the roads to the US boundary - this will take about a minute to execute
 roads_cl = cl.clip_shp(ne_roads, country_bound_us_simp)
-
+roads_cl.crs = ne_roads.crs
 # Dissolve states by region
 regions_agg = state_bound_us.dissolve(by="region")
 ```
@@ -153,34 +149,34 @@ roads_region[["featurecla", "index_right", "ALAND"]].head()
   </thead>
   <tbody>
     <tr>
-      <th>1453</th>
+      <th>0</th>
       <td>Road</td>
-      <td>West</td>
-      <td>403483823181</td>
+      <td>Midwest</td>
+      <td>143794747023</td>
     </tr>
     <tr>
-      <th>1434</th>
+      <th>2</th>
       <td>Road</td>
-      <td>West</td>
-      <td>403483823181</td>
+      <td>Midwest</td>
+      <td>143794747023</td>
     </tr>
     <tr>
-      <th>1492</th>
+      <th>4</th>
       <td>Road</td>
-      <td>West</td>
-      <td>403483823181</td>
+      <td>Midwest</td>
+      <td>143794747023</td>
     </tr>
     <tr>
-      <th>50512</th>
+      <th>5</th>
       <td>Road</td>
-      <td>West</td>
-      <td>403483823181</td>
+      <td>Midwest</td>
+      <td>143794747023</td>
     </tr>
     <tr>
-      <th>49677</th>
+      <th>8</th>
       <td>Road</td>
-      <td>West</td>
-      <td>403483823181</td>
+      <td>Midwest</td>
+      <td>143794747023</td>
     </tr>
   </tbody>
 </table>
@@ -212,6 +208,10 @@ country_albers.plot(alpha=1,
 roads_albers.plot(column='index_right',
                   ax=ax,
                   legend=True)
+# Adjust legend location
+leg = ax.get_legend()
+leg.set_bbox_to_anchor((1.15,1))
+
 ax.set_axis_off()
 plt.axis('equal')
 plt.show()
@@ -256,6 +256,8 @@ for ctype, data in roads_albers.groupby('index_right'):
     data.plot(color=road_attrs[ctype][0],
               label=ctype,
               ax=ax)
+    
+# This approach works to place the legend when you have defined labels
 plt.legend(bbox_to_anchor=(1.0, 1), loc=2)
 ax.set_axis_off()
 plt.axis('equal')

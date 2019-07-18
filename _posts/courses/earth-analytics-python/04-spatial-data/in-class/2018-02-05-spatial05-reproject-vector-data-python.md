@@ -2,8 +2,8 @@
 layout: single
 title: "GIS in Python: Reproject Vector Data."
 excerpt: "In this lesson we cover how to reproject a vector dataset in `Python` using the `to_crs()` `Geopandas` function."
-authors: ['Martha Morrissey','Leah Wasser','Chris Holdgraf']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+authors: ['Leah Wasser','Martha Morrissey','Chris Holdgraf']
+modified: 2019-07-18
 category: [courses]
 class-lesson: ['class-intro-spatial-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/reproject-vector-data-in-python/
@@ -83,14 +83,20 @@ for that state.
 
 {:.input}
 ```python
-import geopandas as gpd
+import os
 import numpy as np
 import matplotlib.pyplot as plt
-import os 
+import seaborn as sns
+import geopandas as gpd
 import earthpy as et
-# Set working directory to your earth-analytics dir
+
+# Setting plotting style for the notebook
+sns.set_style("white")
+sns.set(font_scale=1.5)
+
+# Set working dir & get data
+data = et.data.get_data('spatial-vector-lidar')
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
-plt.ion()
 ```
 
 Revisiting the challenge from a previous lesson, here are the two layers:
@@ -99,12 +105,12 @@ Notice the CRS of each layer.
 
 {:.input}
 ```python
-# import the data
+# Import the data
 sjer_roads = gpd.read_file("data/spatial-vector-lidar/california/madera-county-roads/tl_2013_06039_roads.shp")
 # aoi stands for area of interest
 sjer_aoi = gpd.read_file("data/spatial-vector-lidar/california/neon-sjer-site/vector_data/SJER_crop.shp")
 
-# view the coordinate reference system of both layers 
+# View the Coordinate Reference System of both layers 
 print(sjer_roads.crs)
 print(sjer_aoi.crs)
 ```
@@ -131,13 +137,13 @@ If you are simply reprojecting to create a base map then it doesn't matter what 
 
 {:.input}
 ```python
-# reproject the aoi to match the roads layer
+# Reproject the aoi to match the roads layer
 sjer_aoi_wgs84  = sjer_aoi.to_crs({'init': 'epsg:4269'})
 ```
 
 {:.input}
 ```python
-# plot the data
+# Plot the data
 fig, ax = plt.subplots(figsize=(12, 8))
 
 sjer_roads.plot(cmap='Greys', ax=ax, alpha=.5)
@@ -184,7 +190,7 @@ from the Census website to support the learning goals of this tutorial.
 {:.input}
 ```python
 state_boundary_us = gpd.read_file('data/spatial-vector-lidar/usa/usa-states-census-2014.shp')
-# what is the structure of the data that we imported?
+# View data structure
 type(state_boundary_us)
 ```
 
@@ -201,7 +207,7 @@ type(state_boundary_us)
 
 {:.input}
 ```python
-# view the first few lines of the data
+# View the first few lines of the data
 state_boundary_us.head()
 ```
 
@@ -325,13 +331,13 @@ Also notice that you are using `ax.set_axis_off()` to hide the x, y axis of our 
 
 {:.input}
 ```python
-# plot the data
+# Plot the data
 fig, ax = plt.subplots(figsize = (12,8))
 state_boundary_us.plot(ax = ax, facecolor = 'white', edgecolor = 'black')
 
-# add title to map
+# Add title to map
 ax.set(title="Map of Continental US State Boundaries\n United States Census Bureau Data")
-# turn off the axis  
+# Turn off the axis  
 plt.axis('equal')
 ax.set_axis_off()
 plt.show()
@@ -360,7 +366,7 @@ make our map visually pop!
 
 {:.input}
 ```python
-# import United States country boundary data
+# Import United States country boundary data
 country_boundary_us = gpd.read_file('data/spatial-vector-lidar/usa/usa-boundary-dissolved.shp')
 type(country_boundary_us)
 ```
@@ -376,10 +382,10 @@ type(country_boundary_us)
 
 
 
+
 {:.input}
 ```python
-# https://matplotlib.org/1.4.3/examples/color/named_colors.html
-# plot data 
+# Plot data 
 fig, ax = plt.subplots(figsize = (12,7))
 country_boundary_us.plot(ax=ax, 
                          alpha=1, 
@@ -400,7 +406,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial05-reproject-vector-data-python_16_0.png" alt = "Map showing USA boundary and states with custom colors.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial05-reproject-vector-data-python_17_0.png" alt = "Map showing USA boundary and states with custom colors.">
 <figcaption>Map showing USA boundary and states with custom colors.</figcaption>
 
 </figure>
@@ -416,7 +422,7 @@ HINT: AOI stands for  "Area of Interest". This is your study area.
 
 {:.input}
 ```python
-# plot the data
+# Plot the data
 fig, ax = plt.subplots(figsize = (6,6))
 sjer_aoi.plot(ax=ax, color = "indigo")
 ax.set(title='San Joachin Experimental Range \n Area of interest (AOI)')
@@ -429,7 +435,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial05-reproject-vector-data-python_18_0.png" alt = "Plot of the SJER area of interest (AOI). This represents the boundary of your study area.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial05-reproject-vector-data-python_19_0.png" alt = "Plot of the SJER area of interest (AOI). This represents the boundary of your study area.">
 <figcaption>Plot of the SJER area of interest (AOI). This represents the boundary of your study area.</figcaption>
 
 </figure>
@@ -452,7 +458,7 @@ state_boundary_us.plot(ax = ax,
                        color = "white", 
                        edgecolor ="gray")
 sjer_aoi.plot(ax=ax, color = "indigo")
-# turn off axis  
+# Turn off axis  
 ax.set_axis_off()
 plt.show()
 ```
@@ -462,7 +468,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial05-reproject-vector-data-python_20_0.png" alt = "When you try to plot the state and country boundaries with the SJER_AOI what happens? Notice that this map does not look right even though the layers plotted just fine individually. This suggests there may be a CRS issue.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial05-reproject-vector-data-python_21_0.png" alt = "When you try to plot the state and country boundaries with the SJER_AOI what happens? Notice that this map does not look right even though the layers plotted just fine individually. This suggests there may be a CRS issue.">
 <figcaption>When you try to plot the state and country boundaries with the SJER_AOI what happens? Notice that this map does not look right even though the layers plotted just fine individually. This suggests there may be a CRS issue.</figcaption>
 
 </figure>
@@ -479,7 +485,7 @@ U.S. boundary layers.
 
 {:.input}
 ```python
-# view CRS of each layer
+# View CRS of each layer
 print(sjer_aoi.crs)
 print(country_boundary_us.crs)
 print(state_boundary_us.crs)
@@ -518,13 +524,13 @@ object compared to the `state_boundary_us` object.
 
 {:.input}
 ```python
-# view spatial extent for both layers 
+# View spatial extent for both layers 
 print(sjer_aoi.total_bounds)
 print(state_boundary_us.total_bounds)
 ```
 
 {:.output}
-    [  254570.567       4107303.07684455   258867.40933092  4112361.92026107]
+    [ 254570.567      4107303.07684455  258867.40933092 4112361.92026107]
     [-124.725839   24.498131  -66.949895   49.384358]
 
 
@@ -563,17 +569,17 @@ longitude `WGS84` coordinate reference system (CRS).
 
 {:.input}
 ```python
-# reproject the aoi to the same CRS as the state_boundary_use object
+# Reproject the aoi to the same CRS as the state_boundary_use object
 sjer_aoi_WGS84 = sjer_aoi.to_crs(state_boundary_us.crs)
 
-# view CRS of new reprojected layer
+# View CRS of new reprojected layer
 print(sjer_aoi.total_bounds)
 print('sjer_aoi crs: ', sjer_aoi_WGS84.crs)
 print('state boundary crs:', state_boundary_us.crs)
 ```
 
 {:.output}
-    [  254570.567       4107303.07684455   258867.40933092  4112361.92026107]
+    [ 254570.567      4107303.07684455  258867.40933092 4112361.92026107]
     sjer_aoi crs:  {'init': 'epsg:4326'}
     state boundary crs: {'init': 'epsg:4326'}
 
@@ -585,7 +591,7 @@ the CRS for the EPSG code 4326 from the <a href="http://spatialreference.org/ref
 
 {:.input}
 ```python
-# reproject using the full proj.4 string copied from spatial reference.org
+# Reproject using the full proj.4 string copied from spatial reference.org
 sjer_aoi_WGS84_2 = sjer_aoi.to_crs("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")
 ```
 
@@ -621,7 +627,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial05-reproject-vector-data-python_30_0.png" alt = "Once you have reprojected your data, you can then plot all of the layers together.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial05-reproject-vector-data-python_31_0.png" alt = "Once you have reprojected your data, you can then plot all of the layers together.">
 <figcaption>Once you have reprojected your data, you can then plot all of the layers together.</figcaption>
 
 </figure>
@@ -637,7 +643,7 @@ as follows:
 
 {:.input}
 ```python
-# zoom in on just the area 
+# Zoom in on just the area 
 fig, ax = plt.subplots(figsize = (12,8))
 state_boundary_us.plot(ax = ax,
                       linewidth=1,
@@ -652,7 +658,7 @@ sjer_aoi_WGS84.plot(ax=ax,
                    edgecolor = "r")
 ax.set(title="Map of Continental US State Boundaries \n with SJER AOI")
 ax.set(xlim=[-125, -116], ylim=[35, 40])
-# turn off axis  
+# Turn off axis  
 ax.set(xticks = [], yticks = []);
 ```
 
@@ -661,7 +667,7 @@ ax.set(xticks = [], yticks = []);
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial05-reproject-vector-data-python_32_0.png" alt = "Here you've zoomed into the data on the map to see the very small study area extent that you are interested in.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial05-reproject-vector-data-python_33_0.png" alt = "Here you've zoomed into the data on the map to see the very small study area extent that you are interested in.">
 <figcaption>Here you've zoomed into the data on the map to see the very small study area extent that you are interested in.</figcaption>
 
 </figure>
@@ -673,7 +679,7 @@ Great! The plot worked this time however now, the AOI boundary is a polygon and 
 To do this, you'll access the `centroid` attribute of your AOI polygon using `.centroid`.
 {:.input}
 ```python
-# grab the centroid x, y location of the aoi and turn it into a new spatial object. 
+# Grab the centroid x, y location of the aoi and turn it into a new spatial object. 
 AOI_point = sjer_aoi_WGS84["geometry"].centroid
 type(AOI_point)
 ```
@@ -699,7 +705,7 @@ sjer_aoi_WGS84["geometry"].centroid.plot();
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial05-reproject-vector-data-python_35_0.png" alt = "Plot showing the centroid of your AOI boundary. A point might be more visible on a map of the entire United States than a tiny box as you can adjust the markersize.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial05-reproject-vector-data-python_36_0.png" alt = "Plot showing the centroid of your AOI boundary. A point might be more visible on a map of the entire United States than a tiny box as you can adjust the markersize.">
 <figcaption>Plot showing the centroid of your AOI boundary. A point might be more visible on a map of the entire United States than a tiny box as you can adjust the markersize.</figcaption>
 
 </figure>
@@ -724,7 +730,7 @@ AOI_point.plot(ax=ax,
               marker='*')
 ax.set(title="Map of Continental US State Boundaries \n with SJER AOI")
 
-# turn off axis  
+# Turn off axis  
 ax.set_axis_off();
 ```
 
@@ -733,7 +739,7 @@ ax.set_axis_off();
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial05-reproject-vector-data-python_36_0.png" alt = "Plot showing the centroid of your AOI boundary overlayed on top of a map of the entire United States.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/04-spatial-data/in-class/2018-02-05-spatial05-reproject-vector-data-python_37_0.png" alt = "Plot showing the centroid of your AOI boundary overlayed on top of a map of the entire United States.">
 <figcaption>Plot showing the centroid of your AOI boundary overlayed on top of a map of the entire United States.</figcaption>
 
 </figure>

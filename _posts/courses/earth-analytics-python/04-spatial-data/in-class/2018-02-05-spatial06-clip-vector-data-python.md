@@ -3,7 +3,7 @@ layout: single
 title: "Clip a spatial vector layer in python using shapely & geopandas: GIS in Python"
 excerpt: "In this lesson you review how to clip a vector data layer in python using geopandas and shapely."
 authors: ['Leah Wasser', 'Martha Morrissey']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-18
 category: [courses]
 class-lesson: ['class-intro-spatial-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/clip-vector-data-in-python-geopandas-shapely/
@@ -80,12 +80,16 @@ import geopandas as gpd
 # Load the box module from shapely to create box objects
 from shapely.geometry import box
 import earthpy as et
-# Plot figures inline
-plt.ion()
+from earthpy import clip as cl
+import seaborn as sns
 
+# Adjust plot font sizes
+sns.set(font_scale=1.5)
+sns.set_style("white")
+
+# Set working dir & get data
+data = et.data.get_data('spatial-vector-lidar')
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
-# Import clip_data.py as a module so you can access the clip data functions
-import clip_data as cl
 ```
 
 ## How to Clip Shapefiles in Python
@@ -423,7 +427,7 @@ Plot the cropped data.
 
 {:.input}
 ```python
-# plot the data
+# Plot the data
 fig, ax = plt.subplots(figsize=(12, 8))
 country_boundary_us.plot(alpha=1,
                          color="white",
@@ -485,10 +489,10 @@ final_clipped = clipped[clipped.geometry.notnull()]
 ```python
 fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(10, 10))
 
-# a larger tolerance yields a blockier polygon
+# Set a larger tolerance yields a blockier polygon
 country_boundary_us.simplify(2, preserve_topology=True).plot(ax=ax1)
 
-# a larger tolerance yields a blockier polygon
+# Set  a larger tolerance yields a blockier polygon
 country_boundary_us.simplify(.2, preserve_topology=True).plot(ax=ax2)
 
 ax1.set_title(
@@ -574,7 +578,7 @@ road_attrs = {'Beltway': ['black', 2],
               'Ferry Route': ['grey', .5],
               'Major Highway': ['black', 1]}
 
-# plot the data
+# Plot the data
 fig, ax = plt.subplots(figsize=(12, 8))
 
 for ctype, data in ne_roads_clip.groupby('type'):
@@ -613,57 +617,3 @@ plt.show()
 
 
 
-
-
-
-
-{:.input}
-```python
-# Create function to clip point data using geopandas
-
-
-def clip_points(shp, clip_obj):
-    '''
-    Docs Here
-    '''
-
-    poly = clip_obj.geometry.unary_union
-    return(shp[shp.geometry.intersects(poly)])
-
-# Create function to clip line and polygon data using geopandas
-
-
-def clip_line_poly(shp, clip_obj):
-    '''
-    docs
-    '''
-
-    # Create a single polygon object for clipping
-    poly = clip_obj.geometry.unary_union
-    spatial_index = shp.sindex
-
-    # Create a box for the initial intersection
-    bbox = poly.bounds
-    # Get a list of id's for each road line that overlaps the bounding box and subset the data to just those lines
-    sidx = list(spatial_index.intersection(bbox))
-    shp_sub = shp.iloc[sidx]
-
-    # Clip the data - with these data
-    clipped = shp_sub.copy()
-    clipped['geometry'] = shp_sub.intersection(poly)
-
-    # Return the clipped layer with no null geometry values
-    return(clipped[clipped.geometry.notnull()])
-
-
-# Final clip function that handles points, lines and polygons
-
-
-def clip_shp(shp, clip_obj):
-    '''
-    '''
-    if shp["geometry"].iloc[0].type == "Point":
-        return(clip_points(shp, clip_obj))
-    else:
-        return(clip_line_poly(shp, clip_obj))
-```
