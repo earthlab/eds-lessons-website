@@ -3,7 +3,7 @@ layout: single
 category: courses
 title: "Quantify Fire Impacts - Remote Sensing"
 permalink: /courses/earth-analytics/multispectral-remote-sensing-modis/
-modified: '2019-07-23'
+modified: '2019-07-24'
 week-landing: 8
 week: 8
 sidebar:
@@ -30,7 +30,7 @@ you will learn how to
 * Deal with cloud shadows and cloud coverage.
 * Deal with scale factors and no data values.
 
-{% include/data_subsets/course_earth_analytics/_data-week6-7.md %}
+{% include /data_subsets/course_earth_analytics/_data-week6-7.md %}
 
 </div>
 

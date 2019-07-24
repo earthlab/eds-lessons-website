@@ -3,7 +3,7 @@ layout: single
 title: "Clean Remote Sensing Data in R - Clouds, Shadows & Cloud Masks"
 excerpt: "In this lesson, you will learn how to deal with clouds when working with spectral remote sensing data. You will learn how to mask clouds from landsat and MODIS remote sensing data in R using the mask() function. You will also discuss issues associated with cloud cover - particular as they relate to a research topic."
 authors: ['Leah Wasser','Megan Cattau']
-modified: '2019-07-23'
+modified: '2019-07-24'
 category: [courses]
 class-lesson: ['spectral-data-fire-2-r']
 permalink: /courses/earth-analytics/multispectral-remote-sensing-modis/intro-spectral-data-r/
@@ -47,9 +47,9 @@ After completing this tutorial, you will be able to:
 ## <i class="fa fa-check-square-o fa-2" aria-hidden="true"></i> What You Need
 
 You will need a computer with internet access to complete this lesson and the
-data that you already downloaded for week 6 of the course.
+data that you already downloaded for week 8 of the course.
 
-{% include/data_subsets/course_earth_analytics/_data-week6-7.md %}
+{% include /data_subsets/course_earth_analytics/_data-week6-7.md %}
 
 </div>
 
