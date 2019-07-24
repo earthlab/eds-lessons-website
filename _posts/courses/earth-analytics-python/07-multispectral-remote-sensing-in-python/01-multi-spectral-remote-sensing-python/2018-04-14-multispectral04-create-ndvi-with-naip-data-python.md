@@ -3,7 +3,7 @@ layout: single
 title: "Calculate NDVI Using NAIP Remote Sensing Data in the Python Programming Language"
 excerpt: "A vegetation index is a single value that quantifies vegetation health or structure. Learn how to calculate the NDVI vegetation index using NAIP data in Python."
 authors: ['Leah Wasser', 'Chris Holdgraf']
-modified: 2019-07-09
+modified: 2019-07-24
 category: [courses]
 class-lesson: ['multispectral-remote-sensing-data-python']
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-in-python/vegetation-indices-NDVI-in-python/
@@ -117,6 +117,12 @@ os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 mpl.rcParams['figure.figsize'] = (14, 14)
 mpl.rcParams['axes.titlesize'] = 20
 ```
+
+{:.output}
+    Downloading from https://ndownloader.figshare.com/files/10960109
+    Extracted output to /root/earth-analytics/data/cold-springs-fire/.
+
+
 
 Next, open up the NAIP data that you wish to calculate NDVI with. You will use the data from 2015 for this example that you downloaded for week 7 of this course:
 
