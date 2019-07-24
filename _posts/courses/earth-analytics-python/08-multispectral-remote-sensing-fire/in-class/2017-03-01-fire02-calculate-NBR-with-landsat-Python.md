@@ -3,7 +3,7 @@ layout: single
 title: "Calculate and Plot Difference Normalized Burn Ratio (dNBR) using Landsat 8 Remote Sensing Data in Python"
 excerpt: "The Normalized Burn Index is used to quantify the amount of area that was impacted by a fire. Learn how to calculate the normalized burn index and classify your data using Landsat 8 data in Python."
 authors: ['Leah Wasser','Megan Cattau']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-24
 category: [courses]
 class-lesson: ['modis-multispectral-rs-python']
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-modis/calculate-dNBR-Landsat-8/
@@ -63,9 +63,9 @@ First, import your Python libraries.
 
 {:.input}
 ```python
-import numpy as np
 from glob import glob
 import os
+import numpy as np
 
 import matplotlib.pyplot as plt
 from matplotlib import patches as mpatches
@@ -76,16 +76,19 @@ import seaborn as sns
 
 import rasterio as rio
 from rasterio.plot import plotting_extent
-from rasterio.mask import mask
+#from rasterio.mask import mask
 
 import geopandas as gpd
 from shapely.geometry import mapping, box
 
 import earthpy as et
 import earthpy.spatial as es
+import earthpy.plot as ep
 
 sns.set_style('white')
+sns.set(font_scale=1.5)
 
+data = et.data.get_data('cold-springs-fire')
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
 
@@ -104,16 +107,12 @@ all_landsat_bands.sort()
 
 landsat_post_fire_path = "data/cold-springs-fire/outputs/landsat_post_fire.tif"
 
-es.stack_raster_tifs(all_landsat_bands,
-                     landsat_post_fire_path)
+landsat_post_fire, landsat_post_fire_meta = es.stack(all_landsat_bands,
+                                                     landsat_post_fire_path)
 
-# You are not cropping the data in this lesson so you can just use .read()
-with rio.open(landsat_post_fire_path) as src:
-    landsat_post_fire = src.read(masked=True)
-    landsat_post_meta = src.profile
-    landsat_post_bounds = src.bounds
-    landsat_extent = plotting_extent(src)
-
+# Get the plot extent
+landsat_extent = plotting_extent(landsat_post_fire[0],
+                                 landsat_post_fire_meta["transform"])
 
 # Open fire boundary layer and reproject it to match the Landsat data
 fire_boundary_path = "data/cold-springs-fire/vector_layers/fire-boundary-geomac/co_cold_springs_20160711_2200_dd83.shp"
@@ -121,7 +120,7 @@ fire_boundary = gpd.read_file(fire_boundary_path)
 
 
 # If the CRS' are not the same be sure to reproject
-fire_bound_utmz13 = fire_boundary.to_crs(landsat_post_meta['crs'])
+fire_bound_utmz13 = fire_boundary.to_crs(landsat_post_fire_meta['crs'])
 ```
 
 Next, you can calculate NBR on the post fire data. Remember that NBR uses different bands than NDVI but the calculation formula is the same. For landsat 8 data you will be using bands 7 and 5. And remember because python starts counting at 0 (0-based indexing), that will be bands 6 and 4 when you access them in your numpy array. 
@@ -137,7 +136,7 @@ landsat_postfire_nbr = (
 ```python
 # Calculate NBR & plot
 landsat_postfire_nbr = es.normalized_diff(
-    landsat_post_fire[6], landsat_post_fire[4])
+    landsat_post_fire[4], landsat_post_fire[6])
 
 fig, ax = plt.subplots(figsize=(12, 6))
 ndvi = ax.imshow(landsat_postfire_nbr,
@@ -149,7 +148,7 @@ ndvi = ax.imshow(landsat_postfire_nbr,
 fire_bound_utmz13.plot(ax=ax, color='None',
                        edgecolor='black', linewidth=2)
 
-fig.colorbar(ndvi)
+ep.colorbar(ndvi)
 ax.set(title="Landsat derived Normalized Burn Ratio\n 23 July 2016 \n Post Cold Springs Fire")
 ax.set_axis_off()
 plt.show()
@@ -320,7 +319,7 @@ fire_bound_utmz13.plot(ax=ax, color='None',
 
 values = np.unique(dnbr_landsat_class.ravel())
 
-es.draw_legend(im, 
+ep.draw_legend(im,
                classes=values,
                titles=dnbr_cat_names)
 
@@ -348,7 +347,7 @@ plt.show()
 
 ### Create a Colorbar Legend
 
-Alternatively, you can create a discrete colorbar with labels. This method might be a bit less technical to follow. You can decide what type of legend you prefer for your homework. 
+You can also create a discrete colorbar with labels. This method might be a bit less technical to follow. You can decide what type of legend you prefer for your homework. 
 
 {:.input}
 ```python
@@ -386,17 +385,14 @@ fire_bound_utmz13.plot(ax=ax,
                        edgecolor='black',
                        linewidth=2)
 
-cbar = fig.colorbar(im,
-                    boundaries=bounds,
-                    norm=norm,
-                    fraction=.035)
+cbar = ep.colorbar(im)
 
 cbar.set_ticks([np.unique(dnbr_landsat_class)])
 cbar.set_ticklabels(dnbr_cat_names)
 ax.set_title("Landsat dNBR - Cold Spring Fire Site \n June 22, 2017 - July 24, 2017",
              fontsize=16)
 
-# turn off ticks
+# Turn off ticks
 ax.set_axis_off()
 plt.show()
 ```

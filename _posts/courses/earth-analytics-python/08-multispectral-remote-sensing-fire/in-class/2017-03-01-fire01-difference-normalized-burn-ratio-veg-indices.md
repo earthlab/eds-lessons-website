@@ -3,7 +3,7 @@ layout: single
 title: "Calculate the Difference Normalized Burn Index - On Landsat and MODIS data in Python"
 excerpt: "The Normalized Burn Index (NBR) allows you to measure the impact of a fire on the landscape with remote sensing data. Learn how to calculate NBR using Landsat and MODIS remote sensing data in Python."
 authors: ['Leah Wasser']
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-24
 category: [courses]
 class-lesson: ['modis-multispectral-rs-python']
 module-title: 'MODIS, Landsat and the Normalized Burn Ratio Index (NBR) in Python'
@@ -146,6 +146,8 @@ sensitive to water and thus sometimes, pixels that are classified as "high sever
 may actually be water. Because of this, it is important to mask out areas of water
 PRIOR to performing any quantitative analysis on the difference NBR results.
 
+NOTE: Check out the mask lessons for this week for an example of how to remove unwanted pixels from your image!
+
 ### NBR & Landsat 8
 
 The table below which shows the band distribution of Landsat 8. These bands
@@ -242,13 +244,12 @@ Finally, calculate the difference between the two rasters to calculate the Diffe
 
 
 
-
 {:.output}
 {:.display_data}
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire01-difference-normalized-burn-ratio-veg-indices_16_0.png" alt = "Classified dNBR map using Landsat 8 data at the Cold Springs Fire site.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire01-difference-normalized-burn-ratio-veg-indices_15_0.png" alt = "Classified dNBR map using Landsat 8 data at the Cold Springs Fire site.">
 <figcaption>Classified dNBR map using Landsat 8 data at the Cold Springs Fire site.</figcaption>
 
 </figure>
@@ -262,7 +263,7 @@ Finally, calculate the difference between the two rasters to calculate the Diffe
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire01-difference-normalized-burn-ratio-veg-indices_17_0.png" alt = "Histogram of classified dNBR values for Landsat 8 Data">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire01-difference-normalized-burn-ratio-veg-indices_16_0.png" alt = "Histogram of classified dNBR values for Landsat 8 Data">
 <figcaption>Histogram of classified dNBR values for Landsat 8 Data</figcaption>
 
 </figure>
