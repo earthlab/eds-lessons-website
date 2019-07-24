@@ -3,7 +3,7 @@ layout: single
 category: courses
 title: "Learn to Create Efficient Data Workflows in Python"
 permalink: /courses/earth-analytics-python/create-efficient-data-workflows/
-modified: '{:%Y-%m-%d}'.format(datetime.now())
+modified: 2019-07-24
 week-landing: 10
 week: 10
 sidebar:
@@ -57,6 +57,12 @@ Your homework for this week is provided in the assignment dropbox on Canvas.
 ## Homework Plots
 
 The plots below are examples of what your output plots will look like with and without dealing with clouds.
+
+
+
+{:.output}
+    Downloading from https://ndownloader.figshare.com/files/13431344
+    Extracted output to /root/earth-analytics/data/ndvi-automation/.
 
 
 
