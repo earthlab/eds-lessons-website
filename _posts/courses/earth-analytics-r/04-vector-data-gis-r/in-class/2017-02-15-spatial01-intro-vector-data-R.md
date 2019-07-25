@@ -4,7 +4,7 @@ title: "GIS in R: Intro to Vector Format Spatial Data - Points, Lines and Polygo
 excerpt: "This lesson introduces what vector data are and how to open vector data stored in
 shapefile format in R. "
 authors: ['Leah Wasser']
-modified: '2019-07-11'
+modified: '2019-07-25'
 category: [courses]
 class-lesson: ['class-intro-spatial-r']
 permalink: /courses/earth-analytics/spatial-data-r/intro-vector-data-r/
@@ -32,123 +32,6 @@ redirect_from:
 
 
 
-
-```r
-knitr::opts_chunk$get("root.dir")
-## [1] "~/earth-analytics"
-print(getwd())
-## [1] "/root/earth-analytics"
-list.files(getwd(), recursive = T)
-##   [1] "data/week-04.zip"                                                                   
-##   [2] "data/week-04/california/madera-county-roads/metadata.html"                          
-##   [3] "data/week-04/california/madera-county-roads/tl_2010_05143_roads.shp.xml"            
-##   [4] "data/week-04/california/madera-county-roads/tl_2013_06039_roads.dbf"                
-##   [5] "data/week-04/california/madera-county-roads/tl_2013_06039_roads.prj"                
-##   [6] "data/week-04/california/madera-county-roads/tl_2013_06039_roads.shp"                
-##   [7] "data/week-04/california/madera-county-roads/tl_2013_06039_roads.shp.xml"            
-##   [8] "data/week-04/california/madera-county-roads/tl_2013_06039_roads.shx"                
-##   [9] "data/week-04/california/SJER/2013/insitu/veg_chemistry/D17_2013_SJER_foliarChem.csv"
-##  [10] "data/week-04/california/SJER/2013/insitu/veg_metadata_desc_DataInstitute2016.csv"   
-##  [11] "data/week-04/california/SJER/2013/insitu/veg_structure/D17_2013_SJER_vegStr.csv"    
-##  [12] "data/week-04/california/SJER/2013/insitu/veg_structure/sjer_stems.dbf"              
-##  [13] "data/week-04/california/SJER/2013/insitu/veg_structure/sjer_stems.prj"              
-##  [14] "data/week-04/california/SJER/2013/insitu/veg_structure/sjer_stems.qpj"              
-##  [15] "data/week-04/california/SJER/2013/insitu/veg_structure/sjer_stems.shp"              
-##  [16] "data/week-04/california/SJER/2013/insitu/veg_structure/sjer_stems.shx"              
-##  [17] "data/week-04/california/SJER/2013/lidar/SJER_lidarAspect.tif"                       
-##  [18] "data/week-04/california/SJER/2013/lidar/SJER_lidarCHM.tif"                          
-##  [19] "data/week-04/california/SJER/2013/lidar/SJER_lidarDSM.tif"                          
-##  [20] "data/week-04/california/SJER/2013/lidar/SJER_lidarDTM.tif"                          
-##  [21] "data/week-04/california/SJER/2013/lidar/SJER_lidarSlope.tif"                        
-##  [22] "data/week-04/california/SJER/2013/spectrometer/veg_index/SJER_EVI.tif"              
-##  [23] "data/week-04/california/SJER/2013/spectrometer/veg_index/SJER_NDVI.tif"             
-##  [24] "data/week-04/california/SJER/vector_data/SJER_crop.dbf"                             
-##  [25] "data/week-04/california/SJER/vector_data/SJER_crop.prj"                             
-##  [26] "data/week-04/california/SJER/vector_data/SJER_crop.qpj"                             
-##  [27] "data/week-04/california/SJER/vector_data/SJER_crop.shp"                             
-##  [28] "data/week-04/california/SJER/vector_data/SJER_crop.shx"                             
-##  [29] "data/week-04/california/SJER/vector_data/SJER_plot_centroids.dbf"                   
-##  [30] "data/week-04/california/SJER/vector_data/SJER_plot_centroids.prj"                   
-##  [31] "data/week-04/california/SJER/vector_data/SJER_plot_centroids.qpj"                   
-##  [32] "data/week-04/california/SJER/vector_data/SJER_plot_centroids.shp"                   
-##  [33] "data/week-04/california/SJER/vector_data/SJER_plot_centroids.shx"                   
-##  [34] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_1.dbf"                
-##  [35] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_1.prj"                
-##  [36] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_1.README.html"        
-##  [37] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_1.shp"                
-##  [38] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_1.shx"                
-##  [39] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_1.VERSION.txt"        
-##  [40] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_10.dbf"               
-##  [41] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_10.prj"               
-##  [42] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_10.README.html"       
-##  [43] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_10.shp"               
-##  [44] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_10.shx"               
-##  [45] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_10.VERSION.txt"       
-##  [46] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_15.dbf"               
-##  [47] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_15.prj"               
-##  [48] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_15.README.html"       
-##  [49] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_15.shp"               
-##  [50] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_15.shx"               
-##  [51] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_15.VERSION.txt"       
-##  [52] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_20.dbf"               
-##  [53] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_20.prj"               
-##  [54] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_20.README.html"       
-##  [55] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_20.shp"               
-##  [56] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_20.shx"               
-##  [57] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_20.VERSION.txt"       
-##  [58] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_30.dbf"               
-##  [59] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_30.prj"               
-##  [60] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_30.README.html"       
-##  [61] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_30.shp"               
-##  [62] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_30.shx"               
-##  [63] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_30.VERSION.txt"       
-##  [64] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_5.dbf"                
-##  [65] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_5.prj"                
-##  [66] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_5.README.html"        
-##  [67] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_5.shp"                
-##  [68] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_5.shx"                
-##  [69] "data/week-04/global/ne_110m_graticules_all/ne_110m_graticules_5.VERSION.txt"        
-##  [70] "data/week-04/global/ne_110m_graticules_all/ne_110m_wgs84_bounding_box.dbf"          
-##  [71] "data/week-04/global/ne_110m_graticules_all/ne_110m_wgs84_bounding_box.prj"          
-##  [72] "data/week-04/global/ne_110m_graticules_all/ne_110m_wgs84_bounding_box.README.html"  
-##  [73] "data/week-04/global/ne_110m_graticules_all/ne_110m_wgs84_bounding_box.shp"          
-##  [74] "data/week-04/global/ne_110m_graticules_all/ne_110m_wgs84_bounding_box.shx"          
-##  [75] "data/week-04/global/ne_110m_graticules_all/ne_110m_wgs84_bounding_box.VERSION.txt"  
-##  [76] "data/week-04/global/ne_110m_land/ne_110m_land.dbf"                                  
-##  [77] "data/week-04/global/ne_110m_land/ne_110m_land.prj"                                  
-##  [78] "data/week-04/global/ne_110m_land/ne_110m_land.README.html"                          
-##  [79] "data/week-04/global/ne_110m_land/ne_110m_land.shp"                                  
-##  [80] "data/week-04/global/ne_110m_land/ne_110m_land.shx"                                  
-##  [81] "data/week-04/global/ne_110m_land/ne_110m_land.VERSION.txt"                          
-##  [82] "data/week-04/global/readme.txt"                                                     
-##  [83] "data/week-04/README"                                                                
-##  [84] "data/week-04/usa-boundary-layers/Boundary-US-State-Mass.cpg"                        
-##  [85] "data/week-04/usa-boundary-layers/Boundary-US-State-Mass.dbf"                        
-##  [86] "data/week-04/usa-boundary-layers/Boundary-US-State-Mass.prj"                        
-##  [87] "data/week-04/usa-boundary-layers/Boundary-US-State-Mass.qpj"                        
-##  [88] "data/week-04/usa-boundary-layers/Boundary-US-State-Mass.shp"                        
-##  [89] "data/week-04/usa-boundary-layers/Boundary-US-State-Mass.shx"                        
-##  [90] "data/week-04/usa-boundary-layers/Boundary-US-State-NEast.cpg"                       
-##  [91] "data/week-04/usa-boundary-layers/Boundary-US-State-NEast.dbf"                       
-##  [92] "data/week-04/usa-boundary-layers/Boundary-US-State-NEast.prj"                       
-##  [93] "data/week-04/usa-boundary-layers/Boundary-US-State-NEast.qpj"                       
-##  [94] "data/week-04/usa-boundary-layers/Boundary-US-State-NEast.shp"                       
-##  [95] "data/week-04/usa-boundary-layers/Boundary-US-State-NEast.shx"                       
-##  [96] "data/week-04/usa-boundary-layers/US-Boundary-Dissolved-States.cpg"                  
-##  [97] "data/week-04/usa-boundary-layers/US-Boundary-Dissolved-States.dbf"                  
-##  [98] "data/week-04/usa-boundary-layers/US-Boundary-Dissolved-States.prj"                  
-##  [99] "data/week-04/usa-boundary-layers/US-Boundary-Dissolved-States.qpj"                  
-## [100] "data/week-04/usa-boundary-layers/US-Boundary-Dissolved-States.shp"                  
-## [101] "data/week-04/usa-boundary-layers/US-Boundary-Dissolved-States.shx"                  
-## [102] "data/week-04/usa-boundary-layers/US-State-Boundaries-Census-2014.cpg"               
-## [103] "data/week-04/usa-boundary-layers/US-State-Boundaries-Census-2014.dbf"               
-## [104] "data/week-04/usa-boundary-layers/US-State-Boundaries-Census-2014.prj"               
-## [105] "data/week-04/usa-boundary-layers/US-State-Boundaries-Census-2014.qpj"               
-## [106] "data/week-04/usa-boundary-layers/US-State-Boundaries-Census-2014.shp"               
-## [107] "data/week-04/usa-boundary-layers/US-State-Boundaries-Census-2014.shp.xml"           
-## [108] "data/week-04/usa-boundary-layers/US-State-Boundaries-Census-2014.shx"
-```
-
 <div class='notice--success' markdown="1">
 
 ## <i class="fa fa-graduation-cap" aria-hidden="true"></i> Learning Objectives
@@ -157,7 +40,7 @@ After completing this tutorial, you will be able to:
 
 * Describe the characteristics of 3 key vector data structures: points, lines and polygons.
 * Open a shapefile in R using `readOGR()`.
-* View the metadata of a vector spatial layer in R including CRS
+* View the metadata of a vector spatial layer in R including CRS.
 * Access the tabular (`data.frame`) attributes of a vector spatial layer in `R`.
 
 ## <i class="fa fa-check-square-o fa-2" aria-hidden="true"></i> What You Need
@@ -171,7 +54,7 @@ You will need a computer with internet access to complete this lesson and the da
 ## About Vector Data
 Vector data are composed of discrete geometric locations (x,y values) known as
 **vertices** that define the "shape" of the spatial object. The organization
-of the vertices, determines the type of vector that you are working
+of the vertices determines the type of vector that you are working
 with: point, line or polygon.
 
 <figure>
@@ -425,7 +308,7 @@ Next, let's visualize the data in your `R` `spatialpointsdataframe` object using
 # 'col' sets point symbol color
 plot(sjer_plot_locations, col = "blue",
      pch = 8)
-title("SJER Plot Locations\nMadera County, CA TRIGGER BUILD")
+title("SJER Plot Locations\nMadera County, CA")
 ```
 
 <img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/plot-shapefile-1.png" title="SJER plot locations." alt="SJER plot locations." width="90%" />
@@ -460,8 +343,7 @@ on top of each other in your plot.
 
 ```r
 # Plot multiple shapefiles
-plot(sjer_crop_extent, col = "lightgreen")
-title("NEON Harvard Forest\nField Site")
+plot(sjer_crop_extent, col = "lightgreen", main ="NEON SJER Field Site")
 
 # Use the pch element to adjust the symbology of the points
 plot(sjer_plot_locations,
