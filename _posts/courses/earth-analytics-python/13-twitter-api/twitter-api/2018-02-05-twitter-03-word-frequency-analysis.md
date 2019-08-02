@@ -3,7 +3,7 @@ layout: single
 title: 'Analyze Word Frequency Counts Using Twitter Data and Tweepy in Python'
 excerpt: 'One common way to analyze Twitter data is to calculate word frequencies to understand how often words are used in tweets on a particular topic. To complete any analysis, you need to first prepare the data. Learn how to clean Twitter data and calculate word frequencies using Python.'
 authors: ['Martha Morrissey', 'Leah Wasser', 'Jeremey Diaz', 'Jenny Palomino']
-modified: 2019-07-16
+modified: 2019-08-02
 category: [courses]
 class-lesson: ['social-media-Python']
 permalink: /courses/earth-analytics-python/using-apis-natural-language-processing-twitter/calculate-tweet-word-frequencies-in-python/
@@ -50,6 +50,7 @@ Next, you will explore the text associated with a set of tweets that you access 
 
 {:.input}
 ```python
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -107,11 +108,11 @@ all_tweets[:5]
 
 
 
-    ['#Climate Change causes Islands to disappear https://t.co/F4FhVqbYtf #climatechange',
-     '.@djhayes01: "It is both unlawful and irresponsible for the administration’s climate deniers and climate dismissers… https://t.co/caw3wxs0y6',
-     'Climate change is killing millions of plants and animals — and untold scientific discoveries in the process… https://t.co/tTCJ9GNWCQ',
-     '#Climate change could cause a large increase in days with extreme heat in the #UnitedStates, according to @UCSUSA r… https://t.co/aShx13haSR',
-     'Bringing the HEAT! \n\nNew Study: Days of Extreme Heat Will Become WEEKS as #Climate Warms https://t.co/gp2tshQHHt vi… https://t.co/F4OcuwGa9Q']
+    ["Two recent DTE #episodes have been driven by questions from high school students—but we'll take questions from anyo… https://t.co/8OVX2S51AY",
+     "#Trump #drilling leases could create #more #climate #pollution than EU does in a #year | Donald Trump's leases of… https://t.co/OjvlBFreef",
+     'Hottest month on Earth ever recorded by humans? You just lived through it. https://t.co/D44PvUktE1 #climate',
+     '“At the U.N. Thursday, the Secretary General laid out what must be done: limit global temperature increases to 1.5… https://t.co/TKCe5B4QSU',
+     'Bill Collins, director of the Climate and Ecosystem Sciences Division at @BerkeleyLab, has been named Tyndall Histo… https://t.co/Mpcv6jbQJ2']
 
 
 
@@ -166,11 +167,11 @@ all_tweets_no_urls[:5]
 
 
 
-    ['Climate Change causes Islands to disappear climatechange',
-     'djhayes01 It is both unlawful and irresponsible for the administrations climate deniers and climate dismissers',
-     'Climate change is killing millions of plants and animals and untold scientific discoveries in the process',
-     'Climate change could cause a large increase in days with extreme heat in the UnitedStates according to UCSUSA r',
-     'Bringing the HEAT New Study Days of Extreme Heat Will Become WEEKS as Climate Warms vi']
+    ['Two recent DTE episodes have been driven by questions from high school studentsbut well take questions from anyo',
+     'Trump drilling leases could create more climate pollution than EU does in a year Donald Trumps leases of',
+     'Hottest month on Earth ever recorded by humans You just lived through it climate',
+     'At the UN Thursday the Secretary General laid out what must be done limit global temperature increases to 15',
+     'Bill Collins director of the Climate and Ecosystem Sciences Division at BerkeleyLab has been named Tyndall Histo']
 
 
 
@@ -261,7 +262,24 @@ all_tweets_no_urls[0].split()
 
 
 
-    ['Climate', 'Change', 'causes', 'Islands', 'to', 'disappear', 'climatechange']
+    ['Two',
+     'recent',
+     'DTE',
+     'episodes',
+     'have',
+     'been',
+     'driven',
+     'by',
+     'questions',
+     'from',
+     'high',
+     'school',
+     'studentsbut',
+     'well',
+     'take',
+     'questions',
+     'from',
+     'anyo']
 
 
 
@@ -282,7 +300,24 @@ all_tweets_no_urls[0].lower().split()
 
 
 
-    ['climate', 'change', 'causes', 'islands', 'to', 'disappear', 'climatechange']
+    ['two',
+     'recent',
+     'dte',
+     'episodes',
+     'have',
+     'been',
+     'driven',
+     'by',
+     'questions',
+     'from',
+     'high',
+     'school',
+     'studentsbut',
+     'well',
+     'take',
+     'questions',
+     'from',
+     'anyo']
 
 
 
@@ -302,28 +337,42 @@ words_in_tweet[:2]
 
 
 
-    [['climate',
-      'change',
-      'causes',
-      'islands',
-      'to',
-      'disappear',
-      'climatechange'],
-     ['djhayes01',
-      'it',
-      'is',
-      'both',
-      'unlawful',
-      'and',
-      'irresponsible',
-      'for',
-      'the',
-      'administrations',
+    [['two',
+      'recent',
+      'dte',
+      'episodes',
+      'have',
+      'been',
+      'driven',
+      'by',
+      'questions',
+      'from',
+      'high',
+      'school',
+      'studentsbut',
+      'well',
+      'take',
+      'questions',
+      'from',
+      'anyo'],
+     ['trump',
+      'drilling',
+      'leases',
+      'could',
+      'create',
+      'more',
       'climate',
-      'deniers',
-      'and',
-      'climate',
-      'dismissers']]
+      'pollution',
+      'than',
+      'eu',
+      'does',
+      'in',
+      'a',
+      'year',
+      'donald',
+      'trumps',
+      'leases',
+      'of']]
 
 
 
@@ -354,21 +403,21 @@ counts_no_urls.most_common(15)
 
 
 
-    [('climate', 810),
-     ('the', 632),
-     ('change', 587),
-     ('to', 466),
-     ('of', 337),
-     ('in', 254),
-     ('a', 254),
-     ('and', 253),
-     ('is', 242),
-     ('climatechange', 163),
-     ('on', 147),
-     ('for', 140),
-     ('we', 108),
-     ('that', 93),
-     ('are', 89)]
+    [('climate', 877),
+     ('change', 620),
+     ('the', 574),
+     ('to', 426),
+     ('of', 279),
+     ('in', 270),
+     ('is', 253),
+     ('a', 217),
+     ('and', 216),
+     ('on', 210),
+     ('climatechange', 170),
+     ('for', 125),
+     ('we', 98),
+     ('by', 92),
+     ('that', 90)]
 
 
 
@@ -415,27 +464,27 @@ clean_tweets_no_urls.head()
     <tr>
       <th>0</th>
       <td>climate</td>
-      <td>810</td>
+      <td>877</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>the</td>
-      <td>632</td>
+      <td>change</td>
+      <td>620</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>change</td>
-      <td>587</td>
+      <td>the</td>
+      <td>574</td>
     </tr>
     <tr>
       <th>3</th>
       <td>to</td>
-      <td>466</td>
+      <td>426</td>
     </tr>
     <tr>
       <th>4</th>
       <td>of</td>
-      <td>337</td>
+      <td>279</td>
     </tr>
   </tbody>
 </table>
@@ -483,7 +532,7 @@ plt.show()
 
 
 
-    [7, 15, 16]
+    [18, 18, 14]
 
 
 
@@ -533,16 +582,7 @@ list(stop_words)[0:10]
 
 
 
-    ['haven',
-     'my',
-     'do',
-     'hadn',
-     "should've",
-     've',
-     "doesn't",
-     "you'll",
-     'into',
-     'itself']
+    ['ll', 'we', 'ours', "it's", 'or', 'at', 'him', 'what', 'no', 'you']
 
 
 
@@ -562,7 +602,24 @@ words_in_tweet[0]
 
 
 
-    ['climate', 'change', 'causes', 'islands', 'to', 'disappear', 'climatechange']
+    ['two',
+     'recent',
+     'dte',
+     'episodes',
+     'have',
+     'been',
+     'driven',
+     'by',
+     'questions',
+     'from',
+     'high',
+     'school',
+     'studentsbut',
+     'well',
+     'take',
+     'questions',
+     'from',
+     'anyo']
 
 
 
@@ -592,7 +649,19 @@ tweets_nsw[0]
 
 
 
-    ['climate', 'change', 'causes', 'islands', 'disappear', 'climatechange']
+    ['two',
+     'recent',
+     'dte',
+     'episodes',
+     'driven',
+     'questions',
+     'high',
+     'school',
+     'studentsbut',
+     'well',
+     'take',
+     'questions',
+     'anyo']
 
 
 
@@ -614,21 +683,21 @@ counts_nsw.most_common(15)
 
 
 
-    [('climate', 810),
-     ('change', 587),
-     ('climatechange', 163),
-     ('new', 71),
-     ('amp', 53),
-     ('could', 44),
-     ('us', 39),
-     ('globalwarming', 37),
-     ('one', 36),
-     ('fight', 36),
-     ('climatecrisis', 36),
-     ('study', 30),
-     ('global', 30),
-     ('science', 30),
-     ('news', 29)]
+    [('climate', 877),
+     ('change', 620),
+     ('climatechange', 170),
+     ('globalwarming', 48),
+     ('amp', 48),
+     ('new', 48),
+     ('news', 47),
+     ('via', 39),
+     ('years', 39),
+     ('could', 37),
+     ('environment', 36),
+     ('us', 36),
+     ('world', 36),
+     ('science', 35),
+     ('one', 32)]
 
 
 
@@ -698,7 +767,19 @@ tweets_nsw[0]
 
 
 
-    ['climate', 'change', 'causes', 'islands', 'disappear', 'climatechange']
+    ['two',
+     'recent',
+     'dte',
+     'episodes',
+     'driven',
+     'questions',
+     'high',
+     'school',
+     'studentsbut',
+     'well',
+     'take',
+     'questions',
+     'anyo']
 
 
 
@@ -714,7 +795,19 @@ tweets_nsw_nc[0]
 
 
 
-    ['causes', 'islands', 'disappear']
+    ['two',
+     'recent',
+     'dte',
+     'episodes',
+     'driven',
+     'questions',
+     'high',
+     'school',
+     'studentsbut',
+     'well',
+     'take',
+     'questions',
+     'anyo']
 
 
 
@@ -742,21 +835,21 @@ counts_nsw_nc.most_common(15)
 
 
 
-    [('new', 71),
-     ('amp', 53),
-     ('could', 44),
-     ('us', 39),
-     ('globalwarming', 37),
-     ('one', 36),
-     ('fight', 36),
-     ('climatecrisis', 36),
-     ('study', 30),
-     ('global', 30),
-     ('science', 30),
-     ('news', 29),
-     ('world', 29),
-     ('crisis', 28),
-     ('via', 27)]
+    [('globalwarming', 48),
+     ('amp', 48),
+     ('new', 48),
+     ('news', 47),
+     ('via', 39),
+     ('years', 39),
+     ('could', 37),
+     ('environment', 36),
+     ('us', 36),
+     ('world', 36),
+     ('science', 35),
+     ('one', 32),
+     ('crisis', 29),
+     ('reindeer', 28),
+     ('people', 27)]
 
 
 
@@ -774,7 +867,7 @@ len(counts_nsw_nc)
 
 
 
-    3722
+    3533
 
 
 
@@ -819,28 +912,28 @@ clean_tweets_ncw.head()
   <tbody>
     <tr>
       <th>0</th>
-      <td>new</td>
-      <td>71</td>
+      <td>globalwarming</td>
+      <td>48</td>
     </tr>
     <tr>
       <th>1</th>
       <td>amp</td>
-      <td>53</td>
+      <td>48</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>could</td>
-      <td>44</td>
+      <td>new</td>
+      <td>48</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>us</td>
-      <td>39</td>
+      <td>news</td>
+      <td>47</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>globalwarming</td>
-      <td>37</td>
+      <td>via</td>
+      <td>39</td>
     </tr>
   </tbody>
 </table>

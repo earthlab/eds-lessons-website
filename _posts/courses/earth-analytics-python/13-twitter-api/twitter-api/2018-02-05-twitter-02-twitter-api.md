@@ -3,7 +3,7 @@ layout: single
 title: 'Get and Work With Twitter Data in Python Using Tweepy'
 excerpt: 'You can use the Twitter RESTful API to access tweet data from Twitter. Learn how to use tweepy to download and work with twitter social media data in Python.'
 authors: ['Martha Morrissey', 'Leah Wasser','Carson Farmer']
-modified: 2019-07-16
+modified: 2019-08-02
 category: [courses]
 class-lesson: ['social-media-Python']
 permalink: /courses/earth-analytics-python/using-apis-natural-language-processing-twitter/get-and-use-twitter-data-in-python/
@@ -71,6 +71,7 @@ Once you have your Twitter app set-up, you are ready to access tweets in `Python
 
 {:.input}
 ```python
+import os
 import tweepy as tw
 import pandas as pd
 ```
@@ -130,7 +131,7 @@ date_since = "2018-11-16"
 
 Below you use `.Cursor()` to search twitter for tweets containing the search term #wildfires. You can restrict the number of tweets returned by specifying a number in the `.items()` method. `.items(5)` will return 5 of the most recent tweets.
 
-{:.input}
+
 ```python
 # Collect tweets
 tweets = tw.Cursor(api.search,
@@ -138,18 +139,12 @@ tweets = tw.Cursor(api.search,
               lang="en",
               since=date_since).items(5)
 tweets
+
 ```
 
-{:.output}
-{:.execute_result}
-
-
-
-    <tweepy.cursor.ItemIterator at 0x7fe2b7b544e0>
-
-
-
-
+```
+<tweepy.cursor.ItemIterator at 0x7fafc296e400>
+```
 
 `.Cursor()` returns an object that you can iterate or loop over to access the data collected. Each item in the iterator has various attributes that you can access to get information about each tweet including:
 
@@ -159,7 +154,8 @@ tweets
 
 and more. The code below loops through the object and prints the text associated with each tweet.
 
-{:.input}
+
+
 ```python
 # Collect tweets
 tweets = tw.Cursor(api.search,
@@ -167,24 +163,23 @@ tweets = tw.Cursor(api.search,
               lang="en",
               since=date_since).items(5)
 
-# Iterate on tweets
+# Iterate and print tweets
 for tweet in tweets:
     print(tweet.text)
+    
 ```
 
-{:.output}
-    RT @Bewickwren: PG&amp;E working to repair nearly 10,000 problems as it steps up efforts to prevent equipment from sparking more #wildfires
-    It…
-    A year ago thunderstorms ignited more than 100 #wildfires in Oregon https://t.co/LRJtECh1s6 https://t.co/FPbW2tBD6g
-    RT @blmnv: Update: #JasperFire remains at 1165 acres.  Containment: 80%, w/ proj full containment 07/16 at 6 p.m. Structures confirmed dest…
-    RT @blmnv: Update: #JasperFire remains at 1165 acres.  Containment: 80%, w/ proj full containment 07/16 at 6 p.m. Structures confirmed dest…
-    RT @AntjeInness: #Wildfires in the #Arctic lead to enhanced CO concentrations in #Alaska and #Siberia on 14 July as seen here in #TROPOMI #…
+```
+2/2 provide forest products to local mills, provide jobs to local communities, and improve the ecological health of… https://t.co/XemzXvyPyX
+1/2 Obama's Forest Service Chief in 2015 --&gt;"Treating these acres through commercial thinning, hazardous fuels remo… https://t.co/01obvjezQW
+RT @EnviroEdgeNews: US-#Volunteers care for abandoned #pets found in #California #wildfires; #Dogs, #cats, [#horses], livestock get care an…
+RT @FairWarningNews: The wildfires that ravaged CA have been contained, but the health impacts from the resulting air pollution will be sev…
+RT @chiarabtownley: If you know anybody who has been affected by the wildfires, please refer them to @awarenow_io It is one of the companie…
+```
+
+The above approach uses a standard for loop. However, this is an excellent place to use a Python list comprehension. A list comprehension provides an efficient way to collect object elements contained within an iterator as a list.
 
 
-
-The above approach uses a standard for loop. However, this is an excellent place to use a Python list comprehension. A list comprehension provides an efficient way to collect object elements contained within an iterator as a list.  
-
-{:.input}
 ```python
 # Collect tweets
 tweets = tw.Cursor(api.search,
@@ -194,22 +189,16 @@ tweets = tw.Cursor(api.search,
 
 # Collect a list of tweets
 [tweet.text for tweet in tweets]
+
 ```
 
-{:.output}
-{:.execute_result}
-
-
-
-    ['RT @Bewickwren: PG&amp;E working to repair nearly 10,000 problems as it steps up efforts to prevent equipment from sparking more #wildfires\nIt…',
-     'A year ago thunderstorms ignited more than 100 #wildfires in Oregon https://t.co/LRJtECh1s6 https://t.co/FPbW2tBD6g',
-     'RT @blmnv: Update: #JasperFire remains at 1165 acres.  Containment: 80%, w/ proj full containment 07/16 at 6 p.m. Structures confirmed dest…',
-     'RT @blmnv: Update: #JasperFire remains at 1165 acres.  Containment: 80%, w/ proj full containment 07/16 at 6 p.m. Structures confirmed dest…',
-     'RT @AntjeInness: #Wildfires in the #Arctic lead to enhanced CO concentrations in #Alaska and #Siberia on 14 July as seen here in #TROPOMI #…']
-
-
-
-
+```
+['Expert insight on how #wildfires impact our environment: https://t.co/sHg6PcC3R3',
+ 'Lomakatsi crews join the firefight: \n\n#wildfires #smoke #firefighter\n\nhttps://t.co/DcI2uvmKQv',
+ 'RT @rpallanuk: Current @PHE_uk #climate extremes bulletin: #Arctic #wildfires &amp; Greenland melt, #drought in Australia/NSW; #flooding+#droug…',
+ "RT @witzshared: And yet the lies continue. Can't trust a corporation this deaf dumb and blind -- PG&amp;E tells court deferred #Maintenance did…",
+ 'The #wildfires have consumed an area twice the size of Connecticut, and their smoke is reaching Seattle. Russia isn… https://t.co/SgoF6tds1s']
+```
 
 ## To Keep or Remove Retweets
 
@@ -249,11 +238,11 @@ tweets = tw.Cursor(api.search,
 
 
 
-    ['A year ago thunderstorms ignited more than 100 #wildfires in Oregon https://t.co/LRJtECh1s6 https://t.co/FPbW2tBD6g',
-     '#NWTNewsNorth #SteenRiver #wildfires CN plans to rebuild Steen River bridge linking NWT and Alberta… https://t.co/pFYAzAhOSF',
-     'From #ScienceNow - Alaska Still Reeling From Incessant Wildfires https://t.co/YYpAokfvD9 #NASA #Alaska #wildfires',
-     'California’s #Wildfires Are 500 Percent Larger Due to #ClimateChange\n“Each degree of warming causes way more fire t… https://t.co/CwjL3llbWN',
-     "Worried about #wildfires? This map shows the fire hazard zones in California. (And it's going to get a major update… https://t.co/SpgWexmBE5"]
+    ['I enjoyed working with @ACS on this @YouTube video on how fire retardants are used to suppress #wildfires. Always g… https://t.co/qEZptVucCH',
+     "Why don't Trump use the millions on helping out with victims from the wildfire's and flooded areas instead of a wal… https://t.co/NBN3AS9lli",
+     'Expert insight on how #wildfires impact our environment: https://t.co/sHg6PcC3R3',
+     'Lomakatsi crews join the firefight: \n\n#wildfires #smoke #firefighter\n\nhttps://t.co/DcI2uvmKQv',
+     'The #wildfires have consumed an area twice the size of Connecticut, and their smoke is reaching Seattle. Russia isn… https://t.co/SgoF6tds1s']
 
 
 
@@ -268,13 +257,13 @@ You can access a wealth of information associated with each tweet. Below is an e
 
 You can experiment with other items available within each tweet by typing `tweet.` and using the tab button to see all of the available attributes stored. 
 
+
 {:.input}
 ```python
 tweets = tw.Cursor(api.search, 
                            q=new_search,
                            lang="en",
                            since=date_since).items(5)
-
 
 users_locs = [[tweet.user.screen_name, tweet.user.location] for tweet in tweets]
 users_locs
@@ -285,11 +274,11 @@ users_locs
 
 
 
-    [['wildfiretoday', 'South Dakota (Black Hills)'],
-     ['NNSLonline', 'Northern Canada'],
-     ['kellytechnology', 'Marco Island FL USA'],
-     ['ICLRCanada', 'Toronto, Ontario'],
-     ['KQED', 'San Francisco, CA']]
+    [['gollnerfire', 'College Park, MD'],
+     ['Daniell42427439', 'United States'],
+     ['BELFORGroup', 'USA'],
+     ['mailtribune', 'Southern Oregon'],
+     ['OHudsonValley', 'Hudson, NY']]
 
 
 
@@ -336,28 +325,28 @@ tweet_text
   <tbody>
     <tr>
       <th>0</th>
-      <td>wildfiretoday</td>
-      <td>South Dakota (Black Hills)</td>
+      <td>gollnerfire</td>
+      <td>College Park, MD</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>NNSLonline</td>
-      <td>Northern Canada</td>
+      <td>Daniell42427439</td>
+      <td>United States</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>kellytechnology</td>
-      <td>Marco Island FL USA</td>
+      <td>BELFORGroup</td>
+      <td>USA</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>ICLRCanada</td>
-      <td>Toronto, Ontario</td>
+      <td>mailtribune</td>
+      <td>Southern Oregon</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>KQED</td>
-      <td>San Francisco, CA</td>
+      <td>OHudsonValley</td>
+      <td>Hudson, NY</td>
     </tr>
   </tbody>
 </table>
@@ -375,7 +364,7 @@ For instance, if you search for `climate+change`, Twitter will return all tweets
 
 Note that the code below creates a list that can be queried using Python indexing to return the first five tweets. 
 
-{:.input}
+
 ```python
 new_search = "climate+change -filter:retweets"
 
@@ -386,22 +375,17 @@ tweets = tw.Cursor(api.search,
 
 all_tweets = [tweet.text for tweet in tweets]
 all_tweets[:5]
+
 ```
 
-{:.output}
-{:.execute_result}
 
-
-
-    ['CLIMATE CHANGE IS REAL YOU DUMB CUNTS JUST WALK MORE INSTEAD OF DRIVE AND USE LESS PLASTIC',
-     "Climate change is upending the world around us. That's why we advocate for a #priceonpollution with HR 763, the… https://t.co/Ng4I8Azc1Y",
-     '@CanadaAction Has the leadership of #CanadaAction assessed the @IPCC_CH and @usgcrp change reports and have you pos… https://t.co/vgyjA54pBL',
-     '@VP @realDonaldTrump Under the leadership of @realDonaldTrump , the government is doing away with climate change st… https://t.co/uYFAl5Cvg6',
-     "Don't know why I read replies to articles, Extinction Rebellion are holding a protest in town for climate change an… https://t.co/Zeiyv6CV69"]
-
-
-
-
+```
+['They care so much for these bears, but climate change is altering their relationship with them. It’s getting so dan… https://t.co/D4wLNhhsdt',
+ 'Prediction any celebrity/person in government that preaches about climate change probably is blackmailed… https://t.co/TM64QukGhy',
+ '@RichardBurgon Brain washed and trying to do the same to others. Capitalism is ALL that "Climate Change" is about. https://t.co/GbNE87luVx',
+ "We're in a climate crisis, but Canada's handing out billions to fossil fuel companies. Click to change this:… https://t.co/oQZXUfOWe8",
+ 'Hundreds Of Starved Reindeer Found Dead In Norway, Climate Change Blamed - Forbes #nordic #norway https://t.co/9XLS8yi72l']
+```
 
 In the next lesson, you will explore calculating word frequencies associated with tweets using `Python`.
 
