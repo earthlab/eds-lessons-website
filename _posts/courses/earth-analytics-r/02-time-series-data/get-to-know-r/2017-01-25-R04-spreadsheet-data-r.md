@@ -8,7 +8,7 @@ class-lesson: ['get-to-know-r']
 permalink: /courses/earth-analytics/time-series-data/open-plot-spreadsheet-data-in-R/
 nav-title: 'Open Spreadsheet Data'
 dateCreated: 2016-12-13
-modified: '2019-06-20'
+modified: '2019-08-02'
 week: 2
 sidebar:
   nav:
@@ -190,7 +190,7 @@ qplot(x = boulder_precip$DATE,
       y = boulder_precip$PRECIP)
 ```
 
-<img src="{{ site.url }}/courses/earth-analytics-r/02-time-series-data/get-to-know-r/quick-plot-1.png" title="plot precipitation data" alt="plot precipitation data" width="90%" /><img src="{{ site.url }}/courses/earth-analytics-r/02-time-series-data/get-to-know-r/quick-plot-1.png" title="plot precipitation data" alt="plot precipitation data" width="90%" /><img src="{{ site.url }}/courses/earth-analytics-r/03-lidar-raster-data/quick-plot-1.png" title="plot precipitation data" alt="plot precipitation data" width="90%" /><img src="{{ site.url }}/courses/earth-analytics-r/03-lidar-raster-data/lidar-intro/quick-plot-1.png" title="plot precipitation data" alt="plot precipitation data" width="90%" /><img src="{{ site.url }}/courses/earth-analytics-r/03-lidar-raster-data/lidar-raster-intro/quick-plot-1.png" title="plot precipitation data" alt="plot precipitation data" width="90%" /><img src="{{ site.url }}/courses/earth-analytics-r/04-vector-data-gis-r/in-class/quick-plot-1.png" title="plot precipitation data" alt="plot precipitation data" width="90%" /><img src="{{ site.url }}/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/quick-plot-1.png" title="plot precipitation data" alt="plot precipitation data" width="90%" /><img src="{{ site.url }}/courses/earth-analytics-r/06-automate-science-workflows/quick-plot-1.png" title="plot precipitation data" alt="plot precipitation data" width="90%" /><img src="{{ site.url }}/courses/earth-analytics-r/07-multispectral-remote-sensing/quick-plot-1.png" title="plot precipitation data" alt="plot precipitation data" width="90%" /><img src="{{ site.url }}/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/quick-plot-1.png" title="plot precipitation data" alt="plot precipitation data" width="90%" /><img src="{{ site.url }}/courses/earth-analytics-r/13-programmatic-data-access/quick-plot-1.png" title="plot precipitation data" alt="plot precipitation data" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/get-to-know-r/quick-plot-1.png" title="plot precipitation data" alt="plot precipitation data" width="90%" />
 
 <div class="notice--warning" markdown="1">
 

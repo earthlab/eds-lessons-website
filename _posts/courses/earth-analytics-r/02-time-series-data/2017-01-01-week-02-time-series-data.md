@@ -3,7 +3,7 @@ layout: single
 category: courses
 title: "Intro to R & Work with Time Series Data"
 permalink: /courses/earth-analytics/time-series-data/
-modified: '2019-05-13'
+modified: '2019-08-02'
 week-landing: 2
 week: 2
 sidebar:
@@ -47,7 +47,6 @@ you complete the assignment.
 ## <i class="fa fa-pencil"></i> Homework Week 2
 
 ### 1. Download Data
-
 [<i class="fa fa-download" aria-hidden="true"></i> Download Week 02 data](https://ndownloader.figshare.com/files/7426738){:data-proofer-ignore='' .btn }
 
 ## Important - Data Organization
@@ -190,64 +189,26 @@ format report using `knitr`.
 
 ## Homework Plots
 
+<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/homework-solution-plot-1-1.png" title="homework plot one" alt="homework plot one" width="90%" />
 
-```
-## Warning in file(file, "rt"): cannot open file 'data/week-02/precipitation/
-## 805325-precip-dailysum-2003-2013.csv': No such file or directory
-## Error in file(file, "rt"): cannot open the connection
-## Error in eval(expr, envir, enclos): object 'boulder_daily_precip' not found
-## Error in ggplot(data = boulder_daily_precip, aes(x = DATE, y = DAILY_PRECIP)): object 'boulder_daily_precip' not found
-```
+<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/homework-plot-2-1.png" title="homework plot 2" alt="homework plot 2" width="90%" />
 
+<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/homework-plot3-1.png" title="homework plot 3" alt="homework plot 3" width="90%" />
 
-```
-## Error in eval(expr, envir, enclos): object 'boulder_daily_precip' not found
-```
-
-
-```
-## Warning in file(file, "rt"): cannot open file 'data/week-02/discharge/
-## 06730200-discharge-daily-1986-2013.csv': No such file or directory
-## Error in file(file, "rt"): cannot open the connection
-## Error in eval(expr, envir, enclos): object 'boulder_discharge' not found
-## Error in ggplot(data = boulder_discharge, aes(x = datetime, y = disValue)): object 'boulder_discharge' not found
-```
-
-
-```
-## Error in eval(expr, envir, enclos): object 'boulder_discharge' not found
-```
+<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/homework-plot4-1.png" title="homework plot 4" alt="homework plot 4" width="90%" />
 
 
 ## Graduate Plot
 
-
-```
-## Warning in file(file, "rt"): cannot open file 'data/week-02/precipitation/
-## 805333-precip-daily-1948-2013.csv': No such file or directory
-## Error in file(file, "rt"): cannot open the connection
-## Error in eval(expr, envir, enclos): object 'precip_boulder' not found
-## Error in eval(expr, envir, enclos): object 'daily_sum_precip' not found
-```
+<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/graduate-plot1-1.png" title="Grad only homework plot 1" alt="Grad only homework plot 1" width="90%" />
 
 ## Bonus Plots
 
-
-```
-## Warning in file(file, "rt"): cannot open file 'data/week-02/precipitation/
-## 805333-precip-daily-1948-2013.csv': No such file or directory
-## Error in file(file, "rt"): cannot open the connection
-## Error in eval(expr, envir, enclos): object 'precip_boulder' not found
-## Error in ggplot(precip_boulder, aes(DATE, HPCP)): object 'precip_boulder' not found
-```
+<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/bonus-plot1-1.png" title="homework plot 4" alt="homework plot 4" width="90%" />
 
 
 
-
-```
-## Error in eval(expr, envir, enclos): object 'precip_boulder' not found
-## Error in ggplot(precip_boulder, aes(DATE, HPCP_round)): object 'precip_boulder' not found
-```
+<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/bonus-plot-2-1.png" title="hourly precipitation" alt="hourly precipitation" width="90%" />
 
 
 ## Report Grade Rubric
