@@ -1,51 +1,20 @@
 ---
 title: "Why Earth Data Scientists Are in Demand"
 header1: "Why Earth Data Scientists Are In Demand: A Survey of Hiring Managers"
-author: ["Kendra Sand, Science Writer, House of Sand", "Leah A. Wasser, Director of Earth Analytics Education, Earth Lab", "Lauren Herwehe, Program Manager - Earth Analytics Education, Earth Lab"]
+authors: ["Kendra Sand", "Leah Wasser", "Lauren Herwehe"]
 category: blog
-output:
-  html_document: default
-  pdf_document: default
-excerpt: The Earth analytics field sits at the intersection of data science and earth
-  sciences. Discover why hiring managers are seeking earth data science skills.
+excerpt: "The Earth analytics field sits at the intersection of data science and earth sciences. Discover why hiring managers are seeking earth data science skills."
 layout: single
-modified: '2019-04-22'
+modified: '2019-08-06'
 comments: yes
 permalink: /blog/earth-data-scientist-demand/
 sidebar:
-  nav: null
-tags: null
+  nav:
+tags:
 author_profile: no
 ---
 
 
-
-
-
-
-```
-## Error in library(qsurvey): there is no package called 'qsurvey'
-## Error in library(qtoolkit): there is no package called 'qtoolkit'
-## Error in library(magick): there is no package called 'magick'
-```
-
-
-
-```
-## Error in eval(expr, envir, enclos): could not find function "connect_qualtrics"
-## Error in eval(expr, envir, enclos): could not find function "surveys"
-## Error in eval(expr, envir, enclos): could not find function "responses"
-## Error in eval(expr, envir, enclos): could not find function "responses"
-## Error in eval(expr, envir, enclos): could not find function "design"
-## Error in dots_values(...): object 'industry_survey' not found
-```
-
-
-
-
-```
-## Error in eval(expr, envir, enclos): object 'industry_and_science_responses' not found
-```
 
 
 
@@ -182,16 +151,6 @@ computational components and included both basic and applied science. Particular
 tools were more commonly used in particular domains.
 
 
-```
-## Error in data.frame(the_size = industry_and_science_responses$Q4): object 'industry_and_science_responses' not found
-## Error in eval(expr, envir, enclos): object 'org_size' not found
-## Error in grid.draw(plot): object 'org_plot' not found
-## Error in eval(expr, envir, enclos): could not find function "image_read"
-## Error in eval(expr, envir, enclos): could not find function "image_read"
-## Error in eval(expr, envir, enclos): object 'logo_orig' not found
-## Error in eval(expr, envir, enclos): could not find function "image_append"
-## Error in eval(expr, envir, enclos): could not find function "image_write"
-```
 
 
 <figure>
@@ -205,13 +164,6 @@ Source: Earth Lab 2017 Survey
 
 
 
-```
-## Error in eval(expr, envir, enclos): object 'industry_and_science_responses' not found
-## Error in grid.draw(plot): object 'industry_plot' not found
-## Error in eval(expr, envir, enclos): could not find function "image_read"
-## Error in eval(expr, envir, enclos): could not find function "image_append"
-## Error in eval(expr, envir, enclos): could not find function "image_write"
-```
 
 
 <figure>
