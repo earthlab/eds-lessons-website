@@ -36,10 +36,11 @@ jobs:
             else
               # if it does not, clone master and checkout a new branch
               git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN}@github.com/earthlab/dummy-website-test.git
-              cd eds-lessons-website
+              cd dummy-website-test
               git checkout -b website-autobuild
 
             # Copy files commited in master / dev over to the website
             echo "${changed_files} "
-            
+            for file in $(cat ~/changed_files.txt); do mv "$file" ~/dummy-website-test; done
+            git status
             fi
