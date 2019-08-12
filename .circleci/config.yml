@@ -7,9 +7,11 @@ jobs:
     branches:
       only:
         #- master # only run on master
-
     steps:
       - checkout
+      - run:
+          name: "Set Python Version"
+          command: pyenv global 3.7.0
       - run:
           name: Get latest lesson commit to master branch
           working_directory: ~/eds-lessons-website
