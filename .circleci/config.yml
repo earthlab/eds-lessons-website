@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run:
           name: Get latest lesson commit
-          working_directory: ~/eds-lessons-dev
+          working_directory: ~/eds-lessons-website
           command: |
             # ACMRT -- only looks at changed files, not deleted ones
             changed_files=$(git diff-tree --no-commit-id --name-only --diff-filter=ACMRT -r HEAD 2>&1)
