@@ -37,4 +37,5 @@ jobs:
               # if it does not, clone master and checkout a new branch
               git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN}@github.com/earthlab/dummy-website-test.git
               cd eds-lessons-website
-              git checkout -b "$branch"
+              git checkout -b website-autobuild
+            fi
