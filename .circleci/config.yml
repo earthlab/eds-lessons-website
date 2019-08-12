@@ -2,6 +2,9 @@ version: 2
 jobs:
   build:
     working_directory: ~/eds-lessons-website
+    build:
+      machine:
+        image: ubuntu-1604:201903-01
     branches:
       only:
         #- master # only run on master
