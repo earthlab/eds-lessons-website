@@ -42,7 +42,6 @@ jobs:
               git checkout -b website-autobuild
 
             # Copy files commited in master / dev over to the website
-            echo "${changed_files} "
-            for file in $(cat changed_files.txt); do mv "$file" ~/dummy-website-test; done
+            for file in $(cat ~/eds-lessons-website/changed_files.txt); do mv "$file" ~/dummy-website-test; done
             git status
             fi
