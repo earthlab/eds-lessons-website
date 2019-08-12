@@ -38,4 +38,8 @@ jobs:
               git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN}@github.com/earthlab/dummy-website-test.git
               cd eds-lessons-website
               git checkout -b website-autobuild
+
+            # Copy files commited in master / dev over to the website
+            echo "${changed_files} "
+            
             fi
