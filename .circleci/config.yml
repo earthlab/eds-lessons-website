@@ -49,7 +49,6 @@ jobs:
           command: |
             ls
             # Copy files commited in master / dev over to the website
-            # Might be better as a new step?
             python move-files.py
       - run:
           name: Push files to new repo
