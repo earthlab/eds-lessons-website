@@ -12,7 +12,7 @@ print("Now doing stuff")
 
 # Open the text file and move files over to the other dir
 fp = open('changed-files.txt', 'r')
-
+print("here is the file: ", fp)
 for f in fp:
     print(f)
     if not f.lower().endswith(('.yml')):
