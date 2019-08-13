@@ -51,5 +51,9 @@ jobs:
             # Copy files commited in master / dev over to the website
             # Might be better as a new step?
             python move-files.py
-            #for file in $(cat ~/eds-lessons-website/changed_files.txt); do mv "$file" ~/dummy-website-test; done
+      - run:
+          name: Push files to new repo
+          working_directory: ~/dummy-website-test
+          command: |
+            ls
             git status
