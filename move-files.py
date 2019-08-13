@@ -5,7 +5,7 @@ import os
 import shutil
 base_repo = "dummy-website-test"
 base_path = "~/"
-#base_path = "../"
+base_path = "../"
 
 
 # Open the text file and move files over to the other dir
@@ -17,6 +17,7 @@ os.getcwd()
 for f in fp:
     print("Trying to move: ", f)
     f = f.rstrip('\n')
+    f = f.strip()
     if not f.lower().endswith(('yml', 'py')):
         print("final file name: ", f)
         new_path = os.path.join(base_path, base_repo, f)
@@ -28,12 +29,6 @@ for f in fp:
     else:
         print("sorry can't move: ", f)
 
-
-
-
-f = "move-files.py"
-if not f.lower().endswith(('yml', 'py')):
-    print("Test")
 
 
 

@@ -1,0 +1,2 @@
+/_posts/deddled-me.md
+move-files.py
