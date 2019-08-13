@@ -1,19 +1,20 @@
+"""
+This script takes a set of files from a text file, and line by line parses and
+moves them to the corresponding directory.
 
-
+It is used to move files in the website repo to the eds.org live website for the
+time being. This script assumes that it is being run in the website repo.
+"""
 
 import os
 import shutil
-base_repo = "dummy-website-test"
+base_repo = "earthlab.github.io"
 base_path = "~/"
-base_path = "../"
-
 
 # Open the text file and move files over to the other dir
 fp = open('changed_files.txt', 'r')
-print("here is the file: ", fp)
 
-os.getcwd()
-
+# Loop through each file, clean the path and move to the final directory
 for f in fp:
     print("Trying to move: ", f)
     f = f.rstrip('\n')
