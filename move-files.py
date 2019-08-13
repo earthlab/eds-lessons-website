@@ -13,9 +13,11 @@ print("Now doing stuff")
 # Open the text file and move files over to the other dir
 fp = open('changed-files.txt', 'r')
 print("here is the file: ", fp)
+
 for f in fp:
+    print("starting the loop now")
     print(f)
-    if not f.lower().endswith(('.yml')):
+    if not f.lower().endswith(('yml')):
         print(f)
         new_path = os.path.join(base_path, base_repo, f)
         dir_path = os.path.dirname(new_path)
