@@ -44,7 +44,8 @@ jobs:
               git checkout -b website-autobuild
 
             # Copy files commited in master / dev over to the website
-            python move-files.py
+            # Migh tbe better as a new step?
+            python ~/eds-lessons-website/move-files.py
             #for file in $(cat ~/eds-lessons-website/changed_files.txt); do mv "$file" ~/dummy-website-test; done
             git status
             fi
