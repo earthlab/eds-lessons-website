@@ -28,16 +28,16 @@ jobs:
           working_directory: ~/
           command: |
             # check for autobuild branch on website remote
-            branch_status=$(git ls-remote --heads https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/dummy-website-test.git "website-autobuild" | wc -l)
+            branch_status=$(git ls-remote --heads https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git "website-autobuild" | wc -l)
             # if branch exists check it out...
             if [ $branch_status == 1 ]
             then
               # clone the remote branch
-              git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN}@github.com/earthlab/dummy-website-test.git "website-autobuild"
+              git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN}@github.com/earthlab/earthlab.github.io.git "website-autobuild"
             else
               # if it does not, clone master and checkout a new branch
-              git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN}@github.com/earthlab/dummy-website-test.git
-              cd dummy-website-test
+              git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN}@github.com/earthlab/earthlab.github.io.git
+              cd earthlab.github.io
               git checkout -b website-autobuild
             fi
       - run:
@@ -52,7 +52,7 @@ jobs:
             python move-files.py
       - run:
           name: Push files to new repo
-          working_directory: ~/dummy-website-test
+          working_directory: ~/earthlab.github.io
           command: |
             # Be sure to see how many files there are and only commit if there are more than 0
             git status
@@ -66,4 +66,4 @@ jobs:
             commit_msg_latest=$(head -1 ~/eds-lessons-website/commit_msg_latest.txt)
             git commit --allow-empty -m "$commit_msg_latest"
             # Push quietly to prevent showing the token in log
-            git push -q https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/dummy-website-test.git
+            git push -q https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
