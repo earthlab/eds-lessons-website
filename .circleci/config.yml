@@ -52,5 +52,16 @@ jobs:
           name: Push files to new repo
           working_directory: ~/dummy-website-test
           command: |
-            ls
+            # Be sure to see how many files there are and only commit if there are more than 0
             git status
+            git config credential.helper 'cache --timeout=120'
+            git config user.email "earth.lab@colorado.edu"
+            git config user.name "Deployment Bot"
+            OUTPUT=$( GIT_PAGER_IN_USE=true git status )
+            echo "$OUTPUT"
+            git add .
+            # get current commit message
+            commit_msg_latest=$(head -1 ~/eds-lessons-website/commit_msg_latest.txt)
+            git commit --allow-empty -m "$commit_msg_latest"
+            # Push quietly to prevent showing the token in log
+            git push -q https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/dummy-website-test.git
