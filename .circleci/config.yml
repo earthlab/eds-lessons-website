@@ -21,15 +21,12 @@ jobs:
             # get names of changed files
             echo "${changed_files} "
             echo "${changed_files} ">> changed_files.txt
-            # python scripts/parse_commit.py
             ls
             ls ../
       - run:
           name: Clone eds.org website
           working_directory: ~/
           command: |
-            #git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN}@github.com/earthlab/dummy-website-test.git
-            #cd eds-lessons-website
             # check for autobuild branch on website remote
             branch_status=$(git ls-remote --heads https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/dummy-website-test.git "website-autobuild" | wc -l)
             # if branch exists check it out...
@@ -48,6 +45,7 @@ jobs:
           working_directory: ~/eds-lessons-website
           command: |
             ls
+            cat changed_files.txt
             # Copy files commited in master / dev over to the website
             python move-files.py
       - run:
