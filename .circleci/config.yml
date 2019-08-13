@@ -1,10 +1,69 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/eds-lessons-dev
-    docker:
-      - image: earthlab/earth-analytics-python-env
+    working_directory: ~/eds-lessons-website
+    machine:
+      image: ubuntu-1604:201903-01
+    branches:
+      only:
+        - master # only run when a commit it made to master
     steps:
       - checkout
-      
-
+      - run:
+          name: "Set Python Version"
+          command: pyenv global 3.7.0
+      - run:
+          name: Get latest lesson commit to master branch
+          working_directory: ~/eds-lessons-website
+          command: |
+            # ACMRT -- only looks at changed files, not deleted ones
+            changed_files=$(git diff-tree --no-commit-id --name-only --diff-filter=ACMRT -r HEAD 2>&1)
+            # get names of changed files
+            echo "${changed_files} "
+            echo "${changed_files} ">> changed_files.txt
+            ls
+            ls ../
+      - run:
+          name: Clone eds.org website
+          working_directory: ~/
+          command: |
+            # check for autobuild branch on website remote
+            branch_status=$(git ls-remote --heads https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git "website-autobuild" | wc -l)
+            # if branch exists check it out...
+            if [ $branch_status == 1 ]
+            then
+              # clone the remote branch
+              git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN}@github.com/earthlab/earthlab.github.io.git "website-autobuild"
+            else
+              # if it does not, clone master and checkout a new branch
+              git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN}@github.com/earthlab/earthlab.github.io.git
+              cd earthlab.github.io
+              git checkout -b website-autobuild
+            fi
+      - run:
+          name: Copy Files to eds.org website
+          working_directory: ~/eds-lessons-website
+          command: |
+            ls
+            # Get latest commit message
+            echo $(git log -1 --pretty=%B) > commit_msg_latest.txt
+            cat changed_files.txt
+            # Copy files commited in master / dev over to the website
+            python move-files.py
+      - run:
+          name: Push files to new repo
+          working_directory: ~/earthlab.github.io
+          command: |
+            # Be sure to see how many files there are and only commit if there are more than 0
+            git status
+            git config credential.helper 'cache --timeout=120'
+            git config user.email "earth.lab@colorado.edu"
+            git config user.name "Deployment Bot"
+            OUTPUT=$( GIT_PAGER_IN_USE=true git status )
+            echo "$OUTPUT"
+            git add .
+            # get current commit message
+            commit_msg_latest=$(head -1 ~/eds-lessons-website/commit_msg_latest.txt)
+            git commit --allow-empty -m "$commit_msg_latest"
+            # Push quietly to prevent showing the token in log
+            git push -q https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
