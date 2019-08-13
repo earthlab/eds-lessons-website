@@ -18,6 +18,7 @@ for f in fp:
     print("starting the loop now")
     print(f)
     if not f.lower().endswith(('yml')):
+        f = f.rstrip('\n')
         print(f)
         new_path = os.path.join(base_path, base_repo, f)
         dir_path = os.path.dirname(new_path)
