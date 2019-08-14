@@ -3,7 +3,7 @@ layout: single
 title: "Text Mining Twitter Data With TidyText in R"
 excerpt: "Text mining is used to extract useful information from text - such as Tweets. Learn how to use the Tidytext package in R to analyze twitter data."
 authors: ['Leah Wasser','Carson Farmer']
-modified: '2019-07-25'
+modified: '2019-08-14'
 category: [courses]
 class-lesson: ['social-media-r']
 permalink: /courses/earth-analytics/get-data-using-apis/text-mining-twitter-data-intro-r/
@@ -116,12 +116,12 @@ climate_tweets <- search_tweets(q = "#climatechange", n = 10000, lang = "en",
                              include_rts = FALSE)
 # check data to see if there are emojis
 head(climate_tweets$text)
-## [1] "Extensive historical data shows recent extreme warming is unprecedented in past 2,000 years #globalwarming #climatechange https://t.co/UukUwylAbr"                                                   
-## [2] "Europe's July 2019 heatwave\n#climatechange\nhttps://t.co/HwBJcuFcoQ https://t.co/Z8KphVajwM"                                                                                                        
-## [3] "Paris saw a record high temperature of 42.6C (108.7F) on Thursday, amid a heatwave that broke records across Western Europe \n#climatechange #paris\nhttps://t.co/ggLZDQ7dvC https://t.co/XmcBaCksMX"
-## [4] "The UK has had its hottest July day on record, with temperatures reaching 38.1C in Cambridge #uk #climatechange \nhttps://t.co/rNJZTNr6K6 https://t.co/nLditRD6DH"                                   
-## [5] "Underwater glacial melting is happening up to 100 times faster than previously thought #climatechange https://t.co/3tcHcEyjRV"                                                                       
-## [6] "Guam’s reefs currently are under a bleaching warning, according to a press release from the Coral Reef Resilience program #climatechange #coralreef #bleaching https://t.co/RSEPwAOliB"
+## [1] "Bottom line: the jury is still out. #climatechange https://t.co/833mZgUxmg"                                                                                                                                                                                                               
+## [2] "Linking heat waves to #climatechange: “In New Orleans, the overnight summer lows are warming 280 percent faster than daytime highs. That makes warm, humid nights unbearable...And it’s only getting worse.” ⁦@MatthewCappucci⁩ ⁦@sejorg⁩  https://t.co/C04lwnXVMh"                       
+## [3] "#ClimateChange and Straws in the ocean are not causing civil unrest in Yemen, Cameroon, Nigeria, Hong Kong, Afganistan or the DRC. They are legitimate issues, but they are not the biggest issue that we need to be focusing on."                                                        
+## [4] "2019 to be ‘worst-ever year’ for wildfires in Siberia and ‘only rain can now extinguish flames’\nhttps://t.co/bO1jAIh1ds\n#ClimateCrisis #climatechange #Siberianfires #Siberia"                                                                                                          
+## [5] "Check out visualization of #DataForACause volunteer @LucaUrzi on how the #sealevel changed since 1993🐳 https://t.co/KWkcVpsS9G #ClimateChange #dataviz #tableau https://t.co/cBILKnFJbu"                                                                                                  
+## [6] "Extreme #climatechange in the #USA.  #DanielPauly, influential marine scientist at @SeaAroundUs, says the 2-degree Celsius hot spots are early warning signs of a climate shift. “These hot spots are chunks of the future in the present.”\n https://t.co/0yYveo7fyN via @washingtonpost"
 ```
 
 ## Data Clean-Up
@@ -232,7 +232,7 @@ head(stop_words)
 ## 6 according SMART
 
 nrow(climate_tweets_clean)
-## [1] 232674
+## [1] 142078
 
 # remove stop words from your list of words
 cleaned_tweet_words <- climate_tweets_clean %>%
@@ -240,7 +240,7 @@ cleaned_tweet_words <- climate_tweets_clean %>%
 
 # there should be fewer words now
 nrow(cleaned_tweet_words)
-## [1] 126507
+## [1] 77873
 ```
 
 Now that you've performed this final step of cleaning, you can try to plot, once
@@ -285,20 +285,20 @@ climate_tweets_paired_words <- climate_tweets %>%
 
 climate_tweets_paired_words %>%
   count(paired_words, sort = TRUE)
-## # A tibble: 123,518 x 2
+## # A tibble: 81,214 x 2
 ##    paired_words         n
 ##    <chr>            <int>
-##  1 climate change    1120
-##  2 in the             860
-##  3 of the             754
-##  4 climatechange is   455
-##  5 of climatechange   406
-##  6 on the             387
-##  7 to the             357
-##  8 this is            319
-##  9 on climatechange   314
-## 10 to be              306
-## # … with 123,508 more rows
+##  1 climate change     686
+##  2 in the             519
+##  3 of the             475
+##  4 climatechange is   270
+##  5 of climatechange   245
+##  6 is a               240
+##  7 to the             233
+##  8 the climate        212
+##  9 on the             210
+## 10 on climatechange   208
+## # … with 81,204 more rows
 ```
 
 
@@ -318,14 +318,14 @@ climate_words_counts <- climate_tweets_filtered %>%
 
 head(climate_words_counts)
 ## # A tibble: 6 x 3
-##   word1            word2                n
-##   <chr>            <chr>            <int>
-## 1 climate          change            1120
-## 2 18               months             263
-## 3 climatechange    climateemergency   232
-## 4 global           warming            226
-## 5 climatechange    globalwarming      161
-## 6 climateemergency climatechange      160
+##   word1         word2              n
+##   <chr>         <chr>          <int>
+## 1 climate       change           686
+## 2 climate       emergency        124
+## 3 current       climate          105
+## 4 act           climatechange    103
+## 5 climate       stewardship      103
+## 6 climatechange regenerativeag   103
 ```
 
 Finally, plot the data
