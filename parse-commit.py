@@ -1,6 +1,9 @@
 """
 This script reads every line of "changed_files.txt" and extracts only the files
-that should be moved to the live website.
+that should be moved to the live website. If there are files to commit, it
+creates a website_files.txt file that is used to store the files to move.
+
+Files are moved in the move-files.py script
 """
 
 with open("changed_files.txt") as f:
