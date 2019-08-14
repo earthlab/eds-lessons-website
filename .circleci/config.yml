@@ -50,6 +50,7 @@ jobs:
               python move-files.py
             else
               echo "There are no changes, not cloning the website repo."
+            fi
       - run:
           name: Push files to new repo
           working_directory: ~/earthlab.github.io
