@@ -20,7 +20,7 @@ changed_files = "changed_files.txt"
 fp = open(changed_files, 'r')
 
 if os.stat(changed_files).st_size == 0:
-    print("There are no changes to commit")
+    print("There are no changes to move.")
 # Loop through each file, clean the path and move to the final directory
 else:
     for f in fp:
