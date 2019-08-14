@@ -2,8 +2,8 @@
 This script takes a set of files from a text file, and line by line parses and
 moves them to the corresponding directory.
 
-It is used to move files in the website repo to the eds.org live website for the
-time being. This script assumes that it is being run in the website repo.
+It is used to move files in the website repo to the eds.org live website. 
+This script assumes that it is being run in the website repo.
 """
 
 import os
