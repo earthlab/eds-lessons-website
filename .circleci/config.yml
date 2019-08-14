@@ -21,6 +21,8 @@ jobs:
             # get names of changed files
             echo "${changed_files} "
             echo "${changed_files} ">> changed_files.txt
+            # Remove unwanted files from commit
+            python parse-commit.py
 
             # Get latest commit message
             echo $(git log -1 --pretty=%B) > commit_msg_latest.txt
@@ -29,7 +31,7 @@ jobs:
           name: Clone eds.org website
           working_directory: ~/
           command: |
-            if [ -s ~/eds-lessons-website/changed_files.txt ]
+            if [ -s ~/eds-lessons-website/website_files.txt ]
               # check for autobuild branch on website remote
               branch_status=$(git ls-remote --heads https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git "website-autobuild" | wc -l)
               # if branch exists check it out...
@@ -52,7 +54,7 @@ jobs:
           name: Push files to new repo
           working_directory: ~/earthlab.github.io
           command: |
-            if [ -s ~/eds-lessons-website/changed_files.txt ]
+            if [ -s ~/eds-lessons-website/website_files.txt ]
               # Be sure to see how many files there are and only commit if there are more than 0
               git status
               git config credential.helper 'cache --timeout=120'

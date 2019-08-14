@@ -14,7 +14,7 @@ cwd = os.path.abspath(os.getcwd())
 # create full path to other repo
 eds_website_repo = cwd.replace("eds-lessons-website", "earthlab.github.io")
 
-changed_files = "changed_files.txt"
+changed_files = "website_files.txt"
 
 # Open the text file and move files over to the other dir
 fp = open(changed_files, 'r')
@@ -34,8 +34,6 @@ else:
                 os.makedirs(dir_path)
             shutil.copy(f, new_path)
             print("File has been moved to: ", new_path)
-        else:
-            print("sorry can't move: ", f)
 
 
 
