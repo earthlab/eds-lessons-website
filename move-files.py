@@ -8,8 +8,12 @@ time being. This script assumes that it is being run in the website repo.
 
 import os
 import shutil
-base_repo = "earthlab.github.io"
-base_path = "~/"
+
+# get absolute path
+cwd = os.path.abspath(os.getcwd())
+# create full path to other repo
+eds_website_repo = cwd.replace("eds-lessons-website", "earthlab.github.io")
+
 
 # Open the text file and move files over to the other dir
 fp = open('changed_files.txt', 'r')
@@ -17,11 +21,10 @@ fp = open('changed_files.txt', 'r')
 # Loop through each file, clean the path and move to the final directory
 for f in fp:
     print("Trying to move: ", f)
-    f = f.rstrip('\n')
-    f = f.strip()
+    f = f.rstrip('\n').strip()
     if not f.lower().endswith(('yml', 'py')):
         print("final file name: ", f)
-        new_path = os.path.join(base_path, base_repo, f)
+        new_path = os.path.join(eds_website_repo, f)
         dir_path = os.path.dirname(new_path)
         if not os.path.exists(dir_path):
             os.makedirs(dir_path)
