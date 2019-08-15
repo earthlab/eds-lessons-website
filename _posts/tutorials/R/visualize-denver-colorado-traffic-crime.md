@@ -5,7 +5,7 @@ date: 2016-12-06
 modified: '2019-08-14'
 authors: [Max Joseph]
 category: [tutorials]
-excerpt: 'This tutorial demonstrates how to access & visualize crime data for Denver, Colorado using the R programming language.'
+excerpt: 'This tutorial demonstrates how to access and visualize crime data for Denver, Colorado using the R programming language.'
 sidebar:
 nav:
 author_profile: false
@@ -17,7 +17,7 @@ lib: [dplyr, ggplot2, lubridate, readr]
 The city of Denver publicly hosts crime data from the past five years in their open data catalog.
 In this tutorial, we will use R to access and visualize these data, which are essentially spatiotemporally referenced points with features for type of crime, neighborhood, etc.
 
-First, we will load some packages that we'll use later.
+First, you will load some packages that we'll use later.
 
 ```r
 library(dplyr)
