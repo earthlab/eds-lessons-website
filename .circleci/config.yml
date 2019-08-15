@@ -17,7 +17,7 @@ jobs:
           working_directory: ~/eds-lessons-website
           command: |
             # ACMRT -- only looks at changed files, not deleted ones
-            changed_files=$(git diff-tree --no-commit-id --name-only --diff-filter=ACMRT -r HEAD 2>&1)
+            changed_files=$(git diff-tree --no-commit-id --name-only --diff-filter=ACMRT -r -m HEAD 2>&1)
             # get names of changed files
             echo "${changed_files} "
             echo "${changed_files} ">> changed_files.txt
