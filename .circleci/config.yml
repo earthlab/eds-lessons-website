@@ -19,14 +19,14 @@ jobs:
             # ACMRT -- only looks at changed files, not deleted ones
             changed_files=$(git diff-tree --no-commit-id --name-only --diff-filter=ACMRT -r -m HEAD 2>&1)
             # get names of changed files
-            echo "${changed_files} "
             echo "${changed_files} ">> changed_files.txt
             # Remove unwanted files from commit and count files changed
             python parse-commit.py
 
             # Get latest commit message
             echo $(git log -1 --pretty=%B) > commit_msg_latest.txt
-            cat changed_files.txt
+            echo "The following files were modified: "
+            cat website_files.txt
       - run:
           name: Clone eds.org website
           working_directory: ~/
