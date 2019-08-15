@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Visualizing hourly traffic crime data for Denver, Colorado using R, dplyr, and ggplot"
+title: "Visualizing hourly traffic crime data for Denver, Colorado using R, dplyr & ggplot"
 date: 2016-12-06
 modified: '2019-08-14'
 authors: [Max Joseph]
