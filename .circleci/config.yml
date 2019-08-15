@@ -47,7 +47,7 @@ jobs:
                 git checkout -b website-autobuild
               fi
               # Copy files to the live website repo
-              cd eds-lessons-website
+              cd ~/eds-lessons-website
               python move-files.py
             else
               echo "There are no changes, not cloning the website repo."
