@@ -39,10 +39,10 @@ jobs:
               if [ $branch_status == 1 ]
               then
                 # clone the remote branch
-                git clone -b website-autobuild --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN}@github.com/earthlab/earthlab.github.io.git
+                git clone -b website-autobuild --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
               else
                 # if it does not, clone master and checkout a new branch
-                git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN}@github.com/earthlab/earthlab.github.io.git
+                git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
                 cd earthlab.github.io
                 git checkout -b website-autobuild
               fi
