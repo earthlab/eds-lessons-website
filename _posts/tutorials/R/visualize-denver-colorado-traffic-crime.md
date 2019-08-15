@@ -19,7 +19,6 @@ In this tutorial, we will use R to access and visualize these data, which are es
 
 First, we will load some packages that we'll use later.
 
-
 ```r
 library(dplyr)
 library(ggplot2)
@@ -34,7 +33,6 @@ d <- read.csv(data_url)
 ```
 
 Let's lowercase the column names, and look at the structure of the data with the `str()` function.
-
 
 ```r
 names(d) <- tolower(names(d))
