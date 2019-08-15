@@ -5,7 +5,7 @@ date: 2016-12-06
 modified: '2019-08-14'
 authors: [Max Joseph]
 category: [tutorials]
-excerpt: 'This tutorial demonstrates how to access and visualize crime data for Denver, Colorado.'
+excerpt: 'This tutorial demonstrates how to access and visualize crime data for Denver, Colorado using the r programming language.'
 sidebar:
 nav:
 author_profile: false
