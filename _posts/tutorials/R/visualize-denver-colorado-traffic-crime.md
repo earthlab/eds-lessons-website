@@ -1,23 +1,25 @@
 ---
-layout: single
-title: "Visualizing hourly traffic crime data for Denver, Colorado using R, dplyr & ggplot"
-date: 2016-12-06
-modified: '2019-08-14'
-authors: [Max Joseph]
-category: [tutorials]
-excerpt: 'This tutorial demonstrates how to access and visualize crime data for Denver, Colorado using the R programming language.'
-sidebar:
-nav:
-author_profile: false
-comments: true
+layout: single 
+title: "Visualizing hourly traffic crime data for Denver, Colorado using R, dplyr, and ggplot"
+date: 2016-12-06 
+modified: '2019-08-19'
+authors: [Max Joseph] 
+category: [tutorials] 
+excerpt: 'This tutorial demonstrates how to access and visualize crime data for Denver, Colorado.' 
+sidebar: 
+nav: 
+author_profile: false 
+comments: true 
 lang: [r]
 lib: [dplyr, ggplot2, lubridate, readr]
 ---
 
-The city of Denver publicly hosts crime data from the past five years in their open data catalog.
-In this tutorial, we will use R to access and visualize these data, which are essentially spatiotemporally referenced points with features for type of crime, neighborhood, etc.
 
-First, you will load some packages that we'll use later.
+The city of Denver publicly hosts crime data from the past five years in their open data catalog.
+In this tutorial, we will use R to access and visualize these data, which are essentially spatiotemporally referenced points with features for type of crime, neighborhood, etc. 
+
+First, we will load some packages that we'll use later. 
+
 
 ```r
 library(dplyr)
@@ -27,17 +29,19 @@ library(lubridate)
 
 Then, we need to download a comma separated values file that contains the raw data.
 
+
 ```r
 data_url <- "https://www.denvergov.org/media/gis/DataCatalog/crime/csv/crime.csv"
 d <- read.csv(data_url)
 ```
 
-Let's lowercase the column names, and look at the structure of the data with the `str()` function.
+Let's lowercase the column names, and look at the structure of the data with the `str()` function. 
+
 
 ```r
 names(d) <- tolower(names(d))
 str(d)
-## 'data.frame':	504902 obs. of  19 variables:
+## 'data.frame':	506248 obs. of  19 variables:
 ##  $ incident_id           : num  2.02e+09 2.02e+10 2.02e+10 2.02e+08 2.02e+09 ...
 ##  $ offense_id            : num  2.02e+15 2.02e+16 2.02e+16 2.02e+14 2.02e+15 ...
 ##  $ offense_code          : int  5213 2399 2305 2399 2303 5499 2304 5707 5401 2305 ...
@@ -67,42 +71,43 @@ accidents <- d %>%
   filter(offense_type_id == "traffic-accident") %>%
   mutate(datetime = mdy_hms(first_occurrence_date, tz = "MST"),
          hr = hour(datetime),
-         dow = wday(datetime),
+         dow = wday(datetime), 
          yday = yday(datetime))
 ```
 
-Last, we will group our data by hour and day of the week, and for each combination of these two quantities, compute the number of traffic accident crimes.
+Last, we will group our data by hour and day of the week, and for each combination of these two quantities, compute the number of traffic accident crimes. 
 Then we'll create a new variable `day`, which is the character representation (Sunday, Monday, ...) of the numeric `dow` column (1, 2, ...).
 We'll also create a new variable `offense_type`, which is a more human-readable version of the `offense-type-id` column.
 Using ggplot, we'll create a density plot with a color for each day of week.
-This workflow uses `dplyr` to munge our data, then pipes the result to `ggplot2`, so that we only create one object in our global environment `p`, which is our plot.
+This workflow uses `dplyr` to munge our data, then pipes the result to `ggplot2`, so that we only create one object in our global environment `p`, which is our plot. 
 
 
 ```r
 p <- accidents %>%
   count(hr, dow, yday, offense_type_id) %>%
   # the call to mutate() makes new variables with better names
-  mutate(day = factor(c("Sunday", "Monday", "Tuesday",
-                 "Wednesday", "Thursday", "Friday",
-                 "Saturday")[dow],
-                 levels = c("Monday", "Tuesday",
-                            "Wednesday", "Thursday", "Friday",
-                            "Saturday", "Sunday")),
+  mutate(day = factor(c("Sunday", "Monday", "Tuesday", 
+                 "Wednesday", "Thursday", "Friday", 
+                 "Saturday")[dow], 
+                 levels = c("Monday", "Tuesday", 
+                            "Wednesday", "Thursday", "Friday", 
+                            "Saturday", "Sunday")), 
          offense_type = ifelse(
-           offense_type_id == "traffic-accident-hit-and-run",
-           "Hit and run",
+           offense_type_id == "traffic-accident-hit-and-run", 
+           "Hit and run", 
            ifelse(
              offense_type_id == "traffic-accident-dui-duid",
              "Driving under the influence", "Traffic accident"))) %>%
-  ggplot(aes(x = hr,
-             fill = day,
-             color = day)) +
+  ggplot(aes(x = hr, 
+             fill = day, 
+             color = day)) + 
   geom_freqpoly(binwidth = 1) + # 60 sec/min * 60 min
-  scale_color_discrete("Day of week") +
-  xlab("Time of day (hour)") +
-  ylab("Frequency") +
+  scale_color_discrete("Day of week") + 
+  xlab("Time of day (hour)") + 
+  ylab("Frequency") + 
   ggtitle("Traffic crimes in Denver, Colorado")
-p
+p 
 ```
 
-<img src="{{ site.url }}/images/tutorials/R/plot-hourly-1.png" title="Traffic accident data for each hour in Denver, CO" alt="Traffic accident data for each hour in Denver, CO" width="90%" />
+<img src="{{ site.url }}/images/tutorials//R/plot-hourly-1.png" title="Traffic accident data for each hour in Denver, CO" alt="Traffic accident data for each hour in Denver, CO" width="90%" />
+
