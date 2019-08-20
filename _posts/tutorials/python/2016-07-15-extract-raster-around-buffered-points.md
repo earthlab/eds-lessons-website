@@ -2,7 +2,7 @@
 layout: single
 title: 'Computing raster statistics around buffered spatial points Python'
 date: 2016-07-15
-modified: 2019-08-19
+modified: 2019-08-20
 authors: [Matt Oakley, Max Joseph]
 category: [tutorials]
 excerpt: 'This tutorial shows how to compute raster statistics like the mean and variance around buffered spatial points in Python.'
@@ -69,14 +69,14 @@ Our first objective is to read in the data that we want to use. We'll be working
     rm spool/N41/N41W122.hgt spool/N41/N41W123.hgt
     make: Leaving directory '/root/.cache/elevation/SRTM1'
     make: Entering directory '/root/.cache/elevation/SRTM1'
-    gdalbuildvrt -q -overwrite SRTM1.vrt cache/N41/N41W122.tif cache/N41/N41W123.tif
+    gdalbuildvrt -q -overwrite SRTM1.vrt cache/N41/N41W123.tif cache/N41/N41W122.tif
     make: Leaving directory '/root/.cache/elevation/SRTM1'
     make: Entering directory '/root/.cache/elevation/SRTM1'
-    cp SRTM1.vrt SRTM1.7d98a54c1dae45ae88687b1b3c4f4be8.vrt
+    cp SRTM1.vrt SRTM1.d733b0f2aa5b4e05821ca843fef973c0.vrt
     make: Leaving directory '/root/.cache/elevation/SRTM1'
     make: Entering directory '/root/.cache/elevation/SRTM1'
-    gdal_translate -q -co TILED=YES -co COMPRESS=DEFLATE -co ZLEVEL=9 -co PREDICTOR=2 -projwin -122.6 41.6 -121.9 41.15 SRTM1.7d98a54c1dae45ae88687b1b3c4f4be8.vrt /root/earth-analytics-lessons/Shasta-30m-DEM.tif
-    rm -f SRTM1.7d98a54c1dae45ae88687b1b3c4f4be8.vrt
+    gdal_translate -q -co TILED=YES -co COMPRESS=DEFLATE -co ZLEVEL=9 -co PREDICTOR=2 -projwin -122.6 41.6 -121.9 41.15 SRTM1.d733b0f2aa5b4e05821ca843fef973c0.vrt /root/earth-analytics-lessons/Shasta-30m-DEM.tif
+    rm -f SRTM1.d733b0f2aa5b4e05821ca843fef973c0.vrt
     make: Leaving directory '/root/.cache/elevation/SRTM1'
 
 
@@ -125,7 +125,7 @@ img = plt.imshow(data_array, cmap = "viridis")
 
 <figure>
 
-<img src = "{{ site.url }}//images/tutorials/python/extract-raster-around-buffered-points_7_0.png">
+<img src = "{{ site.url }}//images/tutorials/python/2016-07-15-extract-raster-around-buffered-points/2016-07-15-extract-raster-around-buffered-points_7_0.png">
 
 </figure>
 
@@ -229,7 +229,7 @@ img = plt.imshow(data_array, cmap = "viridis")
 
 <figure>
 
-<img src = "{{ site.url }}//images/tutorials/python/extract-raster-around-buffered-points_15_0.png">
+<img src = "{{ site.url }}//images/tutorials/python/2016-07-15-extract-raster-around-buffered-points/2016-07-15-extract-raster-around-buffered-points_15_0.png">
 
 </figure>
 

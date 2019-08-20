@@ -2,7 +2,7 @@
 layout: single
 title: 'Calculating slope and aspect from a digital elevation model in Python'
 date: 2016-07-26
-modified: 2019-08-19
+modified: 2019-08-20
 authors: [Matt Oakley, Max Joseph]
 category: [tutorials]
 excerpt: 'This tutorial shows how to compute the slope and aspect from a digital elevation model in Python.'
@@ -78,7 +78,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/tutorials/python/get-slope-aspect-from-digital-elevation-model_8_0.png">
+<img src = "{{ site.url }}//images/tutorials/python/2016-07-26-get-slope-aspect-from-digital-elevation-model/2016-07-26-get-slope-aspect-from-digital-elevation-model_8_0.png">
 
 </figure>
 
@@ -103,7 +103,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/tutorials/python/get-slope-aspect-from-digital-elevation-model_10_0.png">
+<img src = "{{ site.url }}//images/tutorials/python/2016-07-26-get-slope-aspect-from-digital-elevation-model/2016-07-26-get-slope-aspect-from-digital-elevation-model_10_0.png">
 
 </figure>
 
@@ -122,7 +122,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/tutorials/python/get-slope-aspect-from-digital-elevation-model_11_0.png">
+<img src = "{{ site.url }}//images/tutorials/python/2016-07-26-get-slope-aspect-from-digital-elevation-model/2016-07-26-get-slope-aspect-from-digital-elevation-model_11_0.png">
 
 </figure>
 
