@@ -2,7 +2,7 @@
 layout: single
 title: 'Create rasters from SMAP data in Python'
 date: 2016-06-28
-modified: 2019-08-19
+modified: 2019-08-20
 authors: [Matt Oakley, Zach Schira]
 category: [tutorials]
 excerpt: 'This tutorial demonstrates how to access SMAP data, and how to generate raster output from this data.'

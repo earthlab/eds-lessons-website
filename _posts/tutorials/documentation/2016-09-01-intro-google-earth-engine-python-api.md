@@ -2,7 +2,7 @@
 layout: single 
 title: 'Computing and plotting 2d spatial point density in R' 
 date: 2016-07-07 
-modified: '2019-08-19'
+modified: '2019-08-20'
 authors: [Max Joseph] 
 category: [tutorials] 
 excerpt: 'This tutorial demonstrates how to compute 2d spatial density and visualize the result using storm event data from NOAA.' 
@@ -80,7 +80,7 @@ ggplot(crime, aes(x = lon, y = lat)) +
   ylab('Latitude')
 ```
 
-<img src="{{ site.url }}/images/tutorials//R/basic-plot-1.png" title="plot of chunk basic-plot" alt="plot of chunk basic-plot" width="90%" />
+<img src="{{ site.url }}/images/tutorials/documentation/2016-07-07-visualize-2d-point-density-ggmap/basic-plot-1.png" title="plot of chunk basic-plot" alt="plot of chunk basic-plot" width="90%" />
 
 There seems to be a fair bit of overplotting. 
 Let's instead plot a density estimate. 
@@ -100,7 +100,7 @@ ggplot(crime, aes(x = lon, y = lat)) +
   theme(legend.position = 'none')
 ```
 
-<img src="{{ site.url }}/images/tutorials//R/stat_density2d-1.png" title="plot of chunk stat_density2d" alt="plot of chunk stat_density2d" width="90%" />
+<img src="{{ site.url }}/images/tutorials/documentation/2016-07-07-visualize-2d-point-density-ggmap/stat_density2d-1.png" title="plot of chunk stat_density2d" alt="plot of chunk stat_density2d" width="90%" />
 
 You can pass arguments for `kde2d` through the call to `stat_density2d`. 
 In this case, we alter the argument `h`, which is a bandwidth parameter related to the spatial range or smoothness of the density estimate. 
@@ -119,7 +119,7 @@ ggplot(crime, aes(x = lon, y = lat)) +
   theme(legend.position = 'none')
 ```
 
-<img src="{{ site.url }}/images/tutorials//R/stat_density2d-bw-1.png" title="plot of chunk stat_density2d-bw" alt="plot of chunk stat_density2d-bw" width="90%" />
+<img src="{{ site.url }}/images/tutorials/documentation/2016-07-07-visualize-2d-point-density-ggmap/stat_density2d-bw-1.png" title="plot of chunk stat_density2d-bw" alt="plot of chunk stat_density2d-bw" width="90%" />
 
 As an alternative, we might consider plotting the raw data points with alpha transparency so that we can see the actual data, not just a model of the data.
 We will also set coordinates to use as limits to focus in on downtown Houston. 
@@ -135,5 +135,5 @@ ggplot(crime, aes(x = lon, y = lat)) +
                   ylim = c(29.5, 30.1))
 ```
 
-<img src="{{ site.url }}/images/tutorials//R/little-pts-1.png" title="plot of chunk little-pts" alt="plot of chunk little-pts" width="90%" />
+<img src="{{ site.url }}/images/tutorials/documentation/2016-07-07-visualize-2d-point-density-ggmap/little-pts-1.png" title="plot of chunk little-pts" alt="plot of chunk little-pts" width="90%" />
 

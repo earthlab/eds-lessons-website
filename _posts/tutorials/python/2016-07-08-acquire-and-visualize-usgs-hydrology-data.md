@@ -2,7 +2,7 @@
 layout: single
 title: 'Acquiring streamflow data from USGS with climata and Python'
 date: 2016-07-08
-modified: 2019-08-19
+modified: 2019-08-20
 authors: [Max Joseph]
 category: [tutorials]
 excerpt: 'This tutorial demonstrates how to use climata to acquire streamflow data in and around Boulder, Colorado.'
@@ -87,7 +87,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/tutorials/python/acquire-and-visualize-usgs-hydrology-data_6_0.png">
+<img src = "{{ site.url }}//images/tutorials/python/2016-07-08-acquire-and-visualize-usgs-hydrology-data/2016-07-08-acquire-and-visualize-usgs-hydrology-data_6_0.png">
 
 </figure>
 
@@ -162,7 +162,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/tutorials/python/acquire-and-visualize-usgs-hydrology-data_12_0.png">
+<img src = "{{ site.url }}//images/tutorials/python/2016-07-08-acquire-and-visualize-usgs-hydrology-data/2016-07-08-acquire-and-visualize-usgs-hydrology-data_12_0.png">
 
 </figure>
 
