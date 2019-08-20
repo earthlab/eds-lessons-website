@@ -87,9 +87,18 @@ import earthpy.plot as ep
 sns.set_style('white')
 sns.set(font_scale=1.5)
 
-data = et.data.get_data('cold-springs-fire')
+data1 = et.data.get_data('cold-springs-fire')
+data2 = et.data.get_data('cs-test-landsat')
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
+
+{:.output}
+    Downloading from https://ndownloader.figshare.com/files/10960109
+    Extracted output to /root/earth-analytics/data/cold-springs-fire/.
+    Downloading from https://ndownloader.figshare.com/files/10960214?private_link=fbba903d00e1848b423e
+    Extracted output to /root/earth-analytics/data/cs-test-landsat/.
+
+
 
 To calculate difference Normalized Burn Ratio (dNBR), you first need to calculate NBR for the pre and post fire data. This, of course, presumes that you have data before and after the area was burned from the same remote sensing sensor. Ideally, this data also does not have clouds covering the fire area.
 
@@ -156,7 +165,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire02-calculate-NBR-with-landsat-Python_6_0.png" alt = "Normalized burn ratio (NBR) calculated for the post-Cold Springs fire image for July 23, 2016 from Landsat.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire02-calculate-NBR-with-landsat-Python/2017-03-01-fire02-calculate-NBR-with-landsat-Python_6_0.png" alt = "Normalized burn ratio (NBR) calculated for the post-Cold Springs fire image for July 23, 2016 from Landsat.">
 <figcaption>Normalized burn ratio (NBR) calculated for the post-Cold Springs fire image for July 23, 2016 from Landsat.</figcaption>
 
 </figure>
@@ -194,7 +203,7 @@ The code for this is hidden below because you know how to do this!
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire02-calculate-NBR-with-landsat-Python_10_0.png" alt = "Normalized burn ratio (NBR) calculated for the pre-Cold Springs fire image from Landsat.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire02-calculate-NBR-with-landsat-Python/2017-03-01-fire02-calculate-NBR-with-landsat-Python_10_0.png" alt = "Normalized burn ratio (NBR) calculated for the pre-Cold Springs fire image from Landsat.">
 <figcaption>Normalized burn ratio (NBR) calculated for the pre-Cold Springs fire image from Landsat.</figcaption>
 
 </figure>
@@ -291,7 +300,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire02-calculate-NBR-with-landsat-Python_18_0.png" alt = "Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with legend created using matplotlib.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire02-calculate-NBR-with-landsat-Python/2017-03-01-fire02-calculate-NBR-with-landsat-Python_18_0.png" alt = "Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with legend created using matplotlib.">
 <figcaption>Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with legend created using matplotlib.</figcaption>
 
 </figure>
@@ -334,7 +343,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire02-calculate-NBR-with-landsat-Python_20_0.png" alt = "Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with legend created using earthpy.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire02-calculate-NBR-with-landsat-Python/2017-03-01-fire02-calculate-NBR-with-landsat-Python_20_0.png" alt = "Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with legend created using earthpy.">
 <figcaption>Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with legend created using earthpy.</figcaption>
 
 </figure>
@@ -399,7 +408,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire02-calculate-NBR-with-landsat-Python_24_0.png" alt = "Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with a color bar legend.">
+<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire02-calculate-NBR-with-landsat-Python/2017-03-01-fire02-calculate-NBR-with-landsat-Python_24_0.png" alt = "Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with a color bar legend.">
 <figcaption>Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with a color bar legend.</figcaption>
 
 </figure>
