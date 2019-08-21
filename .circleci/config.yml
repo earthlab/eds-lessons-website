@@ -29,7 +29,7 @@ jobs:
             cat website_files.txt
       - run:
           name: Get & print current branch
-          working_directory: ~/earth-analytics-website
+          working_directory: ~/eds-lessons-website
           command: |
             # get the current branch
             echo $(git branch | sed -n -e 's/^\* \(.*\)/\1/p') > current_branch.txt
