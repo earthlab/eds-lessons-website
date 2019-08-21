@@ -4,9 +4,6 @@ jobs:
     working_directory: ~/eds-lessons-website
     machine:
       image: ubuntu-1604:201903-01
-    branches:
-      only:
-        - master # only run when a commit it made to master
     steps:
       - checkout
       - run:
