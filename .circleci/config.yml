@@ -34,7 +34,7 @@ jobs:
             echo "Working on this branch: "
             cat current_branch.txt
       - run:
-          name: Clone eds.org website branch NEW
+          name: Clone earthlab.github.io website branch NEW
           working_directory: ~/
           command: |
             branch=$(head -1 eds-lessons-website/current_branch.txt)
@@ -42,23 +42,22 @@ jobs:
               if [ "$branch" != "master" ]
               then
                   # check that branch exists on remote eds-lessons-website
-                  branch_status=$(git ls-remote --heads https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/eds-lessons-website.git "$branch" | wc -l)
+                  branch_status=$(git ls-remote --heads https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git "$branch" | wc -l)
                   # if branch exists...
                   if [ $branch_status == 1 ]
                   then
                     # clone the remote branch
-                    git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/eds-lessons-website.git -b "$branch"
+                    git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git -b "$branch"
                     echo "Failing 0: "
                   else
                     # if it does not, clone master and checkout a new branch
-                    git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/eds-lessons-website.git
-                    cd eds-lessons-website
+                    git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
+                    cd earthlab.github.io
                     git checkout -b "$branch"
                     echo "Failing 1: "
                   fi
               else
                   # if commits are on master, push to website-autobuild to avoid direct commits to live website
-                  # git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/eds-lessons-website.git
                   # check for autobuild branch on website remote
                   branch_status=$(git ls-remote --heads https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git "website-autobuild" | wc -l)
                   # if branch exists check it out...
