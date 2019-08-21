@@ -40,7 +40,7 @@ jobs:
           name: Clone eds.org website branch NEW
           working_directory: ~/
           command: |
-            branch=$(head -1 earth-analytics-website/current_branch.txt)
+            branch=$(head -1 eds-lessons-website/current_branch.txt)
             # Will need to add a check to see if commits exist but test this first
               if [ "$branch" != "master" ]
               then
