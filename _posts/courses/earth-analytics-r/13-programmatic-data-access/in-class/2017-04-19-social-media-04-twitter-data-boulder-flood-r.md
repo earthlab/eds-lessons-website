@@ -3,7 +3,7 @@ layout: single
 title: "Use Tidytext to Text Mine Social Media - Twitter Data Using the Twitter API from Rtweet in R"
 excerpt: "This lesson provides an example of modularizing code in R. "
 authors: ['Leah Wasser','Carson Farmer']
-modified: '2019-08-20'
+modified: '2019-08-22'
 category: [courses]
 class-lesson: ['social-media-r']
 permalink: /courses/earth-analytics/get-data-using-apis/text-mine-colorado-flood-tweets-science-r/
@@ -203,7 +203,7 @@ flood_tweet_messages %>%
       title = "Count of unique words found in tweets")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/plot-top-15-tweets-1.png" title="unique words found in tweets" alt="unique words found in tweets" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-04-twitter-data-boulder-flood-r/plot-top-15-tweets-1.png" title="unique words found in tweets" alt="unique words found in tweets" width="90%" />
 
 ## Remove Stop Words
 
@@ -253,7 +253,7 @@ flood_tweet_clean %>%
       title = "Count of unique words found in tweets")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/top-15-words-without-stops-1.png" title="unique words found in tweets without stop words" alt="unique words found in tweets without stop words" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-04-twitter-data-boulder-flood-r/top-15-words-without-stops-1.png" title="unique words found in tweets without stop words" alt="unique words found in tweets without stop words" width="90%" />
 
 Finally, notice that http is the top word in the plot above. Let's remove all 
 links from your data using a regular expression. Then you can recreate all of the 
@@ -294,7 +294,7 @@ flood_tweet_clean %>%
       title = "Count of unique words found in tweets, ")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/top-15-words-without-stops2-1.png" title="count of unique words found in tweets without links" alt="count of unique words found in tweets without links" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-04-twitter-data-boulder-flood-r/top-15-words-without-stops2-1.png" title="count of unique words found in tweets without links" alt="count of unique words found in tweets without links" width="90%" />
 
 ## Paired Word Analysis
 
@@ -371,4 +371,39 @@ flood_word_counts
 Finally, plot the word network.
 
 
+```r
+# plot climate change word network
+# (plotting graph edges is currently broken)
+flood_word_counts %>%
+        filter(n >= 50) %>%
+        graph_from_data_frame() %>%
+        ggraph(layout = "fr") +
+        # geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+        geom_node_point(color = "darkslategray4", size = 3) +
+        geom_node_text(aes(label = name), vjust = 1.8, size = 3) +
+        labs(title = "Word Network: Tweets during the 2013 Colorado Flood Event",
+             subtitle = "September 2013 - Text mining twitter data ",
+             x = "", y = "") +
+        theme_void()
+```
+
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-04-twitter-data-boulder-flood-r/plot-word-pairs-1.png" title="plot of chunk plot-word-pairs" alt="plot of chunk plot-word-pairs" width="90%" />
+
+Note that "http" is still a value that appears in your word analysis. You likely
+need to do a bit more cleaning to complete this analysis! The next step might be
+a <a href="http://tidytextmining.com/sentiment.html" target = "_blank">sentiment analysis. </a>
+This analysis would attempt to capture the general mood of the social media posts
+during and after the flood events. While this is beyond the scope of the class,
+the tidytextmining book link above has a very useful section on this topic.
+
+In the next lesson, you will will take the tweet location data and create an
+interactive map.
+
+<div class="notice--info" markdown="1">
+
+## Additional Resources
+
+* <a href="http://tidytextmining.com/" target = "_blank">Tidy text mining e-book is a great resource for text mining in `R`.  </a>
+
+</div>
 
