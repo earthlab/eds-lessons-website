@@ -38,7 +38,9 @@ jobs:
           working_directory: ~/
           command: |
             branch=$(head -1 eds-lessons-website/current_branch.txt)
-            # Will need to add a check to see if commits exist but test this first
+            # Only clone eds.org if there are files to commit
+            if [[ -f ~/eds-lessons-website/website_files.txt ]]
+            then
               if [ "$branch" != "master" ]
               then
                   # check that branch exists on remote eds-lessons-website
@@ -54,7 +56,6 @@ jobs:
                     git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
                     cd earthlab.github.io
                     git checkout -b "$branch"
-                    echo "Failing 1: "
                   fi
               else
                   # if commits are on master, push to website-autobuild to avoid direct commits to live website
@@ -63,7 +64,6 @@ jobs:
                   # if branch exists check it out...
                   if [ $branch_status == 1 ]
                   then
-                    echo "Failing creating website autobuild: "
                     # clone the remote branch
                     git clone -b website-autobuild --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
                   else
@@ -73,6 +73,14 @@ jobs:
                     git checkout -b website-autobuild
                   fi
               fi
+
+              # Copy files to the live website repo
+              cd ~/eds-lessons-website
+              python move-files.py
+            else
+              echo "There are no changes, not cloning the website repo."
+            fi
+
 #      - run:
 #          name: Clone eds.org website OLD
 #          working_directory: ~/
