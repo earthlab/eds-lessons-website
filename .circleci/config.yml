@@ -55,7 +55,7 @@ jobs:
                   then
                     # clone the remote branch
                     git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git -b "$branch"
-                    echo "Failing 0: "
+                    echo "Looks like the branch doesn't existing on the eds.org website, created branch for you."
                   else
                     # if the branch doesn't exist, clone master and checkout the branch as a new branch
                     git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
@@ -78,39 +78,12 @@ jobs:
                     git checkout -b website-autobuild
                   fi
               fi
-
               # Copy files to the live website repo
               cd ~/eds-lessons-website
               python move-files.py
             else
               echo "There are no changes, not cloning the website repo."
             fi
-
-#      - run:
-#          name: Clone eds.org website OLD
-#          working_directory: ~/
-#          command: |
-#            if [[ -f ~/eds-lessons-website/website_files.txt ]]
-#            then
-#              # check for autobuild branch on website remote
-#              branch_status=$(git ls-remote --heads https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git "website-autobuild" | wc -l)
-#              # if branch exists check it out...
-#              if [ $branch_status == 1 ]
-#              then
-#                # clone the remote branch
-#                git clone -b website-autobuild --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
-#              else
-#                # if it does not, clone master and checkout a new branch
-#                git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
-#                cd earthlab.github.io
-#                git checkout -b website-autobuild
-#              fi
-#              # Copy files to the live website repo
-#              cd ~/eds-lessons-website
-#              python move-files.py
-#            else
-#              echo "There are no changes, not cloning the website repo."
-#            fi
       - run:
           name: Push files to new repo
           working_directory: ~/earthlab.github.io
