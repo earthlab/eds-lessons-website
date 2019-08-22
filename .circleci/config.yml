@@ -23,6 +23,7 @@ jobs:
             # Get latest commit message
             echo $(git log -1 --pretty=%B) > commit_msg_latest.txt
             if [[ -f website_files.txt ]]
+            then
               echo "The following files were modified: "
               cat website_files.txt
             else
