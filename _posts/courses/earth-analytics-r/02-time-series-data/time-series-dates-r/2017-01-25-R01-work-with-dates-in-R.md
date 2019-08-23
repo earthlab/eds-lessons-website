@@ -104,7 +104,7 @@ ggplot(data = boulder_precip, aes(x = DATE, y = PRECIP)) +
     subtitle = "Boulder, Colorado 2013")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/time-series-dates-r/2017-01-25-R01-work-with-dates-in-R/ggplot-plot-1.png" title="ggplot of precip data" alt="ggplot of precip data" width="90%" />
+<img src="{{ site.url }}/images/courses//earth-analytics-r/02-time-series-data/time-series-dates-r/2017-01-25-R01-work-with-dates-in-R/ggplot-plot-1.png" title="ggplot of precip data" alt="ggplot of precip data" width="90%" />
 
 Notice when you plot the data, the x axis is "messy". It would be easier to read
 if you only had ticks on the x axis for dates incrementally - every few weeks. Or
@@ -238,6 +238,6 @@ ggplot(data = boulder_precip, aes(x = DATE, y = PRECIP)) +
            x = "Date", y = "Daily Precipitation (Inches)")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/time-series-dates-r/2017-01-25-R01-work-with-dates-in-R/qplot-data-1.png" title="precip bar plot" alt="precip bar plot" width="90%" />
+<img src="{{ site.url }}/images/courses//earth-analytics-r/02-time-series-data/time-series-dates-r/2017-01-25-R01-work-with-dates-in-R/qplot-data-1.png" title="precip bar plot" alt="precip bar plot" width="90%" />
 
 Now, your plot looks a lot nicer!

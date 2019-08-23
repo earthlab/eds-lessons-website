@@ -118,12 +118,7 @@ climate_tweets <- search_tweets(q = "#climatechange", n = 10000, lang = "en",
                              include_rts = FALSE)
 # check data to see if there are emojis
 head(climate_tweets$text)
-## [1] "A while back I made this Bumble Booty series to help destigmatize bees as scary bugs &amp; to showcase their adorable yet important job in preserving nature.\n#amazon #savetheamazon #savetheearth #climatechange #deforestation #bees #polinators #booty #indigenous #amazonia #nature"
-## [2] "@SenGillibrand So does this mean you'll be taking the Prius to your campaign events instead of jets and buses? Asking for the nation. #ClimateChange #FakeNews"                                                                                                                          
-## [3] "Perhaps what is needed to sell the #GreenNewDeal is a  charismatic evangelical leader  before \"The earth dries up and withers...defiled by its people\" - Isaiah 24:4-6\n#ClimateChange #TheAmazon \n\nhttps://t.co/wq2Ka27fow"                                                         
-## [4] "FAKE NEWS. Just like your brain. #cdnpoli #climatechange https://t.co/hWSTtwTzMf"                                                                                                                                                                                                        
-## [5] "Solar storage is a myth. Meanwhile, unicorns have been cited outside of Palm Springs. #climatechange #uspoli https://t.co/pwOXY21ion"                                                                                                                                                    
-## [6] "Tweets coastal erosion (wave action) as climate change. You should have stayed up there. It's a dry community. #cdnpoli #climatechange https://t.co/9Xot9FHQjl"
+## NULL
 ```
 
 ## Data Clean-Up
@@ -234,7 +229,7 @@ head(stop_words)
 ## 6 according SMART
 
 nrow(climate_tweets_clean)
-## [1] 152466
+## [1] 0
 
 # remove stop words from your list of words
 cleaned_tweet_words <- climate_tweets_clean %>%
@@ -242,7 +237,7 @@ cleaned_tweet_words <- climate_tweets_clean %>%
 
 # there should be fewer words now
 nrow(cleaned_tweet_words)
-## [1] 81488
+## [1] 0
 ```
 
 Now that you've performed this final step of cleaning, you can try to plot, once
@@ -275,86 +270,9 @@ next.
 ngrams specifies pairs and 2 is the number of words together
 
 
-```r
-# library(devtools)
-#install_github("dgrtwo/widyr")
-library(widyr)
-
-# remove punctuation, convert to lowercase, add id for each tweet!
-climate_tweets_paired_words <- climate_tweets %>%
-  dplyr::select(stripped_text) %>%
-  unnest_tokens(paired_words, stripped_text, token = "ngrams", n = 2)
-
-climate_tweets_paired_words %>%
-  count(paired_words, sort = TRUE)
-## # A tibble: 88,431 x 2
-##    paired_words         n
-##    <chr>            <int>
-##  1 of the             596
-##  2 climate change     574
-##  3 in the             528
-##  4 the amazon         356
-##  5 climatechange is   287
-##  6 is a               254
-##  7 of climatechange   241
-##  8 for the            240
-##  9 the world          239
-## 10 on the             233
-## # … with 88,421 more rows
-```
 
 
 
-```r
-library(tidyr)
-climate_tweets_separated_words <- climate_tweets_paired_words %>%
-  separate(paired_words, c("word1", "word2"), sep = " ")
-
-climate_tweets_filtered <- climate_tweets_separated_words %>%
-  filter(!word1 %in% stop_words$word) %>%
-  filter(!word2 %in% stop_words$word)
-
-# new bigram counts:
-climate_words_counts <- climate_tweets_filtered %>%
-  count(word1, word2, sort = TRUE)
-
-head(climate_words_counts)
-## # A tibble: 6 x 3
-##   word1            word2                n
-##   <chr>            <chr>            <int>
-## 1 climate          change             574
-## 2 amazon           rainforest         140
-## 3 climatechange    climatecrisis      118
-## 4 climatechange    climateemergency    97
-## 5 climatechange    globalwarming       92
-## 6 climateemergency climatechange       91
-```
-
-Finally, plot the data
-
-
-```r
-library(igraph)
-library(ggraph)
-
-# plot climate change word network
-# (plotting graph edges is currently broken)
-climate_words_counts %>%
-        filter(n >= 24) %>%
-        graph_from_data_frame() %>%
-        ggraph(layout = "fr") +
-        # geom_edge_link(aes(edge_alpha = n, edge_width = n))
-        # geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
-        geom_node_point(color = "darkslategray4", size = 3) +
-        geom_node_text(aes(label = name), vjust = 1.8, size = 3) +
-        labs(title = "Word Network: Tweets using the hashtag - Climate Change",
-             subtitle = "Text mining twitter data ",
-             x = "", y = "")
-```
-
-<img src="{{ site.url }}/images/courses//earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/word-assoc-plot-1.png" title="word associations for climate change tweets" alt="word associations for climate change tweets" width="90%" />
-
-You expect the words climate & change to have a high
 
 
 
