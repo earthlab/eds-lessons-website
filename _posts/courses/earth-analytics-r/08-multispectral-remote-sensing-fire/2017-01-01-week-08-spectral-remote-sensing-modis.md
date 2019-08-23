@@ -3,7 +3,7 @@ layout: single
 category: courses
 title: "Quantify Fire Impacts - Remote Sensing"
 permalink: /courses/earth-analytics/multispectral-remote-sensing-modis/
-modified: '2019-08-20'
+modified: '2019-08-23'
 week-landing: 8
 week: 8
 sidebar:
@@ -309,17 +309,6 @@ Submit your report in both `.Rmd` and `.html` format to the D2l dropbox.
 
 
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/plot-grid-naip-modis-landsat-1.png" title="grid of plots" alt="grid of plots" width="90%" />
-
-
-
-
-
-
-
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/plot-landsat-nbr-1.png" title="Landsat derived dNBR for Cold Springs Fire 
- Nederland, CO" alt="Landsat derived dNBR for Cold Springs Fire 
- Nederland, CO" width="90%" />
 
 
 
@@ -328,13 +317,12 @@ Submit your report in both `.Rmd` and `.html` format to the D2l dropbox.
 
 
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/diff-nbr-modis-1.png" title="dnbr plotted using MODIS data for the Cold Springs fire." alt="dnbr plotted using MODIS data for the Cold Springs fire." width="90%" />
 
 
 
 
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/ndvi-difference-1.png" title="Difference in NDVI pre vs post Cold Springs fire." alt="Difference in NDVI pre vs post Cold Springs fire." width="90%" />
 
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/modis-ndvi-1.png" title="MODIS NDVI difference Cold Springs Fire" alt="MODIS NDVI difference Cold Springs Fire" width="90%" />
+
+

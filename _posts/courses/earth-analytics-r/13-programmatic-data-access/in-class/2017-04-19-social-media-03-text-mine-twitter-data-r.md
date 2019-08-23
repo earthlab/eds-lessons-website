@@ -3,7 +3,7 @@ layout: single
 title: "Text Mining Twitter Data With TidyText in R"
 excerpt: "Text mining is used to extract useful information from text - such as Tweets. Learn how to use the Tidytext package in R to analyze twitter data."
 authors: ['Leah Wasser','Carson Farmer']
-modified: '2019-08-22'
+modified: '2019-08-23'
 category: [courses]
 class-lesson: ['social-media-r']
 permalink: /courses/earth-analytics/get-data-using-apis/text-mining-twitter-data-intro-r/
@@ -118,12 +118,12 @@ climate_tweets <- search_tweets(q = "#climatechange", n = 10000, lang = "en",
                              include_rts = FALSE)
 # check data to see if there are emojis
 head(climate_tweets$text)
-## [1] "@KirenRijiju @MmhonlumoKikon Damages and impending damages of #ClimateChange"                                                                                                               
-## [2] "Hey Kim Kardashian West, here’s some advice....STOP TAKING PRIVATE JETS TO THE GROCERY STORE!!! #AmazonFire #rainforest #Brazil #ClimateChange #ClimateChangeIsReal https://t.co/KBJsmF9ost"
-## [3] "@KimKardashian here’s some advice....STOP TAKING PRIVATE JETS TO THE GROCERY STORE!!! #AmazonFire #rainforest #Brazil #ClimateChange #ClimateChangeIsReal https://t.co/gVjFtexFhh"          
-## [4] "The Earth's lungs are basically on fire. Can there still be people &amp; politicians who will not act on #climatecrisis #climatechange #amazon https://t.co/aFz50Ovlsa"                     
-## [5] "@SenatorSinema Great. Now do something about  #ClimateChange #ImpeachTrump #ImmigrationPolicy and  #GunControl"                                                                             
-## [6] "@Breaking911 He has been fighting #ClimateChange for 25 years, before anyone even heard of it!"
+## [1] "@Pearllisez Hello there is your unroll: Thread by @AllAmericanAsi4: \"1) Attention leftists! You've joined a cult and you didn't know it. \"The First Global Revolution\" written […]\" #ClimateChange #GlobalWarming https://t.co/rT1GCnlN5L\nSee you soon. 🤖"                                              
+## [2] "@VictorMwambacha Hello, the unroll you asked for: Thread by @tmsruge: \"Don’t get into agriculture they said. “But I want to help farmers reach market and make more money and improve their liv […]\" #ClimateChange https://t.co/haBK8GSt1a\nHave a good day. 🤖"                                           
+## [3] "@swfusi Hola the unroll you asked for: Thread by @tmsruge: \"Don’t get into agriculture they said. “But I want to help farmers reach market and make more money and improve their liv […]\" #ClimateChange https://t.co/haBK8GSt1a\nEnjoy :) 🤖"                                                              
+## [4] "Billionaires what you up to? :) 🌎\nFeel like saving our planets lungs today? :) 🙃🌳🌿 #billionaire #government #help #Amazon #AmazonRainforest #Amazonfires #vegan #vegetarian #animalagriculture #ActForTheAmazon #Ashes #climatechange #climate #environment #FridayFeeling #animals https://t.co/ooxOlUrbBO"
+## [5] "How Climate Change Could Affect Businesses &amp; The Overall Economy https://t.co/p8Y9OkO1n8 / #ClimateChange #GlobalWarming #ClimateCrisis #ClimateCatastrophe #ClimateChangeTheFacts #ClimateEmergency #Economy #Sustainability #GoGreen #RenewableEnergy https://t.co/DXMZQ8GNNR"                         
+## [6] "Hot off the press! Too Darn Hot Times is out! https://t.co/IvnHOMZrzn  @amisdelaterre @GilbertJoshuaM @M_Orphelin #climate #climatechange"
 ```
 
 ## Data Clean-Up
@@ -202,7 +202,7 @@ climate_tweets_clean %>%
       title = "Count of unique words found in tweets")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/plot-uncleaned-data-1.png" title="plot of users tweeting about fire." alt="plot of users tweeting about fire." width="90%" />
+<img src="{{ site.url }}/images/courses//earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/plot-uncleaned-data-1.png" title="plot of users tweeting about fire." alt="plot of users tweeting about fire." width="90%" />
 
 You plot of unique words contains some words that may not be useful to use. For instance
 "a" and "to". In the word of text mining you call those words - 'stop words'.
@@ -234,7 +234,7 @@ head(stop_words)
 ## 6 according SMART
 
 nrow(climate_tweets_clean)
-## [1] 248826
+## [1] 251654
 
 # remove stop words from your list of words
 cleaned_tweet_words <- climate_tweets_clean %>%
@@ -242,7 +242,7 @@ cleaned_tweet_words <- climate_tweets_clean %>%
 
 # there should be fewer words now
 nrow(cleaned_tweet_words)
-## [1] 133516
+## [1] 134441
 ```
 
 Now that you've performed this final step of cleaning, you can try to plot, once
@@ -265,7 +265,7 @@ cleaned_tweet_words %>%
       subtitle = "Stop words removed from the list")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/plot-cleaned-words-1.png" title="top 15 words used in tweets" alt="top 15 words used in tweets" width="90%" />
+<img src="{{ site.url }}/images/courses//earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/plot-cleaned-words-1.png" title="top 15 words used in tweets" alt="top 15 words used in tweets" width="90%" />
 
 ## Explore Networks of Words
 
@@ -287,20 +287,20 @@ climate_tweets_paired_words <- climate_tweets %>%
 
 climate_tweets_paired_words %>%
   count(paired_words, sort = TRUE)
-## # A tibble: 130,517 x 2
+## # A tibble: 132,538 x 2
 ##    paired_words         n
 ##    <chr>            <int>
-##  1 climate change     987
-##  2 of the             969
-##  3 in the             829
-##  4 climatechange is   510
-##  5 of climatechange   489
-##  6 on the             413
-##  7 to the             388
-##  8 is a               380
-##  9 on climatechange   363
-## 10 for the            357
-## # … with 130,507 more rows
+##  1 of the            1023
+##  2 climate change    1000
+##  3 in the             859
+##  4 the amazon         577
+##  5 climatechange is   467
+##  6 of climatechange   424
+##  7 on the             417
+##  8 is a               412
+##  9 the world          397
+## 10 for the            395
+## # … with 132,528 more rows
 ```
 
 
@@ -320,14 +320,14 @@ climate_words_counts <- climate_tweets_filtered %>%
 
 head(climate_words_counts)
 ## # A tibble: 6 x 3
-##   word1         word2                   n
-##   <chr>         <chr>               <int>
-## 1 climate       change                987
-## 2 climatechange climatecrisis         217
-## 3 amazon        rainforest            180
-## 4 climatechange climateemergency      175
-## 5 climatechange globalwarming         174
-## 6 climatechange climatechangeisreal   116
+##   word1            word2                n
+##   <chr>            <chr>            <int>
+## 1 climate          change            1000
+## 2 amazon           rainforest         230
+## 3 climatechange    climateemergency   195
+## 4 climatechange    climatecrisis      194
+## 5 climatechange    globalwarming      149
+## 6 climateemergency climatechange      142
 ```
 
 Finally, plot the data
@@ -352,7 +352,7 @@ climate_words_counts %>%
              x = "", y = "")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/word-assoc-plot-1.png" title="word associations for climate change tweets" alt="word associations for climate change tweets" width="90%" />
+<img src="{{ site.url }}/images/courses//earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/word-assoc-plot-1.png" title="word associations for climate change tweets" alt="word associations for climate change tweets" width="90%" />
 
 You expect the words climate & change to have a high
 

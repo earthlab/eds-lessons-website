@@ -3,7 +3,7 @@ layout: single
 title: "Get Landsat Remote Sensing Data From the Earth Explorer Website"
 excerpt: "In this lesson you will review how to find and download Landsat imagery from the USGS Earth Explorere website."
 authors: ['Leah Wasser']
-modified: '2019-08-20'
+modified: '2019-08-23'
 category: [courses]
 class-lesson: ['spectral-data-fire-2-r']
 permalink: /courses/earth-analytics/multispectral-remote-sensing-modis/get-data-earth-explorer/
@@ -176,47 +176,13 @@ because your instructor cropped the class data to make is easier to work with!
 First, let's import your new data and create a raster stack. The code is hidden
 because you already know how to do this!
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/import-landsat-1.png" title="landsat new image" alt="landsat new image" width="90%" />
-
-Next, plot the fire boundary extent on top of the newly downloaded Landsat 8 image.
 
 
 
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/plot-extent-1.png" title="rgb with the extent overlayed" alt="rgb with the extent overlayed" width="90%" />
-
-If you look closely at the image above, you'll see the tiny yellow boundary
-that represents the Cold Springs fire boundary. This
-landsat scene is MUCH larger than your Cold Springs Fire study area. You have 2 options:
-
-1. **Crop the data:** this will make it easier to work with as it will be smaller. A good move.
-2. **Plot only the study area extent:** this is ok if you just want to plot your data and don't need to do any additional processing on it.
-
-Below i've plotted the cloud mask for the data that I downloaded. It looks like
-the data in your study area are cloud free. How do I know that?
-
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/import-cloud-mask-1.png" title="cloud mask cropped layer" alt="cloud mask cropped layer" width="90%" />
-
-All of the pixels within your study area are cloud free. This means you have
-downloaded the right scene. This also means that you don't have to worry about
-applying a cloud mask to the data.
 
 
-```r
-# turn axes to white
-par(col.axis = "white", col.lab = "white", tck = 0)
-# plot RGB
-plotRGB(all_landsat_bands_173_st,
-        r = 4, g = 3, b = 2,
-        stretch = "lin",
-        main = "Final landsat scene with the fire extent overlayed",
-        axes = TRUE)
-box(col = "white")
-plot(fire_boundary_utm,
-     add = TRUE,
-     border = "yellow")
-```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/plot-with-extent-1.png" title="plot w extent defined" alt="plot w extent defined" width="90%" />
 
-Now that you have some cloud free data covering the study area, you can proceed to calculate NBR on the pre-fire data.
+
+

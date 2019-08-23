@@ -3,7 +3,7 @@ layout: single
 title: "Creating Interactive Spatial Maps in R Using Leaflet"
 excerpt: "This lesson covers the basics of creating an interactive map using the leaflet API in R. We will import data from the Colorado Information warehouse using the SODA RESTful API and then create an interactive map that can be published to an HTML formatted file using knitr and rmarkdown."
 authors: ['Carson Farmer', 'Leah Wasser']
-modified: '2019-08-20'
+modified: '2019-08-23'
 category: [courses]
 class-lesson: ['intro-APIs-r']
 permalink: /courses/earth-analytics/get-data-using-apis/leaflet-r/
@@ -206,9 +206,9 @@ head(paste0(water_data_df$station_name, "<br/>Discharge: ", water_data_df$amount
 ## [1] "SOUTH FLAT DITCH<br/>Discharge: 4.84"                     
 ## [2] "ROUGH AND READY DITCH<br/>Discharge: 0.08"                
 ## [3] "WEBSTER MCCASLIN DITCH<br/>Discharge: 0.29"               
-## [4] "GOSS DITCH 1<br/>Discharge: 5.77"                         
-## [5] "BOULDER CREEK FEEDER CANAL NEAR LYONS<br/>Discharge: 64.8"
-## [6] "DRY CREEK CARRIER<br/>Discharge: 7.34"
+## [4] "GOSS DITCH 1<br/>Discharge: 9.27"                         
+## [5] "BOULDER CREEK FEEDER CANAL NEAR LYONS<br/>Discharge: 61.6"
+## [6] "DRY CREEK CARRIER<br/>Discharge: 2.53"
 ```
 
 The `<br/>` element in your popup above is HTML. This adds a line break to your
