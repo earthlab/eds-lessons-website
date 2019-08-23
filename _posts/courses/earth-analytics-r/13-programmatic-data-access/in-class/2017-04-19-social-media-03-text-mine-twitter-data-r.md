@@ -118,12 +118,12 @@ climate_tweets <- search_tweets(q = "#climatechange", n = 10000, lang = "en",
                              include_rts = FALSE)
 # check data to see if there are emojis
 head(climate_tweets$text)
-## [1] "@Pearllisez Hello there is your unroll: Thread by @AllAmericanAsi4: \"1) Attention leftists! You've joined a cult and you didn't know it. \"The First Global Revolution\" written […]\" #ClimateChange #GlobalWarming https://t.co/rT1GCnlN5L\nSee you soon. 🤖"                                              
-## [2] "@VictorMwambacha Hello, the unroll you asked for: Thread by @tmsruge: \"Don’t get into agriculture they said. “But I want to help farmers reach market and make more money and improve their liv […]\" #ClimateChange https://t.co/haBK8GSt1a\nHave a good day. 🤖"                                           
-## [3] "@swfusi Hola the unroll you asked for: Thread by @tmsruge: \"Don’t get into agriculture they said. “But I want to help farmers reach market and make more money and improve their liv […]\" #ClimateChange https://t.co/haBK8GSt1a\nEnjoy :) 🤖"                                                              
-## [4] "Billionaires what you up to? :) 🌎\nFeel like saving our planets lungs today? :) 🙃🌳🌿 #billionaire #government #help #Amazon #AmazonRainforest #Amazonfires #vegan #vegetarian #animalagriculture #ActForTheAmazon #Ashes #climatechange #climate #environment #FridayFeeling #animals https://t.co/ooxOlUrbBO"
-## [5] "How Climate Change Could Affect Businesses &amp; The Overall Economy https://t.co/p8Y9OkO1n8 / #ClimateChange #GlobalWarming #ClimateCrisis #ClimateCatastrophe #ClimateChangeTheFacts #ClimateEmergency #Economy #Sustainability #GoGreen #RenewableEnergy https://t.co/DXMZQ8GNNR"                         
-## [6] "Hot off the press! Too Darn Hot Times is out! https://t.co/IvnHOMZrzn  @amisdelaterre @GilbertJoshuaM @M_Orphelin #climate #climatechange"
+## [1] "A while back I made this Bumble Booty series to help destigmatize bees as scary bugs &amp; to showcase their adorable yet important job in preserving nature.\n#amazon #savetheamazon #savetheearth #climatechange #deforestation #bees #polinators #booty #indigenous #amazonia #nature"
+## [2] "@SenGillibrand So does this mean you'll be taking the Prius to your campaign events instead of jets and buses? Asking for the nation. #ClimateChange #FakeNews"                                                                                                                          
+## [3] "Perhaps what is needed to sell the #GreenNewDeal is a  charismatic evangelical leader  before \"The earth dries up and withers...defiled by its people\" - Isaiah 24:4-6\n#ClimateChange #TheAmazon \n\nhttps://t.co/wq2Ka27fow"                                                         
+## [4] "FAKE NEWS. Just like your brain. #cdnpoli #climatechange https://t.co/hWSTtwTzMf"                                                                                                                                                                                                        
+## [5] "Solar storage is a myth. Meanwhile, unicorns have been cited outside of Palm Springs. #climatechange #uspoli https://t.co/pwOXY21ion"                                                                                                                                                    
+## [6] "Tweets coastal erosion (wave action) as climate change. You should have stayed up there. It's a dry community. #cdnpoli #climatechange https://t.co/9Xot9FHQjl"
 ```
 
 ## Data Clean-Up
@@ -234,7 +234,7 @@ head(stop_words)
 ## 6 according SMART
 
 nrow(climate_tweets_clean)
-## [1] 251654
+## [1] 152466
 
 # remove stop words from your list of words
 cleaned_tweet_words <- climate_tweets_clean %>%
@@ -242,7 +242,7 @@ cleaned_tweet_words <- climate_tweets_clean %>%
 
 # there should be fewer words now
 nrow(cleaned_tweet_words)
-## [1] 134441
+## [1] 81488
 ```
 
 Now that you've performed this final step of cleaning, you can try to plot, once
@@ -287,20 +287,20 @@ climate_tweets_paired_words <- climate_tweets %>%
 
 climate_tweets_paired_words %>%
   count(paired_words, sort = TRUE)
-## # A tibble: 132,538 x 2
+## # A tibble: 88,431 x 2
 ##    paired_words         n
 ##    <chr>            <int>
-##  1 of the            1023
-##  2 climate change    1000
-##  3 in the             859
-##  4 the amazon         577
-##  5 climatechange is   467
-##  6 of climatechange   424
-##  7 on the             417
-##  8 is a               412
-##  9 the world          397
-## 10 for the            395
-## # … with 132,528 more rows
+##  1 of the             596
+##  2 climate change     574
+##  3 in the             528
+##  4 the amazon         356
+##  5 climatechange is   287
+##  6 is a               254
+##  7 of climatechange   241
+##  8 for the            240
+##  9 the world          239
+## 10 on the             233
+## # … with 88,421 more rows
 ```
 
 
@@ -322,12 +322,12 @@ head(climate_words_counts)
 ## # A tibble: 6 x 3
 ##   word1            word2                n
 ##   <chr>            <chr>            <int>
-## 1 climate          change            1000
-## 2 amazon           rainforest         230
-## 3 climatechange    climateemergency   195
-## 4 climatechange    climatecrisis      194
-## 5 climatechange    globalwarming      149
-## 6 climateemergency climatechange      142
+## 1 climate          change             574
+## 2 amazon           rainforest         140
+## 3 climatechange    climatecrisis      118
+## 4 climatechange    climateemergency    97
+## 5 climatechange    globalwarming       92
+## 6 climateemergency climatechange       91
 ```
 
 Finally, plot the data

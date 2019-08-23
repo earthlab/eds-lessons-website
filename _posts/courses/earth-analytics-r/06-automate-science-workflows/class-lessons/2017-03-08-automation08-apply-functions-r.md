@@ -95,7 +95,7 @@ lapply
 ##         X <- as.list(X)
 ##     .Internal(lapply(X, FUN))
 ## }
-## <bytecode: 0x556283920df0>
+## <bytecode: 0x558f924fedf0>
 ## <environment: namespace:base>
 ```
 
@@ -240,8 +240,8 @@ microbenchmark(invisible(lapply(all_precip_files, (FUN = summarize_data),
 ## Unit: microseconds
 ##                                                                               expr
 ##  invisible(lapply(all_precip_files, (FUN = summarize_data), the_dir = the_dir_ex))
-##   min     lq    mean median    uq   max neval
-##  2.17 2.2175 2.63322  2.248 2.464 27.57   100
+##    min    lq    mean median    uq    max neval
+##  1.161 1.203 1.56712  1.263 1.517 18.006   100
 ```
 
 
@@ -264,8 +264,8 @@ microbenchmark(for (file in all_precip_files) {
 ## Unit: nanoseconds
 ##                                                                                                                                                                                                                                                                                                                                           expr
 ##  for (file in all_precip_files) {     the_data <- read.csv(file, header = TRUE, na.strings = 999.99) %>%          mutate(DATE = as.POSIXct(DATE, tz = "America/Denver",              format = "%Y-%m-%d %H:%M:%S"), precip_mm = in_to_mm(HPCP))     write.csv(the_data, file = paste0(the_dir, "/", basename(file)),          na = "999.99") }
-##  min    lq   mean median  uq  max neval
-##  253 271.5 365.17    279 285 8615   100
+##  min  lq   mean median  uq  max neval
+##  116 123 177.66    125 127 5372   100
 ```
 
 <!--RETURN a single data.frame do.call(rbind, lapply(file_paths, function(path) { read.csv(path, stringsAsFactors = FALSZE }))-->
