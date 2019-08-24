@@ -4,7 +4,7 @@ authors: ['Max Joseph', 'Leah Wasser']
 category: courses
 title: 'Handle Missing Data in R'
 attribution: ''
-excerpt: 'Learn...'
+excerpt: 'Learn how to handle missing data in the R programming language.'
 dateCreated: 2018-01-29
 modified: '2019-08-24'
 nav-title: 'Missing Data'
