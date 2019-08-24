@@ -5,7 +5,7 @@ excerpt: "This lesson introduces the raster geotiff file format - which is often
 to store lidar raster data. You will learn the 3 key spatial attributes of a raster dataset
 including Coordinate reference system, spatial extent and resolution."
 authors: ['Leah Wasser', 'Joe McGlinchy', 'Chris Holdgraf', 'Martha Morrissey']
-modified: 2019-08-20
+modified: 2019-08-24
 category: [courses]
 permalink: /workshops/gis-open-source-python/open-lidar-raster-python/
 nav-title: 'Open Raster Data Python'
@@ -162,7 +162,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "{{ site.url }}//images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_8_0.png">
+<img src = "{{ site.url }}/images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_8_0.png">
 
 </figure>
 
@@ -228,7 +228,7 @@ ax.set_axis_off()
 
 <figure>
 
-<img src = "{{ site.url }}//images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_13_0.png">
+<img src = "{{ site.url }}/images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_13_0.png">
 
 </figure>
 
@@ -341,7 +341,7 @@ ax.imshow(lidar_dem_im,
 
 <figure>
 
-<img src = "{{ site.url }}//images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_22_0.png">
+<img src = "{{ site.url }}/images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_22_0.png">
 
 </figure>
 
@@ -379,7 +379,7 @@ ax.set_title("Digital Elevation Model - Pre 2013 Flood\n Plotted Using the Corre
 
 <figure>
 
-<img src = "{{ site.url }}//images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_24_1.png">
+<img src = "{{ site.url }}/images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_24_1.png">
 
 </figure>
 
@@ -406,7 +406,7 @@ ax.set_title("Digital Elevation Model - Pre 2013 Flood\n Plotted Using the Corre
 
 <figure>
 
-<img src = "{{ site.url }}//images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_26_0.png">
+<img src = "{{ site.url }}/images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_26_0.png">
 
 </figure>
 
@@ -437,7 +437,7 @@ ax.set_axis_off();
 
 <figure>
 
-<img src = "{{ site.url }}//images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_28_0.png">
+<img src = "{{ site.url }}/images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_28_0.png">
 
 </figure>
 
@@ -471,7 +471,7 @@ ax.set_axis_off();
 
 <figure>
 
-<img src = "{{ site.url }}//images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_31_0.png">
+<img src = "{{ site.url }}/images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_31_0.png">
 
 </figure>
 
@@ -505,7 +505,7 @@ show_hist(lidar_dem_im,
 
 <figure>
 
-<img src = "{{ site.url }}//images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_34_0.png">
+<img src = "{{ site.url }}/images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_34_0.png">
 
 </figure>
 
@@ -528,7 +528,7 @@ show_hist(lidar_dem_im,
 
 <figure>
 
-<img src = "{{ site.url }}//images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_35_0.png">
+<img src = "{{ site.url }}/images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_35_0.png">
 
 </figure>
 
@@ -549,7 +549,7 @@ The file that you opened above was an elevation model representing the elvation 
 
 <figure>
 
-<img src = "{{ site.url }}//images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_37_0.png">
+<img src = "{{ site.url }}/images/workshops/spatial-data-python-intro/2018-07-20-spatial-02-open-lidar-raster-data-python/2018-07-20-spatial-02-open-lidar-raster-data-python_37_0.png">
 
 </figure>
 
