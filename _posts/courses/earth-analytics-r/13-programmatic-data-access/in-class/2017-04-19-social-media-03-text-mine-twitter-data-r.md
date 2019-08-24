@@ -3,7 +3,7 @@ layout: single
 title: "Text Mining Twitter Data With TidyText in R"
 excerpt: "Text mining is used to extract useful information from text - such as Tweets. Learn how to use the Tidytext package in R to analyze twitter data."
 authors: ['Leah Wasser','Carson Farmer']
-modified: '2019-08-23'
+modified: '2019-08-24'
 category: [courses]
 class-lesson: ['social-media-r']
 permalink: /courses/earth-analytics/get-data-using-apis/text-mining-twitter-data-intro-r/
@@ -118,7 +118,12 @@ climate_tweets <- search_tweets(q = "#climatechange", n = 10000, lang = "en",
                              include_rts = FALSE)
 # check data to see if there are emojis
 head(climate_tweets$text)
-## NULL
+## [1] "@Queen_UK @PrincePhilipDoE @Charles_HRH @BBC @PravitR @suthichai @somtow @prayutofficial @UNHCRThailand @UNICEF_Thailand @UN @UNICEF @IRKhomeini @BorisJohnson @Swamy39 @khamenei_ir @BarackObama @AminaJMohammed @nytimesarts @KristieKenney @WorldBank @realXi_Jinping @realDonaldTrump @POTUS @VP @NATO @FBI @CIA @UNDP @LenniMontiel @Kim_Jong_UnFR @EmmaWatson @UN_Women @marinajacoby @punchpstt @xtina @kaothip_tidadin @RepMcGovern @RoyalDickie @JohnKerry @theresa_may @WhiteHouse @thefoodellers @ThaiRoyalFamily @usairforce @IDontLikeYou210 @BillClinton @mkfoyw @lizethlopeztl @JordanDarling32 North Korea launches more short-range missiles - CNN https://t.co/0K1RbXsc1E #Earth #England #UN_Women #GDP #ASEAN #Iran #India #Russia #China #UNDP #World #Thailand #Travel #PhuketClubThailand #ClimateChange #UK #UAE #EU #US #AEC #GinOClock #lol 😝"                        
+## [2] "@Queen_UK @PrincePhilipDoE @Charles_HRH @BBC @PravitR @suthichai @somtow @prayutofficial @UNHCRThailand @UNICEF_Thailand @UN @UNICEF @IRKhomeini @BorisJohnson @Swamy39 @khamenei_ir @BarackObama @AminaJMohammed @nytimesarts @KristieKenney @WorldBank @realXi_Jinping @realDonaldTrump @POTUS @VP @NATO @FBI @CIA @UNDP @LenniMontiel @Kim_Jong_UnFR @EmmaWatson @UN_Women @marinajacoby @punchpstt @xtina @kaothip_tidadin @RepMcGovern @RoyalDickie @JohnKerry @theresa_may @WhiteHouse @thefoodellers @ThaiRoyalFamily @usairforce @IDontLikeYou210 @BillClinton @mkfoyw @EvelynGlez06 @juliaholli It is a time when politicians around the world...Are different...With the fear that the crisis has failed. Like an iceberg #Earth #England #GDP #ASEAN #Iran #India #Russia #China #World🌻 #Thailand #Travel #PhuketClubThailand #ClimateChange #UK #UAE #EU #US #AEC #GinOClock #lol😝"
+## [3] "@Queen_UK @PrincePhilipDoE @Charles_HRH @BBC @PravitR @suthichai @somtow @prayutofficial @UNHCRThailand @UNICEF_Thailand @UN @UNICEF @IRKhomeini @BorisJohnson @Swamy39 @khamenei_ir @BarackObama @AminaJMohammed @nytimesarts @KristieKenney @WorldBank @realXi_Jinping @realDonaldTrump @POTUS @VP @NATO @FBI @CIA @UNDP @LenniMontiel @Kim_Jong_UnFR @EmmaWatson @UN_Women @marinajacoby @punchpstt @xtina @kaothip_tidadin @RepMcGovern @RoyalDickie @JohnKerry @theresa_may @WhiteHouse @thefoodellers @ThaiRoyalFamily @usairforce @IDontLikeYou210 @BillClinton @mkfoyw @EvelynGlez06 @juliaholli https://t.co/37YooqxXh6 #Earth #England #London  #Myanmar #Vietnam #Laos #HongKong #Chiangmai  #Bangkok #UN_Women #GDP #ASEAN #Iran #India #Russia #China #UNDP #World #น่านClubThaiLand #Thailand#Travel #PhuketClubThailand #ClimateChange #UK #UAE #EU #US #AEC #GinOClock #lol 😝"   
+## [4] "@Queen_UK @PrincePhilipDoE @Charles_HRH @BBC @PravitR @suthichai @somtow @prayutofficial @UNHCRThailand @UNICEF_Thailand @UN @UNICEF @IRKhomeini @BorisJohnson @Swamy39 @khamenei_ir @BarackObama @AminaJMohammed @nytimesarts @KristieKenney @WorldBank @realXi_Jinping @realDonaldTrump @POTUS @VP @NATO @FBI @CIA @UNDP @LenniMontiel @Kim_Jong_UnFR @EmmaWatson @UN_Women @marinajacoby @punchpstt @xtina @kaothip_tidadin @RepMcGovern @RoyalDickie @JohnKerry @theresa_may @WhiteHouse @thefoodellers @ThaiRoyalFamily @usairforce @IDontLikeYou210 @BillClinton @mkfoyw @EvelynGlez06 @juliaholli The reality is always beautiful...More...Van Gogh's haggard image #Earth #England #London #Myanmar #Vietnam #Laos #Bangkok #UN_Women #GDP #ASEAN #Iran #India #Russia #China #UNDP #World🌻 #Thailand #Travel #PhuketClubThailand #ClimateChange #UK #UAE #EU #US #AEC #GinOClock #lol😝"
+## [5] "@rumiviajante Use it beautifully Thailand going into the winter...I look at the morning...But no one appeared #Earth #England #UN_Women #BBC_Travel #GDP #ASEAN #Iran #India #Russia #China #UNDP #World #Thailand #Travel #PhuketClubThailand #ClimateChange #UK #UAE #EU #US #AEC #GinOClock #lol 😝"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+## [6] "@_FoggyDew @BerniesBack2020 @EARTH3R Just remember folks that if this was a “classic war” no one would blink at the price tag. End war and fight the real battle...#ClimateChange"
 ```
 
 ## Data Clean-Up
@@ -197,7 +202,7 @@ climate_tweets_clean %>%
       title = "Count of unique words found in tweets")
 ```
 
-<img src="{{ site.url }}/images/courses//earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/plot-uncleaned-data-1.png" title="plot of users tweeting about fire." alt="plot of users tweeting about fire." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/plot-uncleaned-data-1.png" title="plot of users tweeting about fire." alt="plot of users tweeting about fire." width="90%" />
 
 You plot of unique words contains some words that may not be useful to use. For instance
 "a" and "to". In the word of text mining you call those words - 'stop words'.
@@ -229,7 +234,7 @@ head(stop_words)
 ## 6 according SMART
 
 nrow(climate_tweets_clean)
-## [1] 0
+## [1] 251645
 
 # remove stop words from your list of words
 cleaned_tweet_words <- climate_tweets_clean %>%
@@ -237,7 +242,7 @@ cleaned_tweet_words <- climate_tweets_clean %>%
 
 # there should be fewer words now
 nrow(cleaned_tweet_words)
-## [1] 0
+## [1] 134387
 ```
 
 Now that you've performed this final step of cleaning, you can try to plot, once
@@ -260,7 +265,7 @@ cleaned_tweet_words %>%
       subtitle = "Stop words removed from the list")
 ```
 
-<img src="{{ site.url }}/images/courses//earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/plot-cleaned-words-1.png" title="top 15 words used in tweets" alt="top 15 words used in tweets" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/plot-cleaned-words-1.png" title="top 15 words used in tweets" alt="top 15 words used in tweets" width="90%" />
 
 ## Explore Networks of Words
 
@@ -270,9 +275,86 @@ next.
 ngrams specifies pairs and 2 is the number of words together
 
 
+```r
+# library(devtools)
+#install_github("dgrtwo/widyr")
+library(widyr)
+
+# remove punctuation, convert to lowercase, add id for each tweet!
+climate_tweets_paired_words <- climate_tweets %>%
+  dplyr::select(stripped_text) %>%
+  unnest_tokens(paired_words, stripped_text, token = "ngrams", n = 2)
+
+climate_tweets_paired_words %>%
+  count(paired_words, sort = TRUE)
+## # A tibble: 132,648 x 2
+##    paired_words         n
+##    <chr>            <int>
+##  1 of the            1019
+##  2 climate change     994
+##  3 in the             854
+##  4 the amazon         574
+##  5 climatechange is   478
+##  6 is a               426
+##  7 on the             422
+##  8 of climatechange   415
+##  9 for the            394
+## 10 the world          394
+## # … with 132,638 more rows
+```
 
 
 
+```r
+library(tidyr)
+climate_tweets_separated_words <- climate_tweets_paired_words %>%
+  separate(paired_words, c("word1", "word2"), sep = " ")
+
+climate_tweets_filtered <- climate_tweets_separated_words %>%
+  filter(!word1 %in% stop_words$word) %>%
+  filter(!word2 %in% stop_words$word)
+
+# new bigram counts:
+climate_words_counts <- climate_tweets_filtered %>%
+  count(word1, word2, sort = TRUE)
+
+head(climate_words_counts)
+## # A tibble: 6 x 3
+##   word1            word2                n
+##   <chr>            <chr>            <int>
+## 1 climate          change             994
+## 2 amazon           rainforest         228
+## 3 climatechange    climatecrisis      198
+## 4 climatechange    climateemergency   193
+## 5 climatechange    globalwarming      148
+## 6 climateemergency climatechange      143
+```
+
+Finally, plot the data
+
+
+```r
+library(igraph)
+library(ggraph)
+
+# plot climate change word network
+# (plotting graph edges is currently broken)
+climate_words_counts %>%
+        filter(n >= 24) %>%
+        graph_from_data_frame() %>%
+        ggraph(layout = "fr") +
+        # geom_edge_link(aes(edge_alpha = n, edge_width = n))
+        # geom_edge_link(aes(edge_alpha = n, edge_width = n)) +
+        geom_node_point(color = "darkslategray4", size = 3) +
+        geom_node_text(aes(label = name), vjust = 1.8, size = 3) +
+        labs(title = "Word Network: Tweets using the hashtag - Climate Change",
+             subtitle = "Text mining twitter data ",
+             x = "", y = "")
+```
+
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/word-assoc-plot-1.png" title="word associations for climate change tweets" alt="word associations for climate change tweets" width="90%" />
+
+You expect the words climate & change to have a high
 
 
 

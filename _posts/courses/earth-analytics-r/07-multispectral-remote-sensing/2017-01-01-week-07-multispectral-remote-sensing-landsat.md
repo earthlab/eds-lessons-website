@@ -286,31 +286,60 @@ NAIP NDVI plots are not below.
 
 
 
+<img src="{{ site.url }}/images/courses/earth-analytics-r/07-multispectral-remote-sensing/2017-01-01-week-07-multispectral-remote-sensing-landsat/naip-post-fire-rgb-1.png" title="NAIP RGB post fire." alt="NAIP RGB post fire." width="90%" />
 
 
 
 
 
+<img src="{{ site.url }}/images/courses/earth-analytics-r/07-multispectral-remote-sensing/2017-01-01-week-07-multispectral-remote-sensing-landsat/naip-post-fire-cir-1.png" title="NAIP CIR post fire." alt="NAIP CIR post fire." width="90%" />
 
 
 
 
 
+<img src="{{ site.url }}/images/courses/earth-analytics-r/07-multispectral-remote-sensing/2017-01-01-week-07-multispectral-remote-sensing-landsat/naip-post-ndvi-1.png" title="NAIP NDVI post fire." alt="NAIP NDVI post fire." width="90%" />
+
+
+
+
+<img src="{{ site.url }}/images/courses/earth-analytics-r/07-multispectral-remote-sensing/2017-01-01-week-07-multispectral-remote-sensing-landsat/landsat-pre-ndvi-1.png" title="Landsat NDVI pre fire." alt="Landsat NDVI pre fire." width="90%" />
+
+<img src="{{ site.url }}/images/courses/earth-analytics-r/07-multispectral-remote-sensing/2017-01-01-week-07-multispectral-remote-sensing-landsat/landsat-post-ndvi-1.png" title="Landsat NDVI post fire." alt="Landsat NDVI post fire." width="90%" />
+
+
+
+<img src="{{ site.url }}/images/courses/earth-analytics-r/07-multispectral-remote-sensing/2017-01-01-week-07-multispectral-remote-sensing-landsat/landsat-pre-fire-rgb-1.png" title="Landsat Pre Fire RGB Image." alt="Landsat Pre Fire RGB Image." width="90%" />
+
+
+
+<img src="{{ site.url }}/images/courses/earth-analytics-r/07-multispectral-remote-sensing/2017-01-01-week-07-multispectral-remote-sensing-landsat/landsat-post-fire-rgb-1.png" title="Landsat Post Fire RGB Image." alt="Landsat Post Fire RGB Image." width="90%" />
 
 
 
 
 
+<!--
+#### Plot 2
+Create a MAP of the **difference between NBR pre vs post fire** with Landsat data  (Pre fire - post-fire NBR). Classify that data using the classification thresholds below. Be sure to include a legend on your map that helps someone looking at it
+understand differences.
 
+| SEVERITY LEVEL  | NBR RANGE |
+|------------------------------|
+| Enhanced Regrowth | -700 to  -100  |
+| Unburned       |  -100 to +100  |
+| Low Severity     | +100 to +270  |
+| Moderate Severity  | +270 to +660  |
+| High Severity     |  +660 to +1300 |
 
+Note: if your min and max NBR values are outside of the range above, you can adjust
+-700 to be your smallest raster value and for high severity you can adjust 1300 to
+be your largest NBR raster value.
 
+#### Plot 3
+Create a classified map of **post fire NDVI** with Landsat data using classification values that you
+think make sense based upon exploring the data.
 
-
-
-
-
-
-
-
-
-
+#### Plot 4
+Create a map of **post fire NBR** with Landsat data.
+-->
