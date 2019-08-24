@@ -3,7 +3,7 @@ layout: single
 title: 'Get and Work With Twitter Data in Python Using Tweepy'
 excerpt: 'You can use the Twitter RESTful API to access tweet data from Twitter. Learn how to use tweepy to download and work with twitter social media data in Python.'
 authors: ['Martha Morrissey', 'Leah Wasser','Carson Farmer']
-modified: 2019-08-20
+modified: 2019-08-24
 category: [courses]
 class-lesson: ['social-media-Python']
 permalink: /courses/earth-analytics-python/using-apis-natural-language-processing-twitter/get-and-use-twitter-data-in-python/
@@ -238,11 +238,11 @@ tweets = tw.Cursor(api.search,
 
 
 
-    ['The Amazon Is on Fire and the Smoke Can Be Seen from Space #fogo #temposeco #clima #mudançasClimáticas… https://t.co/fc5qbNy2Oo',
-     'Forest fires in Brazil up 82 pct in 2019 https://t.co/73QJXQI9lR  #fogo #temposeco #clima #mudançasClimáticas… https://t.co/XkZ9kgleqa',
-     'Siberia, Greece, Spain Canary Islands, the Arctic, Alaska and other areas in the U.S.  #wildfires #ClimateChangeIsReal 🔥',
-     'Wildfires are burning around the world. The most alarming is in the Amazon rainforest. https://t.co/5oSBVd1Ocq via… https://t.co/OolAiObU0K',
-     'Firefighters in #Texas are battling three #wildfires covering more than 17,000 acres across the state. \n#TXFire\nhttps://t.co/kjqxmBzo4t']
+    ['California #artist Danielle Nelisse paints #abstract landscape #paintings of #daniellenelisse #wildfires | thank yo… https://t.co/NfcIV3tN2O',
+     '#wildfires are burning in different parts of the earth:\n\n#Amazon rainforest\n#Greece\n#Spain’s Canary Islands\n#Alaska… https://t.co/6yvC9Ubgpk',
+     'World leaders call 4 action 2 stop #Amazon #wildfires 🙏🏽 #TheSavageRoom #Savage https://t.co/t9299pic37',
+     'Leonardo DiCaprio, other celebrities share old, inaccurate photos of Amazon wildfires https://t.co/1TC7UBC6eJ #Heatwave #Wildfires',
+     '@realDonaldTrump @jairbolsonaro You were so helpful with the California #wildfires last year.']
 
 
 
@@ -274,11 +274,11 @@ users_locs
 
 
 
-    [['_athaydes', 'Cruzeiro do Sul, Acre, Brasil'],
-     ['_athaydes', 'Cruzeiro do Sul, Acre, Brasil'],
-     ['NatalyinAK', 'Anchorage, Alaska'],
-     ['BTLRadioNews', ''],
-     ['Bewickwren', 'New Mexico USA']]
+    [['abstractwallart', 'Kihei, HI'],
+     ['ALSAADI__KHALID', ''],
+     ['The_SavageRoom', 'Brooklyn, NY'],
+     ['robinsnewswire', "RT's Are FYI Purposes Only"],
+     ['sweeneymcqueen', 'Santa Monica']]
 
 
 
@@ -324,29 +324,29 @@ tweet_text
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>_athaydes</td>
-      <td>Cruzeiro do Sul, Acre, Brasil</td>
+      <td>0</td>
+      <td>abstractwallart</td>
+      <td>Kihei, HI</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>_athaydes</td>
-      <td>Cruzeiro do Sul, Acre, Brasil</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>NatalyinAK</td>
-      <td>Anchorage, Alaska</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>BTLRadioNews</td>
+      <td>1</td>
+      <td>ALSAADI__KHALID</td>
       <td></td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>Bewickwren</td>
-      <td>New Mexico USA</td>
+      <td>2</td>
+      <td>The_SavageRoom</td>
+      <td>Brooklyn, NY</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>robinsnewswire</td>
+      <td>RT's Are FYI Purposes Only</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>sweeneymcqueen</td>
+      <td>Santa Monica</td>
     </tr>
   </tbody>
 </table>
