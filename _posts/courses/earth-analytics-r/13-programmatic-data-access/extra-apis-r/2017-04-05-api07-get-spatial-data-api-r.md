@@ -3,7 +3,7 @@ layout: single
 title: "Programmatically Accessing Geospatial Data Using API's - Working with and Mapping JSON Data from the Colorado Information Warehouse in R"
 excerpt: "This lesson walks through the process of retrieving and manipulating surface water data housed in the Colorado Information Warehouse. These data are stored in JSON format with spatial x, y information that support mapping."
 authors: ['Carson Farmer', 'Leah Wasser', 'Max Joseph']
-modified: '2019-08-20'
+modified: '2019-08-24'
 category: [courses]
 class-lesson: ['intro-APIs-r']
 permalink: /courses/earth-analytics/get-data-using-apis/co-water-data-spatial-r/
@@ -277,7 +277,7 @@ ggplot(water_data_df, aes(location.longitude, location.latitude, size = amount,
   labs(size = "Amount", colour = "Station Type")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/extra-apis-r/water_data_plot1-1.png" title="ggplot of water surface data." alt="ggplot of water surface data." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/extra-apis-r/2017-04-05-api07-get-spatial-data-api-r/water_data_plot1-1.png" title="ggplot of water surface data." alt="ggplot of water surface data." width="90%" />
 
 Plotting the data using `ggplot()` creates a scatterplot of longitude and latitude,
 with some minor aesthetic tweaks. You really want to create a web
@@ -300,7 +300,7 @@ ggmap(boulder) +
   color = factor(station_type)))
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/extra-apis-r/create_ggmap-1.png" title="GGMAP of water surface data" alt="GGMAP of water surface data" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/extra-apis-r/2017-04-05-api07-get-spatial-data-api-r/create_ggmap-1.png" title="GGMAP of water surface data" alt="GGMAP of water surface data" width="90%" />
 
 In the next lesson, you will learn how to create interactive maps using the leaflet
 package for `R`.

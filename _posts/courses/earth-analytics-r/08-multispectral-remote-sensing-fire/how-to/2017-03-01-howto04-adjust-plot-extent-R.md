@@ -3,7 +3,7 @@ layout: single
 title: "Adjust plot extent in R."
 excerpt: "In this lesson you will review how to adjust the extent of a spatial plot in R using the ext() or extent argument and the extent of another layer. "
 authors: ['Leah Wasser']
-modified: '2019-08-20'
+modified: '2019-08-23'
 category: [courses]
 class-lesson: ['how-to-hints-week8']
 permalink: /courses/earth-analytics/multispectral-remote-sensing-modis/adjust-plot-extent-R/
@@ -80,7 +80,7 @@ plotRGB(all_landsat_bands_st,
 box(col = "white")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/plot-landsat-1.png" title="landsat plot" alt="landsat plot" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/2017-03-01-howto04-adjust-plot-extent-R/plot-landsat-1.png" title="landsat plot" alt="landsat plot" width="90%" />
 
 ## Adjust plot extent
 
@@ -117,4 +117,4 @@ box(col = "white")
 plot(fire_boundary_utm, add = TRUE)
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/plot-with-boundary-1.png" title="Plot with the fire boundary" alt="Plot with the fire boundary" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/2017-03-01-howto04-adjust-plot-extent-R/plot-with-boundary-1.png" title="Plot with the fire boundary" alt="Plot with the fire boundary" width="90%" />

@@ -3,7 +3,7 @@ layout: single
 title: "Maps in R: R Maps Tutorial Using Ggplot"
 excerpt: "You can use R as a GIS. Learn how to create a map in R using ggplot in this R maps tutorial."
 authors: ['Leah Wasser']
-modified: '2019-08-20'
+modified: '2019-08-23'
 category: [courses]
 class-lesson: ['hw-custom-maps-r']
 permalink: /courses/earth-analytics/spatial-data-r/make-maps-with-ggplot-in-R/
@@ -110,7 +110,7 @@ plot(sjer_roads,
      main = "Quick plot of roads data")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/convert-to-factor-1.png" title="Quick plot of the roads data." alt="Quick plot of the roads data." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/convert-to-factor-1.png" title="Quick plot of the roads data." alt="Quick plot of the roads data." width="90%" />
 
 
 
@@ -176,7 +176,7 @@ ggplot() +
   labs(title = "ggplot map of roads")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/plot-roads-data-1.png" title="Basic ggplot of roads." alt="Basic ggplot of roads." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/plot-roads-data-1.png" title="Basic ggplot of roads." alt="Basic ggplot of roads." width="90%" />
 
 You can color each line by type too by adding the attribute that you wish to use
 for categories or types to the color  = argument.
@@ -196,7 +196,7 @@ labs(color = 'Road Types', # change the legend type
      title = "Roads colored by the RTTP attribute")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/roads-axis-cleaned-1.png" title="Basic plot with title and legend title" alt="Basic plot with title and legend title" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/roads-axis-cleaned-1.png" title="Basic plot with title and legend title" alt="Basic plot with title and legend title" width="90%" />
 
 You can customize the colors on your map too. Below you do a few things:
 
@@ -231,7 +231,7 @@ ggplot() +
        subtitle = "Colored by road type")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/palette-and-plot-1.png" title="Adjust colors on map by creating a palette." alt="Adjust colors on map by creating a palette." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/palette-and-plot-1.png" title="Adjust colors on map by creating a palette." alt="Adjust colors on map by creating a palette." width="90%" />
 
 Notice that above the colors are applied to each category (C, M, S and Unknown) in order.
 In this case the order is alphabetical.
@@ -264,7 +264,7 @@ ggplot() +
   theme(axis.text = element_blank(), axis.ticks = element_blank())
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/roads-axis-cleand-1.png" title="Roads ggplot map with axes customized." alt="Roads ggplot map with axes customized." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/roads-axis-cleand-1.png" title="Roads ggplot map with axes customized." alt="Roads ggplot map with axes customized." width="90%" />
 
 Finally you can use `coord_quickmap()` to scale the x and y axis equally by long and
 lat values.
@@ -292,7 +292,7 @@ ggplot() +
   coord_quickmap()
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/roads-ratio-1.png" title="Roads ggplot map with aspect ratio fixed." alt="Roads ggplot map with aspect ratio fixed." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/roads-ratio-1.png" title="Roads ggplot map with aspect ratio fixed." alt="Roads ggplot map with aspect ratio fixed." width="90%" />
 
 <!--
 # r for spatial analysis --
@@ -319,7 +319,7 @@ ggplot() +
   coord_fixed()
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/roads-line-width-1.png" title="Roads ggplot map with line width set." alt="Roads ggplot map with line width set." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/roads-line-width-1.png" title="Roads ggplot map with line width set." alt="Roads ggplot map with line width set." width="90%" />
 
 ### Adjust Line Width by Attribute
 
@@ -364,7 +364,7 @@ ggplot() +
   coord_fixed()
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/roads-line-width2-1.png" title="Roads ggplot map with line width set." alt="Roads ggplot map with line width set." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/roads-line-width2-1.png" title="Roads ggplot map with line width set." alt="Roads ggplot map with line width set." width="90%" />
 
 ### Merge the Legends
 
@@ -396,7 +396,7 @@ ggplot() +
   coord_fixed()
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/roads-line-width-custom-1.png" title="Roads ggplot map with line width set." alt="Roads ggplot map with line width set." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/roads-line-width-custom-1.png" title="Roads ggplot map with line width set." alt="Roads ggplot map with line width set." width="90%" />
 
 But this is ugly, right? Let's make the line widths a bit thinner to clean
 things up.
@@ -422,7 +422,7 @@ ggplot() +
   coord_fixed()
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/roads-line-width-custom2-1.png" title="Roads ggplot map with line width set. Thinner lines." alt="Roads ggplot map with line width set. Thinner lines." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/roads-line-width-custom2-1.png" title="Roads ggplot map with line width set. Thinner lines." alt="Roads ggplot map with line width set. Thinner lines." width="90%" />
 
 <div class="notice--warning" markdown="1">
 
@@ -435,7 +435,7 @@ roads with an `RTTYP` attribute value of unknown (thinner lines, lighter color).
 </div>
 
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/road-map-2-1.png" title="emphasize some attributes" alt="emphasize some attributes" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/road-map-2-1.png" title="emphasize some attributes" alt="emphasize some attributes" width="90%" />
 
 
 <!-- C = County
@@ -497,7 +497,7 @@ ggplot() +
   labs(title = "Plot locations")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/ggplot-points-1.png" title="ggplot with points" alt="ggplot with points" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/ggplot-points-1.png" title="ggplot with points" alt="ggplot with points" width="90%" />
 
 Great! You've now plotted your data using `ggplot`. Let's next combine the roads
 with the points in one clean map.
@@ -518,7 +518,7 @@ ggplot() +
   geom_point(data = sjer_plots_df, aes(x = coords.x1, y = coords.x2))
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/combine-layers-1.png" title="Plot of both points and lines with ggplot" alt="Plot of both points and lines with ggplot" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/combine-layers-1.png" title="Plot of both points and lines with ggplot" alt="Plot of both points and lines with ggplot" width="90%" />
 
 
 Next you have a few options - your roads layer is a much larger spatial extent
@@ -535,7 +535,7 @@ ggplot() +
   coord_fixed(xlim = c(-119.8, -119.7), ylim = c(37.05, 37.15))
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/combine-layers-custom-ext-1.png" title="Plot of both points and lines with ggplot with custom extent" alt="Plot of both points and lines with ggplot with custom extent" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/combine-layers-custom-ext-1.png" title="Plot of both points and lines with ggplot with custom extent" alt="Plot of both points and lines with ggplot with custom extent" width="90%" />
 
 ## Data Crop vs. Map Zoom
 
@@ -593,7 +593,7 @@ sjer_roads_utmcrop <- crop(sjer_roads_utm, study_area)
 plot(sjer_roads_utmcrop)
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/reproject-plot-1.png" title="quick plot of the data" alt="quick plot of the data" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/reproject-plot-1.png" title="quick plot of the data" alt="quick plot of the data" width="90%" />
 
 ```r
 
@@ -656,7 +656,7 @@ ggplot() +
   labs(title = "GGPLOT map of roads, study area and plot locations")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/combine-all-layers-1.png" title="ggplot map with roads and plots" alt="ggplot map with roads and plots" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/combine-all-layers-1.png" title="ggplot map with roads and plots" alt="ggplot map with roads and plots" width="90%" />
 
 <!-- #+
 #  guides(colour = guide_legend("Road Type"), size = guide_legend("Road Type"))
@@ -698,7 +698,7 @@ ggplot() +
   theme_bw()
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/final-ggplot1-1.png" title="ggplot map with roads and plots using symbols and colors" alt="ggplot map with roads and plots using symbols and colors" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/final-ggplot1-1.png" title="ggplot map with roads and plots using symbols and colors" alt="ggplot map with roads and plots using symbols and colors" width="90%" />
 
 Finally, let's clean up your map further. You can use some of the built in functionality
 of `cowplot` to adjust the `theme()` settings in `ggplot`.
@@ -731,7 +731,7 @@ ggplot() +
   theme_bw()
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/final-ggplot-cowplot-1.png" title="ggplot map with roads and plots using symbols and colors" alt="ggplot map with roads and plots using symbols and colors" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/final-ggplot-cowplot-1.png" title="ggplot map with roads and plots using symbols and colors" alt="ggplot map with roads and plots using symbols and colors" width="90%" />
 
 ## Adjust ggplot Theme Settings
 
@@ -771,7 +771,7 @@ ggplot() +
         axis.line = element_blank())
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/final-ggplot-3-1.png" title="ggplot map with roads and plots using symbols and colors" alt="ggplot map with roads and plots using symbols and colors" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/final-ggplot-3-1.png" title="ggplot map with roads and plots using symbols and colors" alt="ggplot map with roads and plots using symbols and colors" width="90%" />
 
 ## Legends and Scale Bars
 
@@ -847,7 +847,7 @@ ggplot() +
         axis.line = element_blank()) + blank()
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/final-ggplot-scalebar-1.png" title="ggplot map with roads and plots using symbols and colors" alt="ggplot map with roads and plots using symbols and colors" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/review-materials/2017-07-25-plot02-custom-mapsggplot-R/final-ggplot-scalebar-1.png" title="ggplot map with roads and plots using symbols and colors" alt="ggplot map with roads and plots using symbols and colors" width="90%" />
 
 
 <div class="notice--info" markdown="1">

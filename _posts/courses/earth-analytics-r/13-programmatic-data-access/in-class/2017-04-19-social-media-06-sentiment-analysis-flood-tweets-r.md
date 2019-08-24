@@ -3,7 +3,7 @@ layout: single
 title: "Sentiment Analysis of Colorado Flood Tweets in R"
 excerpt: "Learn how to perform a basic sentiment analysis using the tidytext package in R. "
 authors: ['Leah Wasser','Carson Farmer']
-modified: '2019-08-20'
+modified: '2019-08-24'
 category: [courses]
 class-lesson: ['social-media-r']
 permalink: /courses/earth-analytics/get-data-using-apis/sentiment-analysis-of-twitter-data-r/
@@ -128,7 +128,7 @@ flood_tweet_clean %>%
        title = "Count of unique words found in tweets")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-06-sentiment-analysis-flood-tweets-r/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="90%" />
 
 Next, you can join the words extracted from the tweets with the sentiment data.
 The "bing" sentiment data classifies words as positive or negative. Note that
@@ -167,7 +167,7 @@ bing_word_counts %>%
   coord_flip()
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/sentiment-plot-top-words-1.png" title="sentiment expressed on twitter during Boulder floods" alt="sentiment expressed on twitter during Boulder floods" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-06-sentiment-analysis-flood-tweets-r/sentiment-plot-top-words-1.png" title="sentiment expressed on twitter during Boulder floods" alt="sentiment expressed on twitter during Boulder floods" width="90%" />
 
 
 
@@ -202,7 +202,7 @@ flood_tweet_clean_2013 %>%
        title = "Count of unique words found in a year's worth of tweets")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-06-sentiment-analysis-flood-tweets-r/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" width="90%" />
 
 
 
@@ -236,7 +236,7 @@ bing_sentiment_2013 %>%
   coord_flip()
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/sentiment-by-month-1.png" title="plot of chunk sentiment-by-month" alt="plot of chunk sentiment-by-month" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-06-sentiment-analysis-flood-tweets-r/sentiment-by-month-1.png" title="plot of chunk sentiment-by-month" alt="plot of chunk sentiment-by-month" width="90%" />
 
 
 <div class="notice--info" markdown="1">

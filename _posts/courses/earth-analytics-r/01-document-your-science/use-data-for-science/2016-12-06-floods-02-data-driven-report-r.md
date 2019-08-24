@@ -3,7 +3,7 @@ layout: single
 title: "Work With Precipitation Data in R: 2013 Colorado Floods"
 excerpt: "Learn why documentation is important when analyzing data by evaluating someone elses report on the Colorado floods."
 authors: ['Leah Wasser']
-modified: '2019-08-20'
+modified: '2019-08-23'
 category: [courses]
 class-lesson: ['co-floods-1-intro']
 permalink: /courses/earth-analytics/document-your-science/data-driven-reports/
@@ -90,7 +90,7 @@ plot(lidar_dsm,
      main = "Lidar Digital Surface Model (DSM)\n Study area map")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/01-document-your-science/use-data-for-science/plot-raster-1.png" title="Study area map" alt="Study area map" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/01-document-your-science/use-data-for-science/2016-12-06-floods-02-data-driven-report-r/plot-raster-1.png" title="Study area map" alt="Study area map" width="90%" />
 
 
 
@@ -113,14 +113,14 @@ precip_boulder$HPCP[precip_boulder$HPCP == 999.99] <- NA
 
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/01-document-your-science/use-data-for-science/daily-summaries-1.png" title="plot 1" alt="plot 1" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/01-document-your-science/use-data-for-science/2016-12-06-floods-02-data-driven-report-r/daily-summaries-1.png" title="plot 1" alt="plot 1" width="90%" />
 
 ## Fall 2013 Precipitation
 
 Let's check out the data for a few months.
 
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/01-document-your-science/use-data-for-science/subset-data-1.png" title="plot 2 precip" alt="plot 2 precip" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/01-document-your-science/use-data-for-science/2016-12-06-floods-02-data-driven-report-r/subset-data-1.png" title="plot 2 precip" alt="plot 2 precip" width="90%" />
 
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/01-document-your-science/use-data-for-science/all-boulder-station-data-1.png" title="plot 3 discharge" alt="plot 3 discharge" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/01-document-your-science/use-data-for-science/2016-12-06-floods-02-data-driven-report-r/all-boulder-station-data-1.png" title="plot 3 discharge" alt="plot 3 discharge" width="90%" />

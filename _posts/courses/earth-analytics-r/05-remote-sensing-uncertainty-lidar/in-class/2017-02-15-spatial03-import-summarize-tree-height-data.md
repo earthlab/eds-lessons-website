@@ -3,7 +3,7 @@ layout: single
 title: "Import and Summarize Tree Height Data and Compare it to Lidar Derived Height in R"
 excerpt: "It is important to compare differences between tree height measurements made by humans on the ground to those estimated using lidar remote sensing data. Learn how to perform this analysis and calculate error or uncertainty in R."
 authors: ['Leah Wasser']
-modified: '2019-08-20'
+modified: '2019-08-23'
 category: [courses]
 class-lesson: ['remote-sensing-uncertainty-r']
 permalink: /courses/earth-analytics/remote-sensing-uncertainty/import-summarize-tree-height-data/
@@ -223,7 +223,7 @@ ggplot(SJER_height@data, aes(x = lidar_mean_ht, y = insitu_mean)) +
        y = "Mean LiDAR pixel")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/plot-w-ggplot-1.png" title="ggplot - measured vs lidar chm." alt="ggplot - measured vs lidar chm." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/2017-02-15-spatial03-import-summarize-tree-height-data/plot-w-ggplot-1.png" title="ggplot - measured vs lidar chm." alt="ggplot - measured vs lidar chm." width="90%" />
 
 Next, let's fix the plot adding a 1:1 line and making the x and y axis the same .
 
@@ -241,7 +241,7 @@ ggplot(SJER_height@data, aes(x = lidar_mean_ht, y = insitu_mean)) +
        y = "Mean LiDAR pixel")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/plot-w-ggplot2-1.png" title="ggplot - measured vs lidar chm w one to one line." alt="ggplot - measured vs lidar chm w one to one line." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/2017-02-15-spatial03-import-summarize-tree-height-data/plot-w-ggplot2-1.png" title="ggplot - measured vs lidar chm w one to one line." alt="ggplot - measured vs lidar chm w one to one line." width="90%" />
 
 You can also add a regression fit to your plot. Explore the `GGPLOT` options and
 customize your plot.
@@ -268,7 +268,7 @@ p + theme(panel.background = element_rect(colour = "grey")) +
                                     hjust = 0.54, vjust = -.2))
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/ggplot-data-1.png" title="Scatterplot measured height compared to lidar chm." alt="Scatterplot measured height compared to lidar chm." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/2017-02-15-spatial03-import-summarize-tree-height-data/ggplot-data-1.png" title="Scatterplot measured height compared to lidar chm." alt="Scatterplot measured height compared to lidar chm." width="90%" />
 
 
 ## View Difference: Lidar vs Measured
@@ -288,7 +288,7 @@ ggplot(data = SJER_height@data,
              y = "Height difference (m)")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/view-diff-1.png" title="box plot showing differences between chm and measured heights." alt="box plot showing differences between chm and measured heights." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/2017-02-15-spatial03-import-summarize-tree-height-data/view-diff-1.png" title="box plot showing differences between chm and measured heights." alt="box plot showing differences between chm and measured heights." width="90%" />
 
 Remove the legend from the ggplot and remove the site name from the plotid column.
 You will want to know how to modify a column for your homework assignment.
@@ -316,7 +316,7 @@ ggplot(data = SJER_height@data,
   guides(fill = FALSE) # remove legend
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/barplot-nolegend-1.png" title="plot of chunk barplot-nolegend" alt="plot of chunk barplot-nolegend" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/2017-02-15-spatial03-import-summarize-tree-height-data/barplot-nolegend-1.png" title="plot of chunk barplot-nolegend" alt="plot of chunk barplot-nolegend" width="90%" />
 
 You have now successfully created a canopy height model using lidar data AND compared lidar
 derived vegetation height, within plots, to actual measured tree height data.

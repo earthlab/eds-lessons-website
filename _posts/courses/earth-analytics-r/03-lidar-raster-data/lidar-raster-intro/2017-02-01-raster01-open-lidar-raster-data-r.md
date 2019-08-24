@@ -5,7 +5,7 @@ excerpt: "This lesson introduces the raster geotiff file format - which is often
 to store lidar raster data. You learn the 3 key spatial attributes of a raster dataset
 including Coordinate reference system, spatial extent and resolution."
 authors: ['Leah Wasser']
-modified: '2019-08-20'
+modified: '2019-08-23'
 category: [courses]
 class-lesson: ['intro-lidar-raster-r']
 permalink: /courses/earth-analytics/lidar-raster-data-r/open-lidar-raster-r/
@@ -103,7 +103,7 @@ plot(lidar_dem,
      main = "Digital Elevation Model - Pre 2013 Flood")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/03-lidar-raster-data/lidar-raster-intro/open-plot-raster-1.png" title="digital surface model raster plot" alt="digital surface model raster plot" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/03-lidar-raster-data/lidar-raster-intro/2017-02-01-raster01-open-lidar-raster-data-r/open-plot-raster-1.png" title="digital surface model raster plot" alt="digital surface model raster plot" width="90%" />
 
 If you zoom in on a small section of the raster, you can see the individual pixels
 that make up the raster. Each pixel has one value associated with it. In this
@@ -121,7 +121,7 @@ plot(lidar_dem,
      main = "Lidar Raster - Zoomed into one small region")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/03-lidar-raster-data/lidar-raster-intro/plot-zoomed-in-raster-1.png" title="zoom in on a small part of a raster - see the pixels?" alt="zoom in on a small part of a raster - see the pixels?" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/03-lidar-raster-data/lidar-raster-intro/2017-02-01-raster01-open-lidar-raster-data-r/plot-zoomed-in-raster-1.png" title="zoom in on a small part of a raster - see the pixels?" alt="zoom in on a small part of a raster - see the pixels?" width="90%" />
 
 Next, let's discuss some of the important spatial attributes associated with raster
 data.

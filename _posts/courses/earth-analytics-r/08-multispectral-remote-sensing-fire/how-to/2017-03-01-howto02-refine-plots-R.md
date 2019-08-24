@@ -3,7 +3,7 @@ layout: single
 title: "How to Remove Borders and Add Legends to Spatial Plots in R. "
 excerpt: "In this lesson you review how to remove those pesky borders from a raster plot using base plot in R. We also cover adding legends to your plot outside of the plot extent."
 authors: ['Leah Wasser']
-modified: '2019-08-20'
+modified: '2019-08-23'
 category: [courses]
 class-lesson: ['how-to-hints-week8']
 permalink: /courses/earth-analytics/multispectral-remote-sensing-modis/refine-plots-report/
@@ -73,7 +73,7 @@ plotRGB(all_landsat_bands_st,
         main = "title here")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/plot-rgb-title-1.png" title="Remove axes labels." alt="Remove axes labels." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/2017-03-01-howto02-refine-plots-R/plot-rgb-title-1.png" title="Remove axes labels." alt="Remove axes labels." width="90%" />
 
 
 If you add the `axes=T` argument to your plot, your title plots but you also get
@@ -93,7 +93,7 @@ plotRGB(all_landsat_bands_st,
         axes = TRUE)
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/plot-rgb-title-2-1.png" title="Remove axes labels." alt="Remove axes labels." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/2017-03-01-howto02-refine-plots-R/plot-rgb-title-2-1.png" title="Remove axes labels." alt="Remove axes labels." width="90%" />
 
 The final step is to turn off box which leaves that annoying line on the left
 hand side and bottom of the plot.
@@ -112,7 +112,7 @@ plotRGB(all_landsat_bands_st,
 box(col = "white") # turn all of the lines to white
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/plot-rgb-title-3-1.png" title="Remove axes labels." alt="Remove axes labels." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/2017-03-01-howto02-refine-plots-R/plot-rgb-title-3-1.png" title="Remove axes labels." alt="Remove axes labels." width="90%" />
 
 This looks nice, but now the plot itself is too tall. There is extra white space
 above and below the plot that you don't need. This is because the `dev` space
@@ -139,7 +139,7 @@ plotRGB(all_landsat_bands_st,
 box(col = "white") # turn all of the lines to white
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/plot-rgb-title-4-1.png" title="Adjust figure width and height." alt="Adjust figure width and height." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/2017-03-01-howto02-refine-plots-R/plot-rgb-title-4-1.png" title="Adjust figure width and height." alt="Adjust figure width and height." width="90%" />
 
 Notice that now my plot has less white space above and below the image. This is because
 it's no longer plotting using a square aspect ratio - you've adjusted that! You can
@@ -179,7 +179,7 @@ plot(ndvi_classified,
      col = the_colors)
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/plot-data-1-ndvi-classified-1.png" title="ndvi plot - no legend" alt="ndvi plot - no legend" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/2017-03-01-howto02-refine-plots-R/plot-data-1-ndvi-classified-1.png" title="ndvi plot - no legend" alt="ndvi plot - no legend" width="90%" />
 First let's get rid of the unnecessary axes and turn off the legend.
 You can remote the axes & box that surrounds your image using: `axes=F` and `box=F`.
 
@@ -192,7 +192,7 @@ plot(ndvi_classified,
      axes = FALSE, box = FALSE)
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/plot-data-2-ndvi-classified-1.png" title="ndvi plot - no legend" alt="ndvi plot - no legend" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/2017-03-01-howto02-refine-plots-R/plot-data-2-ndvi-classified-1.png" title="ndvi plot - no legend" alt="ndvi plot - no legend" width="90%" />
 
 Next, you turn off the legend and add your own legend. However, the legend isn't
 exactly where you want it to be here. It's above the plot and you'd like it to be
@@ -211,7 +211,7 @@ legend("topright",
        fill = the_colors)
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/plot-data-3-ndvi-classified-1.png" title="ndvi plot - no legend" alt="ndvi plot - no legend" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/2017-03-01-howto02-refine-plots-R/plot-data-3-ndvi-classified-1.png" title="ndvi plot - no legend" alt="ndvi plot - no legend" width="90%" />
 
 You can force the legend to plot outside of your axes using the parameter
 `xpd=T`. You can locate the legend in the upper right hand corner OUTSIDE
@@ -241,7 +241,7 @@ legend(x = ndvi_classified@extent@xmax, y = ndvi_classified@extent@ymax,
        fill = rev(the_colors)) # use rev to reverse the order of colors for the legend
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/fix-plot-legend-ndvi-classified-1.png" title="plot with legend in the upper right. " alt="plot with legend in the upper right. " width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/2017-03-01-howto02-refine-plots-R/fix-plot-legend-ndvi-classified-1.png" title="plot with legend in the upper right. " alt="plot with legend in the upper right. " width="90%" />
 
 Now, another problem with your legend. *The order of your colors is all wrong:* Grey should represent "no vegetation" and green should represent health vegetation. You can use `rev()` on your list of colors to reverse the order of colors drawn on the legend.
 
@@ -261,7 +261,7 @@ legend(x = ndvi_classified@extent@xmax, y = ndvi_classified@extent@ymax,
        fill = rev(the_colors)) # use rev to reverse the order of colors for the legend
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/fix-plot-legend-2-2-ndvi-classified-1.png" title="plot with legend in the upper right. " alt="plot with legend in the upper right. " width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/2017-03-01-howto02-refine-plots-R/fix-plot-legend-2-2-ndvi-classified-1.png" title="plot with legend in the upper right. " alt="plot with legend in the upper right. " width="90%" />
 
 On to the pesky white space on either side of the plot. There are several
 ways to handle this. One is by specifying margins for out plot.
@@ -296,7 +296,7 @@ legend(x = ndvi_classified@extent@xmax, y = ndvi_classified@extent@ymax,
        fill = rev(the_colors)) # use rev to reverse the order of colors for the legend
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/fix-plot-legend-3-ndvi-classified-1.png" title="plot with legend in the upper right. " alt="plot with legend in the upper right. " width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/2017-03-01-howto02-refine-plots-R/fix-plot-legend-3-ndvi-classified-1.png" title="plot with legend in the upper right. " alt="plot with legend in the upper right. " width="90%" />
 
 
 ```r
@@ -329,7 +329,7 @@ legend(x = ndvi_classified@extent@xmax, y = ndvi_classified@extent@ymax,
        cex = .9)  # adjust legend font size
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/fix-plot-legend-3-3-ndvi-classified-1.png" title="plot with legend in the upper right. " alt="plot with legend in the upper right. " width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/2017-03-01-howto02-refine-plots-R/fix-plot-legend-3-3-ndvi-classified-1.png" title="plot with legend in the upper right. " alt="plot with legend in the upper right. " width="90%" />
 
 ```r
 dev.off()
@@ -371,7 +371,7 @@ legend(x = ndvi_classified@extent@xmax, y = ndvi_classified@extent@ymax,
        fill = rev(the_colors)) # use rev to reverse the order of colors for the legend
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/fix-plot-legend-4-ndvi-classified-1.png" title="plot with legend in the upper right." alt="plot with legend in the upper right." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/2017-03-01-howto02-refine-plots-R/fix-plot-legend-4-ndvi-classified-1.png" title="plot with legend in the upper right." alt="plot with legend in the upper right." width="90%" />
 
 While you are at it, let's add a border using a crop extent
 shapefile that was used to clip these data
@@ -404,7 +404,7 @@ legend(x = ndvi_classified@extent@xmax, y = ndvi_classified@extent@ymax,
        fill = rev(the_colors)) # use rev to reverse the order of colors for the legend
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/import-shape-crop-ndvi-classified-1.png" title="add crop box" alt="add crop box" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/how-to/2017-03-01-howto02-refine-plots-R/import-shape-crop-ndvi-classified-1.png" title="add crop box" alt="add crop box" width="90%" />
 
 Again - always reset dev when you've been adjusting `par()` values for
 plots!

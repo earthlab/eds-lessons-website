@@ -3,7 +3,7 @@ layout: single
 title: "Sources of Error in Lidar and Human Measured Estimates of Tree Height"
 excerpt: "There are difference sources of error when you measure tree height using Lidar. Learn about accuracy, precision and the sources of error associated with lidar remote sensing data."
 authors: ['Leah Wasser']
-modified: '2019-08-20'
+modified: '2019-08-23'
 category: [courses]
 class-lesson: ['remote-sensing-uncertainty-r']
 permalink: /courses/earth-analytics/remote-sensing-uncertainty/about-uncertainty-lidar/
@@ -117,7 +117,7 @@ boxplot(tree_heights$heights,
         col = "springgreen")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/standard-error-1.png" title="Distribution of tree heights." alt="Distribution of tree heights." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/2017-02-15-spatial01-understand-uncertainty/standard-error-1.png" title="Distribution of tree heights." alt="Distribution of tree heights." width="90%" />
 
 In the example above, your mean tree height value is towards the center of
 your distribution of measured heights. You might expect that the sample mean of
@@ -135,7 +135,7 @@ hist(tree_heights$heights, breaks = c(9,9.6,10.4,11),
      xlab = "Height (m)", col = "purple")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/hist-tree-height-1.png" title="Tree height distribution" alt="Tree height distribution" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/2017-02-15-spatial01-understand-uncertainty/hist-tree-height-1.png" title="Tree height distribution" alt="Tree height distribution" width="90%" />
 
 ## Measurement Accuracy
 
@@ -232,7 +232,7 @@ site location on the map below.
 
 
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/ggmap-plot-1.png" title="ggmap of study area." alt="ggmap of study area." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/2017-02-15-spatial01-understand-uncertainty/ggmap-plot-1.png" title="ggmap of study area." alt="ggmap of study area." width="90%" />
 
 ## Study Area Plots
 
@@ -244,7 +244,7 @@ values *in situ* measurements.
 
 A map of your study plots is below overlaid on top of the canopy height mode.
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/plot-plots-1.png" title="plots" alt="plots" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/2017-02-15-spatial01-understand-uncertainty/plot-plots-1.png" title="plots" alt="plots" width="90%" />
 
 ### Compare Lidar Derived Height to In Situ Measurements
 
@@ -269,11 +269,11 @@ Do they follow a 1:1 line? Do the data diverge from a 1:1 relationship?
     </figcaption>
 </figure>
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/plot-data-1.png" title="final plot" alt="final plot" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/2017-02-15-spatial01-understand-uncertainty/plot-data-1.png" title="final plot" alt="final plot" width="90%" />
 
 ### How Different are the Data?
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/view-diff-1.png" title="box plot showing differences between chm and measured heights." alt="box plot showing differences between chm and measured heights." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/05-remote-sensing-uncertainty-lidar/in-class/2017-02-15-spatial01-understand-uncertainty/view-diff-1.png" title="box plot showing differences between chm and measured heights." alt="box plot showing differences between chm and measured heights." width="90%" />
 
 ## View Interactive Scatterplot
 

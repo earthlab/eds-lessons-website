@@ -3,7 +3,7 @@ layout: single
 title: "Coordinate Reference System and Spatial Projection"
 excerpt: "Coordinate reference systems are used to convert locations on the earth which is round, to a two dimensional (flat) map. Learn about the differences between coordinate reference systems."
 authors: ['Leah Wasser']
-modified: '2019-08-20'
+modified: '2019-08-23'
 category: [courses]
 class-lesson: ['class-intro-spatial-r']
 permalink: /courses/earth-analytics/spatial-data-r/intro-to-coordinate-reference-systems/
@@ -223,7 +223,7 @@ worldMap <- ggplot(worldBound_df, aes(long,lat, group = group)) +
 worldMap
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/load-plot-data-1.png" title="world map plot" alt="world map plot" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/2017-02-15-spatial03-crs-intro/load-plot-data-1.png" title="world map plot" alt="world map plot" width="90%" />
 
 You can add three coordinate locations to your map. Note that the UNITS are
 in **decimal degrees** (latitude, longitude):
@@ -251,7 +251,7 @@ mapLocations <- worldMap +
 mapLocations
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/add-lat-long-locations-1.png" title="Map plotted using geographic projection with location points added." alt="Map plotted using geographic projection with location points added." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/2017-02-15-spatial03-crs-intro/add-lat-long-locations-1.png" title="Map plotted using geographic projection with location points added." alt="Map plotted using geographic projection with location points added." width="90%" />
 
 ## Geographic CRS - The Good & The Less Good
 
@@ -299,7 +299,7 @@ robMap <- ggplot(worldBound_df_robin, aes(long,lat, group = group)) +
 robMap
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/global-map-robinson-1.png" title="Map reprojected to robinson projection." alt="Map reprojected to robinson projection." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/2017-02-15-spatial03-crs-intro/global-map-robinson-1.png" title="Map reprojected to robinson projection." alt="Map reprojected to robinson projection." width="90%" />
 
 Now what happens if you try to add the same Lat / Long coordinate locations that
 you used above, to your map, that is using the `Robinson` `CRS` as it's coordinate
@@ -316,7 +316,7 @@ newMap <- robMap + geom_point(data = loc_df,
 newMap
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/add-locations-robinson-1.png" title="map with point locations added - robinson projection." alt="map with point locations added - robinson projection." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/2017-02-15-spatial03-crs-intro/add-locations-robinson-1.png" title="map with point locations added - robinson projection." alt="map with point locations added - robinson projection." width="90%" />
 
 Notice above that when you try to add lat/long coordinates in degrees to a map
 in a different `CRS` the points are not in the correct location. You need
@@ -380,7 +380,7 @@ newMap <- robMap + geom_point(data = loc_rob_df,
 newMap
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/plot-new-map-1.png" title="Map of the globe in robinson projection." alt="Map of the globe in robinson projection." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/2017-02-15-spatial03-crs-intro/plot-new-map-1.png" title="Map of the globe in robinson projection." alt="Map of the globe in robinson projection." width="90%" />
 
 ## Compare Maps
 
@@ -410,7 +410,7 @@ ggplot() +
   geom_path(data = graticule_df, aes(long, lat, group = group), linetype = "dashed", color = "grey70")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/plot-grat-1.png" title="graticules plot" alt="graticules plot" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/2017-02-15-spatial03-crs-intro/plot-grat-1.png" title="graticules plot" alt="graticules plot" width="90%" />
 
 Also you will import a bounding box to make your plot look nicer!
 
@@ -473,7 +473,7 @@ require(gridExtra)
 grid.arrange(latLongMap, finalRobMap)
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/render-maps-1.png" title="plots in different projections, side by side." alt="plots in different projections, side by side." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/2017-02-15-spatial03-crs-intro/render-maps-1.png" title="plots in different projections, side by side." alt="plots in different projections, side by side." width="90%" />
 
 
 ## Why Multiple CRS?

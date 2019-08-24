@@ -3,7 +3,7 @@ layout: single
 title: "Working with Function Arguments"
 excerpt: "Learn how to work with function arguments in the R programming language.."
 authors: ['Max Joseph', 'Software Carpentry',  'Leah Wasser']
-modified: '2019-08-20'
+modified: '2019-08-23'
 category: [courses]
 class-lesson: ['automating-your-science-r']
 permalink: /courses/earth-analytics/automate-science-workflows/function-arguments-r/
@@ -65,7 +65,7 @@ plot(boulder_precip,
      main = "Digital Surface Model for Boulder, Colorado")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/06-automate-science-workflows/class-lessons/plot-ndvi-1.png" title="ndvi plot" alt="ndvi plot" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/06-automate-science-workflows/class-lessons/2017-03-08-automation05-funct-arguments/plot-ndvi-1.png" title="ndvi plot" alt="ndvi plot" width="90%" />
 
 Function arguments allow you to customize how a function runs. For example, you
 use the `plot()` function to plot many different types of data. You can use the:

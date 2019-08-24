@@ -3,7 +3,7 @@ layout: single
 title: "How to Replace Raster Cell Values with Values from A Different Raster Data Set in R"
 excerpt: "Often data have missing or bad data values that you need to replace. Learn how to replace missing or bad data values in a raster, with values from another raster in the same pixel location using the cover function in R."
 authors: ['Leah Wasser']
-modified: '2019-08-20'
+modified: '2019-08-23'
 category: [courses]
 class-lesson: ['spectral-data-fire-2-r']
 permalink: /courses/earth-analytics/multispectral-remote-sensing-modis/replace-raster-cell-values-in-remote-sensing-images-in-r/
@@ -68,7 +68,7 @@ plotRGB(all_landsat_bands_pre_nocloud_br,
         stretch = 'lin')
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/landsat-pre-no-clouds-1.png" title="Pre-fire imagery with fewer clouds" alt="Pre-fire imagery with fewer clouds" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire03-replace-na-values-in-raster-with-different-raster/landsat-pre-no-clouds-1.png" title="Pre-fire imagery with fewer clouds" alt="Pre-fire imagery with fewer clouds" width="90%" />
 
 
 ```r
@@ -90,7 +90,7 @@ plotRGB(all_landsat_bands_cloudy_br,
         stretch = "lin")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/landsat-pre-cloudy-1.png" title="Pre-fire imagery with clouds" alt="Pre-fire imagery with clouds" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire03-replace-na-values-in-raster-with-different-raster/landsat-pre-cloudy-1.png" title="Pre-fire imagery with clouds" alt="Pre-fire imagery with clouds" width="90%" />
 
 Apply the cloud mask to the cloudy data.
 
@@ -108,7 +108,7 @@ plotRGB(all_landsat_bands_mask,
         stretch = "lin")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire03-replace-na-values-in-raster-with-different-raster/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" width="90%" />
 
 
 Check to see if the rasters are in the same extent and CRS.
@@ -144,7 +144,7 @@ cleaned_raster <- cover(all_landsat_bands_mask, all_landsat_bands_pre_nocloud_br
 plotRGB(cleaned_raster, r = 4, g = 3, b = 2, stretch = 'lin')
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire03-replace-na-values-in-raster-with-different-raster/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" width="90%" />
 
 
 Things are looking a bit better but still this image has issues:

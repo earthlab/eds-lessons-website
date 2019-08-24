@@ -3,7 +3,7 @@ layout: single
 title: "Programmatically Access Data Using an API in R - The Colorado Information Warehouse"
 excerpt: "This lesson covers accessing data via the Colorado Information Warehouse SODA API in R. "
 authors: ['Carson Farmer', 'Leah Wasser', 'Max Joseph']
-modified: '2019-08-20'
+modified: '2019-08-24'
 category: [courses]
 class-lesson: ['intro-APIs-r']
 permalink: /courses/earth-analytics/get-data-using-apis/API-data-access-r/
@@ -316,7 +316,7 @@ ggplot(pop_proj_data_df, aes(x = year, y = femalepopulation,
           subtitle = "Boulder, CO: 1990 - 2040")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/extra-apis-r/plot_pop_proj-1.png" title="Female population age 20-40." alt="Female population age 20-40." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/extra-apis-r/2017-04-05-api05-get-data-api-r/plot_pop_proj-1.png" title="Female population age 20-40." alt="Female population age 20-40." width="90%" />
 
 
 
@@ -337,7 +337,7 @@ plot a descriptive title.
 
 ## Example Homework Plot
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/extra-apis-r/male-population-1.png" title="Male population ages 60-80." alt="Male population ages 60-80." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/extra-apis-r/2017-04-05-api05-get-data-api-r/male-population-1.png" title="Male population ages 60-80." alt="Male population ages 60-80." width="90%" />
 
 
 

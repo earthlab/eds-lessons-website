@@ -3,7 +3,7 @@ layout: single
 title: "Clean Remote Sensing Data in R - Clouds, Shadows & Cloud Masks"
 excerpt: "In this lesson, you will learn how to deal with clouds when working with spectral remote sensing data. You will learn how to mask clouds from landsat and MODIS remote sensing data in R using the mask() function. You will also discuss issues associated with cloud cover - particular as they relate to a research topic."
 authors: ['Leah Wasser','Megan Cattau']
-modified: '2019-08-20'
+modified: '2019-08-23'
 category: [courses]
 class-lesson: ['spectral-data-fire-2-r']
 permalink: /courses/earth-analytics/multispectral-remote-sensing-modis/intro-spectral-data-r/
@@ -131,7 +131,7 @@ plotRGB(all_landsat_bands_br,
 box(col = "white")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/plotRGB-landsat-1.png" title="RGB image of your landsat data." alt="RGB image of your landsat data." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire01-clouds-and-cloud-masks-in-R/plotRGB-landsat-1.png" title="RGB image of your landsat data." alt="RGB image of your landsat data." width="90%" />
 
 ## Raster Masks
 
@@ -153,7 +153,7 @@ plot(cloud_mask_189_conf,
   main = "Landsat Julian Day 189 - Cloud mask layer.")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/cloud-mask-1.png" title="cloud mask - no shadows." alt="cloud mask - no shadows." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire01-clouds-and-cloud-masks-in-R/cloud-mask-1.png" title="cloud mask - no shadows." alt="cloud mask - no shadows." width="90%" />
 
 Next, you can plot the second mask layer. Do you notice any difference between the two?
 
@@ -165,7 +165,7 @@ plot(cloud_mask_189,
   main = "Landsat Julian Day 189 - Cloud mask layer with shadows.")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/view-cloud-mask-with-shadows-1.png" title="cloud mask with shadows" alt="cloud mask with shadows" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire01-clouds-and-cloud-masks-in-R/view-cloud-mask-with-shadows-1.png" title="cloud mask with shadows" alt="cloud mask with shadows" width="90%" />
 
 ## What Do the Metadata Tell Us?
 
@@ -244,7 +244,7 @@ legend(x = cloud_mask_189@extent@xmax, cloud_mask_189@extent@ymax,
        bty = "n")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/create-mask-1.png" title="raster mask. green values are not masked." alt="raster mask. green values are not masked." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire01-clouds-and-cloud-masks-in-R/create-mask-1.png" title="raster mask. green values are not masked." alt="raster mask. green values are not masked." width="90%" />
 
 Notice in the image above, all pixels that are green represent pixels that are
 OK or not masked. This means they weren't flagged as potential clouds or shadows.
@@ -286,7 +286,7 @@ plotRGB(all_landsat_bands_mask,
 box(col = "white")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/masked-raster-brick-1.png" title="apply raster mask to stack and plot." alt="apply raster mask to stack and plot." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire01-clouds-and-cloud-masks-in-R/masked-raster-brick-1.png" title="apply raster mask to stack and plot." alt="apply raster mask to stack and plot." width="90%" />
 
 Notice above that I didn't have to use the stretch function to force the data to
 plot in `R`. This is because the extremely bright pixels which represented clouds,
@@ -306,11 +306,11 @@ plotRGB(all_landsat_bands_mask,
 box(col = "white")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/mask-plot-1.png" title="apply raster mask to stack and plot." alt="apply raster mask to stack and plot." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire01-clouds-and-cloud-masks-in-R/mask-plot-1.png" title="apply raster mask to stack and plot." alt="apply raster mask to stack and plot." width="90%" />
 
 Next, you can calculate a vegetation index.
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/calculate-veg-index-1.png" title="landsat NBR plot" alt="landsat NBR plot" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire01-clouds-and-cloud-masks-in-R/calculate-veg-index-1.png" title="landsat NBR plot" alt="landsat NBR plot" width="90%" />
 
 
 <div class="notice--warning" markdown="1">

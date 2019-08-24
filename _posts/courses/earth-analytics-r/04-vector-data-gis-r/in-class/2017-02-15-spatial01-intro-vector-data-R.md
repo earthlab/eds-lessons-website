@@ -4,7 +4,7 @@ title: "GIS in R: Intro to Vector Format Spatial Data - Points, Lines and Polygo
 excerpt: "This lesson introduces what vector data are and how to open vector data stored in
 shapefile format in R. "
 authors: ['Leah Wasser']
-modified: '2019-08-20'
+modified: '2019-08-23'
 category: [courses]
 class-lesson: ['class-intro-spatial-r']
 permalink: /courses/earth-analytics/spatial-data-r/intro-vector-data-r/
@@ -311,7 +311,7 @@ plot(sjer_plot_locations, col = "blue",
 title("SJER Plot Locations\nMadera County, CA")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/plot-shapefile-1.png" title="SJER plot locations." alt="SJER plot locations." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/2017-02-15-spatial01-intro-vector-data-R/plot-shapefile-1.png" title="SJER plot locations." alt="SJER plot locations." width="90%" />
 
 <div class="notice--warning" markdown="1">
 
@@ -352,7 +352,7 @@ plot(sjer_plot_locations,
   col = "purple")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/plot-multiple-shapefiles-1.png" title="Plot of SJER plots layered on top of the crop extent." alt="Plot of SJER plots layered on top of the crop extent." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/04-vector-data-gis-r/in-class/2017-02-15-spatial01-intro-vector-data-R/plot-multiple-shapefiles-1.png" title="Plot of SJER plots layered on top of the crop extent." alt="Plot of SJER plots layered on top of the crop extent." width="90%" />
 
 
 <div class="notice--warning" markdown="1">

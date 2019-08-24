@@ -3,7 +3,7 @@ layout: single
 title: "Create Maps of Social Media Twitter Tweet Locations Over Time in R"
 excerpt: "This lesson provides an example of modularizing code in R. "
 authors: ['Leah Wasser','Carson Farmer']
-modified: '2019-08-20'
+modified: '2019-08-24'
 category: [courses]
 class-lesson: ['social-media-r']
 permalink: /courses/earth-analytics/get-data-using-apis/map-tweet-locations-over-time-r/
@@ -129,7 +129,7 @@ world_basemap <- ggplot() +
 world_basemap
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/create-world-map-1.png" title="plot of chunk create-world-map" alt="plot of chunk create-world-map" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-05-map-tweet-locationsboulder-flood-r/create-world-map-1.png" title="plot of chunk create-world-map" alt="plot of chunk create-world-map" width="90%" />
 
 Below you can see how the `theme_map()` function cleans up the look
 of your map.
@@ -144,7 +144,7 @@ world_basemap <- ggplot() +
 world_basemap
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/create-world-map-theme-1.png" title="plot of chunk create-world-map-theme" alt="plot of chunk create-world-map-theme" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-05-map-tweet-locationsboulder-flood-r/create-world-map-theme-1.png" title="plot of chunk create-world-map-theme" alt="plot of chunk create-world-map-theme" width="90%" />
 
 Next, look closely at your data. Notice that some of the location
 information contains NA values. Let's remove NA values and then plot the
@@ -218,7 +218,7 @@ world_basemap +
   labs(title = "Tweet Locations During the Boulder Flood Event")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/tweet-locations-plot-1.png" title="plot of chunk tweet-locations-plot" alt="plot of chunk tweet-locations-plot" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-05-map-tweet-locationsboulder-flood-r/tweet-locations-plot-1.png" title="plot of chunk tweet-locations-plot" alt="plot of chunk tweet-locations-plot" width="90%" />
 
 
 ## Leaflet Map
@@ -293,7 +293,7 @@ grouped_tweet_map <- world_basemap + geom_point(data = tweet_locations_grp,
 grouped_tweet_map
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/map-of-tweet-locations-1.png" title="plot of chunk map-of-tweet-locations" alt="plot of chunk map-of-tweet-locations" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-05-map-tweet-locationsboulder-flood-r/map-of-tweet-locations-1.png" title="plot of chunk map-of-tweet-locations" alt="plot of chunk map-of-tweet-locations" width="90%" />
 
 ## Create Location Animation
 
