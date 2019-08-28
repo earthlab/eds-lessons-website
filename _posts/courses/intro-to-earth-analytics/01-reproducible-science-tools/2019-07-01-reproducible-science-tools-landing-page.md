@@ -4,7 +4,7 @@ category: courses
 title: "Introduction to Open Reproducible Science Tools"
 permalink: /courses/intro-to-earth-analytics/open-science-bash-jupyter-markdown-git/
 week-landing: 1
-modified: 2019-08-26
+modified: 2019-08-28
 week: 1
 sidebar:
   nav:
