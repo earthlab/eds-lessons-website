@@ -10,7 +10,7 @@ nav-title: "Bash Commands to Manage Directories and Files"
 dateCreated: 2019-07-15
 modified: 2019-08-28
 module-type: 'class'
-class-order: 3
+class-order: 2
 course: "intro-to-earth-analytics"
 week: 1
 sidebar:

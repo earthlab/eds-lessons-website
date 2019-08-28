@@ -5,12 +5,12 @@ excerpt: "Key tools for open reproducible science include Shell (Bash), git and 
 authors: ['Jenny Palomino', 'Leah Wasser', 'Max Joseph']
 category: [courses]
 class-lesson: ['open-reproducible-science']
-permalink: /courses/intro-to-earth-analytics/open-science-bash-jupyter-markdown-git/open-reproducible-science-tools/
+permalink: /courses/intro-to-earth-analytics/open-science-bash-jupyter-markdown-git/open-reproducible-science/open-reproducible-science-tools/
 nav-title: "Tools for Open Reproducible Science"
 dateCreated: 2019-07-01
 modified: 2019-08-28
 module-type: 'class'
-class-order: 2
+class-order: 1
 course: "intro-to-earth-analytics"
 week: 1
 sidebar:
