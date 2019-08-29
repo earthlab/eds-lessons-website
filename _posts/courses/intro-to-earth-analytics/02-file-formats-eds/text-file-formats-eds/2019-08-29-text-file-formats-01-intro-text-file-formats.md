@@ -1,21 +1,21 @@
 ---
 layout: single
 title: 'Text File Formats for Earth Data Science'
-excerpt: "There are many text file formats that are useful for earth data science workflows including Markdown, text (.txt, .csv) files, and YAML (Yet Another Markup Language). Learn about these common text file formats as well as tools that you can use to edit and work with these files."
+excerpt: "There are many text file formats that are useful for earth data science workflows including Markdown, text (.txt, .csv) files, and YAML (Yet Another Markup Language). Learn about these common text file formats for earth data science workflows."
 authors: ['Jenny Palomino', 'Leah Wasser']
 category: [courses]
 class-lesson: ['text-file-formats']
-permalink: /courses/intro-to-earth-analytics/open-science-bash-jupyter-markdown-git/text-file-formats-earth-data-science/common-text-file-formats/
+permalink: /courses/intro-to-earth-data-science/text-file-formats/text-file-formats-earth-data-science/common-text-file-formats/
 nav-title: "Text File Formats for Earth Data Science"
 dateCreated: 2019-08-29
 modified: 2019-08-29
 module-title: 'Text File Formats for Earth Data Science'
 module-nav-title: 'Text File Formats for Earth Data Science'
-module-description: 'There are many text file formats that are useful for earth data science workflows including Markdown, text (.txt, .csv) files, and YAML (Yet Another Markup Language). Learn about these common text file formats as well as tools that you can use to edit and work with these files.'
+module-description: 'There are many text file formats that are useful for earth data science workflows including Markdown, text (.txt, .csv) files, and YAML (Yet Another Markup Language). Learn about these common text file formats for earth data science workflows.'
 module-type: 'class'
-class-order: 4
-course: "intro-to-earth-analytics"
-week: 1
+class-order: 1
+course: "intro-to-earth-data-science"
+week: 2
 sidebar:
   nav:
 author_profile: false
@@ -31,7 +31,7 @@ topics:
 
 ## <i class="fa fa-ship" aria-hidden="true"></i> Text File Formats for Earth Data Science
 
-In this chapter, you will learn about common text file formats for earth data science workflows including Markdown, text (.txt, .csv) files, YAML (Yet Another Markup Language). You will also learn about tools that you can use to edit and work with these files.
+In this chapter, you will learn about common text file formats for earth data science workflows including Markdown, text (.txt, .csv) files, and YAML (Yet Another Markup Language). 
 
 After completing this chapter, you will be able to:
 
