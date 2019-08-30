@@ -3,7 +3,7 @@ layout: single
 title: 'Analyze Co-occurrence and Networks of Words Using Twitter Data and Tweepy in Python'
 excerpt: 'One common way to analyze Twitter data is to identify the co-occurrence and networks of words in Tweets. Learn how to analyze word co-occurrence (i.e. bigrams) and networks of words using Python.'
 authors: ['Martha Morrissey', 'Leah Wasser', 'Jeremey Diaz', 'Jenny Palomino']
-modified: 2019-08-20
+modified: 2019-08-24
 category: [courses]
 class-lesson: ['social-media-Python']
 permalink: /courses/earth-analytics-python/using-apis-natural-language-processing-twitter/calculate-tweet-word-bigrams-networks-in-python/
@@ -161,14 +161,17 @@ terms_bigram[0]
 
 
 
-    [('expensive', 'act'),
-     ('act', 'gt'),
-     ('gt', 'extreme'),
-     ('extreme', 'weather'),
-     ('weather', 'events'),
-     ('events', 'cuts'),
-     ('cuts', 'worker'),
-     ('worker', 'productivity')]
+    [('islandcynic', 'bronwentucker'),
+     ('bronwentucker', 'true'),
+     ('true', 'ndp'),
+     ('ndp', 'amp'),
+     ('amp', 'cpcone'),
+     ('cpcone', 'way'),
+     ('way', 'force'),
+     ('force', 'amp'),
+     ('amp', 'get'),
+     ('get', 'banks'),
+     ('banks', 'financiers')]
 
 
 
@@ -187,7 +190,7 @@ tweets_no_urls[0]
 
 
 
-    'It is too expensive not to act on climate change gt Extreme weather events cuts to worker productivity and other'
+    'islandcynic bronwentucker True same as NDP amp CPCONE way to force change amp get banks financiers of'
 
 
 
@@ -204,15 +207,18 @@ tweets_nsw_nc[0]
 
 
 
-    ['expensive',
-     'act',
-     'gt',
-     'extreme',
-     'weather',
-     'events',
-     'cuts',
-     'worker',
-     'productivity']
+    ['islandcynic',
+     'bronwentucker',
+     'true',
+     'ndp',
+     'amp',
+     'cpcone',
+     'way',
+     'force',
+     'amp',
+     'get',
+     'banks',
+     'financiers']
 
 
 
@@ -238,26 +244,26 @@ bigram_counts.most_common(20)
 
 
 
-    [(('glacier', 'lost'), 27),
-     (('first', 'glacier'), 19),
-     (('gpwx', 'globalwarming'), 15),
-     (('iceland', 'holds'), 15),
-     (('holds', 'funeral'), 12),
-     (('funeral', 'first'), 11),
-     (('fracking', 'may'), 11),
-     (('new', 'study'), 10),
-     (('study', 'finds'), 10),
-     (('w', 'ecosearch'), 10),
-     (('blackouts', 'melting'), 9),
-     (('melting', 'asphalt'), 9),
-     (('asphalt', 'ways'), 9),
-     (('death', 'blackouts'), 8),
-     (('ways', 'crisis'), 8),
-     (('crisis', 'live'), 8),
-     (('could', 'cost'), 8),
-     (('cost', 'us'), 8),
-     (('2100', 'study'), 8),
-     (('50', 'worlds'), 7)]
+    [(('gpwx', 'globalwarming'), 24),
+     (('penn', 'state'), 20),
+     (('state', 'university'), 18),
+     (('study', 'finds'), 14),
+     (('blackouts', 'melting'), 14),
+     (('melting', 'asphalt'), 14),
+     (('asphalt', 'ways'), 14),
+     (('amazon', 'rainforest'), 13),
+     (('death', 'blackouts'), 13),
+     (('ways', 'crisis'), 13),
+     (('crisis', 'live'), 13),
+     (('bernie', 'sanders'), 11),
+     (('scientists', 'underestimating'), 10),
+     (('underestimating', 'pace'), 10),
+     (('new', 'solar'), 10),
+     (('solar', 'farm'), 10),
+     (('farm', 'cover'), 10),
+     (('cover', '25'), 10),
+     (('25', 'percent'), 10),
+     (('percent', 'penn'), 10)]
 
 
 
@@ -302,104 +308,104 @@ bigram_df
   </thead>
   <tbody>
     <tr>
-      <th>0</th>
-      <td>(glacier, lost)</td>
-      <td>27</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>(first, glacier)</td>
-      <td>19</td>
-    </tr>
-    <tr>
-      <th>2</th>
+      <td>0</td>
       <td>(gpwx, globalwarming)</td>
-      <td>15</td>
+      <td>24</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>(iceland, holds)</td>
-      <td>15</td>
+      <td>1</td>
+      <td>(penn, state)</td>
+      <td>20</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>(holds, funeral)</td>
-      <td>12</td>
+      <td>2</td>
+      <td>(state, university)</td>
+      <td>18</td>
     </tr>
     <tr>
-      <th>5</th>
-      <td>(funeral, first)</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>(fracking, may)</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>(new, study)</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>8</th>
+      <td>3</td>
       <td>(study, finds)</td>
-      <td>10</td>
+      <td>14</td>
     </tr>
     <tr>
-      <th>9</th>
-      <td>(w, ecosearch)</td>
-      <td>10</td>
-    </tr>
-    <tr>
-      <th>10</th>
+      <td>4</td>
       <td>(blackouts, melting)</td>
-      <td>9</td>
+      <td>14</td>
     </tr>
     <tr>
-      <th>11</th>
+      <td>5</td>
       <td>(melting, asphalt)</td>
-      <td>9</td>
+      <td>14</td>
     </tr>
     <tr>
-      <th>12</th>
+      <td>6</td>
       <td>(asphalt, ways)</td>
-      <td>9</td>
+      <td>14</td>
     </tr>
     <tr>
-      <th>13</th>
-      <td>(death, blackouts)</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>(ways, crisis)</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>(crisis, live)</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>(could, cost)</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>(cost, us)</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>(2100, study)</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>(50, worlds)</td>
       <td>7</td>
+      <td>(amazon, rainforest)</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>(death, blackouts)</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>(ways, crisis)</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>(crisis, live)</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>(bernie, sanders)</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>(scientists, underestimating)</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>(underestimating, pace)</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>(new, solar)</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>(solar, farm)</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>(farm, cover)</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>(cover, 25)</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>(25, percent)</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>(percent, penn)</td>
+      <td>10</td>
     </tr>
   </tbody>
 </table>
@@ -464,7 +470,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/13-twitter-api/twitter-api/2018-02-05-twitter-04-bigrams-network-analysis_23_0.png" alt = "This plot displays the networks of co-occurring words in tweets on climate change.">
+<img src = "{{ site.url }}/images/courses/earth-analytics-python/13-twitter-api/twitter-api/2018-02-05-twitter-04-bigrams-network-analysis/2018-02-05-twitter-04-bigrams-network-analysis_23_0.png" alt = "This plot displays the networks of co-occurring words in tweets on climate change.">
 <figcaption>This plot displays the networks of co-occurring words in tweets on climate change.</figcaption>
 
 </figure>

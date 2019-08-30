@@ -3,7 +3,7 @@ layout: single
 title: "Work with MODIS Remote Sensing Data in Python"
 excerpt: "MODIS is a satellite remote sensing instrument that collects data daily across the globe at 250-500 m resolution. Learn how to import, clean up and plot MODIS data in Python."
 authors: ['Leah Wasser', 'Jenny Palomino']
-modified: 2019-08-20
+modified: 2019-08-24
 category: [courses]
 class-lesson: ['modis-multispectral-rs-python']
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-modis/modis-remote-sensing-data-in-python/
@@ -188,7 +188,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire03-modis-data-in-python_9_0.png" alt = "Surface reflectance from MODIS using the RGB bands for the pre-Cold Springs fire time period.">
+<img src = "{{ site.url }}/images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire03-modis-data-in-python/2017-03-01-fire03-modis-data-in-python_9_0.png" alt = "Surface reflectance from MODIS using the RGB bands for the pre-Cold Springs fire time period.">
 <figcaption>Surface reflectance from MODIS using the RGB bands for the pre-Cold Springs fire time period.</figcaption>
 
 </figure>
@@ -257,7 +257,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire03-modis-data-in-python_15_0.png" alt = "Cropped images for surface reflectance from MODIS for all bands for pre-Cold Springs fire.">
+<img src = "{{ site.url }}/images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire03-modis-data-in-python/2017-03-01-fire03-modis-data-in-python_15_0.png" alt = "Cropped images for surface reflectance from MODIS for all bands for pre-Cold Springs fire.">
 <figcaption>Cropped images for surface reflectance from MODIS for all bands for pre-Cold Springs fire.</figcaption>
 
 </figure>
@@ -280,7 +280,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire03-modis-data-in-python_16_0.png" alt = "Cropped surface reflectance from MODIS using the RGB bands for pre-Cold Springs fire.">
+<img src = "{{ site.url }}/images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire03-modis-data-in-python/2017-03-01-fire03-modis-data-in-python_16_0.png" alt = "Cropped surface reflectance from MODIS using the RGB bands for pre-Cold Springs fire.">
 <figcaption>Cropped surface reflectance from MODIS using the RGB bands for pre-Cold Springs fire.</figcaption>
 
 </figure>
@@ -313,7 +313,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire03-modis-data-in-python_18_0.png" alt = "Histograms of the cropped surface reflectance from MODIS for all bands for pre-Cold Springs fire.">
+<img src = "{{ site.url }}/images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire03-modis-data-in-python/2017-03-01-fire03-modis-data-in-python_18_0.png" alt = "Histograms of the cropped surface reflectance from MODIS for all bands for pre-Cold Springs fire.">
 <figcaption>Histograms of the cropped surface reflectance from MODIS for all bands for pre-Cold Springs fire.</figcaption>
 
 </figure>
@@ -380,7 +380,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}//images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire03-modis-data-in-python_25_0.png" alt = "Histograms for the cropped and scaled surface reflectance from MODIS for all bands for pre-Cold Springs fire.">
+<img src = "{{ site.url }}/images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire03-modis-data-in-python/2017-03-01-fire03-modis-data-in-python_25_0.png" alt = "Histograms for the cropped and scaled surface reflectance from MODIS for all bands for pre-Cold Springs fire.">
 <figcaption>Histograms for the cropped and scaled surface reflectance from MODIS for all bands for pre-Cold Springs fire.</figcaption>
 
 </figure>

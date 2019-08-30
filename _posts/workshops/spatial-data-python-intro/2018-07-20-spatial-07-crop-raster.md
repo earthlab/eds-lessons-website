@@ -4,7 +4,7 @@ category: [courses]
 title: "Crop a Spatial Raster Dataset Using a Shapefile in Python"
 excerpt: "This lesson covers how to crop a raster dataset and export it as a new raster in Python"
 authors: ['Leah Wasser', 'Joe McGlinchy', 'Chris Holdgraf', 'Martha Morrissey', 'Jenny Palomino']
-modified: 2019-08-20
+modified: 2019-08-24
 permalink: /workshops/gis-open-source-python/crop-raster-data-in-python/
 nav-title: 'Crop a Raster'
 module-type: 'workshop'
@@ -116,7 +116,7 @@ ax.set_title("Lidar Canopy Height Model (CHM)\n NEON SOAP Field Site",
 
 <figure>
 
-<img src = "{{ site.url }}//images/workshops/spatial-data-python-intro/2018-07-20-spatial-07-crop-raster_5_0.png">
+<img src = "{{ site.url }}/images/workshops/spatial-data-python-intro/2018-07-20-spatial-07-crop-raster/2018-07-20-spatial-07-crop-raster_5_0.png">
 
 </figure>
 
@@ -166,7 +166,7 @@ ax.set_axis_off();
 
 <figure>
 
-<img src = "{{ site.url }}//images/workshops/spatial-data-python-intro/2018-07-20-spatial-07-crop-raster_10_0.png">
+<img src = "{{ site.url }}/images/workshops/spatial-data-python-intro/2018-07-20-spatial-07-crop-raster/2018-07-20-spatial-07-crop-raster_10_0.png">
 
 </figure>
 
@@ -199,7 +199,7 @@ crop_extent_soap.plot(ax=ax, alpha=.6, color='g');
 
 <figure>
 
-<img src = "{{ site.url }}//images/workshops/spatial-data-python-intro/2018-07-20-spatial-07-crop-raster_14_0.png">
+<img src = "{{ site.url }}/images/workshops/spatial-data-python-intro/2018-07-20-spatial-07-crop-raster/2018-07-20-spatial-07-crop-raster_14_0.png">
 
 </figure>
 
@@ -275,7 +275,7 @@ ax.imshow(lidar_chm_crop_ma, extent = cr_extent)
 
 
 
-    <matplotlib.image.AxesImage at 0x7ffb8344a208>
+    <matplotlib.image.AxesImage at 0x7f7e072f03c8>
 
 
 
@@ -286,7 +286,7 @@ ax.imshow(lidar_chm_crop_ma, extent = cr_extent)
 
 <figure>
 
-<img src = "{{ site.url }}//images/workshops/spatial-data-python-intro/2018-07-20-spatial-07-crop-raster_22_1.png">
+<img src = "{{ site.url }}/images/workshops/spatial-data-python-intro/2018-07-20-spatial-07-crop-raster/2018-07-20-spatial-07-crop-raster_22_1.png">
 
 </figure>
 
