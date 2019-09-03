@@ -3,7 +3,7 @@ layout: single
 category: courses
 title: "Intro to R & Work with Time Series Data"
 permalink: /courses/earth-analytics/time-series-data/
-modified: '2019-08-23'
+modified: '2019-09-03'
 week-landing: 2
 week: 2
 sidebar:
@@ -189,91 +189,17 @@ format report using `knitr`.
 
 ## Homework Plots
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/2017-01-01-week-02-time-series-data/homework-solution-plot-1-1.png" title="homework plot one" alt="homework plot one" width="90%" />
-
-<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/2017-01-01-week-02-time-series-data/homework-plot-2-1.png" title="homework plot 2" alt="homework plot 2" width="90%" />
-
-<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/2017-01-01-week-02-time-series-data/homework-plot3-1.png" title="homework plot 3" alt="homework plot 3" width="90%" />
-
-<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/2017-01-01-week-02-time-series-data/homework-plot4-1.png" title="homework plot 4" alt="homework plot 4" width="90%" />
-
-
-## Graduate Plot
-
-<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/2017-01-01-week-02-time-series-data/graduate-plot1-1.png" title="Grad only homework plot 1" alt="Grad only homework plot 1" width="90%" />
-
-## Bonus Plots
-
-<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/2017-01-01-week-02-time-series-data/bonus-plot1-1.png" title="homework plot 4" alt="homework plot 4" width="90%" />
 
 
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/2017-01-01-week-02-time-series-data/bonus-plot-2-1.png" title="hourly precipitation" alt="hourly precipitation" width="90%" />
 
 
-## Report Grade Rubric
-
-### Report content - Text Writeup: 30%
-
-| Full credit |   | No credit |
-|:-----|:--------|:----------|
-| PDF and RMD files submitted   |     |   |
-| Summary text is provided for each plot |   | |
-| Grammar & spelling are accurate throughout the report |  |  |
-| File is named with last name-first initial week 2  |   |  |
-| Report contains all 4 plots described in the assignment |  |  |
-| 2-3 paragraphs exist at the top of the report that summarize the conditions and the events that took place in 2013 to cause a flood that had significant impacts |  |     |
-| Introductory text at the top of the document clearly describes the drivers and impacts associated with the 2013 flood event  |  |  |
-|===
-| Introductory text at the top of the document is organized, clear and thoughtful.  |  | |
 
 
-### Report content - Code Format: 20%
-
-| Full credit |   | No credit |
-|:-----|:--------|:----------|
-| Code is written using "clean" code practices following the Hadley Wickham style guide. This includes (but is not limited to) spaces after # tags, avoidances of `.` in variable / object names and sound object naming practices |  | |
-| YAML contains a title, author and date |  | |
-|===
-| Code chunk contains code and runs and produces the correct output |   |  |  |
 
 
-### Report Plots: 50%
 
 
-#### Plot Aesthetics
 
-* **PLOT 1:** a plot of precipitation from 2003 to 2013 using `ggplot()`.
-* **PLOT 2:** a plot that shows precipitation SUBSETTED from Aug 15 - Oct 15 2013 using `ggplot()`.
-* **PLOT 3:** a plot of stream discharge from 1986 to 2013 using `ggplot()`.
-* **PLOT 4:** a plot that shows stream discharge SUBSETTED from Aug 15 - Oct 15 2013 using `ggplot()`.
-***
-* **PLOT 5:** (GRAD STUDENTS ONLY, bonus points for undergrads): a plot of precipitation that spans from 1948 - 2013
 
-We will review each of the plots listed above for various aesthetics as follows:
 
-| Full credit |   | No credit |
-|:-----|:--------|:----------|
-| Plot is labeled with a title, x and y axis label  | | |
-| Plot is coded using the `ggplot()` function. (please **don't** use qplot()) |  | |
-| Date on the x axis is formatted as a date class for all plots  |  | Dates are not properly formatted |
-| Missing data values have been cleaned / replaced with `NA` |   | Missing values have not been cleaned  |
-| Code to create the plot is clearly documented with comments in the html / pdf `knitr` output  |  | Code isn't commented |
-|===
-| Plot is described and interpreted in the text of the report with reference made to how the data demonstrate an impact or driver of the flood event |  | Plot is not discussed and interpreted in the text   |
-
-#### Dplyr Plot Subsetting
-
-Plots 2 and 4 should be temporally subsetted to the dates listed above.
-
-| Full credit |   | No credit |
-|:-----|:--------|:----------|
-| Plot 2 is temporally subsetted using `dplyr` pipes to Aug 15 - Oct 15 2013 |  |  |
-|===
-| Plot 4 is temporally subsetted using `dplyr` pipes to Aug 15 - Oct 15 2013 |  |  |
-
-#### Grading Bonus Points (2 Points Potential)
-***
-
-* 1 point: Identify and fix the anomaly in the precipitation `805333-precip-daily-1948-2013.csv`.
-* 1 point: Create an interactive plot using `dygraphs` in your output html file.

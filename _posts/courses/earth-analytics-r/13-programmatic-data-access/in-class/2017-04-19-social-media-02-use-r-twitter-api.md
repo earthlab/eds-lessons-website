@@ -3,7 +3,7 @@ layout: single
 title: "Twitter Data in R Using Rtweet: Analyze and Download Twitter Data"
 excerpt: "You can use the Twitter RESTful API to access data about Twitter users and tweets. Learn how to use rtweet to download and analyze twitter social media data in R."
 authors: ['Leah Wasser','Carson Farmer']
-modified: '2019-08-24'
+modified: '2019-09-03'
 category: [courses]
 class-lesson: ['social-media-r']
 permalink: /courses/earth-analytics/get-data-using-apis/use-twitter-api-r/
@@ -183,9 +183,9 @@ head(rstats_tweets, n = 3)
 ## # A tibble: 3 x 90
 ##   user_id status_id created_at          screen_name text  source
 ##   <chr>   <chr>     <dttm>              <chr>       <chr> <chr> 
-## 1 892592… 11650511… 2019-08-24 00:00:14 delany_ram… Exci… Twitt…
-## 2 766056… 11650509… 2019-08-23 23:59:37 Gwmngilfen  #RSt… Twide…
-## 3 291981… 11650507… 2019-08-23 23:58:49 gorkang     Grea… Twitt…
+## 1 230488… 11689359… 2019-09-03 17:17:04 ComputeHole "Pub… _retw…
+## 2 230488… 11689208… 2019-09-03 16:17:04 ComputeHole "Whi… _retw…
+## 3 100422… 11689359… 2019-09-03 17:16:59 machine_ml  "Pub… ML_BD…
 ## # … with 84 more variables: display_text_width <dbl>,
 ## #   reply_to_status_id <chr>, reply_to_user_id <chr>,
 ## #   reply_to_screen_name <chr>, is_quote <lgl>, is_retweet <lgl>,
@@ -241,8 +241,8 @@ head(rstats_tweets, n = 2)
 ## # A tibble: 2 x 90
 ##   user_id status_id created_at          screen_name text  source
 ##   <chr>   <chr>     <dttm>              <chr>       <chr> <chr> 
-## 1 935569… 11650498… 2019-08-23 23:55:08 tidyverset… stri… tidyv…
-## 2 935569… 11649592… 2019-08-23 17:55:10 tidyverset… How … tidyv…
+## 1 144592… 11689357… 2019-09-03 17:16:05 Rbloggers   New … r-blo…
+## 2 144592… 11686096… 2019-09-02 19:40:27 Rbloggers   1 gi… r-blo…
 ## # … with 84 more variables: display_text_width <dbl>,
 ## #   reply_to_status_id <chr>, reply_to_user_id <chr>,
 ## #   reply_to_screen_name <chr>, is_quote <lgl>, is_retweet <lgl>,
@@ -285,109 +285,109 @@ Next, let's figure out who is tweeting about `R` using the `#rstats` hashtag.
 ```r
 # view column with screen names - top 6
 head(rstats_tweets$screen_name)
-## [1] "tidyversetweets" "tidyversetweets" "tidyversetweets" "tidyversetweets"
-## [5] "tidyversetweets" "tidyversetweets"
+## [1] "Rbloggers" "Rbloggers" "Rbloggers" "Rbloggers" "Rbloggers" "Rbloggers"
 # get a list of unique usernames
 unique(rstats_tweets$screen_name)
-##   [1] "tidyversetweets" "zdon89"          "zoedottxt"      
-##   [4] "toddrjones"      "CRANberriesFeed" "AntoViral"      
-##   [7] "waterlego"       "gp_pulipaka"     "quaesita"       
-##  [10] "certifiedwaif"   "dataclaudius"    "DerFredo"       
-##  [13] "rocitations"     "Rbloggers"       "grrrck"         
-##  [16] "BGravesteijn"    "westgatecology"  "ChasingMicrobes"
-##  [19] "Mayacelium"      "UrbanDemog"      "shamindraas"    
-##  [22] "markvdloo"       "AvrahamAdler"    "hwericsatie"    
-##  [25] "ethantenison"    "Rei780"          "StrictlyStat"   
-##  [28] "Xtophe_Bontemps" "wia_conference"  "CareQualityComm"
-##  [31] "volha_tryputsen" "alexsussuarana"  "W_R_Chase"      
-##  [34] "_ColinFay"       "KathleenWendt8"  "Hec_Garrido"    
-##  [37] "rui_barros17"    "HarryASmith9002" "c_borstell"     
-##  [40] "causalinf"       "rweekly_live"    "astaples_mi"    
-##  [43] "researchcommunK" "Ceo_Branding"    "packpridejones" 
-##  [46] "rmflight"        "PodsProgram"     "MarkShadden1"   
-##  [49] "sellorm"         "abresler"        "theRcast"       
-##  [52] "pachamaltese"    "EarlybirdDev"    "LVKremin"       
-##  [55] "topepos"         "rinpharma"       "realauggiehesch"
-##  [58] "TazPoltorak"     "nyhackr"         "thomas_mock"    
-##  [61] "CKVanPay"        "CivicAngela"     "andrew_leach"   
-##  [64] "hadleywickham"   "rstatsdata"      "gavinprm"       
-##  [67] "SteveGawthorpe"  "WhitneyEpi"      "gRizzStats"     
-##  [70] "hutchins_e"      "d_olivaw"        "lemuscanovas"   
-##  [73] "cliffbeall"      "thinksysinc"     "DataDaft"       
-##  [76] "tladeras"        "DaveParr"        "RLangTip"       
-##  [79] "LeafyEricScott"  "Ektropos"        "DogmaticPrior"  
-##  [82] "TiffanyTimbers"  "morgsbrew"       "oscar_b123"     
-##  [85] "matloff"         "TimoRoettger"    "rfortherest"    
-##  [88] "BGSA_WSU"        "RenRidesCycles"  "mattwilkinsbio" 
-##  [91] "ChavarriaMinera" "DrKAinslie"      "nielsberglund"  
-##  [94] "haematobot"      "MicheleTobias"   "S_bravo"        
-##  [97] "crcgrubbsd"      "gbganalyst"      "UK_PetDogPop"   
-## [100] "TAlexPerkins"    "antoine_fabri"   "LIBDrstats"     
-## [103] "scottyd22"       "LMSaxhaug"       "WesongaRonald"  
-## [106] "juliesquid"      "lyderhermansen"  "JonTheGeek"     
-## [109] "mishafredmeyer"  "rstatsdc"        "StatGarrett"    
-## [112] "TroyFor25"       "CougRstats"      "R4DScommunity"  
-## [115] "gboeing"         "whipson3"        "eric_layland"   
-## [118] "walkabilly"      "uHITbaseball"    "uwepidemiology" 
-## [121] "rcentrrall"      "r_and_omics"     "KatheMathBio"   
-## [124] "FelixEVargas"    "katiesegreti"    "Escells"        
-## [127] "PghAdventurer"   "phileas_c"       "AedinCulhane"   
-## [130] "brentocarrigan"  "DustinStoltz"    "jesseberger"    
-## [133] "javierluraschi"  "Visokio"         "taraskaduk"     
-## [136] "PipeFunction"    "iprophage"       "julianlavila"   
-## [139] "ejmarenco1"      "dataandme"       "dataelixir"     
-## [142] "adababbage"      "HakimAbdi"       "bradleyboehmke" 
-## [145] "CLaunderer"      "jaseziv"         "mdancho84"      
-## [148] "swricci"         "grimbough"       "nstrande"       
-## [151] "humeursdevictor" "dgkeyes"         "dr_keithmcnulty"
-## [154] "nevromeCS"       "tylermorganwall" "StatsCloud"     
-## [157] "o_gonzales"      "alexandregeorg5" "WeAreRLadies"   
-## [160] "ChrisLavoieEcon" "rick_pack2"      "torkildl"       
-## [163] "OutboxHub"       "caprico_aries"   "jtrecenti"      
-## [166] "josh_longbottom" "RhinoEcologist"  "carlcarrie"     
-## [169] "coolbutuseless"  "LandbouLisa"     "ludictech"      
-## [172] "milos_agathon"   "afunguy95"       "cimentadaj"     
-## [175] "CillianMacAodh"  "thegymnosophist" "YousriMarzouki" 
-## [178] "FedericoRG"      "OCGTraining"     "nosimpler_me"   
-## [181] "RLangPackage"    "JenRichmondPhD"  "claudiodanielpc"
-## [184] "mattthereed"     "aschinchon"      "luhugerth"      
-## [187] "mmeierer"        "AtlanHQ"         "zx8754"         
-## [190] "appsilon"        "TraineeGeek"     "AndreaCirilloAC"
-## [193] "LearnRinaDay"    "swcarpentry_ja"  "martin_rstats"  
-## [196] "calvinmdewilde"  "guangchuangyu"   "klmr"           
-## [199] "CherguiSafouane" "bjoern_walther"  "SurfingSiren"   
-## [202] "GEMReport"       "mauro_lepore"    "AriyoOludare"   
-## [205] "thomasp85"       "grssnbchr"       "Adrowitzer"     
-## [208] "THEAdamGabriel"  "angelozehr"      "kurzanovart"    
-## [211] "zkajdan"         "InsectEcology"   "Vdot_Spain"     
-## [214] "KWBerlin_R"      "kiwiskiNZ"       "r4n4m4hmud"     
-## [217] "lee_hawthorn"    "foundinblank"    "verajosemanuel" 
-## [220] "rstudio"         "siminaboca"      "GilesDJones"    
-## [223] "RLadiesMTL"      "BlasBenito"      "alexpghayes"    
-## [226] "nathanodgers"    "MarkGingrass"    "KirkDBorne"     
-## [229] "EthanGoan"       "ramez_s"         "sharlagelfand"  
-## [232] "BiodiversityGuy" "daily_r_sheets"  "hellomista"     
-## [235] "PM_maths"        "ArseneXie"       "johncassil"     
-## [238] "ThomasVConti"    "howardsfriedman" "tsonika"        
-## [241] "migueldva"       "Gabriel00602805" "megmwheeler"    
-## [244] "terusterang__"   "petra_kuhnert"   "SouMyajiT_RO"   
-## [247] "michael_wiebe"   "sckottie"        "JezRoff"        
-## [250] "Mooniac"         "gjmount"         "BenjaminWolfe"  
-## [253] "alistaire"       "yabellini"       "RLadies_rciacte"
-## [256] "hessandrea"      "roamingmoth"     "juliasilge"     
-## [259] "kburnswrites"    "jamie_lendrum"   "healthstatsdude"
-## [262] "bigagdata"       "NathanMicatka"   "brad_weiner"    
-## [265] "ClausWilke"      "DataSciEng"      "sarahdolson"    
-## [268] "gabbspalomo"     "dvaughan32"      "JDHaltigan"     
-## [271] "JanaJarecki"     "MariannaFoos"    "NCrouch89"      
-## [274] "_willdebras"     "DethWench"       "GeoMaisonobe"   
-## [277] "SeanfromSeabeck" "chainsawriot"    "jonsweetman"    
-## [280] "etmckinley"      "DataSciSalon"    "leach_jim"      
-## [283] "Stat_Ron"        "GuyProchilo"     "SaanpaurSeedi"  
-## [286] "TenderIsTheByte" "joranelias"      "serdarbalci"    
-## [289] "krlmlr"          "mjhendrickson"   "mribeirodantas" 
-## [292] "strnr"           "PyData"          "prec_analytics" 
-## [295] "dunn_sam"
+##   [1] "Rbloggers"       "rfortherest"     "gp_pulipaka"    
+##   [4] "rocitations"     "mircaze"         "BiophysicalEco" 
+##   [7] "CRANberriesFeed" "dataandme"       "hrbrmstr"       
+##  [10] "thanhtungmilan"  "tidyversetweets" "_DaniellaMark"  
+##  [13] "tylermorganwall" "CougRstats"      "StatsForBios"   
+##  [16] "ProCogia"        "RLadiesFreiburg" "DogmaticPrior"  
+##  [19] "pachamaltese"    "TheMelton"       "DethWench"      
+##  [22] "EarthLabCU"      "_Gil_Henriques"  "joranelias"     
+##  [25] "RLadiesLancs"    "SeeHerGo"        "DataCamp"       
+##  [28] "BodoWinter"      "Simmie_kafaru"   "RSSAnnualConf"  
+##  [31] "DataDaft"        "LPMKremer"       "whiskersedge"   
+##  [34] "maxheld"         "jonkeane"        "zdw2126062"     
+##  [37] "ludmila_janda"   "davidhughjones"  "Eduardo50935627"
+##  [40] "GrantHumphries"  "rstatsdc"        "ryanlinnbrown"  
+##  [43] "abresler"        "SHaymondSays"    "geokaramanis"   
+##  [46] "MikeRSpencer"    "Niels_Bremen"    "AmJEpi"         
+##  [49] "ariel_esteban"   "JoaoGranja3"     "robsalasco"     
+##  [52] "AlexSlavenko"    "AvrahamAdler"    "rmflight"       
+##  [55] "planetmoney"     "nikki_g_b"       "levalencia"     
+##  [58] "KinseyTedford"   "liz_mauer"       "gavg712"        
+##  [61] "tishaevite"      "olyerickson"     "jessenleon"     
+##  [64] "jimhester_"      "AnalyticsFrance" "cypher_text"    
+##  [67] "DataScientistsF" "BigData_Fr"      "lobrowR"        
+##  [70] "ingorohlfing"    "imsonoshah"      "KKulma"         
+##  [73] "rfindingyourway" "underdarkGIS"    "chrisBowdata"   
+##  [76] "JenniferBadham"  "rusersoxford"    "M_E_Scott"      
+##  [79] "haematobot"      "LucyStats"       "mdancho84"      
+##  [82] "MalariaAtlas"    "sharon000"       "gavin_fay"      
+##  [85] "Ektropos"        "fatma_cinar_ftm" "dataclaudius"   
+##  [88] "DerFredo"        "krystian8207"    "simon_tarr"     
+##  [91] "evalparse"       "sherajilir"      "NumFOCUS"       
+##  [94] "UK_PetDogPop"    "HiDefSurvey"     "perspectivalean"
+##  [97] "Laserhedvig"     "tgwilson"        "D_Rodziewicz"   
+## [100] "martinjhnhadley" "traffordDataLab" "MazdakS"        
+## [103] "ClaireCities"    "shermstats"      "THEAdamGabriel" 
+## [106] "veabrunsdon"     "niken59904793"   "alexyfyf"       
+## [109] "datawookie"      "natedayta"       "Vebash"         
+## [112] "KirkDBorne"      "RLangPackage"    "Westlake_CJW"   
+## [115] "man_matej"       "howard_baik"     "dtoher"         
+## [118] "StephenEglen"    "Altea_Lorenzo"   "R_by_Ryo"       
+## [121] "appsilon"        "whatsgoodio"     "jamie_lendrum"  
+## [124] "rweekly_live"    "DubelMarcin"     "trappedalien"   
+## [127] "GSwithR"         "gbganalyst"      "oscar_b123"     
+## [130] "josh_longbottom" "SamPlayle"       "erbiostat"      
+## [133] "cleris_mr"       "earlconf"        "fgutowski__"    
+## [136] "nj_tierney"      "whyRconf"        "dinga92"        
+## [139] "RLadiesCapeTown" "CareQualityComm" "datasciencetip1"
+## [142] "econabstracts"   "thegymnosophist" "inesz"          
+## [145] "EmRstats"        "LucaLeisten"     "ConallOM"       
+## [148] "ElzbthMcCrthy"   "thinkR_fr"       "neilfws"        
+## [151] "LeahAWasser"     "aliyaleigh"      "johnjanuszczak" 
+## [154] "obergr"          "rstudio"         "technocrat"     
+## [157] "spoonertaylor"   "RLadiesSydney"   "CurtinIC"       
+## [160] "_davecooley"     "consimption"     "DerriereLaLune" 
+## [163] "daily_r_sheets"  "DeborahPassey"   "d_olivaw"       
+## [166] "devenwisner"     "tangming2005"    "DrAndrewRate"   
+## [169] "mrtec_y"         "NerdoRican"      "tsonika"        
+## [172] "thomas_mock"     "AnnaHenschel"    "SpacePlowboy"   
+## [175] "redheadkristy"   "alejdiazd"       "gjmount"        
+## [178] "PaobCorrales"    "_lazappi_"       "mbtoomey"       
+## [181] "Eeysirhc"        "brad_weiner"     "MihiretuKebede1"
+## [184] "IKosmidis_"      "bek_grieger"     "claudiodanielpc"
+## [187] "adamhsparks"     "leon_is_awesome" "ai_korg"        
+## [190] "aschinchon"      "_sharleen_w"     "BC0808"         
+## [193] "atrfisch"        "ChasingMicrobes" "mikkelkrogsholm"
+## [196] "darrenclinch"    "Bluelion0305"    "rhetta_chappell"
+## [199] "mixOmics_team"   "wendtke"         "GuyProchilo"    
+## [202] "janellehajjar"   "NabaHassan8"     "thomasp85"      
+## [205] "mattdray"        "wisevis"         "felipe_mattioni"
+## [208] "DrPaulEllis"     "kai_arzheimer"   "quantargo"      
+## [211] "la_Rusers"       "rstatsdata"      "mkuehn10"       
+## [214] "CourseGift"      "ZKamvar"         "vladtarko"      
+## [217] "kamromero"       "KristenNolting"  "ottofwagner"    
+## [220] "mikedecr"        "adhdoug"         "ethantenison"   
+## [223] "DanielT_W"       "RLangTip"        "TeebzR"         
+## [226] "researchcommunK" "inesblackh"      "_RCharlie"      
+## [229] "generativist"    "barbalhofernand" "thomas_barto"   
+## [232] "jonathandinu"    "TazPoltorak"     "scottyanco"     
+## [235] "JanaJarecki"     "LNPP_MX"         "seabbs"         
+## [238] "McKibbinUSA"     "threader_app"    "gdeandajauregui"
+## [241] "eddelbuettel"    "ariamsita"       "datascienceplus"
+## [244] "mbeckett_za"     "JackkStat"       "pegleraj"       
+## [247] "jladata"         "abiyugiday"      "cai_sadio"      
+## [250] "juneyeungchun"   "ryantimpe"       "YBirchPsy"      
+## [253] "koen_hufkens"    "_ColinFay"       "SangerCytometry"
+## [256] "SwampThingPaul"  "jtrecenti"       "MiguelCos"      
+## [259] "rmagn0"          "shamindraas"     "bradisbrad"     
+## [262] "TraineeGeek"     "callmeyvan"      "LessCrime"      
+## [265] "AlexisLNorris"   "FionaIngleby"    "statwonk"       
+## [268] "Nate__Haines"    "wiscostretford"  "JRBerrendero"   
+## [271] "TheGinaGi"       "AndreaCirilloAC" "coolbutuseless" 
+## [274] "lapply"          "krishanu_c"      "cosminribo"     
+## [277] "suuz_beck"       "RLadiesEdinb"    "dirk_sch"       
+## [280] "pawel_appsilon"  "musy_n"          "JLRohmann"      
+## [283] "MangoTheCat"     "notanastronomer" "olga_mie"       
+## [286] "NeptuneML"       "BorisBeranger"   "bobehayes"      
+## [289] "TripathiAm3"     "joe_diodato"     "_J_sinclair"    
+## [292] "GTRao"           "RoelandtN42"     "RPanczak"       
+## [295] "tymwol"          "SuperCroup"      "potterzot"      
+## [298] "jspairani"       "nicoleradziwill"
 ```
 
 You  can similarly use the `search_users()` function to just see what users are tweeting
@@ -404,8 +404,8 @@ head(users, n = 2)
 ## # A tibble: 2 x 90
 ##   user_id status_id created_at          screen_name text  source
 ##   <chr>   <chr>     <dttm>              <chr>       <chr> <chr> 
-## 1 961691… 11641739… 2019-08-21 13:54:45 FC_rstats   This… Twitt…
-## 2 101181… 11650502… 2019-08-23 23:56:42 rstatstweet stri… rstat…
+## 1 101181… 11689332… 2019-09-03 17:06:19 rstatstweet Look… rstat…
+## 2 107501… 11689309… 2019-09-03 16:57:21 rstats4ds   "The… R sta…
 ## # … with 84 more variables: display_text_width <dbl>,
 ## #   reply_to_status_id <chr>, reply_to_user_id <chr>,
 ## #   reply_to_screen_name <chr>, is_quote <lgl>, is_retweet <lgl>,
@@ -449,7 +449,7 @@ they from?
 ```r
 # how many locations are represented
 length(unique(users$location))
-## [1] 312
+## [1] 311
 
 users %>%
   ggplot(aes(location)) +
@@ -459,7 +459,7 @@ users %>%
       title = "Twitter users - unique locations ")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-02-use-r-twitter-api/explore-users-1.png" title="plot of users tweeting about R" alt="plot of users tweeting about R" width="90%" />
+<img src="{{ site.url }}/images/courses//earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-02-use-r-twitter-api/explore-users-1.png" title="plot of users tweeting about R" alt="plot of users tweeting about R" width="90%" />
 
 Let's sort by count and just plot the top locations. To do this, you use top_n().
 Note that in this case you are grouping your data by user. Thus top_n() will return
@@ -479,7 +479,7 @@ users %>%
       title = "Where Twitter users are from - unique locations ")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-02-use-r-twitter-api/users-tweeting-1.png" title="top 15 locations where people are tweeting" alt="top 15 locations where people are tweeting" width="90%" />
+<img src="{{ site.url }}/images/courses//earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-02-use-r-twitter-api/users-tweeting-1.png" title="top 15 locations where people are tweeting" alt="top 15 locations where people are tweeting" width="90%" />
 
 It looks like you have some `NA` or no data values in your list. Let's remove those
 with `na.omit()`.
@@ -499,7 +499,7 @@ users %>%
       title = "Twitter users - unique locations ")
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-02-use-r-twitter-api/users-tweeting2-1.png" title="top 15 locations where people are tweeting - na removed" alt="top 15 locations where people are tweeting - na removed" width="90%" />
+<img src="{{ site.url }}/images/courses//earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-02-use-r-twitter-api/users-tweeting2-1.png" title="top 15 locations where people are tweeting - na removed" alt="top 15 locations where people are tweeting - na removed" width="90%" />
 
 Looking at your data, what do you notice that might improve this plot?
 There are 314 unique locations in your list. However, everyone didn't specify their

@@ -3,7 +3,7 @@ layout: single
 title: "Make Interactive Maps with Leaflet R - GIS in R"
 excerpt: "In this lesson you learn the steps to create a map in R using ggplot."
 authors: ['Leah Wasser']
-modified: '2019-08-23'
+modified: '2019-09-03'
 category: [courses]
 class-lesson: ['hw-custom-maps-r']
 permalink: /courses/earth-analytics/spatial-data-r/make-interactive-maps-with-leaflet-r/
@@ -96,64 +96,12 @@ Next, import and explore the data.
 
 
 
-```r
-# import roads
-plot_locations <- readOGR("data/week-04/california/SJER/vector_data/SJER_plot_centroids.shp")
-## OGR data source with driver: ESRI Shapefile 
-## Source: "/root/earth-analytics/data/week-04/california/SJER/vector_data/SJER_plot_centroids.shp", layer: "SJER_plot_centroids"
-## with 18 features
-## It has 5 fields
-# reproject to latitude / longitude so the data line up with leaflet basemaps
-plot_locations_latlon <- sjer_aoi_WGS84 <- spTransform(plot_locations,
-                                CRS("+proj=longlat +datum=WGS84"))
-plot_locations_df <- as.data.frame(plot_locations_latlon, region = "id")
-str(plot_locations_df)
-## 'data.frame':	18 obs. of  8 variables:
-##  $ Plot_ID  : chr  "SJER1068" "SJER112" "SJER116" "SJER117" ...
-##  $ Point    : chr  "center" "center" "center" "center" ...
-##  $ northing : num  4111568 4111299 4110820 4108752 4110476 ...
-##  $ easting  : num  255852 257407 256839 256177 255968 ...
-##  $ plot_type: chr  "trees" "trees" "grass" "trees" ...
-##  $ coords.x1: num  -120 -120 -120 -120 -120 ...
-##  $ coords.x2: num  37.1 37.1 37.1 37.1 37.1 ...
-##  $ region   : chr  "id" "id" "id" "id" ...
-```
-
-Plot the data and use the plotID field as a popup.
-
-
-```r
-# plot points on top of a leaflet basemap
-site_locations <- leaflet(plot_locations_df) %>%
-  addTiles() %>%
-  addCircleMarkers(lng = ~coords.x1, lat = ~coords.x2, popup = ~Plot_ID)
-
-site_locations
-```
-
-
-
-<iframe title="Basic Map" width="80%" height="600" src="{{ site.url }}/example-leaflet-maps/site_locations.html" frameborder="0" allowfullscreen></iframe>
-
-
-Add unique colors according to plot type.
-
-
-```r
-# define colors - you can find colors that look better than these!
-pal <- colorFactor(c("navy", "darkgreen", "darkorchid4"), domain = unique(sjer_aoi_WGS84$plot_type))
-
-# plot points on top of a leaflet basemap
-site_locations_colors <- leaflet(plot_locations_df) %>%
-  addTiles() %>%
-  addCircleMarkers(
-     color = ~pal(plot_type),
-    lng = ~coords.x1, lat = ~coords.x2, popup = ~Plot_ID)
-
-site_locations_colors
-```
 
 
 
 
-<iframe title="Basic Map" width="80%" height="600" src="{{ site.url }}/example-leaflet-maps/site_locations_colors.html" frameborder="0" allowfullscreen></iframe>
+
+
+
+
+

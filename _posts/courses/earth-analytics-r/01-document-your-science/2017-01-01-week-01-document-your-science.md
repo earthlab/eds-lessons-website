@@ -3,7 +3,7 @@ layout: single
 category: courses
 title: "Document Your Science Using R Markdown and R"
 permalink: /courses/earth-analytics/document-your-science/
-modified: '2019-08-23'
+modified: '2019-09-03'
 week-landing: 1
 week: 1
 sidebar:
@@ -183,7 +183,7 @@ qplot(x = boulder_precip$DATE,
       y = boulder_precip$PRECIP)
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/01-document-your-science/2017-01-01-week-01-document-your-science/student-example-code-1.png" title="Plot of precip over time that a student should see as output after running code." alt="Plot of precip over time that a student should see as output after running code." width="90%" />
+<img src="{{ site.url }}/images/courses//earth-analytics-r/01-document-your-science/2017-01-01-week-01-document-your-science/student-example-code-1.png" title="Plot of precip over time that a student should see as output after running code." alt="Plot of precip over time that a student should see as output after running code." width="90%" />
 
 
 If your code ran properly, the plot output should look like the image above.

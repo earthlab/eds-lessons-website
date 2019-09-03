@@ -3,7 +3,7 @@ layout: single
 title: "Work with the Difference Normalized Burn Index - Using Spectral Remote Sensing to Understand the Impacts of Fire on the Landscape"
 excerpt: "In this lesson you review the normalized burn ratio (NBR) index which can be used to identify the area and severity of a fire. Specifically you will calculate NBR using Landsat 8 spectral remote sensing data in raster, .tif format."
 authors: ['Leah Wasser', 'Megan Cattau']
-modified: '2019-08-23'
+modified: '2019-09-03'
 category: [courses]
 class-lesson: ['spectral-data-fire-2-r']
 permalink: /courses/earth-analytics/multispectral-remote-sensing-modis/normalized-burn-index-dNBR/
@@ -193,84 +193,18 @@ should you use to calculate NBR using MODIS?
 
 
 
-```
-## OGR data source with driver: ESRI Shapefile 
-## Source: "/root/earth-analytics/data/week-08/vector_layers/fire-boundary-geomac", layer: "co_cold_springs_20160711_2200_dd83"
-## with 1 features
-## It has 21 fields
-```
-
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire04-difference-normalized-burn-ratio-vegetation-indices-R/calculate-nbr-1.png" title="Post fire landsat derived NBR plot" alt="Post fire landsat derived NBR plot" width="90%" />
 
 
 
 
-```r
-# bands 7 and 5
-landsat_prefire_nbr <- overlay(all_landsat_bands_173_br[[7]], all_landsat_bands_173_br[[5]],
-        fun = normalized_diff)
-
-plot(landsat_prefire_nbr,
-     main = "Landsat-derived NBR\n Pre-Fire \n with fire boundary overlay",
-     axes = FALSE,
-     box = FALSE)
-plot(fire_boundary_utm,
-     add = TRUE)
-```
-
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire04-difference-normalized-burn-ratio-vegetation-indices-R/nbr-pre-fire-1.png" title="Pre fire landsat derived NBR plot" alt="Pre fire landsat derived NBR plot" width="90%" />
-
-Now you can calculate the difference NBR (pre fire minus post fire )
-
-
-```r
-
-diff_nbr <- landsat_prefire_nbr - landsat_postfire_nbr
-```
-
-When you have calculated NBR - classify the output raster using the `classify()`
-function and the classes below.
-
-| SEVERITY LEVEL  | | dNBR RANGE |
-|------------------------------|
-| Enhanced Regrowth | |   > -.1 |
-| Unburned       |  | -.1 to + .1 |
-| Low Severity     | | +.1 to +.27 |
-| Moderate Severity  | | +.27 to +.66 |
-| High Severity     |  |  > +.66  |
-
-NOTE: your min an max values for NBR may be slightly different from the table
-shown above! If you have a smaller min value (< -700) then adjust your first class
-to that smallest number. If you have a largest max value (>1300) then adjust
-your last class to that largest value in your data.
-
-Alternatively, you can set those values to NA if you think they are outside of
-the valid range of NBR (in this case they are not).
-
-
-
-You `R` classified map should look something like:
-
-
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire04-difference-normalized-burn-ratio-vegetation-indices-R/classify-output-plot3-1.png" title="classified NBR output" alt="classified NBR output" width="90%" />
 
 
 
 
-```r
-barplot(nbr_classified,
-        main = "Distribution of Classified NBR Values",
-        col = the_colors,
-        names.arg = c("Enhanced \nRegrowth", "Unburned", "Low \n Severity", "Moderate \n Severity", "High \nSeverity"))
-```
-
-<img src="{{ site.url }}/images/courses/earth-analytics-r/08-multispectral-remote-sensing-fire/in-class/2017-03-01-fire04-difference-normalized-burn-ratio-vegetation-indices-R/view-barplot1-1.png" title="plot barplot of fire severity values with labels" alt="plot barplot of fire severity values with labels" width="90%" />
 
 
-<div class="notice--info" markdown="1">
 
-## Additional Resources
 
-* <a href="http://gsp.humboldt.edu/olm_2015/Courses/GSP_216_Online/lesson5-1/NBR.html" target="_blank">Humboldt GSP Course online NBR lesson</a>
 
-</div>
+
+

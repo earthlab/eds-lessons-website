@@ -8,7 +8,7 @@ class-lesson: ['get-to-know-r']
 permalink: /courses/earth-analytics/time-series-data/open-plot-spreadsheet-data-in-R/
 nav-title: 'Open Spreadsheet Data'
 dateCreated: 2016-12-13
-modified: '2019-08-23'
+modified: '2019-09-03'
 week: 2
 sidebar:
   nav:
@@ -190,7 +190,7 @@ qplot(x = boulder_precip$DATE,
       y = boulder_precip$PRECIP)
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/get-to-know-r/2017-01-25-R04-spreadsheet-data-r/quick-plot-1.png" title="plot precipitation data" alt="plot precipitation data" width="90%" />
+<img src="{{ site.url }}/images/courses//earth-analytics-r/02-time-series-data/get-to-know-r/2017-01-25-R04-spreadsheet-data-r/quick-plot-1.png" title="plot precipitation data" alt="plot precipitation data" width="90%" />
 
 <div class="notice--warning" markdown="1">
 

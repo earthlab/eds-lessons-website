@@ -8,7 +8,7 @@ class-lesson: ['get-to-know-r']
 permalink: /courses/earth-analytics/time-series-data/basic-r-syntax-scientific-programming/
 nav-title: 'Get to know R'
 dateCreated: 2016-12-13
-modified: '2019-08-23'
+modified: '2019-09-03'
 module-title: 'Get to Know R'
 module-nav-title: 'Get to Know R'
 module-description: 'This module introduces the R scientific programming language.
@@ -111,7 +111,7 @@ qplot(x = boulder_precip$DATE,
       y = boulder_precip$PRECIP)
 ```
 
-<img src="{{ site.url }}/images/courses/earth-analytics-r/02-time-series-data/get-to-know-r/2017-01-25-R01-get-to-know-r/open-file-1.png" title="precip data plot" alt="precip data plot" width="90%" />
+<img src="{{ site.url }}/images/courses//earth-analytics-r/02-time-series-data/get-to-know-r/2017-01-25-R01-get-to-know-r/open-file-1.png" title="precip data plot" alt="precip data plot" width="90%" />
 
 The code above uses syntax that is unique the `R` programming language.
 Syntax is the characters or commands that `R` understands and associated
