@@ -118,12 +118,12 @@ climate_tweets <- search_tweets(q = "#climatechange", n = 10000, lang = "en",
                              include_rts = FALSE)
 # check data to see if there are emojis
 head(climate_tweets$text)
-## [1] "Today @LordMayorDublin @PaulMcauliffe &amp; Owen Keegan, CEO presented the @DubCityCouncil Climate Action Plan to @RichardbrutonTD \nRead it here - https://t.co/HZdOWcAnRd #ClimateAction #ClimateChange https://t.co/oYRWR2Ln7I"                                                                                  
-## [2] "#Land is connected to all 17 #SDGs. These goals have the power to end #poverty, fight #inequality and stop #climatechange. \n\n #UNCCDCOP14 gives new momentum to LandDegradationNeutrality with new initiatives to create green #jobs, build #stability and eradicate #poverty. \n\n#SDG1⤵️ https://t.co/is44rP6VwE"
-## [3] "Effects of #climatechange on the Great Lakes: https://t.co/Va5hIPDykK"                                                                                                                                                                                                                                              
-## [4] "#ClimateChange: \n\n1. It’s real. \n2. It’s bad, and getting worse. \n3. It’s us. \n4. We know how to fix it. \n\nEmit less carbon. https://t.co/e56NDIgT5k"                                                                                                                                                        
-## [5] "@EricBoehlert Bill Clinton from day one of his first day in office made #ClimateChange priority. Unnerving to see the few vague mentions by MSM act like no one has ever tried before."                                                                                                                             
-## [6] "@peanut_brigade @SenatorObvious So sorry. It was a horrible time. Think about where we would be today #ClimateChange had policies from Carter, Clinton, Obama, Gore, been carried forward. Just 4 more years of Carter, 8 years of Gore, Hillary instead of Trump. We would be living in a different world."
+## [1] "With the increased need for building resilience to #climatechange in the Asia-Pacific region, the number of AF projects in this region has reached one-third of its total projects. See the list of the projects on a map view. #APClimateWeek  https://t.co/5WhKsYt8UY https://t.co/BWJ4eGwgiP"                                                                                                                                                            
+## [2] "@ResisterForever @Noself74 @BBonisteel @catlover0812 @WhiteRoseVoice1 @ScottHorn84 @lcv1961 @VegasMel @christa_m_art @lisabe65 @wvjoe911 @VaxRainmaker @greenery444 @MelissaR7777 @ttstime @AndrewVoteBlue @HouseOfDNY @ArtisanPastry @barjarm @daverliming All Followed #PamsTuesdayFam #9...#Resist #VoteBlue\n#StrongerTogether #StopAnimalCruelty #BestFriends\n#ImpeachTrump #DitchMoscowMitch #ClimateChange"                                         
+## [3] "@ResisterForever @KanakaMark @JakeCommentary @angelique_betts @Tedderman1 @pitchmyWalkman @joelcrawford271 @alyanne94 @kay_merlino @EricaFawn3 @Ajohms1956 @putmygamefaceon @dalee1203 @ArresthimNow @MrRaulJenkins @jupiterboy100 @MomRaePowers @I_do_despair All Followed #PamsSundayFam #7...#StrongerTogether #BlueWave\n#Resist #StopAnimalCruelty #BanTrophyHunting #ClimateChange\n#GlobalWarming #BelieveScience #GunReformNow"                     
+## [4] "@ResisterForever @AprilGreen93 @dennismiya12 @KateVAisHOME @thebabs780 @OceanGirl790 @CappaSteve @hilarysontag @ResoluteOldSoul @Super_woman2730 @scoootchover @LexSoutherland @june_heinz @LetsGetBusy_ @janet_bredewoud @LiftForever67 @NattyBumpo74 @CyndyTaylor All Followed #PamsSundayFam #9...#StrongerTogether #BlueWave\n#StopAnimalCruelty #ProtectEndangeredSpecies #ClimateChange\n#EndCorporateWelfare #EndfossilFuelSubsidies #BelieveScience"
+## [5] "@ResisterForever @talks2you1 @BeeCinny2 @hammond777 @AKSCW @JillyRogue @SJW_Resistor @CSCFProfits @RosaResistHate @kenmwells @rescueallthedog @ajchester66 @Duenner_Mann_ @SysArch @dawnresist @Dankskelly @seebreego @lott_hayley @jabberpath @thsisbsitstinks Followed All #PamsMondayFam #6....#Resist #BlueTsunami\n#StrongerTogether #StopAnimalCruelty #BestFriends #ProtectEPA\n#ClimateChange #NoBigChemical #NoBigOil #BelieveScience"             
+## [6] "@ResisterForever @SherriWhit @PatrickLogicman @lindalbay @snuggles0711 @mmercado86 @owenscomp @Eileenleftnotri @OGKINGJAMES @whiterhino42 @judyisnotabot @LolaResists @Juleebug11 @ManojJalota @What00is00life @ms_vizuete @KITTYBAYOUTSFAN @WaitJustOneMin1 Followed All #PamsMondayFam #3...#Resist #BlueWave\n#StopAnimalCruelty #FlipTheSenate #StopElectionFraud\n#StopVoteSuppression #ClimateChange #GlobalWarming"
 ```
 
 ## Data Clean-Up
@@ -234,7 +234,7 @@ head(stop_words)
 ## 6 according SMART
 
 nrow(climate_tweets_clean)
-## [1] 247504
+## [1] 247803
 
 # remove stop words from your list of words
 cleaned_tweet_words <- climate_tweets_clean %>%
@@ -242,7 +242,7 @@ cleaned_tweet_words <- climate_tweets_clean %>%
 
 # there should be fewer words now
 nrow(cleaned_tweet_words)
-## [1] 133573
+## [1] 133608
 ```
 
 Now that you've performed this final step of cleaning, you can try to plot, once
@@ -287,20 +287,20 @@ climate_tweets_paired_words <- climate_tweets %>%
 
 climate_tweets_paired_words %>%
   count(paired_words, sort = TRUE)
-## # A tibble: 134,724 x 2
+## # A tibble: 134,905 x 2
 ##    paired_words         n
 ##    <chr>            <int>
-##  1 climate change    1009
-##  2 of the             804
-##  3 in the             795
-##  4 climatechange is   555
-##  5 is a               449
-##  6 of climatechange   438
-##  7 on the             384
-##  8 on climatechange   379
-##  9 to the             357
-## 10 this is            328
-## # … with 134,714 more rows
+##  1 climate change    1014
+##  2 of the             806
+##  3 in the             799
+##  4 climatechange is   560
+##  5 is a               446
+##  6 of climatechange   442
+##  7 on the             385
+##  8 on climatechange   372
+##  9 to the             358
+## 10 this is            330
+## # … with 134,895 more rows
 ```
 
 
@@ -322,11 +322,11 @@ head(climate_words_counts)
 ## # A tibble: 6 x 3
 ##   word1         word2             n
 ##   <chr>         <chr>         <int>
-## 1 climate       change         1009
-## 2 climatechange climatecrisis   223
+## 1 climate       change         1014
+## 2 climatechange climatecrisis   225
 ## 3 global        warming         148
 ## 4 climatechange globalwarming   127
-## 5 hurricane     dorian          111
+## 5 hurricane     dorian          113
 ## 6 fight         climatechange   102
 ```
 
