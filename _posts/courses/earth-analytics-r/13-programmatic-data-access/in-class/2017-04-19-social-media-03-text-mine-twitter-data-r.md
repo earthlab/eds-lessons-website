@@ -118,12 +118,12 @@ climate_tweets <- search_tweets(q = "#climatechange", n = 10000, lang = "en",
                              include_rts = FALSE)
 # check data to see if there are emojis
 head(climate_tweets$text)
-## [1] "You’ll die of old age, I’ll die to climate change #ClimateChange #ClimateAction #ClimateChangeIsReal #ClimateCrisis #climatebrawl https://t.co/BiryJeipnn"                                                                                                                                    
-## [2] "And that is why #FridaysForFuture is awesome: they are not the \"usual suspects\" and defend something that society as a whole can understand: the right to a future in our planet\n\n#climatechange #climatecomms https://t.co/EGpT5DVkmy"                                                   
-## [3] "Being Canadian, I really enjoyed @hasanminhaj's latest episode of #PatriotAct. #WakanadaForever @JustinTrudeau #ClimateChange #Pipeline #WhitePanther @netflix #netflix"                                                                                                                      
-## [4] "It’s a bad idea to tax activities you want to encourage. If the Scot Gov are serious about tackling #climatechange, vehicle emissions &amp; congestion then they should invest in Edinburgh’s Park and ride network. Better still, improve bus links to Edinburgh.\n\nhttps://t.co/QCHzSYtGEx"
-## [5] "This will test their #ClimateChange rhetoric. https://t.co/EMA6aT68AT"                                                                                                                                                                                                                        
-## [6] "So despite having declared a #ClimateEmergency, Nicola Sturgeon thinks she can dodge questions on her support for the expansion of Heathrow Airport.\n\nThe time for empty rhetoric on #climatechange is over, it's time for Governments to act."
+## [1] "Today @LordMayorDublin @PaulMcauliffe &amp; Owen Keegan, CEO presented the @DubCityCouncil Climate Action Plan to @RichardbrutonTD \nRead it here - https://t.co/HZdOWcAnRd #ClimateAction #ClimateChange https://t.co/oYRWR2Ln7I"                                                                                  
+## [2] "#Land is connected to all 17 #SDGs. These goals have the power to end #poverty, fight #inequality and stop #climatechange. \n\n #UNCCDCOP14 gives new momentum to LandDegradationNeutrality with new initiatives to create green #jobs, build #stability and eradicate #poverty. \n\n#SDG1⤵️ https://t.co/is44rP6VwE"
+## [3] "Effects of #climatechange on the Great Lakes: https://t.co/Va5hIPDykK"                                                                                                                                                                                                                                              
+## [4] "#ClimateChange: \n\n1. It’s real. \n2. It’s bad, and getting worse. \n3. It’s us. \n4. We know how to fix it. \n\nEmit less carbon. https://t.co/e56NDIgT5k"                                                                                                                                                        
+## [5] "@EricBoehlert Bill Clinton from day one of his first day in office made #ClimateChange priority. Unnerving to see the few vague mentions by MSM act like no one has ever tried before."                                                                                                                             
+## [6] "@peanut_brigade @SenatorObvious So sorry. It was a horrible time. Think about where we would be today #ClimateChange had policies from Carter, Clinton, Obama, Gore, been carried forward. Just 4 more years of Carter, 8 years of Gore, Hillary instead of Trump. We would be living in a different world."
 ```
 
 ## Data Clean-Up
@@ -234,7 +234,7 @@ head(stop_words)
 ## 6 according SMART
 
 nrow(climate_tweets_clean)
-## [1] 247372
+## [1] 247504
 
 # remove stop words from your list of words
 cleaned_tweet_words <- climate_tweets_clean %>%
@@ -242,7 +242,7 @@ cleaned_tweet_words <- climate_tweets_clean %>%
 
 # there should be fewer words now
 nrow(cleaned_tweet_words)
-## [1] 133538
+## [1] 133573
 ```
 
 Now that you've performed this final step of cleaning, you can try to plot, once
@@ -287,20 +287,20 @@ climate_tweets_paired_words <- climate_tweets %>%
 
 climate_tweets_paired_words %>%
   count(paired_words, sort = TRUE)
-## # A tibble: 134,631 x 2
+## # A tibble: 134,724 x 2
 ##    paired_words         n
 ##    <chr>            <int>
-##  1 climate change    1012
-##  2 of the             802
-##  3 in the             788
-##  4 climatechange is   557
-##  5 is a               450
-##  6 of climatechange   435
+##  1 climate change    1009
+##  2 of the             804
+##  3 in the             795
+##  4 climatechange is   555
+##  5 is a               449
+##  6 of climatechange   438
 ##  7 on the             384
-##  8 on climatechange   380
-##  9 to the             353
-## 10 this is            325
-## # … with 134,621 more rows
+##  8 on climatechange   379
+##  9 to the             357
+## 10 this is            328
+## # … with 134,714 more rows
 ```
 
 
@@ -322,12 +322,12 @@ head(climate_words_counts)
 ## # A tibble: 6 x 3
 ##   word1         word2             n
 ##   <chr>         <chr>         <int>
-## 1 climate       change         1012
-## 2 climatechange climatecrisis   224
-## 3 global        warming         147
-## 4 climatechange globalwarming   130
-## 5 hurricane     dorian          109
-## 6 fight         climatechange   101
+## 1 climate       change         1009
+## 2 climatechange climatecrisis   223
+## 3 global        warming         148
+## 4 climatechange globalwarming   127
+## 5 hurricane     dorian          111
+## 6 fight         climatechange   102
 ```
 
 Finally, plot the data
