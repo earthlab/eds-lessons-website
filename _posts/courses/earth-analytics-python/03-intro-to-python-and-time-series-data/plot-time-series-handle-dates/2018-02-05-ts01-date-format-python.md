@@ -72,11 +72,11 @@ import earthpy as et
 from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 
-# Set working directory
-os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
-
 # Get the data
 data = et.data.get_data('colorado-flood')
+
+# Set working directory
+os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 
 # Prettier plotting with seaborn
 sns.set(font_scale=1.5, style="whitegrid")
@@ -96,7 +96,7 @@ urllib.request.urlretrieve(url='https://ndownloader.figshare.com/files/12948515'
 
 
     ('data/colorado-flood/downloads/july-2018-temperature-precip.csv',
-     <http.client.HTTPMessage at 0x7f6d3b97d780>)
+     <http.client.HTTPMessage at 0x7f74c9a857b8>)
 
 
 
