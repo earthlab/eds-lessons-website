@@ -118,12 +118,12 @@ climate_tweets <- search_tweets(q = "#climatechange", n = 10000, lang = "en",
                              include_rts = FALSE)
 # check data to see if there are emojis
 head(climate_tweets$text)
-## [1] "With the increased need for building resilience to #climatechange in the Asia-Pacific region, the number of AF projects in this region has reached one-third of its total projects. See the list of the projects on a map view. #APClimateWeek  https://t.co/5WhKsYt8UY https://t.co/BWJ4eGwgiP"                                                                                                                                                            
-## [2] "@ResisterForever @Noself74 @BBonisteel @catlover0812 @WhiteRoseVoice1 @ScottHorn84 @lcv1961 @VegasMel @christa_m_art @lisabe65 @wvjoe911 @VaxRainmaker @greenery444 @MelissaR7777 @ttstime @AndrewVoteBlue @HouseOfDNY @ArtisanPastry @barjarm @daverliming All Followed #PamsTuesdayFam #9...#Resist #VoteBlue\n#StrongerTogether #StopAnimalCruelty #BestFriends\n#ImpeachTrump #DitchMoscowMitch #ClimateChange"                                         
-## [3] "@ResisterForever @KanakaMark @JakeCommentary @angelique_betts @Tedderman1 @pitchmyWalkman @joelcrawford271 @alyanne94 @kay_merlino @EricaFawn3 @Ajohms1956 @putmygamefaceon @dalee1203 @ArresthimNow @MrRaulJenkins @jupiterboy100 @MomRaePowers @I_do_despair All Followed #PamsSundayFam #7...#StrongerTogether #BlueWave\n#Resist #StopAnimalCruelty #BanTrophyHunting #ClimateChange\n#GlobalWarming #BelieveScience #GunReformNow"                     
-## [4] "@ResisterForever @AprilGreen93 @dennismiya12 @KateVAisHOME @thebabs780 @OceanGirl790 @CappaSteve @hilarysontag @ResoluteOldSoul @Super_woman2730 @scoootchover @LexSoutherland @june_heinz @LetsGetBusy_ @janet_bredewoud @LiftForever67 @NattyBumpo74 @CyndyTaylor All Followed #PamsSundayFam #9...#StrongerTogether #BlueWave\n#StopAnimalCruelty #ProtectEndangeredSpecies #ClimateChange\n#EndCorporateWelfare #EndfossilFuelSubsidies #BelieveScience"
-## [5] "@ResisterForever @talks2you1 @BeeCinny2 @hammond777 @AKSCW @JillyRogue @SJW_Resistor @CSCFProfits @RosaResistHate @kenmwells @rescueallthedog @ajchester66 @Duenner_Mann_ @SysArch @dawnresist @Dankskelly @seebreego @lott_hayley @jabberpath @thsisbsitstinks Followed All #PamsMondayFam #6....#Resist #BlueTsunami\n#StrongerTogether #StopAnimalCruelty #BestFriends #ProtectEPA\n#ClimateChange #NoBigChemical #NoBigOil #BelieveScience"             
-## [6] "@ResisterForever @SherriWhit @PatrickLogicman @lindalbay @snuggles0711 @mmercado86 @owenscomp @Eileenleftnotri @OGKINGJAMES @whiterhino42 @judyisnotabot @LolaResists @Juleebug11 @ManojJalota @What00is00life @ms_vizuete @KITTYBAYOUTSFAN @WaitJustOneMin1 Followed All #PamsMondayFam #3...#Resist #BlueWave\n#StopAnimalCruelty #FlipTheSenate #StopElectionFraud\n#StopVoteSuppression #ClimateChange #GlobalWarming"
+## [1] "#ClimateChange #ClimateChangeHoax \nWhen money is the motivator dont expect ethics. https://t.co/87F3KgtLpL"                                                                                                                                                                                            
+## [2] "@HouseForeign @RepEliotEngel Thank you @RepEliotEngel for acknowledging the impending crisis of #climatechange, and how it is already affecting the lives of thousands. #dorianbahamas"                                                                                                                 
+## [3] "There really should be no left, right or centerist view when it comes to #ClimateChange #ClimateCrisis\nIt is and it will impact everyone no matter where you stand politically.\nWhatever side you're on, it WILL IMPACT YOU.\n\nThis is not a battle of politics."                                    
+## [4] "My thoughts are with the Bahamas as they cope with the devastating impact of #HurricaneDorian. U.S. Gov’t must provide immediate relief. \n\nSadly, these storms are getting bigger &amp; occurring more frequently. It's past time to address the effect of #ClimateChange."                           
+## [5] "There are just 2️⃣ days left for you to contribute to @greylockglass's Boost for an investigation into how #climatechange will affect local food systems. Donate here! https://t.co/vzLBqsRl2q"                                                                                                           
+## [6] "@KwameGilbert #climatechange #earth We're delighted to HEAR that national leaders @sanchezcastejon and @CarlosAlvQ will be speaking at the Opening Ceremony of #ClimateWeekNYC!!\nFinding out more about this year's stellar line-up of speakers and #ClimateActionNOW leaders: https://t.co/EbdDro52vI"
 ```
 
 ## Data Clean-Up
@@ -234,7 +234,7 @@ head(stop_words)
 ## 6 according SMART
 
 nrow(climate_tweets_clean)
-## [1] 247803
+## [1] 247760
 
 # remove stop words from your list of words
 cleaned_tweet_words <- climate_tweets_clean %>%
@@ -242,7 +242,7 @@ cleaned_tweet_words <- climate_tweets_clean %>%
 
 # there should be fewer words now
 nrow(cleaned_tweet_words)
-## [1] 133608
+## [1] 133699
 ```
 
 Now that you've performed this final step of cleaning, you can try to plot, once
@@ -287,20 +287,20 @@ climate_tweets_paired_words <- climate_tweets %>%
 
 climate_tweets_paired_words %>%
   count(paired_words, sort = TRUE)
-## # A tibble: 134,905 x 2
+## # A tibble: 134,704 x 2
 ##    paired_words         n
 ##    <chr>            <int>
-##  1 climate change    1014
-##  2 of the             806
-##  3 in the             799
-##  4 climatechange is   560
-##  5 is a               446
-##  6 of climatechange   442
-##  7 on the             385
-##  8 on climatechange   372
+##  1 climate change    1013
+##  2 of the             803
+##  3 in the             801
+##  4 climatechange is   565
+##  5 is a               445
+##  6 of climatechange   440
+##  7 on the             384
+##  8 on climatechange   365
 ##  9 to the             358
-## 10 this is            330
-## # … with 134,895 more rows
+## 10 this is            332
+## # … with 134,694 more rows
 ```
 
 
@@ -322,12 +322,12 @@ head(climate_words_counts)
 ## # A tibble: 6 x 3
 ##   word1         word2             n
 ##   <chr>         <chr>         <int>
-## 1 climate       change         1014
-## 2 climatechange climatecrisis   225
-## 3 global        warming         148
-## 4 climatechange globalwarming   127
-## 5 hurricane     dorian          113
-## 6 fight         climatechange   102
+## 1 climate       change         1013
+## 2 climatechange climatecrisis   228
+## 3 climatechange globalwarming   145
+## 4 global        warming         145
+## 5 hurricane     dorian          114
+## 6 fight         climatechange   100
 ```
 
 Finally, plot the data
