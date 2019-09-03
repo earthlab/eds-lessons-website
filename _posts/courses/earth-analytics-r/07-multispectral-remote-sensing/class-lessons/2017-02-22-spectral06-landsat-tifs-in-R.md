@@ -192,7 +192,18 @@ grab a list of all files within any directory on your computer.
 ```r
 # get list of all tifs
 list.files("data/week-07/landsat/LC80340322016205-SC20170127160728/crop")
-## character(0)
+##  [1] "LC80340322016205LGN00_bqa_crop.tif"        
+##  [2] "LC80340322016205LGN00_cfmask_conf_crop.tif"
+##  [3] "LC80340322016205LGN00_cfmask_crop.tif"     
+##  [4] "LC80340322016205LGN00_sr_band1_crop.tif"   
+##  [5] "LC80340322016205LGN00_sr_band2_crop.tif"   
+##  [6] "LC80340322016205LGN00_sr_band3_crop.tif"   
+##  [7] "LC80340322016205LGN00_sr_band4_crop.tif"   
+##  [8] "LC80340322016205LGN00_sr_band5_crop.tif"   
+##  [9] "LC80340322016205LGN00_sr_band6_crop.tif"   
+## [10] "LC80340322016205LGN00_sr_band7_crop.tif"   
+## [11] "LC80340322016205LGN00_sr_cloud_crop.tif"   
+## [12] "LC80340322016205LGN00_sr_ipflag_crop.tif"
 ```
 
 You can also use `list.files()` with the pattern argument. This allows you to specify
@@ -211,7 +222,18 @@ all_landsat_bands <- list.files("data/week-07/landsat/LC80340322016205-SC2017012
                       pattern = ".tif$",
                       full.names = TRUE) # make sure you have the full path to the file
 all_landsat_bands
-## character(0)
+##  [1] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_bqa_crop.tif"        
+##  [2] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_cfmask_conf_crop.tif"
+##  [3] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_cfmask_crop.tif"     
+##  [4] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_band1_crop.tif"   
+##  [5] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_band2_crop.tif"   
+##  [6] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_band3_crop.tif"   
+##  [7] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_band4_crop.tif"   
+##  [8] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_band5_crop.tif"   
+##  [9] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_band6_crop.tif"   
+## [10] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_band7_crop.tif"   
+## [11] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_cloud_crop.tif"   
+## [12] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_ipflag_crop.tif"
 ```
 
 Above, you use the `$` after `.tif` to tell `R` to look for files that end with .tif.
@@ -240,7 +262,13 @@ all_landsat_bands <- list.files("data/week-07/landsat/LC80340322016205-SC2017012
            pattern = glob2rx("*band*.tif$"),
            full.names = TRUE) # use the dollar sign at the end to get all files that END WITH
 all_landsat_bands
-## character(0)
+## [1] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_band1_crop.tif"
+## [2] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_band2_crop.tif"
+## [3] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_band3_crop.tif"
+## [4] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_band4_crop.tif"
+## [5] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_band5_crop.tif"
+## [6] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_band6_crop.tif"
+## [7] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_band7_crop.tif"
 ```
 
 ## Open the .tif Files in R
@@ -249,14 +277,132 @@ Now you have a list of all of the Landsat bands in your folder. You could chose 
 open each file individually using the `raster()` function.
 
 
+```r
+# get first file
+all_landsat_bands[2]
+## [1] "data/week-07/landsat/LC80340322016205-SC20170127160728/crop/LC80340322016205LGN00_sr_band2_crop.tif"
+landsat_band2 <- raster(all_landsat_bands[2])
+plot(landsat_band2,
+     main = "Landsat cropped band 2\nCold Springs fire scar",
+     col = gray(0:100 / 100))
+```
+
+<img src="{{ site.url }}/images/courses/earth-analytics-r/07-multispectral-remote-sensing/class-lessons/2017-02-22-spectral06-landsat-tifs-in-R/plot-landsat-band-2-cold-springs-1.png" title="Landsat band 2 plot of Cold Springs fire scar." alt="Landsat band 2 plot of Cold Springs fire scar." width="90%" />
+
+However, that is not a very efficient approach.
+It's more efficiently to open all of the layers together as a stack. Then you can
+access each of the bands and plot / use them as you want. You can do that using the
+`stack()` function.
+
+
+```r
+# stack the data
+landsat_stack_csf <- stack(all_landsat_bands)
+# then turn it into a brick
+landsat_csf_br <- brick(landsat_stack_csf)
+# view stack attributes
+landsat_csf_br
+## class      : RasterBrick 
+## dimensions : 177, 246, 43542, 7  (nrow, ncol, ncell, nlayers)
+## resolution : 30, 30  (x, y)
+## extent     : 455655, 463035, 4423155, 4428465  (xmin, xmax, ymin, ymax)
+## crs        : +proj=utm +zone=13 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0 
+## source     : memory
+## names      : LC8034032//band1_crop, LC8034032//band2_crop, LC8034032//band3_crop, LC8034032//band4_crop, LC8034032//band5_crop, LC8034032//band6_crop, LC8034032//band7_crop 
+## min values :                     0,                     0,                     0,                     0,                     0,                     0,                     0 
+## max values :                  3488,                  3843,                  4746,                  5152,                  5674,                  4346,                  3767
+```
+
+
+Let's plot each individual band in your brick.
+
+
+```r
+plot(landsat_csf_br,
+     col = gray(20:100 / 100))
+```
+
+<img src="{{ site.url }}/images/courses/earth-analytics-r/07-multispectral-remote-sensing/class-lessons/2017-02-22-spectral06-landsat-tifs-in-R/plot-stack-default-1.png" title="Plot all individual Landsat bands." alt="Plot all individual Landsat bands." width="90%" />
+
+
+```r
+# get list of each layer name
+names(landsat_csf_br)
+## [1] "LC80340322016205LGN00_sr_band1_crop"
+## [2] "LC80340322016205LGN00_sr_band2_crop"
+## [3] "LC80340322016205LGN00_sr_band3_crop"
+## [4] "LC80340322016205LGN00_sr_band4_crop"
+## [5] "LC80340322016205LGN00_sr_band5_crop"
+## [6] "LC80340322016205LGN00_sr_band6_crop"
+## [7] "LC80340322016205LGN00_sr_band7_crop"
+
+# remove the filename from each band name for pretty plotting
+names(landsat_csf_br) <- gsub(pattern = "LC80340322016205LGN00_sr_", replacement = "", names(landsat_csf_br))
+plot(landsat_csf_br,
+     col = gray(20:100 / 100))
+```
+
+<img src="{{ site.url }}/images/courses/earth-analytics-r/07-multispectral-remote-sensing/class-lessons/2017-02-22-spectral06-landsat-tifs-in-R/plot-stack-clean-names-1.png" title="Plot all individual Landsat bands with clean names." alt="Plot all individual Landsat bands with clean names." width="90%" />
+
+## Plot RGB Composite Band Images with Landsat in R
+
+Next, let's plot an RGB image using Landsat. Refer to the Landsat bands in the table
+at the top of this page to figure out the red, green and blue bands. Or read the
+<a href="https://blogs.esri.com/esri/arcgis/2013/07/24/band-combinations-for-landsat-8/" target="_blank">ESRI Landsat 8 band combinations</a> post.
+
+
+```r
+par(col.axis = "white", col.lab = "white", tck = 0)
+plotRGB(landsat_csf_br,
+     r = 4, g = 3, b = 2,
+     stretch = "lin",
+     axes = TRUE,
+     main = "RGB composite image\n Landsat Bands 4, 3, 2")
+box(col = "white")
+```
+
+<img src="{{ site.url }}/images/courses/earth-analytics-r/07-multispectral-remote-sensing/class-lessons/2017-02-22-spectral06-landsat-tifs-in-R/plot-landsat-rgb-composite-1.png" title="Plot Landsat RGB composite." alt="Plot Landsat RGB composite." width="90%" />
+
+Now we've created a red, green blue color composite image. Remember this is what
+your eye would see. What happens if you plot the near infrared band instead of red?
+Try the following combination:
 
 
 
+```r
+par(col.axis = "white", col.lab = "white", tck = 0)
+plotRGB(landsat_csf_br,
+     r = 5, g = 4, b = 3,
+     stretch = "lin",
+     axes = TRUE,
+     main = "Color infrared composite image\n Landsat Bands 5, 4, 3\n Post Fire Data")
+box(col = "white")
+```
+
+<img src="{{ site.url }}/images/courses/earth-analytics-r/07-multispectral-remote-sensing/class-lessons/2017-02-22-spectral06-landsat-tifs-in-R/plot-landsat-cir-composite-1.png" title="Plot Landsat CIR composite." alt="Plot Landsat CIR composite." width="90%" />
 
 
+<div class="notice--warning" markdown="1">
+
+## <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Optional Challenge
+Using the <a href="https://blogs.esri.com/esri/arcgis/2013/07/24/band-combinations-for-landsat-8/" target="_blank">ESRI Landsat 8 band combinations</a> post as a guide. Plot the
+following Landsat band combinations:
+
+* False color
+* Color infrared
+* Agriculture
+* Healthy vegetation
+
+Be sure to add a title to each of your plots that specifies the band combination.
+
+</div>
 
 
+<div class="notice--info" markdown="1">
 
+## Additional Resources
 
+* <a href="https://landweb.modaps.eosdis.nasa.gov/browse/calendar.html" target="_blank">NASA Julian Day Lookup</a>
+* <a href="https://landweb.modaps.eosdis.nasa.gov/browse/calendar.html" target="_blank">Landweb NASA Julian Day Lookup</a>
 
-
+</div>

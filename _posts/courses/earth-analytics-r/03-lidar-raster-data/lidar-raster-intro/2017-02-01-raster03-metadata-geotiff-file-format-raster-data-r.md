@@ -90,14 +90,116 @@ You can use `GDALinfo()` to view all of the relevant tif tags embedded within a
 `geotiff` before you open it in `R`.
 
 
+```r
+# view attributes associated with your DTM geotiff
+GDALinfo("data/week-03/BLDR_LeeHill/pre-flood/lidar/pre_DTM.tif")
+## rows        2000 
+## columns     4000 
+## bands       1 
+## lower left origin.x        472000 
+## lower left origin.y        4434000 
+## res.x       1 
+## res.y       1 
+## ysign       -1 
+## oblique.x   0 
+## oblique.y   0 
+## driver      GTiff 
+## projection  +proj=utm +zone=13 +datum=WGS84 +units=m +no_defs 
+## file        data/week-03/BLDR_LeeHill/pre-flood/lidar/pre_DTM.tif 
+## apparent band summary:
+##    GDType hasNoDataValue                              NoDataValue
+## 1 Float32           TRUE -340282346638528859811704183484516925440
+##   blockSize1 blockSize2
+## 1        128        128
+## apparent band statistics:
+##          Bmin       Bmax Bmean Bsd
+## 1 -4294967295 4294967295    NA  NA
+## Metadata:
+## AREA_OR_POINT=Area
+```
+
+The information returned from `GDALinfo()` includes:
+
+* x and y resolution
+* projection
+* data format (in this case your data are stored in float format which means they contain decimals)
+
+and more.
+
+You can also extract or view individual metadata attributes.
 
 
+```r
+# view attributes / metadata of raster
+# open raster data
+lidar_dem <- raster(x = "data/week-03/BLDR_LeeHill/pre-flood/lidar/pre_DTM.tif")
+# view crs
+crs(lidar_dem)
+## CRS arguments:
+##  +proj=utm +zone=13 +datum=WGS84 +units=m +no_defs +ellps=WGS84
+## +towgs84=0,0,0
+
+# view extent via the slot - note that slot names can change so this may not always work.
+lidar_dem@extent
+## class      : Extent 
+## xmin       : 472000 
+## xmax       : 476000 
+## ymin       : 4434000 
+## ymax       : 4436000
+```
+
+If you extract metadata from your data, you can then perform tests on the data as
+you process it. For instance, you can ask the question:
+
+> Do both datasets have the same spatial extent?
+
+Let's find out the answer to this question using `R`.
 
 
+```r
+lidar_dsm <- raster(x = "data/week-03/BLDR_LeeHill/pre-flood/lidar/pre_DSM.tif")
+
+extent_lidar_dsm <- extent(lidar_dsm)
+extent_lidar_dem <- extent(lidar_dem)
+
+# Do the two datasets cover the same spatial extents?
+if (extent_lidar_dem == extent_lidar_dsm) {
+  print("Both datasets cover the same spatial extent")
+}
+## [1] "Both datasets cover the same spatial extent"
+```
+
+Does the data have the same spatial extents?
 
 
+```r
+compareRaster(lidar_dsm, lidar_dem,
+              extent = TRUE)
+## [1] TRUE
+```
+
+or resolution?
 
 
+```r
+compareRaster(lidar_dsm, lidar_dem,
+              res = TRUE)
+## [1] TRUE
+```
 
 
+## Single Layer (or Band) vs Multi-Layer (Band Geotiffs)
 
+You will learn this further when you work with RGB (color) imagery in later weeks
+of this course, however `geotiff`s can also store more than one band or layer. You
+can see if a raster object has more than one layer using the `nlayers()` function
+in `R`.
+
+
+```r
+nlayers(lidar_dsm)
+## [1] 1
+```
+
+Now that you better understand the `geotiff` file format, you will work with some
+other lidar raster data layers.

@@ -118,12 +118,12 @@ climate_tweets <- search_tweets(q = "#climatechange", n = 10000, lang = "en",
                              include_rts = FALSE)
 # check data to see if there are emojis
 head(climate_tweets$text)
-## [1] "#ClimateChange #ClimateChangeHoax \nWhen money is the motivator dont expect ethics. https://t.co/87F3KgtLpL"                                                                                                                                                                                            
-## [2] "@HouseForeign @RepEliotEngel Thank you @RepEliotEngel for acknowledging the impending crisis of #climatechange, and how it is already affecting the lives of thousands. #dorianbahamas"                                                                                                                 
-## [3] "There really should be no left, right or centerist view when it comes to #ClimateChange #ClimateCrisis\nIt is and it will impact everyone no matter where you stand politically.\nWhatever side you're on, it WILL IMPACT YOU.\n\nThis is not a battle of politics."                                    
-## [4] "My thoughts are with the Bahamas as they cope with the devastating impact of #HurricaneDorian. U.S. Gov’t must provide immediate relief. \n\nSadly, these storms are getting bigger &amp; occurring more frequently. It's past time to address the effect of #ClimateChange."                           
-## [5] "There are just 2️⃣ days left for you to contribute to @greylockglass's Boost for an investigation into how #climatechange will affect local food systems. Donate here! https://t.co/vzLBqsRl2q"                                                                                                           
-## [6] "@KwameGilbert #climatechange #earth We're delighted to HEAR that national leaders @sanchezcastejon and @CarlosAlvQ will be speaking at the Opening Ceremony of #ClimateWeekNYC!!\nFinding out more about this year's stellar line-up of speakers and #ClimateActionNOW leaders: https://t.co/EbdDro52vI"
+## [1] "If you are feeling the impacts of climate change in your daily life, you're not alone. What do you want to protect from #climatechange? Tell us below. #AdaptOurWorld https://t.co/RFyNFRLHGB"                                                                                                                          
+## [2] "Tree 🌲 planting is great but it cannot become a PR machine for fake climate initiatives by the governments. We will not push #climatechange back by planting trees. Governments must listen and act. Real-meaningful actions. Not PR!"                                                                                  
+## [3] "Cigarette smokers &amp; vapers are exhaling additional CO2 into the air. I call on all politicians to stop smoking and ban cigarettes and vaping for the earth. If not, then shut up about #climatechange and CO2.\n\nLet’s see how much politicians care about the things they talk about. https://t.co/0v60pNd38q"    
+## [4] "@ThemeParkReview @Starbucks Make your own coffee. You can even buy the Starbucks brand in a grocery store, if it’s that important. This really is a ridiculous tantrum over something with many solutions. There are better things to worry about like the #ClimateChange that keeps causing these hurricanes."         
+## [5] "@GaryCMeleJr @DebraMessing The two party system isn’t working  for the people &amp; #Democrats need to do better because my independent vote is on loan to them. But it’s the #GOP breaking constitutional norms, refusing to protect our elections, shoving church into state, denying #ClimateChange, caging kids etc"
+## [6] "Why are #hurricanes getting bigger and moving slower? 🌪\n\n#HurricaneDorian \n#ClimateChange #ClimateChangeIsReal \n#ThereIsNoPlanetB 🌎 https://t.co/2z1JlpVnUg"
 ```
 
 ## Data Clean-Up
@@ -202,7 +202,7 @@ climate_tweets_clean %>%
       title = "Count of unique words found in tweets")
 ```
 
-<img src="{{ site.url }}/images/courses//earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/plot-uncleaned-data-1.png" title="plot of users tweeting about fire." alt="plot of users tweeting about fire." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/plot-uncleaned-data-1.png" title="plot of users tweeting about fire." alt="plot of users tweeting about fire." width="90%" />
 
 You plot of unique words contains some words that may not be useful to use. For instance
 "a" and "to". In the word of text mining you call those words - 'stop words'.
@@ -234,7 +234,7 @@ head(stop_words)
 ## 6 according SMART
 
 nrow(climate_tweets_clean)
-## [1] 247760
+## [1] 247606
 
 # remove stop words from your list of words
 cleaned_tweet_words <- climate_tweets_clean %>%
@@ -242,7 +242,7 @@ cleaned_tweet_words <- climate_tweets_clean %>%
 
 # there should be fewer words now
 nrow(cleaned_tweet_words)
-## [1] 133699
+## [1] 133584
 ```
 
 Now that you've performed this final step of cleaning, you can try to plot, once
@@ -265,7 +265,7 @@ cleaned_tweet_words %>%
       subtitle = "Stop words removed from the list")
 ```
 
-<img src="{{ site.url }}/images/courses//earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/plot-cleaned-words-1.png" title="top 15 words used in tweets" alt="top 15 words used in tweets" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/plot-cleaned-words-1.png" title="top 15 words used in tweets" alt="top 15 words used in tweets" width="90%" />
 
 ## Explore Networks of Words
 
@@ -287,20 +287,20 @@ climate_tweets_paired_words <- climate_tweets %>%
 
 climate_tweets_paired_words %>%
   count(paired_words, sort = TRUE)
-## # A tibble: 134,704 x 2
+## # A tibble: 134,656 x 2
 ##    paired_words         n
 ##    <chr>            <int>
-##  1 climate change    1013
-##  2 of the             803
-##  3 in the             801
-##  4 climatechange is   565
-##  5 is a               445
-##  6 of climatechange   440
-##  7 on the             384
-##  8 on climatechange   365
-##  9 to the             358
-## 10 this is            332
-## # … with 134,694 more rows
+##  1 climate change    1021
+##  2 of the             804
+##  3 in the             798
+##  4 climatechange is   570
+##  5 is a               442
+##  6 of climatechange   437
+##  7 on the             383
+##  8 on climatechange   364
+##  9 to the             354
+## 10 this is            331
+## # … with 134,646 more rows
 ```
 
 
@@ -322,12 +322,12 @@ head(climate_words_counts)
 ## # A tibble: 6 x 3
 ##   word1         word2             n
 ##   <chr>         <chr>         <int>
-## 1 climate       change         1013
-## 2 climatechange climatecrisis   228
-## 3 climatechange globalwarming   145
-## 4 global        warming         145
-## 5 hurricane     dorian          114
-## 6 fight         climatechange   100
+## 1 climate       change         1021
+## 2 climatechange climatecrisis   232
+## 3 climatechange globalwarming   147
+## 4 global        warming         141
+## 5 hurricane     dorian          113
+## 6 climate       crisis          100
 ```
 
 Finally, plot the data
@@ -352,7 +352,7 @@ climate_words_counts %>%
              x = "", y = "")
 ```
 
-<img src="{{ site.url }}/images/courses//earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/word-assoc-plot-1.png" title="word associations for climate change tweets" alt="word associations for climate change tweets" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/in-class/2017-04-19-social-media-03-text-mine-twitter-data-r/word-assoc-plot-1.png" title="word associations for climate change tweets" alt="word associations for climate change tweets" width="90%" />
 
 You expect the words climate & change to have a high
 

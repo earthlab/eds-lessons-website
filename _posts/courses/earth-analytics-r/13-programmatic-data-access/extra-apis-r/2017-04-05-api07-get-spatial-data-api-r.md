@@ -277,7 +277,7 @@ ggplot(water_data_df, aes(location.longitude, location.latitude, size = amount,
   labs(size = "Amount", colour = "Station Type")
 ```
 
-<img src="{{ site.url }}/images/courses//earth-analytics-r/13-programmatic-data-access/extra-apis-r/2017-04-05-api07-get-spatial-data-api-r/water_data_plot1-1.png" title="ggplot of water surface data." alt="ggplot of water surface data." width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/extra-apis-r/2017-04-05-api07-get-spatial-data-api-r/water_data_plot1-1.png" title="ggplot of water surface data." alt="ggplot of water surface data." width="90%" />
 
 Plotting the data using `ggplot()` creates a scatterplot of longitude and latitude,
 with some minor aesthetic tweaks. You really want to create a web
@@ -300,7 +300,7 @@ ggmap(boulder) +
   color = factor(station_type)))
 ```
 
-<img src="{{ site.url }}/images/courses//earth-analytics-r/13-programmatic-data-access/extra-apis-r/2017-04-05-api07-get-spatial-data-api-r/create_ggmap-1.png" title="GGMAP of water surface data" alt="GGMAP of water surface data" width="90%" />
+<img src="{{ site.url }}/images/courses/earth-analytics-r/13-programmatic-data-access/extra-apis-r/2017-04-05-api07-get-spatial-data-api-r/create_ggmap-1.png" title="GGMAP of water surface data" alt="GGMAP of water surface data" width="90%" />
 
 In the next lesson, you will learn how to create interactive maps using the leaflet
 package for `R`.

@@ -207,7 +207,7 @@ head(paste0(water_data_df$station_name, "<br/>Discharge: ", water_data_df$amount
 ## [2] "PECK PELLA CLOVER DITCH<br/>Discharge: 1.56"
 ## [3] "TRUE AND WEBSTER DITCH<br/>Discharge: 0.1"  
 ## [4] "DENIO TAYLOR DITCH<br/>Discharge: 0.01"     
-## [5] "BONUS DITCH<br/>Discharge: 23.62"           
+## [5] "BONUS DITCH<br/>Discharge: 23.33"           
 ## [6] "BOULDER RESERVOIR INLET<br/>Discharge: 64"
 ```
 
