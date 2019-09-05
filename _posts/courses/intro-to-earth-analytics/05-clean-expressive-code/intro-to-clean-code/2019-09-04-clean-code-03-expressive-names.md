@@ -2,22 +2,22 @@
 layout: single
 title: 'Use Expressive Names in Your Python Code'
 excerpt: "Expressive naming conventions help you to write code that is clean and readable, so that others can easily follow and understand your code. Learn how to create expressive names for objects in your Python code."
-authors: ['Jenny Palomino', 'Leah Wasser']
+authors: ['Leah Wasser', 'Jenny Palomino']
 category: [courses]
-class-lesson: ['python-fundamentals']
-permalink: /courses/intro-to-earth-data-science/python-fundamentals/get-started-python/expressive-names-python-objects/
+class-lesson: ['clean-expressive-code']
+permalink: /courses/intro-to-earth-data-science/write-clean-expressive-code/intro-to-clean-code/expressive-programming/
 nav-title: "Expressive Naming Conventions"
 dateCreated: 2019-09-03
-modified: 2019-09-03
+modified: 2019-09-05
 module-type: 'class'
 class-order: 1
 course: "intro-to-earth-data-science"
-week: 4
+week: 5
 sidebar:
   nav:
 author_profile: false
 comments: true
-order: 6
+order: 3
 topics:
   reproducible-science-and-programming: ['python']
 ---
@@ -36,7 +36,7 @@ topics:
 
 ## Why Use Expressive Names? 
 
-In chapter one on open reproducible science, you learned about * <a href="{{ site.url }}/courses/intro-to-earth-data-science/open-reproducible-science/get-started-open-reproducible-science/best-practices-for-organizing-open-reproducible-science/" target="_blank">best practices for organizing open reproducible science projects</a>, including how to create directories and files with names that are both expressive and machine readable.
+In chapter one on open reproducible science, you learned about <a href="{{ site.url }}/courses/intro-to-earth-data-science/open-reproducible-science/get-started-open-reproducible-science/best-practices-for-organizing-open-reproducible-science/" target="_blank">best practices for organizing open reproducible science projects</a>, including how to create directories and files with names that are both expressive and machine readable.
 
 Expressive naming applies to more than just directories and files. It is also important for naming objects in your `Python` code such as variables and functions.  Expressive naming helps you to write code that is clean and easily readable. 
 
@@ -142,6 +142,8 @@ Object Naming Issues
 
 </div>
 
+
+{:.input}
 ```python
 # Create variable
 variable=3*6
