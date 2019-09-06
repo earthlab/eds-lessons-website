@@ -9,7 +9,7 @@ course: "earth-analytics-python"
 permalink: /courses/earth-analytics-python/use-time-series-data-in-python/spreadsheet-data-in-python/
 nav-title: 'Spreadsheet Data in Python'
 dateCreated: 2016-12-13
-modified: 2019-09-03
+modified: 2019-09-04
 week: 3
 sidebar:
   nav:
@@ -48,10 +48,10 @@ In the homework from week 1, you used the code below to create a report with in 
 
 {:.input}
 ```python
+import os
 import numpy as np
 import pandas as pd
 import urllib
-import os
 from matplotlib import pyplot as plt
 import seaborn as sns
 import earthpy as et
@@ -76,7 +76,7 @@ urllib.request.urlretrieve(url='https://ndownloader.figshare.com/files/7010681',
 
 
     ('data/colorado-flood/downloads/boulder-precip.csv',
-     <http.client.HTTPMessage at 0x7f68d3cfe780>)
+     <http.client.HTTPMessage at 0x7fed39bda5c0>)
 
 
 

@@ -3,7 +3,7 @@ layout: single
 title: "The Relationship Between Precipitation and Stream Discharge | Explore Mass Balance"
 excerpt: "Learn how to create a cumulative sum plot in Pandas to better understand stream discharge in a watershed"
 authors: ['Matthew Rossi', 'Leah Wasser']
-modified: 2019-09-03
+modified: 2019-09-04
 category: [courses]
 class-lesson: ['time-series-python']
 course: 'earth-analytics-python'
@@ -26,13 +26,13 @@ To begin, load all of your libraries.
 
 {:.input}
 ```python
-import pandas as pd
-import matplotlib.pyplot as plt
 import os
 import math
-import hydrofunctions as hf
+import pandas as pd
 import urllib
+import matplotlib.pyplot as plt
 import seaborn as sns
+import hydrofunctions as hf
 import earthpy as et
 
 # Date time conversion registration
@@ -80,11 +80,11 @@ hf.get_nwis(site, 'dv').json()
         {'value': '[mode=LATEST, modifiedSince=null]',
          'title': 'filter:timeRange'},
         {'value': 'methodIds=[ALL]', 'title': 'filter:methodId'},
-        {'value': '2019-09-03T16:26:40.718Z', 'title': 'requestDT'},
-        {'value': '9c113ec0-ce67-11e9-afab-6cae8b6642f6', 'title': 'requestId'},
+        {'value': '2019-09-04T15:13:49.854Z', 'title': 'requestDT'},
+        {'value': '99431cd0-cf26-11e9-99cd-6cae8b6642ea', 'title': 'requestId'},
         {'value': 'Provisional data are subject to revision. Go to http://waterdata.usgs.gov/nwis/help/?provisional for more information.',
          'title': 'disclaimer'},
-        {'value': 'caas01', 'title': 'server'}]},
+        {'value': 'sdas01', 'title': 'server'}]},
       'timeSeries': [{'sourceInfo': {'siteName': 'BOULDER CREEK AT MOUTH NEAR LONGMONT, CO',
          'siteCode': [{'value': '06730500',
            'network': 'NWIS',
@@ -120,9 +120,9 @@ hf.get_nwis(site, 'dv').json()
          'noDataValue': -999999.0,
          'variableProperty': [],
          'oid': '45807197'},
-        'values': [{'value': [{'value': '3.78',
+        'values': [{'value': [{'value': '3.14',
             'qualifiers': ['P'],
-            'dateTime': '2019-09-02T00:00:00.000'}],
+            'dateTime': '2019-09-03T00:00:00.000'}],
           'qualifier': [{'qualifierCode': 'P',
             'qualifierDescription': 'Provisional data subject to revision.',
             'qualifierID': 0,

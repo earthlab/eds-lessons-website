@@ -3,7 +3,7 @@ layout: single
 title: "Subset Time Series By Dates Python Using Pandas"
 excerpt: "Sometimes you have data over a longer time span than you need to run analysis. Learn how to subset your data  using a begina and end date in Python."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
-modified: 2019-09-03
+modified: 2019-09-04
 category: [courses]
 class-lesson: ['time-series-python']
 course: 'earth-analytics-python'
@@ -97,11 +97,11 @@ import earthpy as et
 from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 
-# Set working directory
-os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
-
 # Get the data
 data = et.data.get_data('colorado-flood')
+
+# Set working directory
+os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 
 # Prettier plotting with seaborn
 sns.set(font_scale=1.5, style="whitegrid")

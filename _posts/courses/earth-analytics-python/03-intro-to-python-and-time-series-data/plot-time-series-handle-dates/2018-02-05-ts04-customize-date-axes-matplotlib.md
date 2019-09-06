@@ -3,7 +3,7 @@ layout: single
 title: "Customize Matplotlibe Dates Ticks on the x-axis in Python"
 excerpt: 'When you plot time series data in matplotlib, you often want to customize the date format that is presented on the plot. Learn how to customize the date format in a Python matplotlib plot.'
 authors: ['Chris Holdgraf', 'Leah Wasser', 'Martha Morrissey']
-modified: 2019-09-03
+modified: 2019-09-04
 category: [courses]
 class-lesson: ['time-series-python']
 course: 'earth-analytics-python'
@@ -58,10 +58,10 @@ import earthpy as et
 from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 
-os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
-
 # Get the data
 data = et.data.get_data('colorado-flood')
+
+os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 
 # Prettier plotting with seaborn
 sns.set(font_scale=1.5, style="whitegrid")
