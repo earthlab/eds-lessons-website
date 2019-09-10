@@ -8,7 +8,7 @@ class-lesson: ['clean-expressive-code']
 permalink: /courses/intro-to-earth-data-science/write-clean-expressive-code/intro-to-clean-code/dry-modular-code/
 nav-title: "Expressive Naming Conventions"
 dateCreated: 2019-09-03
-modified: 2019-09-06
+modified: 2019-09-10
 module-type: 'class'
 class-order: 1
 course: "intro-to-earth-data-science"
