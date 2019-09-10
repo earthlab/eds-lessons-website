@@ -56,7 +56,7 @@ In **Python**, there are <a href="https://docs.python.org/3/library/stdtypes.htm
 * addition (`+`)
 * subtraction (`-`)
 * multiplication (`*`)
-* division (`\`)
+* division (`/`)
 * exponents (`**`)
 
 Review the cells below and notice that the output is automatically printed without the need to tell **Python** to display the output. 
