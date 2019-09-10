@@ -3,7 +3,7 @@ layout: single
 title: "How to Replace Raster Cell Values with Values from A Different Raster Data Set in Python"
 excerpt: "Most remote sensing data sets contain no data values represented as nan or none in Python. This normally represents pixels that contain invalid data. Learn how to handle no data values in Python for better raster processing."
 authors: ['Leah Wasser']
-modified: 2019-09-03
+modified: 2019-09-10
 category: [courses]
 class-lesson: ['clouds-remote-sensing-python']
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-modis/replace-raster-cell-values-in-remote-sensing-images-in-python/
@@ -74,6 +74,18 @@ data = et.data.get_data('cold-springs-fire')
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
 
+{:.output}
+    Downloading from https://ndownloader.figshare.com/files/10960109
+    Extracted output to /root/earth-analytics/data/cold-springs-fire/.
+
+
+
+
+{:.output}
+    Downloading from https://ndownloader.figshare.com/files/10960214?private_link=fbba903d00e1848b423e
+    Extracted output to /root/earth-analytics/data/cs-test-landsat/.
+
+
 
 First, open the masked raster stack that you exported in the previous lesson. If you did not complete the previous lesson, you will need to make a masked raster stack of the cold springs cloud data to continue on with this lesson. If you exported your masked raster stack from the last lesson, you can read that file in and skip the following code.
 
@@ -126,7 +138,8 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}/images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire02-replace-na-values-in-raster-with-different-raster/2017-03-01-fire02-replace-na-values-in-raster-with-different-raster_7_0.png">
+<img src = "{{ site.url }}/images/courses/earth-analytics-python/08-multispectral-remote-sensing-fire/clouds-cloud-masks/2017-03-01-fire02-replace-na-values-in-raster-with-different-raster/2017-03-01-fire02-replace-na-values-in-raster-with-different-raster_7_0.png" alt = "Plotting the image and the mask together to ensure the mask does indeed cover the cloud in the image.">
+<figcaption>Plotting the image and the mask together to ensure the mask does indeed cover the cloud in the image.</figcaption>
 
 </figure>
 
