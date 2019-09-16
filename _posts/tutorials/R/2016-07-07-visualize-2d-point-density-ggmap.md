@@ -2,7 +2,7 @@
 layout: single 
 title: 'Computing and plotting 2d spatial point density in R' 
 date: 2016-07-07 
-modified: '2019-08-24'
+modified: '2019-09-16'
 authors: [Max Joseph] 
 category: [tutorials] 
 excerpt: 'This tutorial demonstrates how to compute 2d spatial density and visualize the result using storm event data from NOAA.' 
@@ -83,6 +83,7 @@ ggplot(crime, aes(x = lon, y = lat)) +
 <img src="{{ site.url }}/images/tutorials/R/2016-07-07-visualize-2d-point-density-ggmap/basic-plot-1.png" title="plot of chunk basic-plot" alt="plot of chunk basic-plot" width="90%" />
 
 There seems to be a fair bit of overplotting. 
+
 Let's instead plot a density estimate. 
 There are many ways to compute densities, and if the mechanics of density estimation are important for your application, it is worth investigating packages that specialize in point pattern analysis (e.g., [spatstat](https://cran.r-project.org/web/packages/spatstat/index.html)). 
 If on the other hand, you're lookng for a quick and dirty implementation for the purposes of exploratory data analysis, you can also use ggplot's [`stat_density2d`](http://ggplot2.tidyverse.org/reference/geom_density_2d.html), which uses [`MASS::kde2d`](https://stat.ethz.ch/R-manual/R-devel/library/MASS/html/kde2d.html) on the backend to estimate the density using a bivariate normal kernel.
