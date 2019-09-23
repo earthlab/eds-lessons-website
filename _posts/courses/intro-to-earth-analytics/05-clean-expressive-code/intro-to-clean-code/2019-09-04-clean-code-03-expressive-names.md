@@ -8,9 +8,8 @@ class-lesson: ['clean-expressive-code']
 permalink: /courses/intro-to-earth-data-science/write-clean-expressive-code/intro-to-clean-code/expressive-programming/
 nav-title: "Expressive Naming Conventions"
 dateCreated: 2019-09-03
-modified: 2019-09-10
+modified: 2019-09-23
 module-type: 'class'
-class-order: 1
 course: "intro-to-earth-data-science"
 week: 5
 sidebar:
@@ -21,7 +20,6 @@ order: 3
 topics:
   reproducible-science-and-programming: ['python']
 ---
-
 {% include toc title="On This Page" icon="file-text" %}
 
 <div class='notice--success' markdown="1">
