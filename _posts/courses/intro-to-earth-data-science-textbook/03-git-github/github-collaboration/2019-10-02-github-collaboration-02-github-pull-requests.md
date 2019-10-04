@@ -2,13 +2,13 @@
 layout: single
 title: 'Propose Changes to GitHub Repositories Using Pull Requests'
 excerpt: "GitHub.com can be used to store and access files in the cloud using GitHub repositories. Learn how to submit pull requests on GitHub.com to suggest changes to a GitHub repository."
-authors: ['Jenny Palomino', 'Leah Wasser', 'Max Joseph']
+authors: ['Leah Wasser', 'Max Joseph','Jenny Palomino']
 category: [courses]
 class-lesson: ['git-github-collaboration']
 permalink: /courses/intro-to-earth-data-science/git-github/github-collaboration/pull-requests-to-propose-changes-github-repositories/
 nav-title: "GitHub Pull Requests"
 dateCreated: 2019-10-02
-modified: 2019-10-02
+modified: 2019-10-04
 module-type: 'class'
 course: "intro-to-earth-data-science-textbook"
 week: 3
@@ -22,7 +22,6 @@ topics:
 redirect_from:
   - "/courses/earth-analytics-bootcamp/git-github-version-control/guided-activity-pull-request/"
 ---
-
 {% include toc title="On This Page" icon="file-text" %}
 
 <div class='notice--success' markdown="1">
@@ -31,23 +30,38 @@ redirect_from:
 
 After completing this page, you will be able to:
 
+* Explain what a pull request is and how it can be used.
 * Explain the relationship between the head repository (e.g. a forked repository) and base (e.g. original repository or master branch) repository.
-* Submit a pull request of changes to a repository on **GitHub.com**. 
+* Submit a pull request of changes to a repository on **GitHub.com**.
 
 </div>
 
 
 ### Add to page?
 * Question: create new page for following or add to this page:
-    * Communicate with @mention 
+    * Communicate with @mention
     * Using Issues
         * Create a new issue        
         * Close an issue through a pull request
 
-
 ## About Pull Requests
 
-To submit changed files to a repository owned by another user (e.g. `https://github.com/earthlab-education/ea-bootcamp-git-github-workflow`), you need to submit a pull request on `Github.com`. 
+A **pull request** (referred to as **PR**'s) is a way for you to suggest changes to a repository that are
+visible and can be easily reviewed. Pull requests are specific to GitHub and
+can be implemented in two ways:
+
+1. You submit changes to another repository based upon changes that you made to a fork of that repository.
+2. You submit changes to an existing repository using a branch (branches are not discussed in this chapter but you will learn more about branches as you dive deeper into GitHub).
+
+When you open up a pull request, you will see the line by line changes or
+differences between the file you submitted compared to the file that exists
+in a repository. These changes are called **diffs** (short for differences).
+Pull requests show diffs of the content between your repo and the repo that
+you are submitting changes to. The changes, additions, and subtractions are
+shown in green and red.
+
+TODO: Add a PR image (screen shot)
+
 
 <figure>
    <a href="{{ site.url }}/images/workshops/version-control/git-push-pr.png">
@@ -55,82 +69,136 @@ To submit changed files to a repository owned by another user (e.g. `https://git
    <figcaption> LEFT: To sync changes made and committed locally on your computer to your Github account, you push the changes from your computer to your fork on GitHub. RIGHT: To suggest changes to another repository, you submit a Pull Request to update the central repository. Source: Colin Williams, NEON.
    </figcaption>
 </figure>
+# remove??
+Pull requests inform the owner of the original repository (e.g. `https://github.com/earthlab-education/ea-bootcamp-hw-1-yourusername`) that you have changed files you would like to add from a forked repository (e.g. `https://github.com/yourusername/ea-bootcamp-hw-1-yourusername`).
 
-Pull requests inform the owner of the original repository (e.g. `https://github.com/earthlab-education/ea-bootcamp-hw-1-yourusername`) that you have changed files you would like to add from a forked repository (e.g. `https://github.com/yourusername/ea-bootcamp-hw-1-yourusername`). 
+## GitHub Pull Requests Support Open Science and Open Collaboration
 
-A pull request to another repository is similar to a “push”. However, it allows for a few things:
+A pull request is ideal to use as a collaboration tool. A pull request is similar to a “push” that you would make to a repository that you own. However, it also allows for a few things:
 
 1. It allows you to contribute to another repo without needing administrative privileges to make changes to the repository.
-2. It allows others to review your changes and suggest corrections, additions, edits, etc.
-3. It allows repository administrators control over what gets added to their project repo.
+2. It documents changes as they are made to a repository and as they address issues. And it makes those changes easily visible to anyone who may want to see them.
+3. It allows others to review your changes and suggest corrections, additions and edits on a line by line basis to those changes as necessary
+4. It supports conversation between all collaborators on the project.
+5. It allows repository administrators or code maintainers to control what gets added to the project repo.
 
-The ability to suggest changes to ANY repository, without needing administrative privileges is a powerful feature of `GitHub`. You can make as many changes as you want in your fork, and then suggest that the owner of the original repository incorporate those changes using a pull request.
+If you do not own the repository that you wish to modify, a pull request is the
+only way that you can contribute changes to that repository.
 
-## Submit Pull Requests To Suggest Changes To Others' Repositories
+The ability to suggest changes to ANY repository, without needing administrative privileges is a powerful feature of `GitHub`. This workflow supports open science
+because the entire process of updating content is open and supported by peer
+review. You can make as many changes as you want in your fork, and then suggest that the owner of the original repository incorporate those changes using a pull request.
+TODO: finish this up and tie to issues less???
+Below, you will learn how to submit a pull request to a repository. Assume that
+an issue has already been defined....
+### Pull Request Terminology - Head vs. Base
 
+Pretend for a moment that you wish to submit changes to your colleagues repo. You
+are ready to make a pull request to the repo.  
+
+When submitting a pull request, you need to specify both where you'd like to suggest the changes (your colleagues repo) and where the changes are
+coming from (your repo). There are two terms that you should know to set this
+up in Github: **head**
+and **base**.
+
+* **Base**: Base is the repository that will be updated. Changes will be added to this repository. Following the example above, the base repo is your colleagues repo.
+* **Head**: Head is the repository containing the changes that will be added to the base. Following the example above, this is your repo (the fork that you own of your colleagues repo).
+
+One way to remember the difference between head and base is that the “head” is
+a**head** of the "base". Ahead means that there are changes in the head repo that
+the base repo does NOT have. So, you need to add the changes from the **head**
+ (your forked repo) to the **base** (your colleagues repo).
+
+When you begin a pull request, the head and base will auto-populate. It may
+look something like this:
+
+* base fork: `your-colleagues-username/project-name`
+* head fork: `/your-username/project-name`
+
+TODO: Add screenshot or the PR interface
+
+Next, you will learn how to create a pull request in GitHub.
+
+## Submit Pull Requests To Suggest Changes To Repositories
+
+```
+# Remove
 This section was adapted from the `GitHub` <a href="https://guides.github.com/activities/hello-world/" target = "_blank">Hello World guide</a>. They provide an animated version of these directions.
 
 Pull requests are the heart of collaboration on `Github.com`. When you open a pull request, you’re proposing your changes and requesting that someone review and pull in your contribution and merge them into their project.
-
-Pull requests show diffs, (differences), of the content between your repo and the repo that you are submitting changes to. The changes, additions, and subtractions are shown in green and red.
+```
 
 
 ### Step 1 - Start Pull Request
 
-To begin a pull request (PR), click the `New pull request` button on the main page of your forked repository (e.g. `https://github.com/yourusername/ea-bootcamp-hw-1-yourusername`).
+To create a pull request (PR), click the `New pull request` button on the main page of your forked repository (e.g. `https://github.com/yourusername/ea-bootcamp-hw-1-yourusername`).
 
 <figure>
  <a href="{{ site.url }}/images/courses/earth-analytics/git/new-pull-request.png">
  <img src="{{ site.url }}/images/courses/earth-analytics/git/new-pull-request.png" alt="Location of the New pull request button on the main page of an example repository for jenp0277."></a>
- <figcaption> Location of the New pull request button on the main page of an example repository for jenp0277. 
+ <figcaption> Location of the New pull request button on the main page of an example repository for jenp0277.
  </figcaption>
 </figure>
 
-<i class="fa fa-star"></i> **Data Tip:** You can also click the “Pull Requests” tab at the top of the main page of a repository to submit a pull request (PR). When the pull request page opens, click the “New pull request” button to initiate a PR.
+TODO: this is the wrong image directory...
+
+<i class="fa fa-star"></i> **Data Tip:** There are many different ways to submit a pull request. You can also click the “Pull Requests” tab at the top of the main page of a repository to submit a pull request (PR). When the pull request page opens, click the “New pull request” button to initiate a PR. You can also click on the PR button in the repository that you are submitting changes to!
 {: .notice--success}
 
 
 ### Step 2 - Select Repository to Update
 
-Next, you need to select which repository you wish to update (the base repo) and which repository contains the content that you wish to use to update the base (the head repo). 
+Next, select both the repository that you wish to update (the base repo) and them
+repository contains the content that you wish to use to update the base (the head repo).
 
-In this example, you want to update `earthlab-education/ea-bootcamp-hw-1-yourusername` with commits in your fork `/yourusername/ea-bootcamp-hw-1-yourusername`.
-
-#### Head vs Base
-
-* Base: the repository that will be updated; changes will be added to this repository.
-* Head: the repository containing the changes that will be added to the base.
-
-One way to remember this is that the “head” is ahead of the "base". So you must add from the head to the base.
-
-When you begin a pull request, the head and base will auto-populate as follows:
-
-* base fork: `earthlab-education/ea-bootcamp-hw-1-yourusername`
-* head fork: `/yourusername/ea-bootcamp-hw-1-yourusername`
+In this example, you want to update `your-colleagues-username/project-name` with commits in your fork `your-username/project-name`.
 
 The above pull request configuration tells `Github.com` to update the base repository with contents from your forked repository, or the head repository.
 
+
+TODO: above pr?? there isn't an image so we'll have to create some images...
+
 ### Step 3 - Verify Changes
 
-When you compare two repos in a pull request page, `GitHub` provides an overview of the differences (diffs) between the files. Look over the changes and make sure nothing looks surprising. 
+When you compare two repos in a pull request page, `GitHub` provides an overview of the differences (diffs) between the files. Carefully review those changes.
 
-You can also click on the commit titles to see the specific changes in each commit. 
+1. First, look at the number of files. How many files did you modify? Do you see that many files listed in the PR?
+2. Look over the changes made to each file. Do the changes all look correct (like
+     changes that you made)?
+
+
+ <figure>
+  <a href="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-pr-changes.png.png">
+  <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-pr-changes.png.png" alt="When you first create a PR, be sure to check the PR contents. Notice in this image that the number of files and number of commits are displayed. Make sure these numbers make sense based upon the changes that you made."></a>
+  <figcaption>When you first create a PR, be sure to check the PR contents. Notice in this image that the number of files and number of commits are displayed. Make sure these numbers make sense based upon the changes that you made.
+  </figcaption>
+ </figure>
+
+OPTIONAL: You can also click on the commit titles to see the specific changes in each commit. This is another way to check that the contents of a PR are what you expect them to be.
+
+This review of your own **PR** before submitting it is important. Remember that someone
+else is going to take time to review your PR. Make sure that you take care of
+cleaning up what you can FIRST, before submitting the PR
+
 
 <figure>
- <a href="{{ site.url }}/images/courses/earth-analytics/git/diffs.png">
- <img src="{{ site.url }}/images/courses/earth-analytics/git/diffs.png" alt="This screenshot shows the differences between the files on earthlab-education and jenp0277's fork of the repository. When showing line by line changes, the deletions will be highlighted in red and additions will be highlighted in green. Pull request diffs view can be changed between unified and split (arrow)."></a>
- <figcaption> This screenshot shows the differences between the files on earthlab-education and jenp0277's fork of the repository. When showing line by line changes, the deletions will be highlighted in red and additions will be highlighted in green. Pull request diffs view can be changed between unified and split (arrow).
+ <a href="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-diff-file.png">
+ <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/diffs.png" alt="This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo"></a>
+ <figcaption>This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo.
  </figcaption>
 </figure>
 
-### Step 4 - Create New Pull Request
+> NOTE: this also doesn't highlight-- your branch is ahead of the fork by xx commits...the text you'd see on your fork page.  so we want to show that too..
 
-If you are adding new commits to base repository (e.g. `earthlab-education/ea-bootcamp-hw-1-yourusername`), then the "Create Pull Request" button will be available. Click the green “Create Pull Request” button to start your pull request.
+### Step 4 - Click on the Create New Pull Request Button
 
-### Step 5 - Describe Your Pull Request
+The next step of the create pull request process is to click the "Create Pull Request" button. Note that this button will NOT be available if you don't have
+any changes in your PR. Click the green “Create Pull Request” button to start your pull request. Once you do that, a title box and description box will be visible.
+Add a title and write a brief description of your changes. When you have added your
+title and description, “Create Pull Request”.
 
-Add a title and write a brief description of your changes. When you’re done with your message, click “Create Pull Request”.
-
+<i class="fa fa-star"></i> **Data Tip:** You can modify the title, and description of your pull request at any time - even after you've submitted the pull request!
+{: .notice--success}
 
 <figure>
  <a href="{{ site.url }}/images/courses/earth-analytics/git/create-pull-request.png">
@@ -139,18 +207,27 @@ Add a title and write a brief description of your changes. When you’re done wi
  </figcaption>
 </figure>
 
-Notice that when creating a new pull request, you will be automatically transferred to the `Github.com` site for the base repository. 
 
-At this point, you are done with the pull request! In this case, you have submitted a pull request for Homework 1!
+## Pull Requests and Your Location On GitHub
 
-Though you may see an active button for Merge Pull Request, this button is intended for the owner of the repository. They can review your pull request and then decide if/when to merge it into their original repository.
+When you create a new pull request, you will be automatically transferred to the
+`Github.com` url or landing page for the base repository (your colleagues
+repository). At this point, you have submitted your pull request!
 
-Note that until the owner merges your pull request, all future commits that you make to your fork will continue to be added to the open pull request. 
+At the bottom of your pull request, you may see an large green button that says
+**Merge Pull Request**. This button will be used in this case by owner of the
+repository (your colleague or perhaps others working on this collaborative project)
+to merge in your changes, when a review has been completed. The repo owner will
+review your PR and may ask for changes. When they are happy with all of the changes, your PR could get merged!
+
+
+<i class="fa fa-star"></i> **Data Tip:** All future commits that you make to your fork (on the branch where you are working) will continue to be added to the open pull request UNTIL it is merged.
+{: .notice--success}
 
 
 ### Close Pull Requests
 
-You can also close a pull request on `Github.com` if you decide you are not ready to submit your files from your forked repository to the original repository. 
+You can also close a pull request on `Github.com` if you decide you are not ready to submit your files from your forked repository to the original repository.
 
 For example, the pull request you just created in this lesson can be closed if you have not yet completed Homework 1. When you are ready to submit Homework 1, you can simply create a new pull request on `Github.com` following these same steps.
 
@@ -164,7 +241,7 @@ To close a pull request, simply click on `Close pull request` button toward the 
 </figure>
 
 
+TODO:
 For Jenny:
 * Need to save copies of all external images using file-names-like-this.png to images/earth-analytics/git-version-control
-* Move all images that need it to images/earth-analytics/git-version-control 
-
+* Move all images that need it to images/earth-analytics/git-version-control

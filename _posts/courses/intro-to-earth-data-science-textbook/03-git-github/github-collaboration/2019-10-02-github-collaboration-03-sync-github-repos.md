@@ -8,7 +8,7 @@ class-lesson: ['git-github-collaboration']
 permalink: /courses/intro-to-earth-data-science/git-github/collaboration/update-github-repositories-with-changes-by-others/
 nav-title: "Update Your GitHub Repositories"
 dateCreated: 2019-09-06
-modified: 2019-10-02
+modified: 2019-10-04
 module-type: 'class'
 course: "intro-to-earth-data-science-textbook"
 week: 3
@@ -20,7 +20,6 @@ order: 3
 topics:
   reproducible-science-and-programming: ['git']
 ---
-
 {% include toc title="On This Page" icon="file-text" %}
 
 <div class='notice--success' markdown="1">
@@ -33,6 +32,9 @@ After completing this page, you will be able to:
 * Update your local clone of a repository with changes made in the  **GitHub** repository using `git pull`.
 
 </div>
+
+** screen shot of an out of sync repo which shows whether it's ahead or behind ... or both. 
+** how to update on GitHub 
 
 
 ## Update Your Repository with Changes From Others
