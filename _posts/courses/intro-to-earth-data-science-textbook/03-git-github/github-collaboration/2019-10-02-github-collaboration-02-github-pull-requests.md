@@ -2,7 +2,7 @@
 layout: single
 title: 'Propose Changes to GitHub Repositories Using Pull Requests'
 excerpt: "GitHub.com can be used to store and access files in the cloud using GitHub repositories. Learn how to submit pull requests on GitHub.com to suggest changes to a GitHub repository."
-authors: ['Leah Wasser', 'Max Joseph','Jenny Palomino']
+authors: ['Leah Wasser', 'Max Joseph', 'Jenny Palomino']
 category: [courses]
 class-lesson: ['git-github-collaboration']
 permalink: /courses/intro-to-earth-data-science/git-github/github-collaboration/pull-requests-to-propose-changes-github-repositories/
@@ -59,16 +59,18 @@ specific to GitHub and can be implemented in two ways:
 
 For the purposes of this page, pretend that you are working with your colleague
 on a project. You have been asked to make some changes to the contributing.rst file
-in your collaborators repository. Specifically, you have been asked to replace the word **earthpy** in the readme with the word **matplotcheck**. To begin this
-task, you create a fork of your colleagues repo. You then clone that fork to your
-local computer and begin to work on the readme file in a text editor. When you
-are done editing the text file locally on your computer, you save the file,
-add and commit the changes using git at the command line and then push those
-changes back up to your fork of your colleagues repo.
+in your collaborators repository. Specifically, you have been asked to replace
+the word **earthpy** in the readme with the word **matplotcheck**. To begin this
+task, you:
 
-TODO: possibly add colins pr workflow graphic.
+1. Create a fork of your colleagues repo
+2. Clone that fork to your local computer and begin to work on the contributing file in a text editor.
+3. When you are done editing the text file locally on your computer, you save the file,
+add then:  
+4. `git commit` the changes using git at the command line
+5. Finally you `git push` those changes back up to your fork of your colleagues repo.
 
-Now, the changes are in your fork but you want to suggest those changes as updates to your colleague's repo. You submit a pull request with the changes, to your colleagues repo.
+Now, the changes are in your fork but you want to suggest those changes as updates to your colleague's repo. You submit a pull request with the changes, to your colleague's repo.
 
 <figure>
    <a href="{{ site.url }}/images/workshops/version-control/git-push-pr.png">
@@ -77,35 +79,38 @@ Now, the changes are in your fork but you want to suggest those changes as updat
    </figcaption>
 </figure>
 
+### Opening Up A Pull Request on GitHub.com
+
 When you open up a pull request, you will see the line by line changes or
 differences between the file you submitted compared to the file that exists
 in a repository. These changes are called **diffs** (short for differences).
 Pull requests show diffs of the content between (a branch on) your repo and (a
 branch on) the repo that you are submitting changes to. The changes, additions,
- and subtractions are shown in green (green for new additions to the files) and
+and subtractions are shown in green (green for new additions to the files) and
 red (signifying deletions from the file).
 
 <figure>
- <a href="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-diff-file.png">
- <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-diff-file.png" alt="This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo"></a>
+ <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-diff-file.png">
+ <img src="{{ site.url }}/images/earth-analytics/git-version-control/github-diff-file.png" alt="This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo"></a>
  <figcaption>This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo.
  </figcaption>
 </figure>
 
-After you have submitted your PR, you colleague reviews the changes. If they are
-happy with the changes, then they will merge your PR. If they would like a few
-additional changes, they will request changes.
+After you have submitted your PR, you colleague reviews the changes. It's often
+good practice to mention your colleague specifically when you submit your PR to
+ensure that they see it. You can do that using @their-github-username-here in a
+comment in the PR. Once your colleagues is happy with the changes, then they
+will merge your PR. If they would like a few additional changes, they will
+request changes. This is the general PR workflow.
 
-This is the PR workflow.
 
 
-
-# remove??
-Pull requests inform the owner of the original repository (e.g. `https://github.com/earthlab-education/ea-bootcamp-hw-1-yourusername`) that you have changed files you would like to add from a forked repository (e.g. `https://github.com/yourusername/ea-bootcamp-hw-1-yourusername`).
 
 ## GitHub Pull Requests Support Open Science and Open Collaboration
 
-A pull request (herein referred to as **PR**) is ideal to use as a collaboration tool. A **PR** is similar to a “push” that you would make to a repository that you own. However, a **PR** also allows for a few things:
+A pull request (herein referred to as **PR**) is ideal to use as a collaboration
+tool. A **PR** is similar to a “push” that you would make to a repository that
+you own. However, a **PR** also allows for a few things:
 
 1. It allows you to contribute to another repo without needing administrative privileges to make changes to the repository.
 2. It documents changes as they are made to a repository and as they address issues. And it makes those changes easily visible to anyone who may want to see them.
@@ -119,16 +124,18 @@ only way that you can contribute changes to that repository.
 The ability to suggest changes to ANY repository, without needing administrative
 privileges is a powerful feature of **GitHub**. This workflow supports open science
 because the entire process of updating content is open and supported by peer
-review. You can make as many changes as you want in your fork, and then suggest that the owner of the original repository incorporate those changes using a pull request.
+review. You can make as many changes as you want in your fork, and then suggest
+that the owner of the original repository incorporate those changes using a pull request.
 TODO: finish this up and tie to issues less???
 Below, you will learn how to submit a pull request to a repository. Assume that
 an issue has already been defined....
-### Pull Request Terminology - Head vs. Base
+## Pull Request Terminology - Head vs. Base
 
 Consider the example above where you were submitting changes to the contributing.rst
 file in your colleague's repo. You are ready to make a pull request to the repo.  
 
-When submitting a pull request, you need to specify both where you'd like to suggest the changes (your colleague's repo) and where the changes are
+When submitting a pull request, you need to specify both where you'd like to
+suggest the changes (your colleague's repo) and where the changes are
 coming from (your repo). There are two terms that you should know to set this
 up in Github: **head** and **base**.
 
@@ -150,23 +157,15 @@ TODO: Add screenshot or the PR interface
 
 Next, you will learn how to create a pull request in GitHub.
 
-## Submit Pull Requests To Suggest Changes To Repositories
+## How To Submit Pull Requests To Suggest Changes To Repositories
 
-```
-# Remove
-This section was adapted from the `GitHub` <a href="https://guides.github.com/activities/hello-world/" target = "_blank">Hello World guide</a>. They provide an animated version of these directions.
+### Step 1 - Start to Open Your Pull Request on GitHub
 
-Pull requests are the heart of collaboration on `Github.com`. When you open a pull request, you’re proposing your changes and requesting that someone review and pull in your contribution and merge them into their project.
-```
-
-
-### Step 1 - Start to Open Your Pull Request on GitHub.com
-
-To start a pull request (herein referred to as a **PR**), click the `New pull request` button on the main page of your forked repository (e.g. `https://github.com/yourusername/ea-bootcamp-hw-1-yourusername`).
+To start a pull request (herein referred to as a **PR**), click the `New pull request` button on the main page of your forked repository.
 
 <figure>
- <a href="{{ site.url }}/images/courses/earth-analytics/git-version-control/new-pull-request.png">
- <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/new-pull-request.png" alt="Location of the New pull request button on the main page of an example repository for jenp0277."></a>
+ <a href="{{ site.url }}/images/earth-analytics/git-version-control/new-pull-request.png">
+ <img src="{{ site.url }}/images/earth-analytics/git-version-control/new-pull-request.png" alt="Location of the New pull request button on the main page of an example repository for jenp0277."></a>
  <figcaption> Location of the New pull request button on the main page of an example repository for jenp0277.
  </figcaption>
 </figure>
@@ -201,8 +200,8 @@ want to submit.
      changes that you made)?
 
  <figure>
-  <a href="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-pr-changes.png.png">
-  <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-pr-changes.png.png" alt="When you first create a PR, be sure to check the PR contents. Notice in this image that the number of files and number of commits are displayed. Make sure these numbers make sense based upon the changes that you made."></a>
+  <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-pr-changes.png">
+  <img src="{{ site.url }}/images/earth-analytics/git-version-control/github-pr-changes.png" alt="When you first create a PR, be sure to check the PR contents. Notice in this image that the number of files and number of commits are displayed. Make sure these numbers make sense based upon the changes that you made."></a>
   <figcaption>When you first create a PR, be sure to check the PR contents. Notice in this image that the number of files and number of commits are displayed. Make sure these numbers make sense based upon the changes that you made.
   </figcaption>
  </figure>
