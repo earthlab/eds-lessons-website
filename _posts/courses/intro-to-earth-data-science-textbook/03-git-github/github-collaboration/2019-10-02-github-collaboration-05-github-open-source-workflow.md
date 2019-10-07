@@ -8,7 +8,7 @@ class-lesson: ['git-github-collaboration']
 permalink: /courses/intro-to-earth-data-science/git-github/github-collaboration/github-issues-to-document-and-manage-changes/
 nav-title: "GitHub Issues"
 dateCreated: 2019-10-02
-modified: 2019-10-04
+modified: 2019-10-07
 module-type: 'class'
 course: "intro-to-earth-data-science-textbook"
 week: 3
@@ -16,7 +16,7 @@ sidebar:
   nav:
 author_profile: false
 comments: true
-order: 2
+order: 5
 topics:
   reproducible-science-and-programming: ['git']
 redirect_from:

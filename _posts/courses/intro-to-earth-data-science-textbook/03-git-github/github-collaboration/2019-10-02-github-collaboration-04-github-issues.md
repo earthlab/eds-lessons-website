@@ -1,14 +1,14 @@
 ---
 layout: single
-title: 'Propose Changes to GitHub Repositories Using Pull Requests'
-excerpt: "GitHub.com can be used to store and access files in the cloud using GitHub repositories. Learn how to submit pull requests on GitHub.com to suggest changes to a GitHub repository."
+title: 'Track, Manage and Discuss Project Changes and Updates Using GitHub Issues'
+excerpt: "."
 authors: ['Leah Wasser', 'Jenny Palomino', 'Max Joseph']
 category: [courses]
 class-lesson: ['git-github-collaboration']
 permalink: /courses/intro-to-earth-data-science/git-github/github-collaboration/github-issues-to-document-and-manage-changes/
 nav-title: "GitHub Issues"
 dateCreated: 2019-10-02
-modified: 2019-10-04
+modified: 2019-10-07
 module-type: 'class'
 course: "intro-to-earth-data-science-textbook"
 week: 3
@@ -16,7 +16,7 @@ sidebar:
   nav:
 author_profile: false
 comments: true
-order: 2
+order: 4
 topics:
   reproducible-science-and-programming: ['git']
 redirect_from:
