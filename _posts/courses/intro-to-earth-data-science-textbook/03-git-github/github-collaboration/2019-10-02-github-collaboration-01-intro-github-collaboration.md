@@ -78,7 +78,7 @@ The pull request is a great way to ensure that everyone is on the same page with
 
 <figure>
  <a href="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-diff-file.png">
- <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/diffs.png" alt="This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo"></a>
+ <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-diff-file.png" alt="This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo"></a>
  <figcaption>This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo.
  </figcaption>
 </figure>
@@ -162,7 +162,7 @@ workflow and a workflow that many use to manage **GitHub** projects in general.
 
 In this chapter, you will first learn about and practice submitting pull requests.
 In the second half of the chapter you will be exposed to the full open source
-collaboration workflow. 
+collaboration workflow.
 
 > TODO Put together an overview of what a pull request workflow looks like. add graphics. Posted on slack for ally to work on - note this graphic doesn't have to be done for this page to be published.
 

@@ -87,7 +87,7 @@ red (signifying deletions from the file).
 
 <figure>
  <a href="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-diff-file.png">
- <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/diffs.png" alt="This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo"></a>
+ <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-diff-file.png" alt="This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo"></a>
  <figcaption>This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo.
  </figcaption>
 </figure>
@@ -160,43 +160,45 @@ Pull requests are the heart of collaboration on `Github.com`. When you open a pu
 ```
 
 
-### Step 1 - Start Pull Request
+### Step 1 - Start to Open Your Pull Request on GitHub.com
 
-To create a pull request (PR), click the `New pull request` button on the main page of your forked repository (e.g. `https://github.com/yourusername/ea-bootcamp-hw-1-yourusername`).
+To start a pull request (herein referred to as a **PR**), click the `New pull request` button on the main page of your forked repository (e.g. `https://github.com/yourusername/ea-bootcamp-hw-1-yourusername`).
 
 <figure>
- <a href="{{ site.url }}/images/courses/earth-analytics/git/new-pull-request.png">
- <img src="{{ site.url }}/images/courses/earth-analytics/git/new-pull-request.png" alt="Location of the New pull request button on the main page of an example repository for jenp0277."></a>
+ <a href="{{ site.url }}/images/courses/earth-analytics/git-version-control/new-pull-request.png">
+ <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/new-pull-request.png" alt="Location of the New pull request button on the main page of an example repository for jenp0277."></a>
  <figcaption> Location of the New pull request button on the main page of an example repository for jenp0277.
  </figcaption>
 </figure>
-
-TODO: this is the wrong image directory...
 
 <i class="fa fa-star"></i> **Data Tip:** There are many different ways to submit a pull request. You can also click the “Pull Requests” tab at the top of the main page of a repository to submit a pull request (PR). When the pull request page opens, click the “New pull request” button to initiate a PR. You can also click on the PR button in the repository that you are submitting changes to!
 {: .notice--success}
 
 
-### Step 2 - Select Repository to Update
+### Step 2 - Select Repository That You Want to Update on GitHub
 
-Next, select both the repository that you wish to update (the base repo) and them
-repository contains the content that you wish to use to update the base (the head repo).
+In this example you are updating another repo with changes from your fork. Next, select both the repo that you wish to update (the base repo) and the
+repo that contains the content that you wish to use to update the base
+(the head repo).
 
-In this example, you want to update `your-colleagues-username/project-name` with commits in your fork `your-username/project-name`.
+In this example, you want to update:
+
+* **base**: `your-colleagues-username/project-name` with
+* **head**: commits in your fork `your-username/project-name`.
 
 The above pull request configuration tells `Github.com` to update the base repository with contents from your forked repository, or the head repository.
 
+TODO: Create an animated gif of this process...
 
-TODO: above pr?? there isn't an image so we'll have to create some images...
+### Step 3 - Verify The Changes In Your Pull Request
 
-### Step 3 - Verify Changes
+When you compare two repos in a pull request page, `GitHub` provides an overview of the differences (diffs) between the files. Carefully review these changes to
+ensure that the changes that you are submitting are in fact the ones that you
+want to submit.
 
-When you compare two repos in a pull request page, `GitHub` provides an overview of the differences (diffs) between the files. Carefully review those changes.
-
-1. First, look at the number of files. How many files did you modify? Do you see that many files listed in the PR?
+1. First, look at the number of files. How many files did you modify? Do you see that many files listed in the **PR**?
 2. Look over the changes made to each file. Do the changes all look correct (like
      changes that you made)?
-
 
  <figure>
   <a href="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-pr-changes.png.png">
@@ -205,11 +207,14 @@ When you compare two repos in a pull request page, `GitHub` provides an overview
   </figcaption>
  </figure>
 
-OPTIONAL: You can also click on the commit titles to see the specific changes in each commit. This is another way to check that the contents of a PR are what you expect them to be.
+<i class="fa fa-star"></i> **Data Tip:** You can also click on the commit titles to see the specific changes in each commit. This is another way to check that the contents of a PR are what you expect them to be.
+{: .notice--success}
 
 This review of your own **PR** before submitting it is important. Remember that someone
 else is going to take time to review your PR. Make sure that you take care of
 cleaning up what you can FIRST, before submitting the PR
+
+
 
 
 
