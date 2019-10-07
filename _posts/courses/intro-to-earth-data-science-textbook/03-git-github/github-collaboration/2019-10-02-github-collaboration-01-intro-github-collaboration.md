@@ -8,7 +8,7 @@ class-lesson: ['collaboration-github']
 permalink: /courses/intro-to-earth-data-science/git-github/github-collaboration/
 nav-title: "GitHub for Collaboration"
 dateCreated: 2019-10-02
-modified: 2019-10-04
+modified: 2019-10-07
 module-title: 'GitHub for Collaboration'
 module-nav-title: 'GitHub for Collaboration'
 module-description: 'GitHub . Learn'
@@ -37,8 +37,10 @@ In this chapter, you will learn .
 
 After completing this chapter, you will be able to:
 
-*
-
+* Explain what a pull request (PR) is and how PR's are used on GitHub.
+* Explain what a GitHub issue is and explain how issues are used on GitHub.
+* Describe the open source software collaboration model as it's implemented on GitHub.
+* Explain the difference between Git and GitHub
 
 ## <i class="fa fa-check-square-o fa-2" aria-hidden="true"></i> What You Need
 
@@ -51,8 +53,8 @@ You will also need a web browser and your **GitHub.com** login (username and pas
 ## Why Use GitHub For Science Collaboration?
 
 In the previous chapter, you learned about **git** and **GitHub**. Recall that **git** is a
-tool that can be used to manage version control for various files. **GitHub** is a
-website that runs git behind the scenes. The **GitHub** website also has additional
+tool that is used to manage version control for various files. **GitHub** is a
+website that runs **git** behind the scenes. The **GitHub** website also has additional
 functionality that extends the functionality of **git**. This functionality allows
 you to manage projects, coordinate with others on updates to code, text files
 and other files in your repo. GitHub also facilitates sharing your code with the
@@ -63,32 +65,47 @@ can use to collaborate on projects.
 
 ## GitHub For Project Management and Collaboration
 
-There are several tools that GitHub offers that support collaborating on projects.
+There are several tools that GitHub offers that you can use to support collaborating on projects.
 
 ### 1. GitHub Pull Requests
 
-The pull request is a way that you or a colleague can suggest code changes. The pull request allows
-   * your collaborators to see exactly what items were changed line by line in the code.
+The pull request is a way that you or a colleague can suggest code changes. The pull request allows:
+   * Your collaborators to see exactly what items were changed line by line in the code.
    * A group of people working on the code to view, review and comment on the code line by line.
+   * You to document changes to your project which can also be clearly linked to issues that describe the need for those changes (see below).
 
-The pull request is a great way to ensure that everyone is on the same page with your edits before the changes are merged or combined into a designated repository. Pull Requests are specific to the GitHub platform.
+The pull request is a great way to ensure that everyone is on the same page with your edits before the changes are merged or combined into a designated repository. Pull Requests are specific to the **GitHub** website.
 
-TODO: <FIGURE -- image showing a pull request with some changes suggested? perhaps just a text file or something simple>
+<figure>
+ <a href="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-diff-file.png">
+ <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/diffs.png" alt="This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo"></a>
+ <figcaption>This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo.
+ </figcaption>
+</figure>
+
 
 ### 2. GitHub Issues
 
 Issues in GitHub are ways to document and discuss changes needed in a repository.
+Issues are also ideal for managing chnages in a project.
 Issues are normally text (and code) that describe something that needs to be
 addressed. An issue could be related to something that needs to be fixed in your
 code or text. Issues can be assigned to one or more people to work on which
 makes them useful for project management. You can keep track of who is working
-on what items in the repository. You can also link issues to Pull Requests
-discussed above. Linking issues to Pull Requests is good practice and will be
-discussed in more detail later in this chapter.
+on what items in the repository. Once an issue that needs to be addressed with
+changes to the code in your repo is defined, you can then assign it to someone. At that point you have documentation of who is working on what task. Finally,
+when the person assigned submits a pull request, they can link that back to the
+original issues.
+
+If you are familiar with IT (Information Technology) groups or computer help
+desks, this is similar to submitting a ticket,
+except for this ticket could be created collaboratively. Linking issues to Pull
+Requests is good practice and will be discussed in more detail later in this
+chapter.
 
 There are other project management tools within GitHub that you can also use to
-manage your project as it becomes more complex.
-
+manage your project as it becomes more complex including milestones and even Trello like project boards. These more advanced project management topics will not
+be discussed in this chapter but your are encouraged to check them out if you area interested in using GitHub to manage your open science projects.
 
 <figure>
    <a href="{{ site.url }}/images/earth-analytics/git-version-control/git-push-pull-flow-neon.png">
@@ -100,23 +117,54 @@ manage your project as it becomes more complex.
 
 ### 3. GitHub Project Milestones
 
-If you have a large project, you can create milestones which can be used to
-group sets of issues together that are related.
+If you are working on a large project, you can create milestones which can be
+ used to group sets of related issues together. Milestones can have deadlines
+ associated with them.
 
-TODO: screen shot of milestones
+<figure>
+   <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-milestones-abc-classroom.png">
+   <img src="{{ site.url }}/images/earth-analytics/git-version-control/github-milestones-abc-classroom.png" alt="GitHub milestones allow you to track smaller sets of tasks within a larger GitHub project."></a>
+   <figcaption>GitHub milestones allow you to track smaller sets of tasks within a larger GitHub project.
+   </figcaption>
+</figure>
+
 
 ### 4. Github Project Management Tools
 
-You can also use **GitHub** to manage an entire project or set of projects. You can 
+You can also use **GitHub** to manage an entire project or set of projects. You can
 setup boards similar to a tool like Trello to manage pull requests and milestones,
 who is working on what and associated deadlines. For the time being the **GitHub**
 project management tools will not be discussed in this textbook.
 
-> TODO: Link to the actual project management tools so they can see how they work. Add a few screen shots.
-> TODO Put together an overview of what a pull request workflow looks like. add graphics.
+
+<figure>
+   <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-project-page.png">
+   <img src="{{ site.url }}/images/earth-analytics/git-version-control/github-project-page.png" alt="GitHub allows you to track projects across a single repository OR across all of the repos in your organization or account."></a>
+   <figcaption>GitHub allows you to track projects across a single repository OR across all of the repos in your organization or account.
+   </figcaption>
+</figure>
 
 
+## The GitHub Issue, Pull Request Open Source Collaboration and Project Management Model: Putting It All Together
 
+Over the course of this chapter, you will learn how to put together all of the
+pieces of the pull request workflow. To break it down, it looks something like this:
+
+1. Individuals within your team identify issues that need to be addressed
+2. Someone (likely the owners of the repository) assigns team members to specific issues to work on.
+3. Team members go out and work on their individual tasks.
+4. When they are ready, team members submit a pull request (PR) to the main repo. That pull request is reviewed by team leaders (or whomever is assigned to review).
+5. The reviewers may suggest changes to the code. If so, the PR submitters go back and work on the code some more. This process may continue until everyone is happy with the PR.
+6. When the PR is approved by the reviewers, it will be merged into the code base.
+
+All of the above steps may be repeated over and over through time as issues are identified and contributors submit changes. This, is the open source software
+workflow and a workflow that many use to manage **GitHub** projects in general.
+
+In this chapter, you will first learn about and practice submitting pull requests.
+In the second half of the chapter you will be exposed to the full open source
+collaboration workflow. 
+
+> TODO Put together an overview of what a pull request workflow looks like. add graphics. Posted on slack for ally to work on - note this graphic doesn't have to be done for this page to be published.
 
 
 

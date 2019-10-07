@@ -8,7 +8,7 @@ class-lesson: ['git-github-collaboration']
 permalink: /courses/intro-to-earth-data-science/git-github/github-collaboration/pull-requests-to-propose-changes-github-repositories/
 nav-title: "GitHub Pull Requests"
 dateCreated: 2019-10-02
-modified: 2019-10-04
+modified: 2019-10-07
 module-type: 'class'
 course: "intro-to-earth-data-science-textbook"
 week: 3
@@ -33,35 +33,42 @@ After completing this page, you will be able to:
 * Explain what a pull request is and how it can be used.
 * Explain the relationship between the head repository (e.g. a forked repository) and base (e.g. original repository or master branch) repository.
 * Submit a pull request of changes to a repository on **GitHub.com**.
+* Mention or call out someone who you'd like to review your pull request on GitHub using @GitHubUsername
+* Explain what a diff is in GitHub.
 
 </div>
 
 
 ### Add to page?
 * Question: create new page for following or add to this page:
-    * Communicate with @mention
+    * Communicate with @GitHubUsername
     * Using Issues
         * Create a new issue        
         * Close an issue through a pull request
 
-## About Pull Requests
+## About Pull Requests And Two Ways to Create A Pull Request
 
-A **pull request** (referred to as **PR**'s) is a way for you to suggest changes to a repository that are
-visible and can be easily reviewed. Pull requests are specific to GitHub and
-can be implemented in two ways:
+A **pull request** (referred to as a **PR**) is a way for you to suggest changes
+to a repository that are visible and can be easily reviewed. Pull requests are
+specific to GitHub and can be implemented in two ways:
 
 1. You submit changes to another repository based upon changes that you made to a fork of that repository.
-2. You submit changes to an existing repository using a branch (branches are not discussed in this chapter but you will learn more about branches as you dive deeper into GitHub).
+2. You submit changes to an existing repository using a branch. Branches are not discussed in this chapter but you will learn more about branches as you get into more advanced GitHub topics.
 
-When you open up a pull request, you will see the line by line changes or
-differences between the file you submitted compared to the file that exists
-in a repository. These changes are called **diffs** (short for differences).
-Pull requests show diffs of the content between your repo and the repo that
-you are submitting changes to. The changes, additions, and subtractions are
-shown in green and red.
+## Introduction to the Pull Request Workflow
 
-TODO: Add a PR image (screen shot)
+For the purposes of this page, pretend that you are working with your colleague
+on a project. You have been asked to make some changes to the contributing.rst file
+in your collaborators repository. Specifically, you have been asked to replace the word **earthpy** in the readme with the word **matplotcheck**. To begin this
+task, you create a fork of your colleagues repo. You then clone that fork to your
+local computer and begin to work on the readme file in a text editor. When you
+are done editing the text file locally on your computer, you save the file,
+add and commit the changes using git at the command line and then push those
+changes back up to your fork of your colleagues repo.
 
+TODO: possibly add colins pr workflow graphic.
+
+Now, the changes are in your fork but you want to suggest those changes as updates to your colleague's repo. You submit a pull request with the changes, to your colleagues repo.
 
 <figure>
    <a href="{{ site.url }}/images/workshops/version-control/git-push-pr.png">
@@ -69,12 +76,36 @@ TODO: Add a PR image (screen shot)
    <figcaption> LEFT: To sync changes made and committed locally on your computer to your Github account, you push the changes from your computer to your fork on GitHub. RIGHT: To suggest changes to another repository, you submit a Pull Request to update the central repository. Source: Colin Williams, NEON.
    </figcaption>
 </figure>
+
+When you open up a pull request, you will see the line by line changes or
+differences between the file you submitted compared to the file that exists
+in a repository. These changes are called **diffs** (short for differences).
+Pull requests show diffs of the content between (a branch on) your repo and (a
+branch on) the repo that you are submitting changes to. The changes, additions,
+ and subtractions are shown in green (green for new additions to the files) and
+red (signifying deletions from the file).
+
+<figure>
+ <a href="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-diff-file.png">
+ <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/diffs.png" alt="This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo"></a>
+ <figcaption>This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo.
+ </figcaption>
+</figure>
+
+After you have submitted your PR, you colleague reviews the changes. If they are
+happy with the changes, then they will merge your PR. If they would like a few
+additional changes, they will request changes.
+
+This is the PR workflow.
+
+
+
 # remove??
 Pull requests inform the owner of the original repository (e.g. `https://github.com/earthlab-education/ea-bootcamp-hw-1-yourusername`) that you have changed files you would like to add from a forked repository (e.g. `https://github.com/yourusername/ea-bootcamp-hw-1-yourusername`).
 
 ## GitHub Pull Requests Support Open Science and Open Collaboration
 
-A pull request is ideal to use as a collaboration tool. A pull request is similar to a “push” that you would make to a repository that you own. However, it also allows for a few things:
+A pull request (herein referred to as **PR**) is ideal to use as a collaboration tool. A **PR** is similar to a “push” that you would make to a repository that you own. However, a **PR** also allows for a few things:
 
 1. It allows you to contribute to another repo without needing administrative privileges to make changes to the repository.
 2. It documents changes as they are made to a repository and as they address issues. And it makes those changes easily visible to anyone who may want to see them.
@@ -82,10 +113,11 @@ A pull request is ideal to use as a collaboration tool. A pull request is simila
 4. It supports conversation between all collaborators on the project.
 5. It allows repository administrators or code maintainers to control what gets added to the project repo.
 
-If you do not own the repository that you wish to modify, a pull request is the
+If you do not own the repository that you wish to modify, a **PR** is the
 only way that you can contribute changes to that repository.
 
-The ability to suggest changes to ANY repository, without needing administrative privileges is a powerful feature of `GitHub`. This workflow supports open science
+The ability to suggest changes to ANY repository, without needing administrative
+privileges is a powerful feature of **GitHub**. This workflow supports open science
 because the entire process of updating content is open and supported by peer
 review. You can make as many changes as you want in your fork, and then suggest that the owner of the original repository incorporate those changes using a pull request.
 TODO: finish this up and tie to issues less???
@@ -93,16 +125,15 @@ Below, you will learn how to submit a pull request to a repository. Assume that
 an issue has already been defined....
 ### Pull Request Terminology - Head vs. Base
 
-Pretend for a moment that you wish to submit changes to your colleagues repo. You
-are ready to make a pull request to the repo.  
+Consider the example above where you were submitting changes to the contributing.rst
+file in your colleague's repo. You are ready to make a pull request to the repo.  
 
-When submitting a pull request, you need to specify both where you'd like to suggest the changes (your colleagues repo) and where the changes are
+When submitting a pull request, you need to specify both where you'd like to suggest the changes (your colleague's repo) and where the changes are
 coming from (your repo). There are two terms that you should know to set this
-up in Github: **head**
-and **base**.
+up in Github: **head** and **base**.
 
 * **Base**: Base is the repository that will be updated. Changes will be added to this repository. Following the example above, the base repo is your colleagues repo.
-* **Head**: Head is the repository containing the changes that will be added to the base. Following the example above, this is your repo (the fork that you own of your colleagues repo).
+* **Head**: Head is the repository containing the changes that will be added to the base. Following the example above, this is your repo (the fork that you own of your colleague's repo).
 
 One way to remember the difference between head and base is that the “head” is
 a**head** of the "base". Ahead means that there are changes in the head repo that
@@ -181,12 +212,8 @@ else is going to take time to review your PR. Make sure that you take care of
 cleaning up what you can FIRST, before submitting the PR
 
 
-<figure>
- <a href="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-diff-file.png">
- <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/diffs.png" alt="This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo"></a>
- <figcaption>This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo.
- </figcaption>
-</figure>
+
+
 
 > NOTE: this also doesn't highlight-- your branch is ahead of the fork by xx commits...the text you'd see on your fork page.  so we want to show that too..
 
@@ -245,3 +272,9 @@ TODO:
 For Jenny:
 * Need to save copies of all external images using file-names-like-this.png to images/earth-analytics/git-version-control
 * Move all images that need it to images/earth-analytics/git-version-control
+
+* Update images  (links and also with more specific graphics that target what's being taught)
+* setup a story on the landing page of the chapter where the person is working with a colleague and a group and wanted to update some things... use that story throughout the chapter.  
+
+WHAT About
+* @mentioning reviewers when the changes have been complete
