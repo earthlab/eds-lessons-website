@@ -4,14 +4,14 @@ title: 'Learn How To Use GitHub to Collaborate on Science Project Projects'
 excerpt: "GitHub . Learn . "
 authors: ['Leah Wasser', 'Jenny Palomino']
 category: [courses]
-class-lesson: ['collaboration-github']
+class-lesson: ['git-github-collaboration']
 permalink: /courses/intro-to-earth-data-science/git-github/github-collaboration/
 nav-title: "GitHub for Collaboration"
 dateCreated: 2019-10-02
 modified: 2019-10-07
 module-title: 'GitHub for Collaboration'
 module-nav-title: 'GitHub for Collaboration'
-module-description: 'GitHub . Learn'
+module-description: 'GitHub is a website that can be used to both track versions of files with git and also . Learn'
 module-type: 'class'
 chapter: 8
 class-order: 2
@@ -77,8 +77,8 @@ The pull request is a way that you or a colleague can suggest code changes. The 
 The pull request is a great way to ensure that everyone is on the same page with your edits before the changes are merged or combined into a designated repository. Pull Requests are specific to the **GitHub** website.
 
 <figure>
- <a href="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-diff-file.png">
- <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-diff-file.png" alt="This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo"></a>
+ <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-diff-file.png">
+ <img src="{{ site.url }}/images/earth-analytics/git-version-control/github-diff-file.png" alt="This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo"></a>
  <figcaption>This screenshot shows a diff associated with a pull request. On the LEFT you can see the text (highlighted with red) that was modified by the proposed pull request. The words that are dark red were the ones that were deleted. On the RIGHT you can see the text (in green) that represents the proposed changes. The words that are darker green were added. In this example, the word **earthpy** was replaced with **matplotcheck** in the contributing.rst file of the repo.
  </figcaption>
 </figure>
