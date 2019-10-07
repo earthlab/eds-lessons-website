@@ -14,7 +14,7 @@ module-nav-title: 'GitHub for Collaboration'
 module-description: 'GitHub . Learn'
 module-type: 'class'
 chapter: 8
-class-order: 1
+class-order: 2
 course: "intro-to-earth-data-science-textbook"
 week: 3
 sidebar:
