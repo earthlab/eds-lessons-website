@@ -2,7 +2,7 @@
 layout: single
 title: 'Sync a GitHub Repo: How To Ensure Your GitHub Fork Is Up To Date'
 excerpt: "When you are working on a forked GitHub repository you will need to update your files frequently. Learn how to update your GitHub fork using a reverse pull request."
-authors: ['Jenny Palomino', 'Leah Wasser', 'Max Joseph']
+authors: ['Leah Wasser', 'Jenny Palomino', 'Max Joseph']
 category: [courses]
 class-lesson: ['git-github-collaboration-tb']
 permalink: /courses/intro-to-earth-data-science/git-github/collaboration/update-github-repositories-with-changes-by-others/
@@ -41,12 +41,12 @@ being made to the repo that you (and others) are contributing to. It is importan
 up to date or in sync with those changes as you work. Keeping your fork in sync
 with the central repo, will reduce the risk of merge conflicts (a topic that you will learn more about in a later chapter).
 
-### Syncing Your GitHub Repo Reduces the Chances of a Merge Conflict 
+### Syncing Your GitHub Repo Reduces the Chances of a Merge Conflict
 
-A merge conflict occurs when two people edit the same line in a file. Git does not know how to resolve the conflict (which changes to keep and which to remove). When git doesn't know how to resolve a conflict, it will ask you to manually fix the conflict. If you sync your files regularly, you will ultimately reduce the risk of a merge conflict. 
+A merge conflict occurs when two people edit the same line in a file. Git does not know how to resolve the conflict (which changes to keep and which to remove). When git doesn't know how to resolve a conflict, it will ask you to manually fix the conflict. If you sync your files regularly, you will ultimately reduce the risk of a merge conflict.
 
 
-### An Example Workflow Where Syncing Is Important 
+### An Example Workflow Where Syncing Is Important
 
 Pretend that you are working on a fork of your colleagues repo. Your colleagues repo is the final home for the code and content that you are working together on collaboratively. You colleague and others in your group, may be updating code while you are working. It's important to ensure that your fork is in sync with your colleagues repo, ideally before making a new pull request to that repo.
 
@@ -61,7 +61,7 @@ to the code and files that have been made to the parent repo.
 </figure>
 
 
-## Two Ways to Sync A Repo - Command Line and on the Github Website 
+## Two Ways to Sync A Repo - Command Line and on the Github Website
 There are a few ways to update or sync your repo with the central repo (your colleagues repo).
 
 1. You can perform a "Reverse Pull Request" on GitHub. A reverse pull request will follow the same steps as a regular pull request. However, in this case, your fork becomes the **base** and your colleague's repo is the **head**. If you update your fork this way, you will then have to PULL your changes down to your local clone of the repo (on your computer) where you are working.  
