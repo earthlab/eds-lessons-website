@@ -1,14 +1,14 @@
 ---
 layout: single
-title: 'Propose Changes to GitHub Repositories Using Pull Requests'
-excerpt: "GitHub.com can be used to store and access files in the cloud using GitHub repositories. Learn how to submit pull requests on GitHub.com to suggest changes to a GitHub repository."
+title: 'How To Create A Pull Request on Github: Propose Changes to GitHub Repositories'
+excerpt: "A pull request allows anyone to suggest changes to a repository on GitHub that can be easily reviewed by others. Learn how to submit pull requests on GitHub.com to suggest changes to a GitHub repository."
 authors: ['Leah Wasser', 'Max Joseph', 'Jenny Palomino']
 category: [courses]
-class-lesson: ['git-github-collaboration']
-permalink: /courses/intro-to-earth-data-science/git-github/github-collaboration/pull-requests-to-propose-changes-github-repositories/
+class-lesson: ['git-github-collaboration-tb']
+permalink: /courses/intro-to-earth-data-science/git-github/github-collaboration/how-to-submit-pull-requests-on-github/
 nav-title: "GitHub Pull Requests"
 dateCreated: 2019-10-02
-modified: 2019-10-07
+modified: 2019-10-08
 module-type: 'class'
 course: "intro-to-earth-data-science-textbook"
 week: 3
@@ -237,6 +237,10 @@ title and description, “Create Pull Request”.
  <figcaption> Pull request titles should be concise and descriptive of the content in the pull request. More detailed notes can be left in the comments box.
  </figcaption>
 </figure>
+
+### Pull Request Descriptions and @Mentions
+
+If you know who will be reviewing your PR, it is good practice to
 
 
 ## Pull Requests and Your Location On GitHub

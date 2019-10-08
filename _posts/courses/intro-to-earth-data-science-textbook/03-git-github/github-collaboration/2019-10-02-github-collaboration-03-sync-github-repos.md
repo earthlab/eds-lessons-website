@@ -1,14 +1,14 @@
 ---
 layout: single
 title: 'Sync a GitHub Repo: How To Ensure Your GitHub Fork Is Up To Date'
-excerpt: "GitHub.com . Learn how to update your GitHub repositories with changes by other users."
+excerpt: "When you are working on a forked GitHub repository you will need to update your files frequently. Learn how to update your GitHub fork using a reverse pull request."
 authors: ['Jenny Palomino', 'Leah Wasser', 'Max Joseph']
 category: [courses]
-class-lesson: ['git-github-collaboration']
+class-lesson: ['git-github-collaboration-tb']
 permalink: /courses/intro-to-earth-data-science/git-github/collaboration/update-github-repositories-with-changes-by-others/
-nav-title: "Update Your GitHub Repositories"
+nav-title: "Sync GitHub Repos"
 dateCreated: 2019-09-06
-modified: 2019-10-07
+modified: 2019-10-08
 module-type: 'class'
 course: "intro-to-earth-data-science-textbook"
 week: 3

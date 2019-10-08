@@ -1,14 +1,14 @@
 ---
 layout: single
 title: 'Track, Manage and Discuss Project Changes and Updates Using GitHub Issues'
-excerpt: "."
+excerpt: "An issue is a GitHub project management tool that allows anyone to identify and discuss potential changes to a repo. Learn how to create and manage GitHub issues to support collaborative open reproducible science projects."
 authors: ['Leah Wasser', 'Jenny Palomino', 'Max Joseph']
 category: [courses]
-class-lesson: ['git-github-collaboration']
-permalink: /courses/intro-to-earth-data-science/git-github/github-collaboration/github-issues-to-document-and-manage-changes/
+class-lesson: ['git-github-collaboration-tb']
+permalink: /courses/intro-to-earth-data-science/git-github/github-collaboration/github-issues-to-document-and-manage-repo-changes/
 nav-title: "GitHub Issues"
 dateCreated: 2019-10-02
-modified: 2019-10-07
+modified: 2019-10-08
 module-type: 'class'
 course: "intro-to-earth-data-science-textbook"
 week: 3

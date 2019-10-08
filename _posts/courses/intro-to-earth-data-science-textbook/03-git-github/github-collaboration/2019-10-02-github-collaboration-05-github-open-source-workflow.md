@@ -4,11 +4,11 @@ title: 'Github Open Source Workflow....'
 excerpt: "GitHub.com can be used to store and access files in the cloud using GitHub repositories. Learn how to submit pull requests on GitHub.com to suggest changes to a GitHub repository."
 authors: ['Leah Wasser', 'Jenny Palomino', 'Max Joseph']
 category: [courses]
-class-lesson: ['git-github-collaboration']
+class-lesson: ['git-github-collaboration-tb']
 permalink: /courses/intro-to-earth-data-science/git-github/github-collaboration/github-issues-to-document-and-manage-changes/
 nav-title: "GitHub Issues"
 dateCreated: 2019-10-02
-modified: 2019-10-07
+modified: 2019-10-08
 module-type: 'class'
 course: "intro-to-earth-data-science-textbook"
 week: 3
@@ -35,7 +35,6 @@ After completing this page, you will be able to:
 </div>
 
 Overciew of the entire workflow.
-
 
 
 
