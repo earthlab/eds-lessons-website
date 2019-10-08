@@ -73,8 +73,8 @@ To sync your forked repo with the parent or central repo you:
 2. Run the `git pull` command in the Terminal to update your local clone. The following sections review how to complete these steps.
 
 <figure>
- <a href="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-sync-repo.gif">
- <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-sync-repo.gif" alt="An animated gif showing you how to sync a GitHub repo on GitHub.com. Note that you can also sync individual branches within a repo using this same approach."></a>
+ <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-sync-repo.gif">
+ <img src="{{ site.url }}/images/earth-analytics/git-version-control/github-sync-repo.gif" alt="An animated gif showing you how to sync a GitHub repo on GitHub.com. Note that you can also sync individual branches within a repo using this same approach."></a>
  <figcaption>An animated gif showing you how to sync a GitHub repo on GitHub.com. Note that you can also sync individual branches within a repo using this same approach.
  </figcaption>
 </figure>
@@ -91,8 +91,8 @@ On this web page, create a pull request by following these steps:
 5. On the new page, click on `Create pull request` once more to finish creating the pull request.
 
 <figure>
- <a href="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-create-reverse-pull-request.gif">
- <img src="{{ site.url }}/images/courses/earth-analytics/git-version-control/github-create-reverse-pull-request.gif" alt="You can update your fork with changes made to the original Github repository by creating a pull request from the original repository to your fork."></a>
+ <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-create-reverse-pull-request.gif">
+ <img src="{{ site.url }}/images/earth-analytics/git-version-control/github-create-reverse-pull-request.gif" alt="You can update your fork with changes made to the original Github repository by creating a pull request from the original repository to your fork."></a>
  <figcaption> You can update your fork with changes made to the original Github repository by creating a pull request from the original repository to your fork.
  </figcaption>
 </figure>
@@ -110,8 +110,8 @@ repo are in your repo. Return to your fork on GitHub.com. You will see the
 changes that you have just merged into your fork.
 
 <figure>
- <a href="{{ site.url }}/images/courses/earth-analytics/git/github-merge-reverse-pull-request.gif">
- <img src="{{ site.url }}/images/courses/earth-analytics/git/github-merge-reverse-pull-request.gif" alt="After creating a pull request, you merge the pull request to apply the changes from the original repository to your fork."></a>
+ <a href="{{ site.url }}/images/earth-analytics/git/github-merge-reverse-pull-request.gif">
+ <img src="{{ site.url }}/images/earth-analytics/git/github-merge-reverse-pull-request.gif" alt="After creating a pull request, you merge the pull request to apply the changes from the original repository to your fork."></a>
  <figcaption> After creating a pull request, you merge the pull request to apply the changes from the original repository to your fork.
  </figcaption>
 </figure>

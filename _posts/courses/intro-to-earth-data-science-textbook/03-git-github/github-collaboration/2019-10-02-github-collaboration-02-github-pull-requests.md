@@ -250,8 +250,8 @@ title and description, “Create Pull Request”.
 {: .notice--success}
 
 <figure>
- <a href="{{ site.url }}/images/courses/earth-analytics/git/create-pull-request.png">
- <img src="{{ site.url }}/images/courses/earth-analytics/git/create-pull-request.png" alt="Pull request titles should be concise and descriptive of the content in the pull request. More detailed notes can be left in the comments box."></a>
+ <a href="{{ site.url }}/images/earth-analytics/git/create-pull-request.png">
+ <img src="{{ site.url }}/images/earth-analytics/git/create-pull-request.png" alt="Pull request titles should be concise and descriptive of the content in the pull request. More detailed notes can be left in the comments box."></a>
  <figcaption> Pull request titles should be concise and descriptive of the content in the pull request. More detailed notes can be left in the comments box.
  </figcaption>
 </figure>
@@ -285,8 +285,8 @@ To close a pull request, click on `Close pull request` button towards the
 bottom of the pull request page.
 
 <figure>
- <a href="{{ site.url }}/images/courses/earth-analytics/git/close-pull-request.png">
- <img src="{{ site.url }}/images/courses/earth-analytics/git/close-pull-request.png" alt="Location of the Close pull request button on an example pull request from jenp0277 to earthlab-education."></a>
+ <a href="{{ site.url }}/images/earth-analytics/git/close-pull-request.png">
+ <img src="{{ site.url }}/images/earth-analytics/git/close-pull-request.png" alt="Location of the Close pull request button on an example pull request from jenp0277 to earthlab-education."></a>
  <figcaption> Location of the Close pull request button on an example pull request from jenp0277 to earthlab-education.
  </figcaption>
 </figure>
