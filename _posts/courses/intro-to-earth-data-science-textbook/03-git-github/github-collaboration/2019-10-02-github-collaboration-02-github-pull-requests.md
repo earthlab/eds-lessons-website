@@ -243,8 +243,8 @@ title and description, “Create Pull Request”.
 {: .notice--success}
 
 <figure>
- <a href="{{ site.url }}/images/earth-analytics/git/create-pull-request.png">
- <img src="{{ site.url }}/images/earth-analytics/git/create-pull-request.png" alt="Pull request titles should be concise and descriptive of the content in the pull request. More detailed notes can be left in the comments box."></a>
+ <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-create-pull-request.png">
+ <img src="{{ site.url }}/images/earth-analytics/git-version-control/github-create-pull-request.png" alt="Pull request titles should be concise and descriptive of the content in the pull request. More detailed notes can be left in the comments box."></a>
  <figcaption> Pull request titles should be concise and descriptive of the content in the pull request. More detailed notes can be left in the comments box.
  </figcaption>
 </figure>
