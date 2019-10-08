@@ -5,8 +5,8 @@ excerpt: "GitHub.com can be used to store and access files in the cloud using Gi
 authors: ['Leah Wasser', 'Jenny Palomino', 'Max Joseph']
 category: [courses]
 class-lesson: ['git-github-collaboration-tb']
-permalink: /courses/intro-to-earth-data-science/git-github/github-collaboration/github-issues-to-document-and-manage-changes/
-nav-title: "GitHub Issues"
+permalink: /courses/intro-to-earth-data-science/git-github/github-collaboration/github-for-collaboration-open-science-workflow/
+nav-title: "GitHub OpenSource Workflow"
 dateCreated: 2019-10-02
 modified: 2019-10-08
 module-type: 'class'
@@ -35,7 +35,6 @@ After completing this page, you will be able to:
 </div>
 
 Overciew of the entire workflow.
-
 
 
 

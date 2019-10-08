@@ -60,8 +60,8 @@ specific to GitHub and can be implemented in two ways:
 For the purposes of this page, pretend that you are working with your colleague
 on a project. You have been asked to make some changes to the contributing.rst file
 in your collaborators repository. Specifically, you have been asked to replace
-the word **earthpy** in the readme with the word **matplotcheck**. To begin this
-task, you:
+the word **earthpy** in a contributing document in the repo with the word
+**matplotcheck**. To begin this task, you:
 
 1. Create a fork of your colleagues repo
 2. Clone that fork to your local computer and begin to work on the contributing file in a text editor.
@@ -79,15 +79,15 @@ Now, the changes are in your fork but you want to suggest those changes as updat
    </figcaption>
 </figure>
 
-### Opening Up A Pull Request on GitHub.com
+## How To Create A Pull Request on GitHub.com
 
 When you open up a pull request, you will see the line by line changes or
 differences between the file you submitted compared to the file that exists
 in a repository. These changes are called **diffs** (short for differences).
 Pull requests show diffs of the content between (a branch on) your repo and (a
 branch on) the repo that you are submitting changes to. The changes, additions,
-and subtractions are shown in green (green for new additions to the files) and
-red (signifying deletions from the file).
+and subtractions are shown in green and red. The color green represents additions
+to the file whereas red represents deletions.
 
 <figure>
  <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-diff-file.png">
@@ -96,12 +96,36 @@ red (signifying deletions from the file).
  </figcaption>
 </figure>
 
-After you have submitted your PR, you colleague reviews the changes. It's often
+### GitHub and Mentions: Communicating With Your Collaborators
+
+After you have submitted your PR, you colleague reviews the changes. It's
 good practice to mention your colleague specifically when you submit your PR to
-ensure that they see it. You can do that using @their-github-username-here in a
+ensure that they see it. You can do that using `@their-github-username-here` in a
 comment in the PR. Once your colleagues is happy with the changes, then they
 will merge your PR. If they would like a few additional changes, they will
 request changes. This is the general PR workflow.
+
+
+## The Anatomy of a Diff (Difference Between two Files)
+
+As mentioned above, a diff represents differences between two files in **git**.
+Git keeps track of changes through additions and deletions on a character by
+character and line by line basis.
+
+So, pretend that the word "great" is spelled incorrectly in a file. And you wish
+to fix the spelling. The edit that you will make is:
+
+**graet** will be changed to **great**
+
+The change above represents 2 character deletions and 2 additions.
+
+the word great has 5 characters so the number of characters is not changing in this example.
+However, you are deleting: `ae` and replacing those two characters with `ea`.
+
+As you edit files in a version control system like git, it is tracking each character
+addition and deletion. This is then when you see in a diff when you submit a pull
+request.
+
 
 
 
@@ -126,9 +150,7 @@ privileges is a powerful feature of **GitHub**. This workflow supports open scie
 because the entire process of updating content is open and supported by peer
 review. You can make as many changes as you want in your fork, and then suggest
 that the owner of the original repository incorporate those changes using a pull request.
-TODO: finish this up and tie to issues less???
-Below, you will learn how to submit a pull request to a repository. Assume that
-an issue has already been defined....
+
 ## Pull Request Terminology - Head vs. Base
 
 Consider the example above where you were submitting changes to the contributing.rst
@@ -153,11 +175,16 @@ look something like this:
 * base fork: `your-colleagues-username/project-name`
 * head fork: `/your-username/project-name`
 
-TODO: Add screenshot or the PR interface
-
 Next, you will learn how to create a pull request in GitHub.
 
 ## How To Submit Pull Requests To Suggest Changes To Repositories
+
+<figure>
+ <a href="{{ site.url }}/images/earth-analytics/git-version-control/git-create-pull-request-screencast.gif">
+ <img src="{{ site.url }}/images/earth-analytics/git-version-control/git-create-pull-request-screencast.gif" alt="Short animated gif showing the steps involved with creating a pull request. When you setup your pull request first check that the base is the repo that you wish to ADD change to. Your fork (or a branch) is where the changes currently exist. When creating a new pull request you should always check that the changes in your PR are the ones that you wish to submit. It's also good practice to ping or @mention a collaborator who you want to review and merge the PR if you know who that will be."></a>
+ <figcaption>When you setup your pull request, remember to ensure that the base is the repo that you wish to ADD change to. Your fork (or a branch) is where the changes currently exist. When creating a new pull request you should always check that the changes in your PR are the ones that you wish to submit. It's also good practice to ping or @mention a collaborator who you want to review and merge the PR if you know who that will be.
+ </figcaption>
+</figure>
 
 ### Step 1 - Start to Open Your Pull Request on GitHub
 
@@ -187,8 +214,6 @@ In this example, you want to update:
 
 The above pull request configuration tells `Github.com` to update the base repository with contents from your forked repository, or the head repository.
 
-TODO: Create an animated gif of this process...
-
 ### Step 3 - Verify The Changes In Your Pull Request
 
 When you compare two repos in a pull request page, `GitHub` provides an overview of the differences (diffs) between the files. Carefully review these changes to
@@ -214,13 +239,6 @@ else is going to take time to review your PR. Make sure that you take care of
 cleaning up what you can FIRST, before submitting the PR
 
 
-
-
-
-
-
-> NOTE: this also doesn't highlight-- your branch is ahead of the fork by xx commits...the text you'd see on your fork page.  so we want to show that too..
-
 ### Step 4 - Click on the Create New Pull Request Button
 
 The next step of the create pull request process is to click the "Create Pull Request" button. Note that this button will NOT be available if you don't have
@@ -238,9 +256,6 @@ title and description, “Create Pull Request”.
  </figcaption>
 </figure>
 
-### Pull Request Descriptions and @Mentions
-
-If you know who will be reviewing your PR, it is good practice to
 
 
 ## Pull Requests and Your Location On GitHub
@@ -266,7 +281,8 @@ You can also close a pull request on `Github.com` if you decide you are not read
 
 For example, the pull request you just created in this lesson can be closed if you have not yet completed Homework 1. When you are ready to submit Homework 1, you can simply create a new pull request on `Github.com` following these same steps.
 
-To close a pull request, simply click on `Close pull request` button toward the bottom of the pull request page.
+To close a pull request, click on `Close pull request` button towards the
+bottom of the pull request page.
 
 <figure>
  <a href="{{ site.url }}/images/courses/earth-analytics/git/close-pull-request.png">
