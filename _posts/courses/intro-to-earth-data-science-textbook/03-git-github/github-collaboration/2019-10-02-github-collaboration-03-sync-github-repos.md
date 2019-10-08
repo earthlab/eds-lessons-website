@@ -33,9 +33,10 @@ After completing this page, you will be able to:
 
 </div>
 
-** how to update on GitHub
 
-github-commits-behind-master-abc.png
+
+
+
 
 TODO: create animated gif that shows the repo being out of sync and behind and then syncing...
 
@@ -53,8 +54,12 @@ Pretend that you are working on a fork of your colleagues repo. Your colleagues 
 Your repo being in sync refers to your fork having all of the commits or changes
 to the code and files that have been made to the parent repo.
 
-# TODO: Image showing a fork that is behind the parent ... and maybe one that's ahead???
-
+<figure>
+ <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-commits-behind-master-abc.png">
+ <img src="{{ site.url }}/images/earth-analytics/git-version-control/github-commits-behind-master-abc.png" alt="Image of an out of sync forked repo. Notice that you can tell by the upper right hand corner of the repo that this fork is owned by lwasser. The parent repo is owned by earthlab. You can also see that this fork is BEHIND the parent repo by 50 commits. This fork is out of sync."></a>
+ <figcaption>Image of an out of sync forked repo. Notice that you can tell by the upper right hand corner of the repo that this fork is owned by lwasser. The parent repo is owned by earthlab. You can also see that this fork is BEHIND the parent repo by 50 commits. This fork is out of sync.
+ </figcaption>
+</figure>
 
 There are a few ways to update or sync your repo with the central repo (your colleagues repo).
 
@@ -64,6 +69,15 @@ There are a few ways to update or sync your repo with the central repo (your col
 This lesson will focus on syncing your fork using a reverse pull request approach on GitHub.com
 
 TODO: Image showing fork, clone and central repo (i imagine a triangle type graphic showing 1 and two... the order being different.. ) Ally could work on this.
+
+
+
+<figure>
+ <a href="{{ site.url }}/images/earth-analytics/git-version-control/git-fork-clone-flow-neon.png">
+ <img src="{{ site.url }}/images/earth-analytics/git-version-control/git-fork-clone-flow-neon.png" alt="When you fork a repo that is being actively worked on by other people, it is good practice to periodically update your fork with updates. Remember that multiple people may be adding to this repo at any given time."></a>
+ <figcaption>When you fork a repo that is being actively worked on by other people, it is good practice to periodically update your fork with updates. Remember that multiple people may be adding to this repo at any given time.
+ </figcaption>
+</figure>
 
 ## Sync Your Forked GitHub Repo Using A Pull Request
 
@@ -75,7 +89,7 @@ To sync your forked repo with the parent or central repo you:
 <figure>
  <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-sync-repo.gif">
  <img src="{{ site.url }}/images/earth-analytics/git-version-control/github-sync-repo.gif" alt="An animated gif showing you how to sync a GitHub repo on GitHub.com. Note that you can also sync individual branches within a repo using this same approach."></a>
- <figcaption>An animated gif showing you how to sync a GitHub repo on GitHub.com. Note that you can also sync individual branches within a repo using this same approach.
+ <figcaption>An animated gif showing you how to sync a GitHub repo on GitHub.com. In this case, the user lwasser is updating her fork of the abc-classroom repo from the earthlab/abc-classroom repo. Note that the fork is the base (the repo being updated). The earthlab owned repo is teh head. You can also sync individual branches within a repo using this same approach.
  </figcaption>
 </figure>
 
@@ -138,6 +152,4 @@ $ git pull
 Congratulations! You have now updated your local clone with the updates made to the original **GitHub** repository.
 
 
-For Jenny:
-* Need to save copies of all external images using file-names-like-this.png to images/earth-analytics/git-version-control
-* Move all images that need it to images/earth-analytics/git-version-control
+
