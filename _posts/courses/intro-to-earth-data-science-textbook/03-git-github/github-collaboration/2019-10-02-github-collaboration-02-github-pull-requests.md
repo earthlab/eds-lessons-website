@@ -39,13 +39,6 @@ After completing this page, you will be able to:
 </div>
 
 
-### Add to page?
-* Question: create new page for following or add to this page:
-    * Communicate with @GitHubUsername
-    * Using Issues
-        * Create a new issue        
-        * Close an issue through a pull request
-
 ## About Pull Requests And Two Ways to Create A Pull Request
 
 A **pull request** (referred to as a **PR**) is a way for you to suggest changes
@@ -292,7 +285,7 @@ A screencast showing how this process works is below.
 </figure>
 
 
-### Close Pull Requests
+### How To Close Pull Requests on GitHub
 
 You can also close a pull request on `Github.com` if you decide you are not
 ready to submit your files from your forked repository to the original repository.
@@ -305,8 +298,8 @@ To close a pull request, click on `Close pull request` button towards the
 bottom of the pull request page.
 
 <figure>
- <a href="{{ site.url }}/images/earth-analytics/git/close-pull-request.png">
- <img src="{{ site.url }}/images/earth-analytics/git/close-pull-request.png" alt="Location of the Close pull request button on an example pull request from jenp0277 to earthlab-education."></a>
+ <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-close-pull-request.png">
+ <img src="{{ site.url }}/images/earth-analytics/git-version-control/github-close-pull-request.png" alt="Location of the Close pull request button on an example pull request from jenp0277 to earthlab-education."></a>
  <figcaption> Location of the Close pull request button on an example pull request from jenp0277 to earthlab-education.
  </figcaption>
 </figure>
