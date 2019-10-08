@@ -34,12 +34,6 @@ After completing this page, you will be able to:
 </div>
 
 
-
-
-
-
-TODO: create animated gif that shows the repo being out of sync and behind and then syncing...
-
 ## Syncing GitHub Repos
 
 When you are collaborating with others on a project, there are often changes
@@ -47,7 +41,12 @@ being made to the repo that you (and others) are contributing to. It is importan
 up to date or in sync with those changes as you work. Keeping your fork in sync
 with the central repo, will reduce the risk of merge conflicts (a topic that you will learn more about in a later chapter).
 
-A merge conflict occurs when two people edit the same line in a file. Git does not know how to resolve the conflict (which changes to keep and which to remove). When git doesn't know how to resolve a conflict, it will ask you to manually fix the conflict.
+### Syncing Your GitHub Repo Reduces the Chances of a Merge Conflict 
+
+A merge conflict occurs when two people edit the same line in a file. Git does not know how to resolve the conflict (which changes to keep and which to remove). When git doesn't know how to resolve a conflict, it will ask you to manually fix the conflict. If you sync your files regularly, you will ultimately reduce the risk of a merge conflict. 
+
+
+### An Example Workflow Where Syncing Is Important 
 
 Pretend that you are working on a fork of your colleagues repo. Your colleagues repo is the final home for the code and content that you are working together on collaboratively. You colleague and others in your group, may be updating code while you are working. It's important to ensure that your fork is in sync with your colleagues repo, ideally before making a new pull request to that repo.
 
@@ -61,16 +60,14 @@ to the code and files that have been made to the parent repo.
  </figcaption>
 </figure>
 
+
+## Two Ways to Sync A Repo - Command Line and on the Github Website 
 There are a few ways to update or sync your repo with the central repo (your colleagues repo).
 
 1. You can perform a "Reverse Pull Request" on GitHub. A reverse pull request will follow the same steps as a regular pull request. However, in this case, your fork becomes the **base** and your colleague's repo is the **head**. If you update your fork this way, you will then have to PULL your changes down to your local clone of the repo (on your computer) where you are working.  
 2. You can manually set or pull down changes from the central repo to your clone locally. This can be done using bash. When you update your local clone, you will then need to push the changes or commits back up to your fork on github.com
 
 This lesson will focus on syncing your fork using a reverse pull request approach on GitHub.com
-
-TODO: Image showing fork, clone and central repo (i imagine a triangle type graphic showing 1 and two... the order being different.. ) Ally could work on this.
-
-
 
 <figure>
  <a href="{{ site.url }}/images/earth-analytics/git-version-control/git-fork-clone-flow-neon.png">
@@ -93,7 +90,7 @@ To sync your forked repo with the parent or central repo you:
  </figcaption>
 </figure>
 
-### Update Your Forked Repo on Github.com
+## How To Sync or Update Your Forked Repo Using the Github Website
 
 To update your fork on **GitHub.com**, navigate in your web browser to the main **GitHub.com** page of your forked repository: `https://github.com/your-username/example-repository`.
 
@@ -113,6 +110,8 @@ On this web page, create a pull request by following these steps:
 
 After creating the pull request, you need to **merge the pull request**, so that the changes in your colleague's repo are merged into your fork.
 
+### How to Merge a Pull Request
+
 To merge a pull request:
 
 1. Open up the pull request if it's not already open on Github
@@ -124,19 +123,19 @@ repo are in your repo. Return to your fork on GitHub.com. You will see the
 changes that you have just merged into your fork.
 
 <figure>
- <a href="{{ site.url }}/images/earth-analytics/git/github-merge-reverse-pull-request.gif">
- <img src="{{ site.url }}/images/earth-analytics/git/github-merge-reverse-pull-request.gif" alt="After creating a pull request, you merge the pull request to apply the changes from the original repository to your fork."></a>
+ <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-merge-reverse-pull-request.gif">
+ <img src="{{ site.url }}/images/earth-analytics/git-version-control/github-merge-reverse-pull-request.gif" alt="After creating a pull request, you merge the pull request to apply the changes from the original repository to your fork."></a>
  <figcaption> After creating a pull request, you merge the pull request to apply the changes from the original repository to your fork.
  </figcaption>
 </figure>
 
 If you update your fork on GitHub.com, you then need to update your files locally. The steps to do that are below.
 
-### Update Your Local Clone
+### How to Update Your Local Clone
 
 Once you have synced your fork on github.com, you are ready to update your cloned repo on your local computer. To pull down or copy the changes merged into your synced fork, you can use the Terminal and the `git pull` command.
 
-To begin
+To begin:
 
 1. On your local computer, navigate to your forked repo directory.
 2. One you in the forked repo directory, run `git pull`

@@ -33,12 +33,17 @@ redirect_from:
 
 ## <i class="fa fa-ship" aria-hidden="true"></i> Chapter Eight - GitHub for Collaboration
 
-In this chapter, you will learn .
+GitHub is a website that supports version control using git. In this chapter,
+you will learn how to use GitHub for both version control and as a collaboration
+tool. Specifically you will learn about a well-known and used collaboration model
+that is used in the open software community.
 
 After completing this chapter, you will be able to:
 
 * Explain what a pull request (PR) is and how PR's are used on GitHub.
 * Explain what a GitHub issue is and explain how issues are used on GitHub.
+* Create an issue in GitHub
+* Create a Pull Request in GitHub.
 * Describe the open source software collaboration model as it's implemented on GitHub.
 * Explain the difference between Git and GitHub
 
@@ -65,16 +70,20 @@ can use to collaborate on projects.
 
 ## GitHub For Project Management and Collaboration
 
-There are several tools that GitHub offers that you can use to support collaborating on projects.
+There are several tools that GitHub offers that you can use to support
+collaborating on projects.
 
 ### 1. GitHub Pull Requests
 
-The pull request is a way that you or a colleague can suggest code changes. The pull request allows:
+The pull request is a way that you or a colleague can suggest code changes.
+The pull request allows:
    * Your collaborators to see exactly what items were changed line by line in the code.
    * A group of people working on the code to view, review and comment on the code line by line.
    * You to document changes to your project which can also be clearly linked to issues that describe the need for those changes (see below).
 
-The pull request is a great way to ensure that everyone is on the same page with your edits before the changes are merged or combined into a designated repository. Pull Requests are specific to the **GitHub** website.
+The pull request is a great way to ensure that everyone is on the same page with
+your edits before the changes are merged or combined into a designated repository.
+Pull Requests are specific to the **GitHub** website.
 
 <figure>
  <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-diff-file.png">
@@ -87,7 +96,7 @@ The pull request is a great way to ensure that everyone is on the same page with
 ### 2. GitHub Issues
 
 Issues in GitHub are ways to document and discuss changes needed in a repository.
-Issues are also ideal for managing chnages in a project.
+Issues are also ideal for managing changes in a project.
 Issues are normally text (and code) that describe something that needs to be
 addressed. An issue could be related to something that needs to be fixed in your
 code or text. Issues can be assigned to one or more people to work on which
