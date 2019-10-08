@@ -180,8 +180,8 @@ Next, you will learn how to create a pull request in GitHub.
 ## How To Submit Pull Requests To Suggest Changes To Repositories
 
 <figure>
- <a href="{{ site.url }}/images/earth-analytics/git-version-control/git-create-pull-request-screencast.gif">
- <img src="{{ site.url }}/images/earth-analytics/git-version-control/git-create-pull-request-screencast.gif" alt="Short animated gif showing the steps involved with creating a pull request. When you setup your pull request first check that the base is the repo that you wish to ADD change to. Your fork (or a branch) is where the changes currently exist. When creating a new pull request you should always check that the changes in your PR are the ones that you wish to submit. It's also good practice to ping or @mention a collaborator who you want to review and merge the PR if you know who that will be."></a>
+ <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-create-pull-request-screencast.gif">
+ <img src="{{ site.url }}/images/earth-analytics/git-version-control/github-create-pull-request-screencast.gif" alt="Short animated gif showing the steps involved with creating a pull request. When you setup your pull request first check that the base is the repo that you wish to ADD change to. Your fork (or a branch) is where the changes currently exist. When creating a new pull request you should always check that the changes in your PR are the ones that you wish to submit. It's also good practice to ping or @mention a collaborator who you want to review and merge the PR if you know who that will be."></a>
  <figcaption>When you setup your pull request, remember to ensure that the base is the repo that you wish to ADD change to. Your fork (or a branch) is where the changes currently exist. When creating a new pull request you should always check that the changes in your PR are the ones that you wish to submit. It's also good practice to ping or @mention a collaborator who you want to review and merge the PR if you know who that will be.
  </figcaption>
 </figure>
@@ -274,12 +274,32 @@ review your PR and may ask for changes. When they are happy with all of the chan
 <i class="fa fa-star"></i> **Data Tip:** All future commits that you make to your fork (on the branch where you are working) will continue to be added to the open pull request UNTIL it is merged.
 {: .notice--success}
 
+## How To Merge GitHub Pull Requests on GitHub
+
+After you have submitted your PR, someone who owns or manages the repo where you
+are submitting the PR will review it. At this point they will either
+
+1. suggest that you make some changes to the PR or
+2. merge the PR if they are happy with all of the changes that you made.
+
+A screencast showing how this process works is below.
+
+<figure>
+ <a href="{{ site.url }}/images/earth-analytics/git-version-control/github-merge-pull-request-screencast.gif">
+ <img src="{{ site.url }}/images/earth-analytics/git-version-control/github-merge-pull-request-screencast.gif" alt="Short animated gif showing the steps involved with merging a pull request. It's common for a reviewer to comment on your pull request and request change. Once the reviewer is happy with the PR, they will merge it using the merge button on the bottom of the PR. It is important to note that you can only merge a PR in a repo that you have permissions to merge."></a>
+ <figcaption>It's common for a reviewer to comment on your pull request and request change. Once the reviewer is happy with the PR, they will merge it using the merge button on the bottom of the PR. It is important to note that you can only merge a PR in a repo that you have permissions to merge.
+ </figcaption>
+</figure>
+
 
 ### Close Pull Requests
 
-You can also close a pull request on `Github.com` if you decide you are not ready to submit your files from your forked repository to the original repository.
+You can also close a pull request on `Github.com` if you decide you are not
+ready to submit your files from your forked repository to the original repository.
 
-For example, the pull request you just created in this lesson can be closed if you have not yet completed Homework 1. When you are ready to submit Homework 1, you can simply create a new pull request on `Github.com` following these same steps.
+For example, the pull request you just created in this lesson can be closed if
+you have not yet completed Homework 1. When you are ready to submit Homework 1,
+you can simply create a new pull request on `Github.com` following these same steps.
 
 To close a pull request, click on `Close pull request` button towards the
 bottom of the pull request page.
@@ -292,13 +312,4 @@ bottom of the pull request page.
 </figure>
 
 
-TODO:
-For Jenny:
-* Need to save copies of all external images using file-names-like-this.png to images/earth-analytics/git-version-control
-* Move all images that need it to images/earth-analytics/git-version-control
 
-* Update images  (links and also with more specific graphics that target what's being taught)
-* setup a story on the landing page of the chapter where the person is working with a colleague and a group and wanted to update some things... use that story throughout the chapter.  
-
-WHAT About
-* @mentioning reviewers when the changes have been complete
