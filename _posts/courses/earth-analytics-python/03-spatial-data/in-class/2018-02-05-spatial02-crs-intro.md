@@ -3,7 +3,7 @@ layout: single
 title: "GIS in Python: Intro to Coordinate Reference Systems in Python"
 excerpt: "This lesson introduces what a coordinate reference system is. You will use the `Python` programming language to explore and reproject data into geographic and projected CRSs."
 authors: ['Chris Holdgraf', 'Leah Wasser']
-modified: 2020-01-31
+modified: 2020-02-01
 category: [courses]
 class-lesson: ['class-intro-spatial-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/intro-to-coordinate-reference-systems-python/
@@ -224,9 +224,9 @@ city_locations
 
 
 
-    [<shapely.geometry.point.Point at 0x7f0e6b03a590>,
-     <shapely.geometry.point.Point at 0x7f0e92dbba90>,
-     <shapely.geometry.point.Point at 0x7f0e6b03a410>]
+    [<shapely.geometry.point.Point at 0x7fc107b77950>,
+     <shapely.geometry.point.Point at 0x7fc107b77850>,
+     <shapely.geometry.point.Point at 0x7fc136f52b90>]
 
 
 

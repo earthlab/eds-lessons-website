@@ -3,7 +3,7 @@ layout: single
 title: "GIS in Python: Reproject Vector Data."
 excerpt: "In this lesson we cover how to reproject a vector dataset in `Python` using the `to_crs()` `Geopandas` function."
 authors: ['Leah Wasser','Martha Morrissey','Chris Holdgraf']
-modified: 2020-01-31
+modified: 2020-02-01
 category: [courses]
 class-lesson: ['class-intro-spatial-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/reproject-vector-data-in-python/

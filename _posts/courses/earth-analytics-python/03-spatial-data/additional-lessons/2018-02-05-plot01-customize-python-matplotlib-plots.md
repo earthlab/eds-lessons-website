@@ -3,7 +3,7 @@ layout: single
 title: "Customize your Maps in Python using Matplotlib: GIS in Python"
 excerpt: "In this lesson you will review how to customize matplotlib maps created using vector data in Python. You will review how to add legends, titles and how to customize map colors."
 authors: ['Chris Holdgraf', 'Leah Wasser']
-modified: 2020-01-31
+modified: 2020-02-01
 category: [courses]
 class-lesson: ['hw-custom-maps-python']
 module-title: 'Custom Plots in Python'
@@ -723,9 +723,9 @@ ax.collections
 
 
 
-    [<matplotlib.collections.PathCollection at 0x7f3120c9e4d0>,
-     <matplotlib.collections.PathCollection at 0x7f3120d6de10>,
-     <matplotlib.collections.PathCollection at 0x7f3120ca9510>]
+    [<matplotlib.collections.PathCollection at 0x7fbd6053bf90>,
+     <matplotlib.collections.PathCollection at 0x7fbd60612450>,
+     <matplotlib.collections.PathCollection at 0x7fbd6053c790>]
 
 
 
@@ -745,8 +745,8 @@ lines
 
 
 
-    [<matplotlib.collections.PathCollection at 0x7f3120c9e4d0>,
-     <matplotlib.collections.PathCollection at 0x7f3120d6de10>]
+    [<matplotlib.collections.PathCollection at 0x7fbd6053bf90>,
+     <matplotlib.collections.PathCollection at 0x7fbd60612450>]
 
 
 
