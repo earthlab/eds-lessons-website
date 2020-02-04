@@ -3,7 +3,7 @@ layout: single
 category: courses
 title: "Lidar Raster Data in Python"
 permalink: /courses/earth-analytics-python/lidar-raster-data/
-modified: 2020-01-31
+modified: 2020-02-01
 week-landing: 3
 week: 2
 sidebar:

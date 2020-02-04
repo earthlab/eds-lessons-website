@@ -3,7 +3,7 @@ layout: single
 title: "GIS in Python: Introduction to Vector Format Spatial Data - Points, Lines and Polygons"
 excerpt: "This lesson introduces what vector data are and how to open vector data stored in shapefile format in Python."
 authors: ['Leah Wasser', 'Chris Holdgraf']
-modified: 2020-01-31
+modified: 2020-02-01
 category: [courses]
 class-lesson: ['class-intro-spatial-python']
 permalink: /courses/earth-analytics-python/spatial-data-vector-shapefiles/intro-vector-data-python/
@@ -454,7 +454,7 @@ sjer_plot_locations.plot()
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x7f5cffb86e10>
+    <matplotlib.axes._subplots.AxesSubplot at 0x7f9b32e50f50>
 
 
 
