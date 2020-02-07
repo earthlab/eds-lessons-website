@@ -95,7 +95,7 @@ jobs:
             fi
       - run:
           name: Delete removed/renamed/moved images from .io website
-          working_directory: ~/earth-analytics-website
+          working_directory: ~/eds-lessons-website
           command: |
             if [[ -f deleted_image_files.txt ]]
             then
@@ -111,8 +111,9 @@ jobs:
             fi
       - run:
           name: Delete removed/renamed/moved markdown files and associated image directories from .io website
-          working_directory: ~/earth-analytics-website
+          working_directory: ~/eds-lessons-website
           command: |
+            ls
             if [[ -f deleted_md_files.txt ]]
             then
               echo -e "Deleting the following notebooks and their images:"
