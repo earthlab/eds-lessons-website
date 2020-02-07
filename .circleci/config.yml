@@ -87,9 +87,14 @@ jobs:
                     git checkout -b website-autobuild
                   fi
               fi
-              # Copy files to the live website repo
-              cd ~/eds-lessons-website
-              python scripts/move-files.py
+
+              # Only Copy files to the live website repo if there are files to move
+              # This might be nice as it's own step.
+              if [[ -f website_files.txt ]]
+              then
+                cd ~/eds-lessons-website
+                python scripts/move-files.py
+              fi
             else
               echo "There are no changes, not cloning the website repo."
             fi
