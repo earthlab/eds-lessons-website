@@ -103,8 +103,6 @@ jobs:
           name: Delete removed/renamed/moved images from .io website
           working_directory: ~/eds-lessons-website
           command: |
-            ls
-            pwd
             if [[ -f deleted_image_files.txt ]]
             then
               echo -e "Deleting the following images:"
@@ -128,7 +126,7 @@ jobs:
               cat deleted_md_files.txt | while read line
               do
                 echo $line
-                post_to_delete=~/earthlab.github.io/$(echo "$line" | sed 's/.[Rr]md/.md/g; s/.ipynb/.md/g')
+                post_to_delete=~/earthlab.github.io/$line
                 rm $post_to_delete
                 # clear images dir associated with post
                 image_dir_to_delete=~/earthlab.github.io/images/${line%.*}
