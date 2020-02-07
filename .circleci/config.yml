@@ -128,15 +128,17 @@ jobs:
                 echo $line
                 post_to_delete=~/earthlab.github.io/$line
                 rm $post_to_delete
+                echo "$post_to_delete"
                 # clear images dir associated with post
                 image_dir_to_delete=~/earthlab.github.io/images/${line%.*}
                 rm -rf $image_dir_to_delete
+                echo "$image_dir_to_delete"
               done
             else
               echo "There are no lessons and associated lesson images to remove in this PR!"
             fi
       - run:
-          name: Push files to new repo
+          name: Push changes in files and images to earthlab.github.io repo
           working_directory: ~/earthlab.github.io
           command: |
             if [[ -f ~/eds-lessons-website/website_files.txt ]]
