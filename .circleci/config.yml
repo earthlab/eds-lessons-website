@@ -133,9 +133,6 @@ jobs:
                 image_dir_to_delete=~/earthlab.github.io/images/${line%.*}
                 rm -rf $image_dir_to_delete
                 echo "$image_dir_to_delete"
-                cd ~/earthlab.github.io
-                git branch
-                git status
               done
             else
               echo "There are no lessons and associated lesson images to remove in this PR!"
@@ -144,7 +141,7 @@ jobs:
           name: Push changes in files and images to earthlab.github.io repo
           working_directory: ~/earthlab.github.io
           command: |
-            if [[ -f ~/eds-lessons-website/website_files.txt ]]
+            if [[ -f ~/eds-lessons-website/website_files.txt ]] || [ -f ~/eds-lessons-website/deleted_files.txt ]
             then
               # Be sure to see how many files there are and only commit if there are more than 0
               git status
