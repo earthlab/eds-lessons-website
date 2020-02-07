@@ -98,27 +98,37 @@ jobs:
           name: Delete removed/renamed/moved images from .io website
           working_directory: ~/earth-analytics-website
           command: |
-            echo -e "Deleting the following images:"
-            cat deleted_image_files.txt | while read line
-            do
-              echo $line
-              image_to_delete=~/earthlab.github.io/$line
-              rm $image_to_delete
-            done
+            if [[ -f deleted_image_files.txt ]]
+            then
+              echo -e "Deleting the following images:"
+              cat deleted_image_files.txt | while read line
+              do
+                echo $line
+                image_to_delete=~/earthlab.github.io/$line
+                rm $image_to_delete
+              done
+            else
+              echo "There are no images to remove in this PR!"
+            fi
       - run:
           name: Delete removed/renamed/moved markdown files and associated image directories from .io website
           working_directory: ~/earth-analytics-website
           command: |
-            echo -e "Deleting the following notebooks and their images:"
-            cat deleted_notebooks.txt | while read line
-            do
-              echo $line
-              post_to_delete=~/earthlab.github.io/_posts/$(echo "$line" | sed 's/.[Rr]md/.md/g; s/.ipynb/.md/g')
-              rm $post_to_delete
-              # clear images dir associated with post
-              image_dir_to_delete=~/earthlab.github.io/images/${line%.*}
-              rm -rf $image_dir_to_delete
-            done
+            if [[ -f deleted_notebooks.txt ]]
+            then
+              echo -e "Deleting the following notebooks and their images:"
+              cat deleted_notebooks.txt | while read line
+              do
+                echo $line
+                post_to_delete=~/earthlab.github.io/_posts/$(echo "$line" | sed 's/.[Rr]md/.md/g; s/.ipynb/.md/g')
+                rm $post_to_delete
+                # clear images dir associated with post
+                image_dir_to_delete=~/earthlab.github.io/images/${line%.*}
+                rm -rf $image_dir_to_delete
+              done
+            else
+              echo "There are no lessons and associated lesson images to remove in this PR!"
+            fi
       - run:
           name: Push files to new repo
           working_directory: ~/earthlab.github.io
