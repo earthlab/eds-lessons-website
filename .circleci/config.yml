@@ -133,6 +133,9 @@ jobs:
                 image_dir_to_delete=~/earthlab.github.io/images/${line%.*}
                 rm -rf $image_dir_to_delete
                 echo "$image_dir_to_delete"
+                cd ~/earthlab.github.io
+                git branch
+                git status
               done
             else
               echo "There are no lessons and associated lesson images to remove in this PR!"
