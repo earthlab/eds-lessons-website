@@ -64,7 +64,7 @@ jobs:
                   then
                     # clone the remote branch
                     git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git -b "$branch"
-                    echo "Looks like the branch doesn't existing on the eds.org website, created branch for you."
+                    echo "Looks like the branch doesn't exist on the eds.org website, created branch for you."
                   else
                     # if the branch doesn't exist, clone master and checkout the branch as a new branch
                     git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
