@@ -120,7 +120,7 @@ jobs:
               cat deleted_md_files.txt | while read line
               do
                 echo $line
-                post_to_delete=~/earthlab.github.io/_posts/$(echo "$line" | sed 's/.[Rr]md/.md/g; s/.ipynb/.md/g')
+                post_to_delete=~/earthlab.github.io/$(echo "$line" | sed 's/.[Rr]md/.md/g; s/.ipynb/.md/g')
                 rm $post_to_delete
                 # clear images dir associated with post
                 image_dir_to_delete=~/earthlab.github.io/images/${line%.*}
