@@ -36,6 +36,8 @@ jobs:
             deleted_files=$(git diff-tree --no-commit-id --name-only --diff-filter=D -r HEAD 2>&1)
             # get names of changed files
             echo "${deleted_files} ">> deleted_files.txt
+            pwd
+            ls
             python scripts/parse_deleted.py
       - run:
           name: Get & print current branch
