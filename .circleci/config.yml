@@ -18,7 +18,7 @@ jobs:
             # get names of changed files
             echo "${changed_files} ">> changed_files.txt
             # Remove unwanted files from commit and count files changed
-            python parse-commit.py
+            python scripts/parse-commit.py
 
             # Get latest commit message
             echo $(git log -1 --pretty=%B) > commit_msg_latest.txt
@@ -29,6 +29,14 @@ jobs:
             else
               echo "No files were modified in the last commit."
             fi
+      - run:
+          name: Get removed, renamed, or moved files
+          working_directory: ~/eds-lessons-website
+          command: |
+            deleted_files=$(git diff-tree --no-commit-id --name-only --diff-filter=D -r HEAD 2>&1)
+            # get names of changed files
+            echo "${deleted_files} ">> deleted_files.txt
+            python scripts/parse_deleted.py
       - run:
           name: Get & print current branch
           working_directory: ~/eds-lessons-website
@@ -80,10 +88,35 @@ jobs:
               fi
               # Copy files to the live website repo
               cd ~/eds-lessons-website
-              python move-files.py
+              python scripts/move-files.py
             else
               echo "There are no changes, not cloning the website repo."
             fi
+      - run:
+          name: Delete removed/renamed/moved images from .io website
+          working_directory: ~/earth-analytics-website
+          command: |
+            echo -e "Deleting the following images:"
+            cat deleted_image_files.txt | while read line
+            do
+              echo $line
+              image_to_delete=~/earthlab.github.io/$line
+              rm $image_to_delete
+            done
+      - run:
+          name: Delete removed/renamed/moved markdown files and associated image directories from .io website
+          working_directory: ~/earth-analytics-website
+          command: |
+            echo -e "Deleting the following notebooks and their images:"
+            cat deleted_notebooks.txt | while read line
+            do
+              echo $line
+              post_to_delete=~/earthlab.github.io/_posts/$(echo "$line" | sed 's/.[Rr]md/.md/g; s/.ipynb/.md/g')
+              rm $post_to_delete
+              # clear images dir associated with post
+              image_dir_to_delete=~/earthlab.github.io/images/${line%.*}
+              rm -rf $image_dir_to_delete
+            done
       - run:
           name: Push files to new repo
           working_directory: ~/earthlab.github.io
