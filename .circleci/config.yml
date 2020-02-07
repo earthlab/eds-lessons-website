@@ -36,9 +36,8 @@ jobs:
             deleted_files=$(git diff-tree --no-commit-id --name-only --diff-filter=D -r HEAD 2>&1)
             # get names of changed files
             echo "${deleted_files} ">> deleted_files.txt
-            pwd
-            ls
             python scripts/parse-deleted.py
+            ls
       - run:
           name: Get & print current branch
           working_directory: ~/eds-lessons-website
@@ -114,10 +113,10 @@ jobs:
           name: Delete removed/renamed/moved markdown files and associated image directories from .io website
           working_directory: ~/earth-analytics-website
           command: |
-            if [[ -f deleted_notebooks.txt ]]
+            if [[ -f deleted_md_files.txt ]]
             then
               echo -e "Deleting the following notebooks and their images:"
-              cat deleted_notebooks.txt | while read line
+              cat deleted_md_files.txt | while read line
               do
                 echo $line
                 post_to_delete=~/earthlab.github.io/_posts/$(echo "$line" | sed 's/.[Rr]md/.md/g; s/.ipynb/.md/g')
