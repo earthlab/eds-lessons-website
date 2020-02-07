@@ -10,7 +10,7 @@ content = [x.strip() for x in content]
 deleted_md_files = [line for line in content if line.endswith(".md")]
 deleted_image_files = [line for line in content if line.endswith(".jpg") or line.endswith(".jpeg") or line.endswith(".gif") or line.endswith(".png")]
 
-print("deleted notebooks: ", deleted_notebooks)
+print("deleted notebooks: ", deleted_md_files)
 print("deleted image files: ", deleted_image_files)
 
 
