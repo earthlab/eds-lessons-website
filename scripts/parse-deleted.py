@@ -14,9 +14,9 @@ print("deleted notebooks: ", deleted_md_files)
 print("deleted image files: ", deleted_image_files)
 
 
-with open("deleted_notebooks.txt", "w") as f:
-    if len(deleted_notebooks) > 0:
-        for fn in deleted_notebooks:
+with open("deleted_md_files.txt", "w") as f:
+    if len(deleted_md_files) > 0:
+        for fn in deleted_md_files:
             f.write("%s\n" % fn)
 
 with open("deleted_image_files.txt", "w") as f:
