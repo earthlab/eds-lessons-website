@@ -53,7 +53,7 @@ jobs:
           command: |
             branch=$(head -1 eds-lessons-website/current_branch.txt)
             # Only clone eds.org if there are files to commit
-            if [[ -f ~/eds-lessons-website/website_files.txt ]]
+            if [[ -f ~/eds-lessons-website/website_files.txt ]] || [ -f ~/eds-lessons-website/deleted_files.txt ]
             then
               if [ "$branch" != "master" ]
               then
@@ -93,10 +93,13 @@ jobs:
             else
               echo "There are no changes, not cloning the website repo."
             fi
+            pwd
       - run:
           name: Delete removed/renamed/moved images from .io website
           working_directory: ~/eds-lessons-website
           command: |
+            ls
+            pwd
             if [[ -f deleted_image_files.txt ]]
             then
               echo -e "Deleting the following images:"
