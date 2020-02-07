@@ -38,7 +38,7 @@ jobs:
             echo "${deleted_files} ">> deleted_files.txt
             pwd
             ls
-            python scripts/parse_deleted.py
+            python scripts/parse-deleted.py
       - run:
           name: Get & print current branch
           working_directory: ~/eds-lessons-website
