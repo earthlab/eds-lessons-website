@@ -4,7 +4,7 @@ title: "Extract Raster Values at Point Locations in Python"
 excerpt: "For many scientific analyses, it is helpful to be able to select raster pixels based on their relationship to a vector dataset (e.g. locations, boundaries). Learn how to extract data from a raster dataset using a vector dataset."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Carson Farmer']
 dateCreated: 2016-12-06
-modified: 2020-02-06
+modified: 2020-02-11
 category: [courses]
 class-lesson: ['remote-sensing-uncertainty-python-tb']
 permalink: /courses/use-data-open-source-python/spatial-data-applications/lidar-remote-sensing-uncertainty/extract-data-from-raster/
@@ -65,7 +65,7 @@ import rasterstats as rs
 import earthpy as et
 import earthpy.plot as ep
 
-# Setting consistent plotting style throughout notebook
+# Set consistent plotting style
 sns.set_style("white")
 sns.set(font_scale=1.5)
 
@@ -93,21 +93,25 @@ sjer_lidar_chm_path = os.path.join("data", "spatial-vector-lidar",
                                    "2013", "lidar", "SJER_lidarCHM.tif")
 
 with rio.open(sjer_lidar_chm_path) as sjer_lidar_chm_src:
+    # Masked = True sets no data values to np.nan if they are in the metadata
     SJER_chm_data = sjer_lidar_chm_src.read(1, masked=True)
     sjer_chm_meta = sjer_lidar_chm_src.profile
 
-fig, ax = plt.subplots(figsize=(8, 8))
+```
 
-ax.hist(SJER_chm_data.ravel(),
-        color="purple")
-
-ax.set(xlabel="Lidar Estimated Tree Height (m)",
-       ylabel="Total Pixels",
-       title="Distribution of Pixel Values \n Lidar Canopy Height Model")
+{:.input}
+```python
+# Explore the data by plotting a histogram with earthpy
+ax=ep.hist(SJER_chm_data,
+        figsize=(8,8),
+        colors="purple",
+        xlabel="Lidar Estimated Tree Height (m)",
+        ylabel="Total Pixels",
+        title="Distribution of Pixel Values \n Lidar Canopy Height Model")
 
 # Turn off scientific notation
-ax.ticklabel_format(useOffset=False,
-                    style='plain')
+ax[1].ticklabel_format(useOffset=False,
+                     style='plain')
 ```
 
 {:.output}
@@ -115,8 +119,7 @@ ax.ticklabel_format(useOffset=False,
 
 <figure>
 
-<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/04-spatial-data-applications/remote-sensing-uncertainty/2016-12-06-uncertainty02-extract-raster-values/2016-12-06-uncertainty02-extract-raster-values_5_0.png" alt = "Bar plot showing the distribution of lidar canopy height model pixel values.">
-<figcaption>Bar plot showing the distribution of lidar canopy height model pixel values.</figcaption>
+<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/04-spatial-data-applications/remote-sensing-uncertainty/2016-12-06-uncertainty02-extract-raster-values/2016-12-06-uncertainty02-extract-raster-values_6_0.png">
 
 </figure>
 
@@ -125,14 +128,15 @@ ax.ticklabel_format(useOffset=False,
 
 {:.input}
 ```python
-# View summary statistics of canopy height model
-print('Mean:', SJER_chm_data.mean())
-print('Max:', SJER_chm_data.max())
-print('Min:', SJER_chm_data.min())
+# EXPLORE: View summary statistics of canopy height model
+# Notice the mean value with 0's included in the data
+print('Mean:', np.nanmean(SJER_chm_data))
+print('Max:', np.nanmax(SJER_chm_data))
+print('Min:', np.nanmin(SJER_chm_data))
 ```
 
 {:.output}
-    Mean: 1.935586243204776
+    Mean: 1.9355862
     Max: 45.879997
     Min: 0.0
 
@@ -146,10 +150,10 @@ Set all pixel values `==0` to `nan` as they will impact calculation of plot mean
 
 {:.input}
 ```python
-# Set CHM values of 0 to NAN (no data or not a number)
+# CLEANUP: Set CHM values of 0 to NAN (no data or not a number)
 SJER_chm_data[SJER_chm_data == 0] = np.nan
 
-# View summary statistics of canopy height model
+# View summary statistics of canopy height model after cleaning up the data
 print('Mean:', np.nanmean(SJER_chm_data))
 print('Max:', np.nanmax(SJER_chm_data))
 print('Min:', np.nanmin(SJER_chm_data))
@@ -162,31 +166,21 @@ print('Min:', np.nanmin(SJER_chm_data))
 
 
 
-Look at the histogram of the data with the 0's removed. Now you can see the true distribution of heights in the data. 
-Notice that below to plot the histogram an additional step is taken to remove `nan` values from the data. There are several ways to do this but here, we simply subset the data using 
-
-`SJER_chm_data[~np.isnan(SJER_chm_data)])` 
-
-Then the data are flattened into a 1-dimensional array to create the histogram:
-
-`SJER_chm_data[~np.isnan(SJER_chm_data)].ravel()`
-
+Look at the histogram of the data with the 0's removed. Now you can see the true distribution of heights in the data without the 0's.
 
 {:.input}
 ```python
-# Remove nans, flatten the data & plot historgram
-SJER_chm_data_no_na = SJER_chm_data[~np.isnan(SJER_chm_data)].ravel()
+# Explore the data by plotting a histogram with earthpy
+ax=ep.hist(SJER_chm_data,
+        figsize=(8,8),
+        colors="purple",
+        xlabel="Lidar Estimated Tree Height (m)",
+        ylabel="Total Pixels",
+        title="Distribution of Pixel Values \n Lidar Canopy Height Model")
 
-fig, ax = plt.subplots(figsize=(10, 10))
-
-ax.hist(SJER_chm_data_no_na, color="purple")
-
-ax.set(xlabel='Lidar Estimated Tree Height (m)', 
-       ylabel='Total Pixels',
-       title='Distribution of Pixel Values \n Lidar Canopy Height Model')
-
-ax.ticklabel_format(useOffset=False,
-                    style='plain')
+# Turn off scientific notation
+ax[1].ticklabel_format(useOffset=False,
+                     style='plain')
 ```
 
 {:.output}
@@ -194,7 +188,7 @@ ax.ticklabel_format(useOffset=False,
 
 <figure>
 
-<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/04-spatial-data-applications/remote-sensing-uncertainty/2016-12-06-uncertainty02-extract-raster-values/2016-12-06-uncertainty02-extract-raster-values_10_0.png" alt = "Bar plot showing the distribution of lidar chm values with 0's removed.">
+<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/04-spatial-data-applications/remote-sensing-uncertainty/2016-12-06-uncertainty02-extract-raster-values/2016-12-06-uncertainty02-extract-raster-values_11_0.png" alt = "Bar plot showing the distribution of lidar chm values with 0's removed.">
 <figcaption>Bar plot showing the distribution of lidar chm values with 0's removed.</figcaption>
 
 </figure>
@@ -293,7 +287,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/04-spatial-data-applications/remote-sensing-uncertainty/2016-12-06-uncertainty02-extract-raster-values/2016-12-06-uncertainty02-extract-raster-values_15_0.png" alt = "Map showing SJER plot location points overlayed on top of the SJER Canopy Height Model.">
+<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/04-spatial-data-applications/remote-sensing-uncertainty/2016-12-06-uncertainty02-extract-raster-values/2016-12-06-uncertainty02-extract-raster-values_16_0.png" alt = "Map showing SJER plot location points overlayed on top of the SJER Canopy Height Model.">
 <figcaption>Map showing SJER plot location points overlayed on top of the SJER Canopy Height Model.</figcaption>
 
 </figure>
@@ -623,7 +617,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/04-spatial-data-applications/remote-sensing-uncertainty/2016-12-06-uncertainty02-extract-raster-values/2016-12-06-uncertainty02-extract-raster-values_25_0.png" alt = "Bar plot showing maximum tree height per plot in SJER.">
+<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/04-spatial-data-applications/remote-sensing-uncertainty/2016-12-06-uncertainty02-extract-raster-values/2016-12-06-uncertainty02-extract-raster-values_26_0.png" alt = "Bar plot showing maximum tree height per plot in SJER.">
 <figcaption>Bar plot showing maximum tree height per plot in SJER.</figcaption>
 
 </figure>
@@ -780,7 +774,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/04-spatial-data-applications/remote-sensing-uncertainty/2016-12-06-uncertainty02-extract-raster-values/2016-12-06-uncertainty02-extract-raster-values_29_0.png" alt = "Bar plots showing pixel value distribution for all SJER sites.">
+<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/04-spatial-data-applications/remote-sensing-uncertainty/2016-12-06-uncertainty02-extract-raster-values/2016-12-06-uncertainty02-extract-raster-values_30_0.png" alt = "Bar plots showing pixel value distribution for all SJER sites.">
 <figcaption>Bar plots showing pixel value distribution for all SJER sites.</figcaption>
 
 </figure>
