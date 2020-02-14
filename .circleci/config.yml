@@ -87,23 +87,21 @@ jobs:
                     git checkout -b website-autobuild
                   fi
               fi
-
-              # Only Copy files to the live website repo if there are files to move
-              # This might be nice as it's own step.
-              ls
-
-              if [[ -f ~/eds-lessons-website/website_files.txt ]]
-              then
-                cd ~/eds-lessons-website
-                ls
-                echo "The following files were modified: "
-                cat website_files.txt
-                python scripts/move-files.py
-              fi
-            else
-              echo "There are no changes, not cloning the website repo."
+      - run:
+          name: Move Changed Files to earthlab.github.io
+          working_directory: ~/eds-lessons-website
+          command: |
+            # Only Copy files to the live website repo if there are files to move
+            if [[ -f website_files.txt ]]
+            then
+              echo "The following files were modified: "
+              cat website_files.txt
+              python scripts/move-files.py
             fi
-            pwd
+          else
+            echo "There are no changes to push to the website repo."
+          fi
+          pwd
       - run:
           name: Delete removed/renamed/moved images from .io website
           working_directory: ~/eds-lessons-website
