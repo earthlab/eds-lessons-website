@@ -90,9 +90,14 @@ jobs:
 
               # Only Copy files to the live website repo if there are files to move
               # This might be nice as it's own step.
-              if [[ -f website_files.txt ]]
+              ls
+
+              if [[ -f ~/eds-lessons-website/website_files.txt ]]
               then
                 cd ~/eds-lessons-website
+                ls
+                echo "The following files were modified: "
+                cat website_files.txt
                 python scripts/move-files.py
               fi
             else
