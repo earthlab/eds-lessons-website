@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Introduction to Raster Data Processing in Open Source Python"
-excerpt: "You can perform the same raster processing steps in Python that you would in a GIS tool like ArcGIS. Learn how to process spatial raster data using Open Source Python."
+excerpt: "You can perform the same raster processing steps in Python that you would in a GIS tool such as ArcGIS. Learn how to process spatial raster data using Open Source Python."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
 dateCreated: 2018-02-05
 modified: 2020-02-14
