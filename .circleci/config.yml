@@ -93,6 +93,9 @@ jobs:
               if [[ -f website_files.txt ]]
               then
                 cd ~/eds-lessons-website
+                ls
+                echo "The following files were modified: "
+                cat website_files.txt
                 python scripts/move-files.py
               fi
             else

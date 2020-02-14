@@ -2,13 +2,14 @@
 This script takes a set of files from a text file, and line by line parses and
 moves them to the corresponding directory.
 
-It is used to move files in the website repo to the eds.org live website. 
+It is used to move files in the website repo to the eds.org live website.
 This script assumes that it is being run in the website repo.
 """
 
 import os
 import shutil
 
+print("IM MOVEING STUFF")
 # get absolute path
 cwd = os.path.abspath(os.getcwd())
 # create full path to other repo
@@ -34,7 +35,3 @@ else:
                 os.makedirs(dir_path)
             shutil.copy(f, new_path)
             print("File has been moved to: ", new_path)
-
-
-
-
