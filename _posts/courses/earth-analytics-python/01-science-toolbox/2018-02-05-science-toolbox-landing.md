@@ -1,7 +1,7 @@
 ---
 layout: single
 category: courses
-title: "TEST 2 Earth Analytics Python Course - Week One"
+title: "Earth Analytics Python Course - Week One"
 permalink: /courses/earth-analytics-python/python-open-science-toolbox/
 week-landing: 1
 modified: 2020-02-01
