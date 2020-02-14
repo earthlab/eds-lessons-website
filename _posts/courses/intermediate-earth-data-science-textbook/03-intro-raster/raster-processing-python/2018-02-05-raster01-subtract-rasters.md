@@ -72,12 +72,6 @@ et.data.get_data("colorado-flood")
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
 
-{:.output}
-    Downloading from https://ndownloader.figshare.com/files/16371473
-    Extracted output to /root/earth-analytics/data/colorado-flood/.
-
-
-
 Open and plot the lidar digital elevation model (DEM). Note that when you read the data, you can use the argument `masked = True` to ensure that the no data values do not plot and are assign `nan` or `nodata`. 
 
 <!-- 
