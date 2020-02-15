@@ -7,19 +7,22 @@ with open("deleted_files.txt") as f:
     content = f.readlines()
 content = [x.strip() for x in content]
 
-deleted_md_files = [line for line in content if line.endswith(".md")]
-deleted_image_files = [line for line in content if line.endswith(".jpg") or line.endswith(".jpeg") or line.endswith(".gif") or line.endswith(".png")]
 
-print("deleted notebooks: ", deleted_md_files)
-print("deleted image files: ", deleted_image_files)
+# Only run this stuff if there are changes!
+if len(content) > 0:
+    deleted_md_files = [line for line in content if line.endswith(".md")]
+    deleted_image_files = [line for line in content if line.endswith(".jpg") or line.endswith(".jpeg") or line.endswith(".gif") or line.endswith(".png")]
+
+    print("deleted notebooks: ", deleted_md_files)
+    print("deleted image files: ", deleted_image_files)
 
 
-with open("deleted_md_files.txt", "w") as f:
-    if len(deleted_md_files) > 0:
-        for fn in deleted_md_files:
-            f.write("%s\n" % fn)
+    with open("deleted_md_files.txt", "w") as f:
+        if len(deleted_md_files) > 0:
+            for fn in deleted_md_files:
+                f.write("%s\n" % fn)
 
-with open("deleted_image_files.txt", "w") as f:
-    if len(deleted_image_files) > 0:
-        for fn in deleted_image_files:
-            f.write("%s\n" % fn)
+    with open("deleted_image_files.txt", "w") as f:
+        if len(deleted_image_files) > 0:
+            for fn in deleted_image_files:
+                f.write("%s\n" % fn)
