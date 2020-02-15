@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Sometimes we add or delete images on the website. these images are not tied
 # To the autobuild, they are images we find and add to a page. You can directly delete
