@@ -51,8 +51,8 @@ jobs:
           name: Clone earthlab.github.io website branch NEW
           working_directory: ~/
           command: |
-            chmod +x scripts/clone-io-repo.sh
-            scripts/clone-io-repo.sh
+            chmod +x ~/eds-lessons-website/scripts/clone-io-repo.sh
+            ~/eds-lessons-website/scripts/clone-io-repo.sh
       - run:
           name: Move Changed Files to earthlab.github.io
           working_directory: ~/eds-lessons-website
