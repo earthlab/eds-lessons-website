@@ -97,6 +97,19 @@ jobs:
             # Only Copy files to the live website repo if there are files to move
             if [[ -f website_files.txt ]]
             then
+              echo "The following files were modified: "
+              cat website_files.txt
+              python scripts/move-files.py
+            else
+              echo "There are no changes to push to the website repo."
+            fi
+      - run:
+          name: Move Changed Files to earthlab.github.io
+          working_directory: ~/eds-lessons-website
+          command: |
+            # Only Copy files to the live website repo if there are files to move
+            if [[ -f website_files.txt ]]
+            then
               echo "The following files were modified and will be updated on the io website: "
               cat website_files.txt
               python scripts/move-files.py

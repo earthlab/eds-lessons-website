@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "Introduction to Raster Data Processing in Open Source Python"
-excerpt: "You can perform the same raster processing steps in Python that you would in a GIS tool such as ArcGIS. Learn how to process spatial raster data using Open Source Python."
+excerpt: "You can perform the same raster processing steps in Python that you would in a tool like ArcGIS. Learn how to process spatial raster data using Open Source Python."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
 dateCreated: 2018-02-05
 modified: 2020-02-14
@@ -36,7 +36,8 @@ redirect_from:
 
 ## <i class="fa fa-ship" aria-hidden="true"></i> Chapter Five - Raster Data Processing in Python 
 
-In this chapter, you will learn how to process raster data, such as cropping and reprojecting rasters, using raster math to derive new rasters, and reclassifying rasters using a set of values. 
+In this chapter, you will learn how to process raster data. You will learn how to 
+crop, reproject and reclassify raster data.
 
 ## <i class="fa fa-graduation-cap" aria-hidden="true"></i> Learning Objectives
 
