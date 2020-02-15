@@ -9,10 +9,11 @@ This script assumes that it is being run in the website repo.
 import os
 import shutil
 
-print("IM MOVEING STUFF")
-# get absolute path
+print("IM MOVING STUFF")
+
+
 cwd = os.path.abspath(os.getcwd())
-# create full path to other repo
+# Create full path to io repo
 eds_website_repo = cwd.replace("eds-lessons-website", "earthlab.github.io")
 
 changed_files = "website_files.txt"

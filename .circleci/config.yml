@@ -97,50 +97,18 @@ jobs:
             # Only Copy files to the live website repo if there are files to move
             if [[ -f website_files.txt ]]
             then
-              echo "The following files were modified: "
+              echo "The following files were modified and will be updated on the io website: "
               cat website_files.txt
               python scripts/move-files.py
             else
               echo "There are no changes to push to the website repo."
             fi
       - run:
-          name: Delete removed/renamed/moved images from .io website
+          name: Delete removed/renamed/moved images and posts from .io website
           working_directory: ~/eds-lessons-website
           command: |
-            if [[ -f deleted_image_files.txt ]]
-            then
-              echo -e "Deleting the following images:"
-              cat deleted_image_files.txt | while read line
-              do
-                echo $line
-                image_to_delete=~/earthlab.github.io/$line
-                rm $image_to_delete
-              done
-            else
-              echo "There are no images to remove in this PR!"
-            fi
-      - run:
-          name: Delete removed/renamed/moved markdown files and associated image directories from .io website
-          working_directory: ~/eds-lessons-website
-          command: |
-            ls
-            if [[ -f deleted_md_files.txt ]]
-            then
-              echo -e "Deleting the following notebooks and their images:"
-              cat deleted_md_files.txt | while read line
-              do
-                echo $line
-                post_to_delete=~/earthlab.github.io/$line
-                rm $post_to_delete
-                echo "$post_to_delete"
-                # clear images dir associated with post
-                image_dir_to_delete=~/earthlab.github.io/images/${line%.*}
-                rm -rf $image_dir_to_delete
-                echo "$image_dir_to_delete"
-              done
-            else
-              echo "There are no lessons and associated lesson images to remove in this PR!"
-            fi
+            - chmod +x scripts/delete-images-posts.sh
+            - scripts/delete-images-posts.sh
       - run:
           name: Push changes in files and images to earthlab.github.io repo
           working_directory: ~/earthlab.github.io
