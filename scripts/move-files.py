@@ -9,10 +9,11 @@ This script assumes that it is being run in the website repo.
 import os
 import shutil
 
-print("IM MOVEING STUFF")
-# get absolute path
+print("IM MOVING STUFF")
+
+
 cwd = os.path.abspath(os.getcwd())
-# create full path to other repo
+# Create full path to io repo
 eds_website_repo = cwd.replace("eds-lessons-website", "earthlab.github.io")
 
 changed_files = "website_files.txt"
@@ -25,10 +26,9 @@ if os.stat(changed_files).st_size == 0:
 # Loop through each file, clean the path and move to the final directory
 else:
     for f in fp:
-        print("Trying to move: ", f)
         f = f.rstrip('\n').strip()
         if not f.lower().endswith(('yml', 'py')):
-            print("final file name: ", f)
+            print("MOVING: final file name: ", f)
             new_path = os.path.join(eds_website_repo, f)
             dir_path = os.path.dirname(new_path)
             if not os.path.exists(dir_path):

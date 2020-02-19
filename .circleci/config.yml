@@ -51,45 +51,8 @@ jobs:
           name: Clone earthlab.github.io website branch NEW
           working_directory: ~/
           command: |
-            branch=$(head -1 eds-lessons-website/current_branch.txt)
-            # Only clone eds.org if there are files to commit
-            if [[ -f ~/eds-lessons-website/website_files.txt ]] || [ -f ~/eds-lessons-website/deleted_files.txt ]
-            then
-              if [ "$branch" != "master" ]
-              then
-                  # check that branch exists on remote earthlab.github.io
-                  branch_status=$(git ls-remote --heads https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git "$branch" | wc -l)
-                  # if branch exists, clone it
-                  if [ $branch_status == 1 ]
-                  then
-                    # clone the remote branch
-                    git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git -b "$branch"
-                    echo "Looks like the branch doesn't exist on the eds.org website, created branch for you."
-                  else
-                    # if the branch doesn't exist, clone master and checkout the branch as a new branch
-                    git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
-                    cd earthlab.github.io
-                    git checkout -b "$branch"
-                  fi
-              else
-                  # if commits are on master, push to website-autobuild to avoid direct commits to live website
-                  # check for autobuild branch on website remote
-                  branch_status=$(git ls-remote --heads https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git "website-autobuild" | wc -l)
-                  # if branch exists check it out...
-                  if [ $branch_status == 1 ]
-                  then
-                    # clone the remote branch
-                    git clone -b website-autobuild --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
-                  else
-                    # if it does not, clone master and checkout a new branch
-                    git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
-                    cd earthlab.github.io
-                    git checkout -b website-autobuild
-                  fi
-              fi
-            else
-              echo "Not cloning as there are no changes to push."
-            fi
+            chmod +x ~/eds-lessons-website/scripts/clone-io-repo.sh
+            ~/eds-lessons-website/scripts/clone-io-repo.sh
       - run:
           name: Move Changed Files to earthlab.github.io
           working_directory: ~/eds-lessons-website
@@ -97,50 +60,18 @@ jobs:
             # Only Copy files to the live website repo if there are files to move
             if [[ -f website_files.txt ]]
             then
-              echo "The following files were modified: "
+              echo "The following files were modified and will be updated on the io website: "
               cat website_files.txt
               python scripts/move-files.py
             else
               echo "There are no changes to push to the website repo."
             fi
       - run:
-          name: Delete removed/renamed/moved images from .io website
+          name: Delete removed/renamed/moved images and posts from .io website
           working_directory: ~/eds-lessons-website
           command: |
-            if [[ -f deleted_image_files.txt ]]
-            then
-              echo -e "Deleting the following images:"
-              cat deleted_image_files.txt | while read line
-              do
-                echo $line
-                image_to_delete=~/earthlab.github.io/$line
-                rm $image_to_delete
-              done
-            else
-              echo "There are no images to remove in this PR!"
-            fi
-      - run:
-          name: Delete removed/renamed/moved markdown files and associated image directories from .io website
-          working_directory: ~/eds-lessons-website
-          command: |
-            ls
-            if [[ -f deleted_md_files.txt ]]
-            then
-              echo -e "Deleting the following notebooks and their images:"
-              cat deleted_md_files.txt | while read line
-              do
-                echo $line
-                post_to_delete=~/earthlab.github.io/$line
-                rm $post_to_delete
-                echo "$post_to_delete"
-                # clear images dir associated with post
-                image_dir_to_delete=~/earthlab.github.io/images/${line%.*}
-                rm -rf $image_dir_to_delete
-                echo "$image_dir_to_delete"
-              done
-            else
-              echo "There are no lessons and associated lesson images to remove in this PR!"
-            fi
+            chmod +x scripts/delete-images-posts.sh
+            scripts/delete-images-posts.sh
       - run:
           name: Push changes in files and images to earthlab.github.io repo
           working_directory: ~/earthlab.github.io
