@@ -27,11 +27,14 @@ if os.stat(changed_files).st_size == 0:
 else:
     for f in fp:
         f = f.rstrip('\n').strip()
-        if not f.lower().endswith(('yml', 'py')):
-            print("MOVING: final file name: ", f)
-            new_path = os.path.join(eds_website_repo, f)
-            dir_path = os.path.dirname(new_path)
-            if not os.path.exists(dir_path):
-                os.makedirs(dir_path)
-            shutil.copy(f, new_path)
-            print("File has been moved to: ", new_path)
+        if (f == " ") or (f == ""):
+            print("oops - nothing to move")
+        else:
+            if not f.lower().endswith(('yml', 'py')):
+                print("MOVING: final file name: ", f)
+                new_path = os.path.join(eds_website_repo, f)
+                dir_path = os.path.dirname(new_path)
+                if not os.path.exists(dir_path):
+                    os.makedirs(dir_path)
+                shutil.copy(f, new_path)
+                print("File has been moved to: ", new_path)
