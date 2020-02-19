@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Subtract One Raster from Another and Export a New GeoTIFF in Python"
+title: "Subtract One Raster from Another and Export a New GeoTIFF in Open Source Python"
 excerpt: "Often you need to process two raster datasets together to create a new raster output and then save that output as a new file. Learn how to subtract rasters and create a new GeoTIFF file using open source Python."
 authors: ['Leah Wasser', 'Chris Holdgraf', 'Martha Morrissey']
 dateCreated: 2018-02-05
@@ -34,7 +34,7 @@ redirect_from:
 ## <i class="fa fa-ship" aria-hidden="true"></i> Subtract Raster Data in Open Source Python 
 
 After completing this tutorial, you will be able to:
-* Derive a **Canopy Height Model** in `Python` using a Digital Elevation Model and a Digital Surface Model derived from lidar data. 
+* Derive a **Canopy Height Model** in `Python` using a Digital Elevation Model and a Digital Surface Model derived from Lidar data. 
 * Subtract one raster layer from another using raster math and open source Python.
 
 ## <i class="fa fa-check-square-o fa-2" aria-hidden="true"></i> What You Need
@@ -71,12 +71,6 @@ sns.set(font_scale=1.5, style="whitegrid")
 et.data.get_data("colorado-flood")
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
-
-{:.output}
-    Downloading from https://ndownloader.figshare.com/files/16371473
-    Extracted output to /root/earth-analytics/data/colorado-flood/.
-
-
 
 Open and plot the lidar digital elevation model (DEM). Note that when you read the data, you can use the argument `masked = True` to ensure that the no data values do not plot and are assign `nan` or `nodata`. 
 
