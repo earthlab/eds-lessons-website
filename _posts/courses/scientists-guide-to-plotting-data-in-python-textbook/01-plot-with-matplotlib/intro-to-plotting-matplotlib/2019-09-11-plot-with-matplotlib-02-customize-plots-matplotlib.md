@@ -4,7 +4,7 @@ title: "Customize Your Plots Using Matplotlib"
 excerpt: 'Matplotlib is the most commonly used plotting library in Python. Learn how to customize the colors, symbols, and labels on your plots using matplotlib.'
 authors: ['Leah Wasser', 'Jenny Palomino']
 dateCreated: 2019-09-11
-modified: 2020-02-28
+modified: 2020-03-02
 category: [courses]
 class-lesson: ['intro-to-plotting-matplotlib']
 course: 'scientists-guide-to-plotting-data-in-python-textbook'
@@ -93,7 +93,7 @@ ax.plot(months,
 
 
 
-    [<matplotlib.lines.Line2D at 0x7fbb75908b50>]
+    [<matplotlib.lines.Line2D at 0x7f4e2340c350>]
 
 
 
