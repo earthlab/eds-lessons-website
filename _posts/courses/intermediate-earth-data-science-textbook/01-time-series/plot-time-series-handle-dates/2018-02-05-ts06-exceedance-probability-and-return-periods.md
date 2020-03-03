@@ -245,11 +245,11 @@ hf.get_nwis(site, 'dv').json()
         {'value': '[mode=LATEST, modifiedSince=null]',
          'title': 'filter:timeRange'},
         {'value': 'methodIds=[ALL]', 'title': 'filter:methodId'},
-        {'value': '2020-03-03T00:16:42.221Z', 'title': 'requestDT'},
-        {'value': '4242e2c0-5ce4-11ea-8bc9-6cae8b6642ea', 'title': 'requestId'},
+        {'value': '2020-03-03T21:50:15.035Z', 'title': 'requestDT'},
+        {'value': 'f71a75a0-5d98-11ea-b0d8-6cae8b6642f6', 'title': 'requestId'},
         {'value': 'Provisional data are subject to revision. Go to http://waterdata.usgs.gov/nwis/help/?provisional for more information.',
          'title': 'disclaimer'},
-        {'value': 'sdas01', 'title': 'server'}]},
+        {'value': 'caas01', 'title': 'server'}]},
       'timeSeries': [{'sourceInfo': {'siteName': 'BOULDER CREEK AT MOUTH NEAR LONGMONT, CO',
          'siteCode': [{'value': '06730500',
            'network': 'NWIS',
@@ -285,9 +285,9 @@ hf.get_nwis(site, 'dv').json()
          'noDataValue': -999999.0,
          'variableProperty': [],
          'oid': '45807197'},
-        'values': [{'value': [{'value': '65.2',
+        'values': [{'value': [{'value': '77.0',
             'qualifiers': ['P'],
-            'dateTime': '2020-03-01T00:00:00.000'}],
+            'dateTime': '2020-03-02T00:00:00.000'}],
           'qualifier': [{'qualifierCode': 'P',
             'qualifierDescription': 'Provisional data subject to revision.',
             'qualifierID': 0,
@@ -702,7 +702,7 @@ urllib.request.urlretrieve(url, download_path)
 
 
     ('data/colorado-flood/downloads/annual-peak-flow.txt',
-     <http.client.HTTPMessage at 0x7f2c03282d10>)
+     <http.client.HTTPMessage at 0x7ff4bb74ee90>)
 
 
 
