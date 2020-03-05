@@ -4,7 +4,7 @@ title: "Reproject Raster Data Python"
 excerpt: "Sometimes you will work with multiple rasters that are not in the same projections, and thus, need to reproject the rasters, so they are in the same coordinate reference system. Learn how to reproject raster data in Python using Rasterio."
 authors: ['Leah Wasser', 'Martha Morrissey']
 dateCreated: 2018-02-05
-modified: 2020-02-14
+modified: 2020-03-05
 category: ['courses']
 class-lesson: ['raster-processing-python']
 permalink: /courses/use-data-open-source-python/intro-raster-data-python/raster-data-processing/reproject-raster/
@@ -53,6 +53,12 @@ import earthpy as et
 et.data.get_data("colorado-flood")
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 ```
+
+{:.output}
+    Downloading from https://ndownloader.figshare.com/files/16371473
+    Extracted output to /root/earth-analytics/data/colorado-flood/.
+
+
 
 {:.input}
 ```python
@@ -121,7 +127,7 @@ print(lidar_dem2.meta)
 lidar_dem2.close()
 ```
 
-If you have many raster files to re-project the rasterio method has several lines of code that could get repetative to type. Therefore your instructions have wrapped the `rasterio` reproject code into a function called `reproject_et` notice that this function contains all of the same code, but allows the input path, the output path, and the new CRS components to change every time the function is called.
+If you have many raster files to re-project the rasterio method has several lines of code that could get repetitive to type. Therefore your instructions have wrapped the `rasterio` reproject code into a function called `reproject_et` notice that this function contains all of the same code, but allows the input path, the output path, and the new CRS components to change every time the function is called.
 
 {:.input}
 ```python
