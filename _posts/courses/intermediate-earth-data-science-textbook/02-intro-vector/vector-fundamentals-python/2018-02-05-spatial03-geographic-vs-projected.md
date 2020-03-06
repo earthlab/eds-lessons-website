@@ -4,7 +4,7 @@ title: "Geographic vs projected coordinate reference systems - GIS in Python"
 excerpt: "Geographic coordinate systems span the entire globe (e.g. latitude / longitude), while projected coordinate systems are localized to minimize visual distortion in a particular region (e.g. Robinson, UTM, State Plane). Learn more about key differences between projected vs. geographic coordinate reference systems."
 authors: ['Chris Holdgraf', 'Leah Wasser']
 dateCreated: 2018-02-05
-modified: 2020-03-05
+modified: 2020-03-06
 category: [courses]
 class-lesson: ['intro-vector-python-tb']
 permalink: /courses/use-data-open-source-python/intro-vector-data-python/spatial-data-vector-shapefiles/geographic-vs-projected-coordinate-reference-systems-python/

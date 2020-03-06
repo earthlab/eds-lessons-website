@@ -4,7 +4,7 @@ title: "Understand EPSG, WKT and Other CRS Definition Styles"
 excerpt: "Coordinate Reference System (CRS) information is often stored in three key formats, including proj.4, EPSG and WKT. Learn more about the ways that coordinate reference system data are stored including proj4, well known text (wkt) and EPSG codes."
 authors: ['Leah Wasser']
 dateCreated: 2018-02-05
-modified: 2020-03-05
+modified: 2020-03-06
 category: [courses]
 class-lesson: ['intro-vector-python-tb']
 permalink: /courses/use-data-open-source-python/intro-vector-data-python/spatial-data-vector-shapefiles/epsg-proj4-coordinate-reference-system-formats-python/
