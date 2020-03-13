@@ -3,7 +3,7 @@ layout: single
 category: courses
 title: "Quantify the Impacts of a Fire Using MODIS and Landsat Remote Sensing Data in Python"
 permalink: /courses/earth-analytics-python/multispectral-remote-sensing-modis/
-modified: 2020-03-12
+modified: 2020-03-13
 week-landing: 9
 week: 9
 sidebar:
@@ -49,6 +49,14 @@ Please read the articles below to prepare for next week's class.
 * <a href="https://www.webpages.uidaho.edu/for570/Readings/2006_Lentile_et_al.pdf
 " target="_blank">A review of ways to use remote sensing to assess fire and post-fire effects - Lentile et al 2006.</a>
 * <a href="http://www.sciencedirect.com/science/article/pii/S0034425710001100" target="_blank"> Comparison of dNBR vs RdNBR accuracy / introduction to fire indices -  Soverel et al 2010.</a>
+
+
+
+
+
+
+
+
 
 
 
@@ -148,11 +156,6 @@ Please read the articles below to prepare for next week's class.
 # Landsat vs MODIS  Burned Area
 
 
-{:.output}
-    Burned Landsat class 4:
-    Burned Landsat class 5:
-    Burned MODIS class 4:
-    Burned MODIS class 5:
 
 {:.output}
     Burned Landsat class 4:
