@@ -55,20 +55,6 @@ Please read the articles below to prepare for next week's class.
 
 
 
-
-{:.output}
-    There are no pixels to mask
-    There are no pixels to mask
-
-
-
-
-
-
-
-
-
-
 ## Homework Figure 1 - Grid of 3 Color InfraRed (CIR) Post-Fire Plots: NAIP, Landsat and MODIS
 
 
@@ -160,6 +146,11 @@ Please read the articles below to prepare for next week's class.
 # Landsat vs MODIS  Burned Area
 
 
+{:.output}
+    Burned Landsat class 4:
+    Burned Landsat class 5:
+    Burned MODIS class 4:
+    Burned MODIS class 5:
 
 {:.output}
     Burned Landsat class 4:
