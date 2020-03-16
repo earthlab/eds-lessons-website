@@ -4,7 +4,7 @@ title: "Calculate and Plot Difference Normalized Burn Ratio (dNBR) using Landsat
 excerpt: "The Normalized Burn Index is used to quantify the amount of area that was impacted by a fire. Learn how to calculate the normalized burn index and classify your data using Landsat 8 data in Python."
 authors: ['Leah Wasser','Megan Cattau']
 dateCreated: 2017-03-01
-modified: 2020-02-17
+modified: 2020-03-16
 category: [courses]
 class-lesson: ['multispectral-remote-sensing-data-python-veg-indices']
 permalink: /courses/use-data-open-source-python/multispectral-remote-sensing/vegetation-indices-in-python/calculate-dNBR-Landsat-8/
@@ -96,15 +96,20 @@ Open up and stack the Landsat post-fire data.
 {:.input}
 ```python
 # Import and stack post fire Landsat data
-all_landsat_bands_path = os.path.join("data", "cold-springs-fire", "landsat_collect", 
-                                      "LC080340322016072301T1-SC20180214145802", 
-                                      "crop", "*band*.tif")
+all_landsat_bands_path = os.path.join("data", 
+                                      "cold-springs-fire", 
+                                      "landsat_collect",
+                                      "LC080340322016072301T1-SC20180214145802",
+                                      "crop", 
+                                      "*band*.tif")
 
 all_landsat_bands = glob(all_landsat_bands_path)
 all_landsat_bands.sort()
 
-landsat_post_fire_path = os.path.join("data", "cold-springs-fire", 
-                                      "outputs", "landsat_post_fire.tif")
+landsat_post_fire_path = os.path.join("data", 
+                                      "cold-springs-fire",
+                                      "outputs", 
+                                      "landsat_post_fire.tif")
 
 landsat_post_fire, landsat_post_fire_meta = es.stack(all_landsat_bands,
                                                      landsat_post_fire_path)
@@ -114,8 +119,10 @@ landsat_extent = plotting_extent(landsat_post_fire[0],
                                  landsat_post_fire_meta["transform"])
 
 # Open fire boundary layer and reproject it to match the Landsat data
-fire_boundary_path = os.path.join("data", "cold-springs-fire", 
-                                  "vector_layers", "fire-boundary-geomac", 
+fire_boundary_path = os.path.join("data", 
+                                  "cold-springs-fire",
+                                  "vector_layers", 
+                                  "fire-boundary-geomac",
                                   "co_cold_springs_20160711_2200_dd83.shp")
 
 fire_boundary = gpd.read_file(fire_boundary_path)
@@ -143,7 +150,7 @@ fig, ax = plt.subplots(figsize=(12, 6))
 
 ep.plot_bands(landsat_postfire_nbr,
               cmap='PiYG',
-              vmin=-1,vmax=1,
+              vmin=-1, vmax=1,
               extent=landsat_extent,
               title="Landsat derived Normalized Burn Ratio\n 23 July 2016 \n Post Cold Springs Fire",
               ax=ax,
@@ -159,7 +166,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/05-multi-spectral-remote-sensing-python/vegetation-indices/2017-03-01-fire02-calculate-NBR-with-landsat-Python/2017-03-01-fire02-calculate-NBR-with-landsat-Python_6_0.png" alt = "Normalized burn ratio (NBR) calculated for the post-Cold Springs fire image for July 23, 2016 from Landsat.">
+<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/05-multi-spectral-remote-sensing-python/vegetation-indices/2020-02-17-vi03-nbr-with-landsat/2020-02-17-vi03-nbr-with-landsat_6_0.png" alt = "Normalized burn ratio (NBR) calculated for the post-Cold Springs fire image for July 23, 2016 from Landsat.">
 <figcaption>Normalized burn ratio (NBR) calculated for the post-Cold Springs fire image for July 23, 2016 from Landsat.</figcaption>
 
 </figure>
@@ -186,7 +193,7 @@ The code for this is hidden below because you know how to do this!
 
 <figure>
 
-<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/05-multi-spectral-remote-sensing-python/vegetation-indices/2017-03-01-fire02-calculate-NBR-with-landsat-Python/2017-03-01-fire02-calculate-NBR-with-landsat-Python_10_0.png" alt = "Normalized burn ratio (NBR) calculated for the pre-Cold Springs fire image from Landsat.">
+<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/05-multi-spectral-remote-sensing-python/vegetation-indices/2020-02-17-vi03-nbr-with-landsat/2020-02-17-vi03-nbr-with-landsat_10_0.png" alt = "Normalized burn ratio (NBR) calculated for the pre-Cold Springs fire image from Landsat.">
 <figcaption>Normalized burn ratio (NBR) calculated for the pre-Cold Springs fire image from Landsat.</figcaption>
 
 </figure>
@@ -283,7 +290,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/05-multi-spectral-remote-sensing-python/vegetation-indices/2017-03-01-fire02-calculate-NBR-with-landsat-Python/2017-03-01-fire02-calculate-NBR-with-landsat-Python_18_0.png" alt = "Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with legend created using matplotlib.">
+<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/05-multi-spectral-remote-sensing-python/vegetation-indices/2020-02-17-vi03-nbr-with-landsat/2020-02-17-vi03-nbr-with-landsat_18_0.png" alt = "Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with legend created using matplotlib.">
 <figcaption>Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with legend created using matplotlib.</figcaption>
 
 </figure>
@@ -324,7 +331,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/05-multi-spectral-remote-sensing-python/vegetation-indices/2017-03-01-fire02-calculate-NBR-with-landsat-Python/2017-03-01-fire02-calculate-NBR-with-landsat-Python_20_0.png" alt = "Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with legend created using earthpy.">
+<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/05-multi-spectral-remote-sensing-python/vegetation-indices/2020-02-17-vi03-nbr-with-landsat/2020-02-17-vi03-nbr-with-landsat_20_0.png" alt = "Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with legend created using earthpy.">
 <figcaption>Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with legend created using earthpy.</figcaption>
 
 </figure>
@@ -349,7 +356,7 @@ values = [0] + values
 nbr_colors = ["g", "yellowgreen", "peachpuff", "coral", "maroon"]
 nbr_cmap = ListedColormap(nbr_colors)
 
-# But the goal is the identify the MIDDLE point 
+# But the goal is the identify the MIDDLE point
 # of each bin to create a centered tick
 bounds = [((a + b) / 2) for a, b in zip(values[:-1], values[1::1])] + [5.5]
 
@@ -391,7 +398,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/05-multi-spectral-remote-sensing-python/vegetation-indices/2017-03-01-fire02-calculate-NBR-with-landsat-Python/2017-03-01-fire02-calculate-NBR-with-landsat-Python_24_0.png" alt = "Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with a color bar legend.">
+<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/05-multi-spectral-remote-sensing-python/vegetation-indices/2020-02-17-vi03-nbr-with-landsat/2020-02-17-vi03-nbr-with-landsat_24_0.png" alt = "Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with a color bar legend.">
 <figcaption>Classified difference normalized burn ratio (dNBR) calculated for the Cold Springs fire images from Landsat, with a color bar legend.</figcaption>
 
 </figure>
