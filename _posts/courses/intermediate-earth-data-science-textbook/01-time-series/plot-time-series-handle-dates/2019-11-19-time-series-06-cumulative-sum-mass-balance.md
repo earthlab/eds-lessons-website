@@ -4,7 +4,7 @@ title: "The Relationship Between Precipitation and Stream Discharge | Explore Ma
 excerpt: "Learn how to create a cumulative sum plot in Pandas to better understand stream discharge in a watershed"
 authors: ['Matthew Rossi', 'Leah Wasser']
 dateCreated: 2018-02-05
-modified: 2020-03-03
+modified: 2020-03-25
 category: [courses]
 class-lesson: ['time-series-python-tb']
 course: 'intermediate-earth-data-science-textbook'
@@ -101,11 +101,11 @@ hf.get_nwis(site, 'dv').json()
         {'value': '[mode=LATEST, modifiedSince=null]',
          'title': 'filter:timeRange'},
         {'value': 'methodIds=[ALL]', 'title': 'filter:methodId'},
-        {'value': '2020-03-03T21:50:29.939Z', 'title': 'requestDT'},
-        {'value': 'fffca120-5d98-11ea-acf4-6cae8b663fb6', 'title': 'requestId'},
+        {'value': '2020-03-25T17:57:02.620Z', 'title': 'requestDT'},
+        {'value': '080fdeb0-6ec2-11ea-95a2-6cae8b6642f6', 'title': 'requestId'},
         {'value': 'Provisional data are subject to revision. Go to http://waterdata.usgs.gov/nwis/help/?provisional for more information.',
          'title': 'disclaimer'},
-        {'value': 'vaas01', 'title': 'server'}]},
+        {'value': 'caas01', 'title': 'server'}]},
       'timeSeries': [{'sourceInfo': {'siteName': 'BOULDER CREEK AT MOUTH NEAR LONGMONT, CO',
          'siteCode': [{'value': '06730500',
            'network': 'NWIS',
@@ -141,9 +141,9 @@ hf.get_nwis(site, 'dv').json()
          'noDataValue': -999999.0,
          'variableProperty': [],
          'oid': '45807197'},
-        'values': [{'value': [{'value': '77.0',
+        'values': [{'value': [{'value': '98.2',
             'qualifiers': ['P'],
-            'dateTime': '2020-03-02T00:00:00.000'}],
+            'dateTime': '2020-03-24T00:00:00.000'}],
           'qualifier': [{'qualifierCode': 'P',
             'qualifierDescription': 'Provisional data subject to revision.',
             'qualifierID': 0,
@@ -381,7 +381,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/01-time-series/plot-time-series-handle-dates/2018-02-05-ts07-cumulative-sum-mass-balance/2018-02-05-ts07-cumulative-sum-mass-balance_9_0.png" alt = "Comparison of USGS peak annual max vs calculated annual max from the USGS daily mean data.">
+<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/01-time-series/plot-time-series-handle-dates/2019-11-19-time-series-06-cumulative-sum-mass-balance/2019-11-19-time-series-06-cumulative-sum-mass-balance_9_0.png" alt = "Comparison of USGS peak annual max vs calculated annual max from the USGS daily mean data.">
 <figcaption>Comparison of USGS peak annual max vs calculated annual max from the USGS daily mean data.</figcaption>
 
 </figure>
@@ -578,7 +578,7 @@ plt.show()
 
 <figure>
 
-<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/01-time-series/plot-time-series-handle-dates/2018-02-05-ts07-cumulative-sum-mass-balance/2018-02-05-ts07-cumulative-sum-mass-balance_16_0.png" alt = "Cumulative sum plot for stream discharge.">
+<img src = "{{ site.url }}/images/courses/intermediate-earth-data-science-textbook/01-time-series/plot-time-series-handle-dates/2019-11-19-time-series-06-cumulative-sum-mass-balance/2019-11-19-time-series-06-cumulative-sum-mass-balance_16_0.png" alt = "Cumulative sum plot for stream discharge.">
 <figcaption>Cumulative sum plot for stream discharge.</figcaption>
 
 </figure>
