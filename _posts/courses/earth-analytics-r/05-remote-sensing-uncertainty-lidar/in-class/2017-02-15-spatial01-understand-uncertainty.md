@@ -3,7 +3,7 @@ layout: single
 title: "Sources of Error in Lidar and Human Measured Estimates of Tree Height"
 excerpt: "There are difference sources of error when you measure tree height using Lidar. Learn about accuracy, precision and the sources of error associated with lidar remote sensing data."
 authors: ['Leah Wasser']
-modified: '2019-09-03'
+modified: '2020-03-26'
 category: [courses]
 class-lesson: ['remote-sensing-uncertainty-r']
 permalink: /courses/earth-analytics/remote-sensing-uncertainty/about-uncertainty-lidar/
@@ -14,6 +14,8 @@ module-nav-title: 'Uncertainty in Scientific Data & Metadata '
 module-type: 'class'
 course: "earth-analytics"
 week: 5
+estimated-time: "2-3 hours"
+difficulty: "intermediate"
 sidebar:
   nav:
 author_profile: false

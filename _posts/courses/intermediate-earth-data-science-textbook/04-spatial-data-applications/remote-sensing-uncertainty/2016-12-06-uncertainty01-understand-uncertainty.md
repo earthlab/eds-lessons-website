@@ -2,9 +2,9 @@
 layout: single
 title: "Compare Lidar With Human Measured Tree Heights - Remote Sensing Uncertainty"
 excerpt: "Uncertainty quantifies the range of values within which the value of the measurement falls - within a specified level of confidence. Learn about the types of uncertainty that you can expect when working with tree height data both derived from lidar remote sensing and human measurements and learn about sources of error including systematic vs. random error."
-authors: ['Leah Wasser', 'Chris Holdgraf']
+authors: ['Leah Wasser', 'Chris Holdgraf', 'Carson Farmer', 'Max Joseph']
 dateCreated: 2016-12-06
-modified: 2020-03-06
+modified: 2020-03-26
 category: [courses]
 class-lesson: ['remote-sensing-uncertainty-python-tb']
 permalink: /courses/use-data-open-source-python/spatial-data-applications/lidar-remote-sensing-uncertainty/
@@ -16,6 +16,8 @@ module-type: 'class'
 course: 'intermediate-earth-data-science-textbook'
 chapter: 6
 week: 4
+estimated-time: "2-3 hours"
+difficulty: "intermediate"
 sidebar:
   nav:
 author_profile: false

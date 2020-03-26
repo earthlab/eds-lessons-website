@@ -4,7 +4,7 @@ title: "An Overview of the Cold Springs Wildfire"
 excerpt: "The Cold Springs wildfire burned a total of 528 acres of land between July 9, 2016 and July 14, 2016. Learn more about this wildfire and how scientists study wildfire using both field and remote sensing methods."
 authors: ['Leah Wasser']
 dateCreated: 2018-10-04
-modified: 2020-03-16
+modified: 2020-03-26
 category: [courses]
 class-lesson: ['wildfire-overview-tb']
 permalink: /courses/use-data-open-source-python/data-stories/cold-springs-wildfire/
@@ -17,6 +17,8 @@ module-nav-title: 'Wildfire Overview'
 module-description: 'The Cold Springs wildfire burned 528 acres near Nederland, Colorado, in July 2016. Learn about how scientists study the impacts of wildfire using field surveys and remote sensing.'
 module-type: 'class'
 class-order: 3
+estimated-time: "1 hour"
+difficulty: "intermediate"
 sidebar:
   nav:
 author_profile: false

@@ -4,7 +4,7 @@ title: "GIS in Python: Introduction to Vector Format Spatial Data - Points, Line
 excerpt: "Vector data are composed of discrete geometric locations (x, y values) known as vertices that define the shape of the spatial object. Learn more about the structure of vector data and how to open vector data stored in shapefile format in Python."
 authors: ['Leah Wasser', 'Chris Holdgraf']
 dateCreated: 2018-02-05
-modified: 2020-01-29
+modified: 2020-03-26
 category: [courses]
 class-lesson: ['intro-vector-python-tb']
 permalink: /courses/use-data-open-source-python/intro-vector-data-python/spatial-data-vector-shapefiles/
@@ -16,6 +16,8 @@ module-type: 'class'
 course: 'intermediate-earth-data-science-textbook'
 chapter: 2
 week: 2
+estimated-time: "1 hour"
+difficulty: "intermediate"
 sidebar:
   nav:
 author_profile: false
@@ -236,7 +238,7 @@ sjer_plot_locations.head(6)
   </thead>
   <tbody>
     <tr>
-      <td>0</td>
+      <th>0</th>
       <td>SJER1068</td>
       <td>center</td>
       <td>4111567.818</td>
@@ -245,7 +247,7 @@ sjer_plot_locations.head(6)
       <td>POINT (255852.376 4111567.818)</td>
     </tr>
     <tr>
-      <td>1</td>
+      <th>1</th>
       <td>SJER112</td>
       <td>center</td>
       <td>4111298.971</td>
@@ -254,16 +256,16 @@ sjer_plot_locations.head(6)
       <td>POINT (257406.967 4111298.971)</td>
     </tr>
     <tr>
-      <td>2</td>
+      <th>2</th>
       <td>SJER116</td>
       <td>center</td>
       <td>4110819.876</td>
       <td>256838.760</td>
       <td>grass</td>
-      <td>POINT (256838.76 4110819.876)</td>
+      <td>POINT (256838.760 4110819.876)</td>
     </tr>
     <tr>
-      <td>3</td>
+      <th>3</th>
       <td>SJER117</td>
       <td>center</td>
       <td>4108752.026</td>
@@ -272,7 +274,7 @@ sjer_plot_locations.head(6)
       <td>POINT (256176.947 4108752.026)</td>
     </tr>
     <tr>
-      <td>4</td>
+      <th>4</th>
       <td>SJER120</td>
       <td>center</td>
       <td>4110476.079</td>
@@ -281,13 +283,13 @@ sjer_plot_locations.head(6)
       <td>POINT (255968.372 4110476.079)</td>
     </tr>
     <tr>
-      <td>5</td>
+      <th>5</th>
       <td>SJER128</td>
       <td>center</td>
       <td>4111388.570</td>
       <td>257078.867</td>
       <td>trees</td>
-      <td>POINT (257078.867 4111388.57)</td>
+      <td>POINT (257078.867 4111388.570)</td>
     </tr>
   </tbody>
 </table>
@@ -468,7 +470,7 @@ sjer_plot_locations.plot()
 
 
 
-    <matplotlib.axes._subplots.AxesSubplot at 0x7f7c41ca2b70>
+    <matplotlib.axes._subplots.AxesSubplot at 0x7f53667d2a10>
 
 
 

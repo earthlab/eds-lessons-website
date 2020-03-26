@@ -14,6 +14,8 @@ readability, organization, etc and identify key elements that would
 make it more usable and readily reproducible.'
 permalink: /courses/intro-open-science/
 nav-title: 'Lesson Overview'
+estimated-time: "3+ hours"
+difficulty: "beginner"
 sidebar:
   nav:
 module: ['intro-open-science']

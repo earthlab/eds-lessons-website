@@ -2,14 +2,17 @@
 layout: single
 category: courses
 title: "Use Data for Earth and Environmental Science in Open Source Python | Earth Lab CU Boulder"
+authors: ['Leah Wasser', 'Jenny Palomino']
 nav-title: "Use Data for Earth and Environmental Science in Open Source Python Home"
 permalink: /courses/use-data-open-source-python/
 course: "intermediate-earth-data-science-textbook"
-modified: 2020-03-13
+modified: 2020-03-26
 module-type: 'overview'
 module-title: "Use Data for Earth and Environmental Science in Open Source Python Textbook"
 week-landing: 0
 week: 0
+estimated-time: "12 weeks"
+difficulty: "intermediate"
 sidebar:
   nav:
 comments: false
