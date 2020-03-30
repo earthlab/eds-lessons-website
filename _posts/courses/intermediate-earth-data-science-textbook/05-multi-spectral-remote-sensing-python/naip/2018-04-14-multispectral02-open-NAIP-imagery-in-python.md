@@ -4,7 +4,7 @@ title: "Learn to Use NAIP Multiband Remote Sensing Images in Python"
 excerpt: "Learn how to open up a multi-band raster layer or image stored in .tiff format in Python using Rasterio. Learn how to plot histograms of raster values and how to plot 3 band RGB and color infrared or false color images."
 authors: ['Leah Wasser']
 dateCreated: 2018-04-14
-modified: 2020-03-05
+modified: 2020-03-30
 category: [courses]
 class-lesson: ['multispectral-remote-sensing-data-python-naip']
 permalink: /courses/use-data-open-source-python/multispectral-remote-sensing/intro-naip/
@@ -100,12 +100,6 @@ os.chdir(os.path.join(et.io.HOME, 'earth-analytics'))
 plt.rcParams['figure.figsize'] = (10, 10)
 plt.rcParams['axes.titlesize'] = 20
 ```
-
-{:.output}
-    Downloading from https://ndownloader.figshare.com/files/10960109
-    Extracted output to /root/earth-analytics/data/cold-springs-fire/.
-
-
 
 To begin, you will use the rasterio open function to open the multi-band NAIP image
 
@@ -217,7 +211,7 @@ naip_csf_meta
      'width': 4377,
      'height': 2312,
      'count': 4,
-     'crs': CRS.from_wkt('PROJCS["UTM Zone 13, Northern Hemisphere",GEOGCS["GRS 1980(IUGG, 1980)",DATUM["unknown",SPHEROID["GRS80",6378137,298.257222101],TOWGS84[0,0,0,0,0,0,0]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-105],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]]]'),
+     'crs': CRS.from_wkt('PROJCS["UTM Zone 13, Northern Hemisphere",GEOGCS["GRS 1980(IUGG, 1980)",DATUM["unknown",SPHEROID["GRS80",6378137,298.257222101],TOWGS84[0,0,0,0,0,0,0]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-105],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH]]'),
      'transform': Affine(1.0, 0.0, 457163.0,
             0.0, -1.0, 4426952.0)}
 
