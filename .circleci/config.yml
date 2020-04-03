@@ -18,7 +18,7 @@ jobs:
             # get names of changed files
             echo "${changed_files} ">> changed_files.txt
             # Remove unwanted files from commit and count files changed
-            python parse-commit.py
+            python scripts/parse-commit.py
 
             # Get latest commit message
             echo $(git log -1 --pretty=%B) > commit_msg_latest.txt
@@ -29,6 +29,15 @@ jobs:
             else
               echo "No files were modified in the last commit."
             fi
+      - run:
+          name: Get removed, renamed, or moved files
+          working_directory: ~/eds-lessons-website
+          command: |
+            deleted_files=$(git diff-tree --no-commit-id --name-only --diff-filter=D -r HEAD 2>&1)
+            # get names of changed files
+            echo "${deleted_files} ">> deleted_files.txt
+            python scripts/parse-deleted.py
+            ls
       - run:
           name: Get & print current branch
           working_directory: ~/eds-lessons-website
@@ -42,53 +51,32 @@ jobs:
           name: Clone earthlab.github.io website branch NEW
           working_directory: ~/
           command: |
-            branch=$(head -1 eds-lessons-website/current_branch.txt)
-            # Only clone eds.org if there are files to commit
-            if [[ -f ~/eds-lessons-website/website_files.txt ]]
+            chmod +x ~/eds-lessons-website/scripts/clone-io-repo.sh
+            ~/eds-lessons-website/scripts/clone-io-repo.sh
+      - run:
+          name: Move Changed Files to earthlab.github.io
+          working_directory: ~/eds-lessons-website
+          command: |
+            # Only Copy files to the live website repo if there are files to move
+            if [[ -f website_files.txt ]]
             then
-              if [ "$branch" != "master" ]
-              then
-                  # check that branch exists on remote earthlab.github.io
-                  branch_status=$(git ls-remote --heads https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git "$branch" | wc -l)
-                  # if branch exists, clone it
-                  if [ $branch_status == 1 ]
-                  then
-                    # clone the remote branch
-                    git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git -b "$branch"
-                    echo "Looks like the branch doesn't existing on the eds.org website, created branch for you."
-                  else
-                    # if the branch doesn't exist, clone master and checkout the branch as a new branch
-                    git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
-                    cd earthlab.github.io
-                    git checkout -b "$branch"
-                  fi
-              else
-                  # if commits are on master, push to website-autobuild to avoid direct commits to live website
-                  # check for autobuild branch on website remote
-                  branch_status=$(git ls-remote --heads https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git "website-autobuild" | wc -l)
-                  # if branch exists check it out...
-                  if [ $branch_status == 1 ]
-                  then
-                    # clone the remote branch
-                    git clone -b website-autobuild --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
-                  else
-                    # if it does not, clone master and checkout a new branch
-                    git clone --depth 1 https://${EDS_LESSONS_GITHUB_TOKEN_EL}@github.com/earthlab/earthlab.github.io.git
-                    cd earthlab.github.io
-                    git checkout -b website-autobuild
-                  fi
-              fi
-              # Copy files to the live website repo
-              cd ~/eds-lessons-website
-              python move-files.py
+              echo "The following files were modified and will be updated on the io website: "
+              cat website_files.txt
+              python scripts/move-files.py
             else
-              echo "There are no changes, not cloning the website repo."
+              echo "There are no changes to push to the website repo."
             fi
       - run:
-          name: Push files to new repo
+          name: Delete removed/renamed/moved images and posts from .io website
+          working_directory: ~/eds-lessons-website
+          command: |
+            chmod +x scripts/delete-images-posts.sh
+            scripts/delete-images-posts.sh
+      - run:
+          name: Push changes in files and images to earthlab.github.io repo
           working_directory: ~/earthlab.github.io
           command: |
-            if [[ -f ~/eds-lessons-website/website_files.txt ]]
+            if [[ -f ~/eds-lessons-website/website_files.txt ]] || [ -f ~/eds-lessons-website/deleted_files.txt ]
             then
               # Be sure to see how many files there are and only commit if there are more than 0
               git status

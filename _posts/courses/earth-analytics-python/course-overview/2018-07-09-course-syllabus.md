@@ -5,7 +5,7 @@ authors: ['Leah Wasser']
 category: courses
 excerpt:
 nav-title: Course Syllabus
-modified: 2020-01-08
+modified: 2020-03-06
 comments: no
 permalink: /courses/earth-analytics-python/earth-analytics-syllabus/
 author_profile: no
@@ -22,7 +22,7 @@ sidebar:
 ## Course Location & Time
 
 * **Location:** SEEC N125 (distance learning classroom)
-* **Time:** Wednesdays, 3:00PM - 5:30
+* **Time:** Spring 2020: Wednesdays, 3:00PM - 5:30
 
 ## Instructor & TA
 
@@ -35,12 +35,11 @@ sidebar:
 
 There will be a few weeks where office hours will need to be adjusted.
 However unless otherwise notified, office hours are as follows:
- 
 
 | Day | Time | Location | Who |
 |---|---|---|---|
-| Mondays | 10:00 am - 1:00 pm | Earth Lab  S346 SEEC | Leah |
-| Tuesday | 3:00 pm - 4:30 pm | Earth Lab S346 SEEC | Jenny |
+| Mondays (in person) | 11:00 am - 12:30 pm | Earth Lab  S346 SEEC | Leah |
+| Tuesday (in person / zoom) | 3:00 pm - 4:30 pm | Earth Lab S346 SEEC | Jenny |
 |===
 
 ## Learning Outcomes
@@ -59,7 +58,7 @@ All students will need a working laptop to use in class each week.
 ## Online Participation
 
 If you enrolled in the online section of this course, you can join the course
-remotely using ZOOM. Please visit D2L to access the zoom link.
+remotely using ZOOM. Please visit Canvas to access the zoom link.
 
 <a href="http://www.colorado.edu/oit/services/conferencing-services/web-conferencing-zoom" target="_blank">Click here to get help getting Zoom up and running</a>
 
@@ -117,7 +116,7 @@ Course grades will be calculated using the following assignments:
 
 ### Final Letter Grades
 
-Please use the table below to understand how your numeric grade - listed in D2L
+Please use the table below to understand how your numeric grade - listed in Canvas
 related to your final letter grade in this course.
 
 | Score | Grade  |  |  |  |
@@ -145,8 +144,8 @@ subject line and be signed with your full name. Please use your official
 If your email is not personal in nature, but rather a question about the homework,
 issues with the course website, or issues with R, please
 
-1. See if the question has already been asked on Piazza
-2. If the question hasn't already been asked, please **post your question to PIAZZA**.
+1. See if the question has already been asked in the Canvas Discussion page. 
+2. If the question hasn't already been asked, please **post your question to the Canvas Discussion page**.
 
 
 ## Canvas Discussion Post Rules
@@ -157,7 +156,7 @@ Do:
 
 * Post questions that you have about homework assignments
 * Post issues that you find with the website -- typos, errors, points of confusion
-* Answer other questions if you can (you will receive participation points for posting on piazza so use it)
+* Answer other questions if you can (you will receive participation points for posting in the Canvas Discussion page so use it)
 * **upvote** questions that you have as well or that you think are written well
 * Be respectful of your peers. All questions related to data and earth analytics are good questions.
 
@@ -165,9 +164,9 @@ Do not:
 
 * Post any content that is in any way offensive or that violates University codes of conduct (see links below)
 * Post explicit solutions to homework assignments (help each other out but don't post the answer)
-* Post an entire `.ipynb` document on Piazza - rather post a small snippet of code that is causing problems and the associated code error
+* Post an entire `.ipynb` document on the Canvas Discussion page - rather post a small snippet of code that is causing problems and the associated code error
 
-When posting questions about coding issues to Piazza, please do your best to
+When posting questions about coding issues to the Canvas Discussion page, please do your best to
 provide an example of the specific code error that you are encountering.
 
 Example. The code
@@ -192,7 +191,7 @@ content updates. Turn on notifications if you don't login to canvas regularly.
 Attendance is encouraged for all class sessions. I have found that students
 who attend class often do better than those who don't. However, with that
 said the entire course is available in an online format and you will be able
-to participate in many activities remotely using the Piazza forum.
+to participate in many activities remotely using the Canvas Discussion page.
 
 ### Participation
 
