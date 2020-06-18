@@ -90,6 +90,8 @@ Write down your answers in the cell below as a comment.
 ****
 HINT: You may also want to explore the `README_dischargeMetadata.rtf` file located in the same directory. This file contains metadata that describes in more detail the data that you are using
 
+</div>
+
 
 <div class="notice--warning alert alert-info" markdown="1">
 
@@ -147,7 +149,10 @@ The lessons below should help you complete this challenge:
 
 * [More on subsetting time series data using **Pandas**](https://www.earthdatascience.org/courses/use-data-open-source-python/use-time-series-data-in-python/date-time-types-in-pandas-python/subset-time-series-data-python/) 
 * [More on customizing date labels on time series plots in **matplotlib**](https://www.earthdatascience.org/courses/use-data-open-source-python/use-time-series-data-in-python/date-time-types-in-pandas-python/customize-dates-matplotlib-plots-python/). 
+
 </div>
+
+****
 
 
 
@@ -181,6 +186,8 @@ HINT: The lessons below might help you complete this challenge:
 * [Check out the Pandas time series data resampling lesson to help you resample your data.](https://www.earthdatascience.org/courses/use-data-open-source-python/use-time-series-data-in-python/date-time-types-in-pandas-python/resample-time-series-data-pandas-python/)
 * [Check out the customize time series plots lesson to help with adjusting the x axis ticks.](https://www.earthdatascience.org/courses/use-data-open-source-python/use-time-series-data-in-python/date-time-types-in-pandas-python/customize-dates-matplotlib-plots-python/)
 </div>
+
+*****
 
 
 
@@ -218,6 +225,9 @@ In this next challenge, you will compare daily max stream discharge for two time
 
 OPTIONAL: You may have noticed empty space on either side of the x-axis in your previous plot. Use `ax.set_xlim()` to set the x limits of your plot to the minimum and maximum date values in each of your subset datasets. 
 </div>
+
+
+****
 
 
 
@@ -280,6 +290,8 @@ using a Google search!
 </div>
 
 
+****
+
 
 
 {:.output}
@@ -322,6 +334,7 @@ discharge to see how they interact. For this challenge, you need to:
 *  Format your plots  with titles, x and y axis labels. Make sure the dates are easy to read.
 </div>
 
+*****
 
 
 
