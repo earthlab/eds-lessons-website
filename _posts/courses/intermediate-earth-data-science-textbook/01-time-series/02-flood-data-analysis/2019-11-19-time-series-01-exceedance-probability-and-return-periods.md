@@ -4,7 +4,7 @@ title: "Why A Hundred Year Flood Can Occur Every Year. Calculate Exceedance Prob
 excerpt: "Learn how to calculate exceedance probability and return periods associated with a flood in Python."
 authors: ['Matthew Rossi', 'Leah Wasser']
 dateCreated: 2018-02-05
-modified: 2020-06-16
+modified: 2020-06-18
 category: [courses]
 class-lesson: ['ts-flood-return-python']
 course: 'intermediate-earth-data-science-textbook'
@@ -257,11 +257,11 @@ hf.get_nwis(site, 'dv').json()
         {'value': '[mode=LATEST, modifiedSince=null]',
          'title': 'filter:timeRange'},
         {'value': 'methodIds=[ALL]', 'title': 'filter:methodId'},
-        {'value': '2020-06-16T15:48:46.508Z', 'title': 'requestDT'},
-        {'value': 'dd1b9fb0-afe8-11ea-b630-6cae8b663fb6', 'title': 'requestId'},
+        {'value': '2020-06-18T14:22:45.312Z', 'title': 'requestDT'},
+        {'value': '2d9f1cf0-b16f-11ea-ba5b-6cae8b6642f6', 'title': 'requestId'},
         {'value': 'Provisional data are subject to revision. Go to http://waterdata.usgs.gov/nwis/help/?provisional for more information.',
          'title': 'disclaimer'},
-        {'value': 'vaas01', 'title': 'server'}]},
+        {'value': 'caas01', 'title': 'server'}]},
       'timeSeries': [{'sourceInfo': {'siteName': 'BOULDER CREEK AT MOUTH NEAR LONGMONT, CO',
          'siteCode': [{'value': '06730500',
            'network': 'NWIS',
@@ -297,9 +297,9 @@ hf.get_nwis(site, 'dv').json()
          'noDataValue': -999999.0,
          'variableProperty': [],
          'oid': '45807197'},
-        'values': [{'value': [{'value': '97.7',
+        'values': [{'value': [{'value': '104',
             'qualifiers': ['P'],
-            'dateTime': '2020-06-15T00:00:00.000'}],
+            'dateTime': '2020-06-17T00:00:00.000'}],
           'qualifier': [{'qualifierCode': 'P',
             'qualifierDescription': 'Provisional data subject to revision.',
             'qualifierID': 0,
@@ -714,7 +714,7 @@ urllib.request.urlretrieve(url, download_path)
 
 
     ('data/colorado-flood/downloads/annual-peak-flow.txt',
-     <http.client.HTTPMessage at 0x7fc2fc2f2f10>)
+     <http.client.HTTPMessage at 0x7f895e768950>)
 
 
 

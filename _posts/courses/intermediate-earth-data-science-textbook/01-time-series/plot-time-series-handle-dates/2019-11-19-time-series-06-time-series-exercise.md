@@ -3,7 +3,7 @@ layout: single
 title: "Summary Activity for Time Series Data"
 excerpt: "An activity to practice all of the skills you just learned in ."
 authors: ['Leah Wasser', 'Nathan Korinek']
-modified: 2020-06-17
+modified: 2020-06-18
 category: [courses]
 class-lesson: ['time-series-python-tb']
 course: 'intermediate-earth-data-science-textbook'
@@ -52,12 +52,6 @@ sns.set(font_scale=1.5, style="whitegrid")
 # Download the data
 data = et.data.get_data('colorado-flood')
 ```
-
-{:.output}
-    Downloading from https://ndownloader.figshare.com/files/16371473
-    Extracted output to /root/earth-analytics/data/colorado-flood/.
-
-
 
 {:.input}
 ```python

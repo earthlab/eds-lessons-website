@@ -4,7 +4,7 @@ category: courses
 title: "Time Series Data in Python"
 permalink: /courses/use-data-open-source-python/use-time-series-data-in-python/
 week-landing: 1
-modified: 2020-06-15
+modified: 2020-06-18
 week: 1
 sidebar:
   nav:
