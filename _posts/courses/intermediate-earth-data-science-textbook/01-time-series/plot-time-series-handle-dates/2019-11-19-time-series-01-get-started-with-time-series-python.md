@@ -135,6 +135,12 @@ data = et.data.get_data('colorado-flood')
 os.chdir(os.path.join(et.io.HOME, 'earth-analytics', "data"))
 ```
 
+{:.output}
+    Downloading from https://ndownloader.figshare.com/files/16371473
+    Extracted output to /root/earth-analytics/data/colorado-flood/.
+
+
+
 Next, open the precipitation data for Boulder, Colorado. Look at the structure
 of the data.
 
@@ -1224,7 +1230,7 @@ ax.scatter(x=flood_data.index.values,
 # Define the date format
 date_form = DateFormatter("%m-%d")
 ax.xaxis.set_major_formatter(date_form)
-ax.set(title="Challenge 3 Optional \n Precipitation Sept - Nov 2013 \n Optional Plot with Dates Formatted Cleanly")
+ax.set(title="Optional Challenge \n Precipitation Sept - Nov 2013 \n Optional Plot with Dates Formatted Cleanly")
 plt.show()
 ```
 
