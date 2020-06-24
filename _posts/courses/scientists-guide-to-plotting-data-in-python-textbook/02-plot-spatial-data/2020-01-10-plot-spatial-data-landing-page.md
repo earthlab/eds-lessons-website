@@ -5,7 +5,7 @@ title: "Plotting Spatial Data"
 permalink: /courses/scientists-guide-to-plotting-data-in-python/plot-spatial-data/
 week-landing: 2
 dateCreated: 2020-01-10
-modified: 2020-01-30
+modified: 2020-06-24
 week: 2
 sidebar:
   nav:
