@@ -20,6 +20,8 @@ order: 2
 topics:
     spatial-data-and-gis: ['raster-data']
 ---
+{% include toc title="In This Chapter" icon="file-text" %}
+
 <div class='notice--success alert alert-info' markdown="1">
 
 ## <i class="fa fa-ship" aria-hidden="true"></i> Fundamentals of Raster Data in Python 

@@ -20,6 +20,10 @@ order: 4
 topics:
     spatial-data-and-gis: ['vector-data', 'raster-data']
 ---
+{% include toc title="In This Chapter" icon="file-text" %}
+
+
+
 {:.input}
 ```python
 # Importing packages needed to complete this lesson
